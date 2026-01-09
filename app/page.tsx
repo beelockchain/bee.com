@@ -9,6 +9,7 @@ import Awards from "./components/Awards";
 import Solution from "./components/Solution";
 import Digitaltransformation from "./components/Digitaltransformation";
 import Testimonial from "./components/Testimonial";
+import Transformes from "./components/Transformes";
 
 export default function Home() {
   return (
@@ -16,14 +17,15 @@ export default function Home() {
       <Topnav />
       <Herosection />
       <Customers />
-      <Digitaltransformation/>
-      <Testimonial/>
+      <Digitaltransformation />
+      <Transformes />
+      <Testimonial />
       <OverView />
-      <Strategie />
-      <Transforme />
-      <Discover/>
+      {/* <Strategie /> */}
+
+      {/* <Discover/>
       <Awards/>
-      <Solution/>
+      <Solution/> */}
     </div>
   );
 }

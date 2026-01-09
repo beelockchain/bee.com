@@ -1,7 +1,7 @@
 const Digitaltransformation = () => {
     return (
         <div className="w-full h-screen flex justify-center items-center">
-            <div className="w-[55%] h-full flex flex-col justify-center items-start gap-6 p-5">
+            <div className="w-[50%] h-full flex flex-col justify-center items-start gap-6 p-5">
                 <h1 className="text-4xl font-bold mb-6 text-black">Beelockchain Your Trusted <span className="font-semibold text-transparent bg-clip-text
 bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700">Digital <br/>Transformation Company</span></h1>
                 <p className="text-lg leading-8 text-gray-700">
