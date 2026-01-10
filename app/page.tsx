@@ -13,6 +13,7 @@ import FAQSection from "./components/faq";
 import Footer from "./components/footer";
 import OurInsights from "./components/OurInsights";
 import BeelockchainTransformation from "./components/beelockchainTransformation";
+import Transformes from "./components/Transformes";
 
 export default function Home() {
   return (
@@ -20,18 +21,20 @@ export default function Home() {
       <Topnav />
       <Herosection />
       <Customers />
-      <Digitaltransformation/>
-      <Testimonial/>
+      <Digitaltransformation />
+      <Transformes />
+      <Testimonial />
       <OverView />
-      <Strategie />
-      <Transforme />
-      <Discover/>
+      {/* <Strategie /> */}
+
+      {/* <Discover/>
       <Awards/>
       <Solution/>
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
       <Footer/>
+      <Solution/> */}
     </div>
   );
 }

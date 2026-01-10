@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, X } from 'lucide-react';
 import { useState } from 'react';
 import MegaHover from './NavItem';
 import SideMenu from './SideMenu';
@@ -98,19 +98,28 @@ const Topnav = () => {
             Get started <ArrowUpRight className="h-6 w-6 inline text-yellow-500 ml-2" />
           </button>
           <button
-            onClick={() => setSideMenuOpen(true)}
+            onClick={() => setSideMenuOpen(!sideMenuOpen)}
             className="flex items-center gap-2 text-black border border-black px-2 py-1 rounded-full font-medium shadow hover:bg-gray-100 transition"
           >
-            Menu
-            <div className='w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500'>
-              <img src="/Background.svg" alt="menu" className="h-8 w-8" />
+            {sideMenuOpen ? "Close" : "Menu"}
+
+            <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
+              {sideMenuOpen ? (
+                <X className="h-5 w-5 text-black" />
+              ) : (
+                <img
+                  src="/Background.svg"
+                  alt="menu"
+                  className="h-8 w-8"
+                />
+              )}
             </div>
           </button>
         </div>
       </div>
 
       {/* Side Menu */}
-      <SideMenu isOpen={sideMenuOpen} onClose={() => setSideMenuOpen(false)}>
+    <SideMenu isOpen={sideMenuOpen} onClose={() => setSideMenuOpen(false)}>
         <div className="space-y-6 flex flex-col items-end pr-8">
           {menuItems.map((item) => (
             <a
