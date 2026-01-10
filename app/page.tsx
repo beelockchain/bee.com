@@ -15,10 +15,11 @@ import OurInsights from "./components/OurInsights";
 import BeelockchainTransformation from "./components/beelockchainTransformation";
 import Transformes from "./components/Transformes";
 import IndustryWeServe from "./components/IndustryWeServe";
+import Technologies from "./components/Technologies";
 
 export default function Home() {
   return (
-    <div className="bg-[#F2EEE5]">
+    <div className="bg-[#fffff]">
       <Topnav />
       <Herosection />
       <Customers />
@@ -31,6 +32,7 @@ export default function Home() {
       {/* <Discover/>
       <Awards/>
       <Solution/> */}
+      <Technologies/>
       <IndustryWeServe/>
       <BeelockchainTransformation/>
       <OurInsights/>

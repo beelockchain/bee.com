@@ -10,7 +10,7 @@ const highlightNumbers = (text: string) => {
       return (
         <span
           key={index}
-          className="bg-gradient-to-r from-[#AF7211] via-[#F6E000] to-[#D7B007] text-transparent bg-clip-text"
+          className="text-black"
         >
           {part}
         </span>
@@ -27,7 +27,7 @@ const cardsData = [
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Enterprise-Grade Security 100",
     hoverSubtitle: "For Your Business",
-    image: "/hover-image1.png",
+    image: "assets/images/why-choose-img1.png",
     description:
       "We provide enterprise-level blockchain security, ensuring reliability and protection.",
   },
@@ -37,7 +37,7 @@ const cardsData = [
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Automation Excellence 7",
     hoverSubtitle: "Process Reliability",
-    image: "/hover-image2.png",
+    image: "assets/images/why-choose-img1.png",
     description:
       "We deliver consistent quality and outstanding digital transformation results.",
   },
@@ -47,7 +47,7 @@ const cardsData = [
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Safe & Scalable 24x7",
     hoverSubtitle: "Data Infrastructure",
-    image: "/hover-image3.png",
+    image: "assets/images/why-choose-img1.png",
     description:
       "We deliver secure, scalable, high-performance systems for enterprises.",
   },
@@ -57,7 +57,7 @@ const cardsData = [
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Real-Time Insights 24",
     hoverSubtitle: "Modern Intelligence",
-    image: "/hover-image4.png",
+    image: "assets/images/why-choose-img1.png",
     description:
       "We deliver analytics and blockchain-powered insights for modern businesses.",
   },
@@ -67,7 +67,7 @@ const cardsData = [
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Real-Time Insights 24",
     hoverSubtitle: "Modern Intelligence",
-    image: "/hover-image4.png",
+    image: "assets/images/why-choose-img1.png",
     description:
       "We deliver analytics and blockchain-powered insights for modern businesses.",
   },
@@ -102,12 +102,12 @@ const OverView = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full bg-white flex flex-col items-center py-20">
       {/* Title */}
       <div className="mb-10">
         <h1 className="text-black text-[34px] font-bold text-center">
           Why{" "}
-          <span className="bg-gradient-to-r from-[#AF7211] via-[#F6E000] to-[#D7B007] text-transparent bg-clip-text">
+          <span className="text-black">
             Beelockchain
           </span>
         </h1>

@@ -2,7 +2,7 @@ import MarqueeRow from "./MarqueeRow";
 
 const Testimonial = () => {
     return (
-        <div className="flex justify-center items-center w-full">
+        <div className="flex justify-center items-center w-full py-20">
             <div className="flex flex-col justify-center items-center">
                 <section className="w-full h-[40%] overflow-hidden flex flex-col items-center justify-center gap-8">
                     <div className="flex flex-col justify-center items-center gap-2">

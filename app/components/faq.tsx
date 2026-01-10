@@ -53,11 +53,11 @@ const faqs = [
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="relative rounded-[14px] p-[0.8px] bg-[#646464] cursor-pointer">
-                <div className="bg-[#fafafa] rounded-[13px] px-5 py-4">
+              <div key={index} className="relative rounded-[14px] p-[0.9px] bg-[#646464] cursor-pointer">
+                <div className="bg-[#fafafa] rounded-[13px] px-5 py-4"
+                 onClick={() => setOpenIndex(isOpen ? null : index)}>
                   <button
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="w-full flex justify-between items-center gap-6 text-left cursor-pointer"
+                    className="w-full flex justify-between items-center gap-6 text-left cursor-pointer "
                   >
                     <p className="text-black text-sm sm:text-base font-medium font-manrope">{item.q}</p>
 
@@ -78,7 +78,7 @@ const faqs = [
                     )}
                   </button>
 
-                  <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-40 mt-4" : "max-h-0"}`}>
+                  <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-50 mt-6" : "max-h-0"}`}>
                     <p className="text-sm text-[#646464] leading-relaxed font-poppins">{item.a}</p>
                   </div>
                 </div>
