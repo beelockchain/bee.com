@@ -9,6 +9,9 @@ import Awards from "./components/Awards";
 import Solution from "./components/Solution";
 import Digitaltransformation from "./components/Digitaltransformation";
 import Testimonial from "./components/Testimonial";
+import FAQSection from "./components/faq";
+import Footer from "./components/footer";
+import OurInsights from "./components/OurInsights";
 
 export default function Home() {
   return (
@@ -24,6 +27,9 @@ export default function Home() {
       <Discover/>
       <Awards/>
       <Solution/>
+      <OurInsights/>
+      <FAQSection/>
+      <Footer/>
     </div>
   );
 }
