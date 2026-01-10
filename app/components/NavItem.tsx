@@ -39,7 +39,7 @@ const NavItem = ({ label, children }: NavItemProps) => {
 
       {/* dropdown cloud */}
       {open && (
-        <div className="fixed left-0 top-16 w-full h-96 z-40 pointer-events-none">
+        <div className="fixed left-0 top-16 w-full h-screen z-40 pointer-events-none">
           {/* cloud bg - smooth fade out at bottom */}
           <div
             className="

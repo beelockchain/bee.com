@@ -13,6 +13,7 @@ import FAQSection from "./components/faq";
 import Footer from "./components/footer";
 import OurInsights from "./components/OurInsights";
 import BeelockchainTransformation from "./components/beelockchainTransformation";
+import Transformes from "./components/Transformes";
 import IndustryWeServe from "./components/IndustryWeServe";
 
 export default function Home() {
@@ -20,13 +21,14 @@ export default function Home() {
     <div className="bg-[#F2EEE5]">
       <Topnav />
       <Herosection />
-      {/* <Customers />
-      <Digitaltransformation/>
-      <Testimonial/>
+      <Customers />
+      <Digitaltransformation />
+      <Transformes />
+      <Testimonial />
       <OverView />
-      <Strategie />
-      <Transforme />
-      <Discover/>
+      {/* <Strategie /> */}
+
+      {/* <Discover/>
       <Awards/>
       <Solution/> */}
       <IndustryWeServe/>
