@@ -13,13 +13,14 @@ import FAQSection from "./components/faq";
 import Footer from "./components/footer";
 import OurInsights from "./components/OurInsights";
 import BeelockchainTransformation from "./components/beelockchainTransformation";
+import IndustryWeServe from "./components/IndustryWeServe";
 
 export default function Home() {
   return (
     <div className="bg-[#F2EEE5]">
       <Topnav />
       <Herosection />
-      <Customers />
+      {/* <Customers />
       <Digitaltransformation/>
       <Testimonial/>
       <OverView />
@@ -27,7 +28,8 @@ export default function Home() {
       <Transforme />
       <Discover/>
       <Awards/>
-      <Solution/>
+      <Solution/> */}
+      <IndustryWeServe/>
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
