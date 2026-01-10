@@ -12,6 +12,7 @@ import Testimonial from "./components/Testimonial";
 import FAQSection from "./components/faq";
 import Footer from "./components/footer";
 import OurInsights from "./components/OurInsights";
+import BeelockchainTransformation from "./components/beelockchainTransformation";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <Discover/>
       <Awards/>
       <Solution/>
+      <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
       <Footer/>
