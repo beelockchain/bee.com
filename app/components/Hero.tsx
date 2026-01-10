@@ -39,7 +39,7 @@ const Herosection = () => {
 
     return (
         <div className="h-screen w-full flex flex-col justify-center items-center">
-            <div className=" h-[75%] w-full flex justify-center items-center">
+            <div className=" h-[77%] w-full flex justify-center items-end mb-10">
                 <div className="w-[30%] h-[70%] relative flex justify-start items-start">
                     <div className="relative top-4 left-2">
                         <h1 className="text-[24px] leading-10 text-black font-extrabold">BeeLockChain Your Trusted</h1>
@@ -78,8 +78,8 @@ const Herosection = () => {
                     </div>
                 </div>
             </div>
-            <div className="h-[25%] w-[70%] flex justify-center items-center gap-8">
-                <div className="w-[200px] h-[140px] flex items-center justify-center">
+            <div className="h-[23%] w-[70%] flex justify-center items-center gap-8">
+                <div className="w-[170px] h-[110px] flex items-center justify-center">
                     <div
                         className="
           w-full h-full
@@ -89,11 +89,11 @@ const Herosection = () => {
           shadow-[0_10px_22px_rgba(255,200,90,0.45),_0_0_0_1px_rgba(255,200,90,0.25)]
         "
                     >
-                        <h2 className="text-5xl text-black">50+</h2>
-                        <p className="text-lg text-black mt-1">team members</p>
+                        <h2 className="text-3xl text-black">50+</h2>
+                        <p className="text-sm text-black mt-1">team members</p>
                     </div>
                 </div>
-                <div className="w-[200px] h-[140px] flex items-center justify-center">
+                 <div className="w-[170px] h-[110px] flex items-center justify-center">
                     <div
                         className="
           w-full h-full
@@ -103,12 +103,12 @@ const Herosection = () => {
           shadow-[0_10px_22px_rgba(255,200,90,0.45),_0_0_0_1px_rgba(255,200,90,0.25)]
         "
                     >
-                        <h2 className="text-5xl text-black">380+</h2>
-                        <p className="text-lg text-black mt-1">Completed Projects</p>
+                        <h2 className="text-3xl text-black">380+</h2>
+                        <p className="text-sm text-black mt-1">Completed Projects</p>
                     </div>
                 </div>
 
-                <div className="w-[200px] h-[140px] flex items-center justify-center">
+                <div className="w-[170px] h-[110px] flex items-center justify-center">
                     <div
                         className="
           w-full h-full
@@ -118,8 +118,8 @@ const Herosection = () => {
           shadow-[0_10px_22px_rgba(255,200,90,0.45),_0_0_0_1px_rgba(255,200,90,0.25)]
         "
                     >
-                        <h2 className="text-5xl text-black">8 years</h2>
-                        <p className="text-lg text-black mt-1">in Business</p>
+                        <h2 className="text-3xl text-black">8 years</h2>
+                        <p className="text-sm text-black mt-1">in Business</p>
                     </div>
                 </div>
             </div>

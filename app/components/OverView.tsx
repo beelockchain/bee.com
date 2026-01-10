@@ -61,58 +61,53 @@ const cardsData = [
     description:
       "We deliver analytics and blockchain-powered insights for modern businesses.",
   },
+  {
+    initialLogo: "/Group 300 2.svg",
+    initialText: "7+ Years of Quality",
+    hoverLogo: "/Group 300 2.svg",
+    hoverTitle: "Real-Time Insights 24",
+    hoverSubtitle: "Modern Intelligence",
+    image: "/hover-image4.png",
+    description:
+      "We deliver analytics and blockchain-powered insights for modern businesses.",
+  },
 ];
 
 const OverView = () => {
   const cardsRef = useRef<HTMLDivElement[]>([]);
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-  const [showContentIndex, setShowContentIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   /* ======================
-      SUPER SMOOTH HOVER
+      SMOOTH HOVER
      ====================== */
   const expandCard = (index: number) => {
-    setHoverIndex(index);
+    setActiveIndex(index);
 
-    const tl = gsap.timeline({ defaults: { duration: 0.4, ease: "power2.out" } });
-
-    // Animate all cards smoothly
-    tl.to(cardsRef.current, {
-      flexGrow: (i) => (i === index ? 1.5 : 1),
-      scale: (i) => (i === index ? 1.03 : 1),
-      stagger: 0.02,
-    });
-
-    // Show content AFTER animation finishes (no lag)
-    tl.call(() => {
-      setShowContentIndex(index);
+    gsap.to(cardsRef.current, {
+      flex: (i) => (i === index ? 1.6 : 0.8),
+      duration: 0.5,
+      ease: "power3.out",
+      stagger: 0.03,
     });
   };
 
   const resetCards = () => {
-    setHoverIndex(null);
-    setShowContentIndex(null);
+    setActiveIndex(null);
 
     gsap.to(cardsRef.current, {
-      flexGrow: 1,
-      scale: 1,
-      duration: 0.4,
-      ease: "power2.out",
+      flex: 1,
+      duration: 0.45,
+      ease: "power3.out",
     });
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <div>
+    <div className="w-full flex flex-col items-center">
+      {/* Title */}
+      <div className="mb-10">
         <h1 className="text-black text-[34px] font-bold text-center">
-          Why
-          <span
-            style={{
-              background: "linear-gradient(90deg, #AF7211, #F6E000, #D7B007)",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-            }}
-          >
+          Why{" "}
+          <span className="bg-gradient-to-r from-[#AF7211] via-[#F6E000] to-[#D7B007] text-transparent bg-clip-text">
             Beelockchain
           </span>
         </h1>
@@ -122,62 +117,69 @@ const OverView = () => {
         </p>
       </div>
 
-      {/* Card row */}
-      <div className="w-full h-screen flex justify-center items-center gap-4 px-10">
+      {/* 🔥 Card Row */}
+      <div
+        className="w-[80%] h-[520px] flex gap-4 px-6"
+        onMouseLeave={resetCards} // ✅ FIXED HERE
+      >
         {cardsData.map((card, i) => (
           <div
             key={i}
-            ref={(el: HTMLDivElement | null) => {
-              if (el) {
-                cardsRef.current[i] = el;
-              }
+            ref={(el) => {
+              if (el) cardsRef.current[i] = el;
             }}
-
             onMouseEnter={() => expandCard(i)}
-            onMouseLeave={resetCards}
-            className="flex-1 h-[80%] bg-white rounded-xl shadow-lg flex flex-col items-center justify-center overflow-hidden"
+            className="
+              flex-1
+              bg-white
+              rounded-xl
+              shadow-lg
+              overflow-hidden
+              cursor-pointer
+              transition-colors
+            "
           >
-            {/* Show full content ONLY after animation finishes */}
-            {showContentIndex === i ? (
-              <div className="flex flex-col w-full h-full p-6 gap-6 opacity-100 transition-opacity duration-300">
+            {activeIndex === i ? (
+              /* Expanded Content */
+              <div className="flex flex-col w-full h-full p-6 gap-6">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h2 className="text-[26px] font-extrabold leading-tight">
+                    <h2 className="text-[26px] font-extrabold">
                       {highlightNumbers(card.hoverTitle)}
                     </h2>
-                    <p className="text-[18px] text-black">
+                    <p className="text-[18px]">
                       {highlightNumbers(card.hoverSubtitle)}
                     </p>
                   </div>
 
                   <Image
                     src={card.hoverLogo}
-                    alt="hover logo"
+                    alt="logo"
                     width={45}
                     height={45}
                     className="opacity-60"
                   />
                 </div>
 
-                <div className="w-full h-[220px] bg-gray-200 rounded-xl overflow-hidden">
+                <div className="w-full h-[220px] rounded-xl overflow-hidden">
                   <Image
                     src={card.image}
-                    alt="hover image"
+                    alt="image"
                     width={300}
                     height={200}
                     className="w-full h-full object-cover"
                   />
                 </div>
 
-                <p className="text-gray-700 leading-6 text-[16px]">
+                <p className="text-gray-700 text-[16px] leading-6">
                   {card.description}
                 </p>
               </div>
             ) : (
+              /* Collapsed Content */
               <div className="w-full h-full flex flex-col justify-between items-center py-6 px-4">
-                {/* Vertical Text */}
                 <h3
-                  className="text-3xl font-semibold text-black tracking-wide"
+                  className="text-3xl font-semibold text-black"
                   style={{
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",
@@ -186,12 +188,10 @@ const OverView = () => {
                   {card.initialText}
                 </h3>
 
-                {/* Bottom section */}
-                <div className="flex  items-center gap-2">
-                  <span className="text-xl font-semibold text-black">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl font-semibold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-
                   <Image
                     src={card.initialLogo}
                     alt="icon"

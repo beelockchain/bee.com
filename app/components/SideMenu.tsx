@@ -71,7 +71,7 @@ const SideMenu = ({ isOpen, onClose, children }: SideMenuProps) => {
           }}
         />
 
-        {/* Menu content */}
+       
         <div className="relative h-full flex flex-col justify-start items-end pr-8 pt-24 text-black pointer-events-auto">
           {children}
         </div>
