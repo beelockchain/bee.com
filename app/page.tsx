@@ -9,6 +9,10 @@ import Awards from "./components/Awards";
 import Solution from "./components/Solution";
 import Digitaltransformation from "./components/Digitaltransformation";
 import Testimonial from "./components/Testimonial";
+import FAQSection from "./components/faq";
+import Footer from "./components/footer";
+import OurInsights from "./components/OurInsights";
+import BeelockchainTransformation from "./components/beelockchainTransformation";
 import Transformes from "./components/Transformes";
 
 export default function Home() {
@@ -25,6 +29,11 @@ export default function Home() {
 
       {/* <Discover/>
       <Awards/>
+      <Solution/>
+      <BeelockchainTransformation/>
+      <OurInsights/>
+      <FAQSection/>
+      <Footer/>
       <Solution/> */}
     </div>
   );
