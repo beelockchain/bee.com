@@ -81,7 +81,7 @@ export default function Transformes() {
     };
 
     return (
-        <section className="w-full min-h-screen  px-20 py-24">
+        <section className="w-full min-h-screen  flex flex-col justify-center items-center">
             {/* Header */}
             <div>
                 <img src="/Services.png"/>
@@ -118,7 +118,7 @@ export default function Transformes() {
                 </div>
 
                 {/* RIGHT CONTENT */}
-                <div className="space-y-[120px]">
+                <div className="">
                     {TABS.map((tab, index) => (
                         <div
                             key={tab}
