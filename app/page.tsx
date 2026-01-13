@@ -16,6 +16,7 @@ import BeelockchainTransformation from "./components/beelockchainTransformation"
 import Transformes from "./components/Transformes";
 import IndustryWeServe from "./components/IndustryWeServe";
 import Technologies from "./components/Technologies";
+import TestimonialCarousel from "./components/TestimonialCarousel";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <Digitaltransformation />
       <Transformes />
       <Testimonial />
+      <TestimonialCarousel/>
       <OverView />
       {/* <Strategie /> */}
 
