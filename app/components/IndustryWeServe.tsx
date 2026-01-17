@@ -66,7 +66,7 @@ const IndustryWeServe = () => {
             {industries.map((item, i) => (
               <div
                 key={i}
-                className="text-xl font-[Poppins] underline cursor-pointer hover:text-yellow-500 transition"
+                className="text-xl font-[Poppins] text-black underline cursor-pointer hover:text-yellow-500 transition"
               >
                 {item}
               </div>
