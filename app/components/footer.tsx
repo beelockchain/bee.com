@@ -61,7 +61,10 @@ const socialIcons = [
   return (
    <footer className="w-full bg-white py-20">
       <div className="max-w-[1400px] mx-auto px-6">
-
+ {/* TITLE */}
+        <h2 className="text-[26px] sm:text-[26px] md:text-[32px]  xl:text-[28px] lg:text-[36px] text-center font-semibold text-black font-poppins mb-12">
+Area We Occupied
+        </h2>
         {/* ================= CARD GRID ================= */}
         
   <div className="relative w-full mt-10">
@@ -75,16 +78,16 @@ const socialIcons = [
   ></div>
 
   {/* Card Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative z-10">
+  <div className="grid grid-cols-2   sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 sm:gap-2 relative z-10">
     {cards.map((card, index) => (
       <div
         key={index}
-        className="rounded-xl bg-[#F2F2F2] p-6 flex flex-col gap-4"
+        className="rounded-xl bg-[#F2F2F2] p-4 lg:p-6 flex flex-col gap-4"
       >
-        <h4 className="text-[26px] font-bold font-poppins text-black">
+        <h4 className="text-[20px] sm:text-[24px] md:text-[20px]  xl:text-[24px] lg:text-[26px] font-bold font-poppins text-black">
           {card.title}
         </h4>
-        <p className="text-[16px] leading-relaxed text-black/70 font-poppins">
+        <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[14px] lg:text-[16px]  leading-relaxed text-black/70 font-poppins">
           {card.desc}
         </p>
         <div className="flex items-center gap-3 mt-2">
@@ -94,7 +97,7 @@ const socialIcons = [
             width={22}
             height={22}
           />
-          <span className="text-[16px] font-poppins font-medium text-black">
+          <span className="text-[9px] sm:text-[14px] md:text-[12px]  xl:text-[14px] lg:text-[16px]  font-poppins font-medium text-black">
             {card.contact}
           </span>
         </div>
@@ -116,8 +119,8 @@ const socialIcons = [
               width={160}
               height={40}
             />
-            <p className="text-black/80 max-w-[260px] font-poppins text-[15px] leading-relaxed">
-              Digital Transformation Company
+            <p className="text-black/80 max-w-[260px] font-poppins text-[14px] sm:text-[14px] md:text-[12px]  xl:text-[14px] lg:text-[15px] leading-relaxed">
+              Beelockchain is emerging as a trusted digital transformation partner for all your business needs.
             </p>
           </div>
 
@@ -127,7 +130,8 @@ const socialIcons = [
               Our Expertise
             </h4>
 
-            <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 max-w-[600px] text-[15px] text-black/70 font-poppins">
+            <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 max-w-[600px]
+            text-[14px] sm:text-[14px] md:text-[12px]  xl:text-[14px]  text-black/70 font-poppins">
               <Link href="#" className="underline underline-offset-4 hover:text-black">Digital Transformation</Link>
               <Link href="#" className="underline underline-offset-4 hover:text-black">Generative AI Development</Link>
               <Link href="#" className="underline underline-offset-4 hover:text-black">Software Development</Link>
@@ -139,51 +143,58 @@ const socialIcons = [
           </div>
 
           {/* RIGHT — SOCIAL */}
-          <div className="md:col-span-3 flex flex-col items-center md:items-end gap-4">
-            <h4 className="w-full text-center md:text-left text-[18px] text-black font-poppins">
+          <div className="md:col-span-3  flex flex-col items-center md:items-start gap-4">
+            <h4 className="w-full text-center md:text-left text-[14px] sm:text-[14px] md:text-[12px]  xl:text-[16px] lg:text-[16px]  text-black font-poppins">
               Connect With Us
             </h4>
 
-            <div className="flex gap-5">
-              {socialIcons.map((icon, i) => (
-                <Link key={i} href={icon.href} aria-label={icon.name}>
-                  <Image
-                    src={icon.src}
-                    alt={icon.name}
-                    width={42}
-                    height={42}
-                    className="hover:opacity-80 hover:scale-105 transition"
-                  />
-                </Link>
-              ))}
-            </div>
+<div className="flex gap-2 md:gap-2 lg:gap-1 xl:gap-4">
+  {socialIcons.map((icon, i) => (
+    <Link key={i} href={icon.href} aria-label={icon.name}>
+    
+        <Image
+          src={icon.src}
+          alt={icon.name}
+          width={42}
+          height={42}
+          className="object-contain hover:opacity-80"
+        />
+     
+    </Link>
+  ))}
+</div>
+
+
           </div>
         </div>
 
         {/* ================= FOOTER BOTTOM ================= */}
-        <div className="pt-10">
-          <div className="flex justify-center mb-6">
-            <Image
-              src="/assets/images/footer-text.png"
-              alt="Footer Text"
-              width={1400}
-              height={219}
-              className="w-full max-w-[1400px] h-auto object-contain"
-            />
-          </div>
+     <div className="pt-10">
+  <div className="flex justify-center mb-6">
+    <Image
+      src="/assets/images/footer-text.png"
+      alt="Footer Text"
+      width={1400}
+      height={219}
+      className="w-full max-w-[1400px] h-auto object-contain"
+    />
+  </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[14px] text-black/70 font-poppins text-center md:text-left">
-            <p>© 2025 Beelockchain Foundation, Inc.</p>
+  {/* 👇 Mobile reversed, desktop unchanged */}
+  <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 
+   text-[12px] sm:text-[14px] md:text-[12px]  xl:text-[16px] lg:text-[16px] text-black/70 font-poppins text-center md:text-left">
+    
+    <p>© 2025 Beelockchain Foundation, Inc.</p>
 
-            <div className="flex gap-4">
-              <Link href="#" className="hover:text-black">Terms & Conditions</Link>
-              <span>|</span>
-              <Link href="#" className="hover:text-black">Privacy Policy</Link>
-              <span>|</span>
-              <Link href="#" className="hover:text-black">Sitemap</Link>
-            </div>
-          </div>
-        </div>
+    <div className="flex gap-2">
+      <Link href="#" className="hover:text-black">Terms & Conditions</Link>
+      <Link href="#" className="hover:text-black">Privacy Policy</Link>
+      <Link href="#" className="hover:text-black">About us</Link>
+    </div>
+
+  </div>
+</div>
+
 
       </div>
     </footer>
