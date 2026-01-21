@@ -2,148 +2,217 @@
 
 import { useEffect, useRef, useState } from "react";
 
+/* ---------------- TABS ---------------- */
 const TABS = [
-    "Blockchain",
-    "AI",
-    "Game",
-    "Consultant",
-    "Software",
-    "Web3",
-
+  "Blockchain",
+  "AI",
+  "Game",
+  "Consultant",
+  "Software",
+  "Web3",
 ] as const;
 
 type TabType = typeof TABS[number];
 
 const TAB_CONTENT: Record<TabType, { title: string; desc: string }> = {
-    Blockchain: {
-        title: "Digital Transformation Services",
-        desc: "We build decentralized applications, smart contracts, and secure blockchain infrastructures for enterprises.",
-    },
-    AI: {
-        title: "Software Development",
-        desc: "We create intelligent automation, AI-driven analytics, and custom machine learning models.",
-    },
-    Game: {
-        title: "Blockchain Development",
-        desc: "We develop immersive gaming experiences using Unity, Unreal Engine, and WebGL technologies.",
-    },
-    Consultant: {
-        title: "AI Development",
-        desc: "We guide businesses with digital transformation strategies, system architecture, and technology roadmaps.",
-    },
-    Software: {
-        title: "DevOps Services",
-        desc: "We build robust, scalable software tailored to your business workflows.",
-    },
-    Web3: {
-        title: "Digital Marketing",
-        desc: "We deliver next-gen decentralized apps, NFT platforms, and crypto payment integrations.",
-    },
-
+  Blockchain: {
+    title: "Digital Transformation Services",
+    desc: "We provide comprehensive full-cycle digital transformation services that integrate cloud computing, automation, data analytics, and the latest technologies to future-proof your business.",
+  },
+  AI: {
+    title: "Software Development",
+    desc: "We create intelligent automation, AI-driven analytics, and custom machine learning models that accelerate growth and efficiency.",
+  },
+  Game: {
+    title: "Blockchain Development",
+    desc: "We develop immersive gaming experiences using Unity, Unreal Engine, and WebGL technologies.",
+  },
+  Consultant: {
+    title: "AI Development",
+    desc: "We guide businesses with digital transformation strategies, system architecture, and technology roadmaps.",
+  },
+  Software: {
+    title: "DevOps Services",
+    desc: "We build robust, scalable software tailored to your business workflows.",
+  },
+  Web3: {
+    title: "Digital Marketing",
+    desc: "We deliver next-gen decentralized apps, NFT platforms, and crypto payment integrations.",
+  },
 };
 
 export default function Transformes() {
-    const [activeTab, setActiveTab] = useState(0);
-    const sectionRefs = useRef<HTMLDivElement[]>([]);
+  const [activeTab, setActiveTab] = useState(0);
 
-    const addToRefs = (el: HTMLDivElement | null) => {
-        if (el && !sectionRefs.current.includes(el)) {
-            sectionRefs.current.push(el);
-        }
-    };
+  const desktopRefs = useRef<HTMLDivElement[]>([]);
+  const mobileRefs = useRef<HTMLDivElement[]>([]);
 
-    /* ================= Scroll Sync ================= */
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target as HTMLElement;
-                        const index = Number(target.dataset.index);
-                        setActiveTab(index);
-                    }
-                });
-            },
-            {
-                threshold: 0.6,
-            }
-        );
+  const addDesktopRefs = (el: HTMLDivElement | null) => {
+    if (el && !desktopRefs.current.includes(el)) {
+      desktopRefs.current.push(el);
+    }
+  };
 
-        sectionRefs.current.forEach((sec) => observer.observe(sec));
-        return () => observer.disconnect();
-    }, []);
+  const addMobileRefs = (el: HTMLDivElement | null) => {
+    if (el && !mobileRefs.current.includes(el)) {
+      mobileRefs.current.push(el);
+    }
+  };
 
-    const scrollToSection = (index: number) => {
-        sectionRefs.current[index]?.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
+  /* ================= SCROLL OBSERVER ================= */
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(
+              (entry.target as HTMLElement).dataset.index
+            );
+            setActiveTab(index);
+          }
         });
-    };
-
-    return (
-        <section className="w-full min-h-screen  flex flex-col justify-center items-center">
-            {/* Header */}
-            <div>
-                <img src="/Services.png"/>
-            </div>
-            <div className="text-center mb-20">
-                <h1 className="text-4xl font-bold text-black">Digital Transformation</h1>
-                <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                    A full spectrum of digital transformation services to elevate your business
-                </p>
-            </div>
-
-            {/* Main Layout */}
-            <div className="grid grid-cols-[320px_1fr] gap-24 relative">
-                {/* LEFT TABS */}
-                <div className="sticky top-32 h-fit space-y-6">
-                    {TABS.map((tab, index) => (
-                        <button
-                            key={tab}
-                            onClick={() => scrollToSection(index)}
-                            className={`
-    block w-full
-    text-left text-xl font-medium
-    whitespace-normal break-words
-    leading-snug
-    transition-all
-    ${activeTab === index
-                                    ? "text-black font-bold"
-                                    : "text-gray-400 hover:text-black"}
-  `}
-                        >
-                            {TAB_CONTENT[tab].title}
-                        </button>
-                    ))}
-                </div>
-
-                {/* RIGHT CONTENT */}
-                <div className="">
-                    {TABS.map((tab, index) => (
-                        <div
-                            key={tab}
-                            ref={addToRefs}
-                            data-index={index}
-                            className="min-h-[60vh] flex flex-col justify-center"
-                        >
-                            <h2 className="text-3xl font-bold text-black">
-                                {TAB_CONTENT[tab].title}
-                            </h2>
-
-                            <p className="text-gray-600 mt-6 text-lg max-w-xl">
-                                {TAB_CONTENT[tab].desc}
-                            </p>
-
-                            <button className="mt-8 inline-flex items-center gap-2 font-semibold text-black underline">
-                                {TAB_CONTENT[tab].title}
-                                <span className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center">
-                                    →
-                                </span>
-                            </button>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+      },
+      isMobile
+        ? {
+          root: null,
+          rootMargin: "-45% 0px -45% 0px", // 🔥 CENTER ALIGN FIX
+          threshold: 0,
+        }
+        : {
+          threshold: 0.6,
+        }
     );
+
+    const targets = isMobile
+      ? mobileRefs.current
+      : desktopRefs.current;
+
+    targets.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+
+  const scrollToDesktopSection = (index: number) => {
+    desktopRefs.current[index]?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
+  return (
+    <section className="w-full min-h-screen bg-white flex flex-col items-center">
+      {/* ---------------- HEADER ---------------- */}
+      <div>
+        <img src="/Services.png" alt="Services" />
+      </div>
+
+      <div className="text-center mb-20 px-6">
+        <h1 className="text-xl md:text-4xl font-bold text-black">
+          Digital Transformation
+        </h1>
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-xs md:text-base">
+          A full spectrum of digital transformation services to elevate your
+          business
+        </p>
+      </div>
+
+      {/* ================= DESKTOP + TABLET (UNCHANGED) ================= */}
+      <div className="hidden md:block w-full max-w-6xl">
+        <div className="grid grid-cols-[320px_1fr] gap-24 relative">
+          <div className="sticky top-32 h-fit space-y-6">
+            {TABS.map((tab, index) => (
+              <button
+                key={tab}
+                onClick={() => scrollToDesktopSection(index)}
+                className={`block w-full text-left text-xl font-medium transition-all ${activeTab === index
+                  ? "text-black font-bold"
+                  : "text-gray-400 hover:text-black"
+                  }`}
+              >
+                {TAB_CONTENT[tab].title}
+              </button>
+            ))}
+          </div>
+
+          <div>
+            {TABS.map((tab, index) => (
+              <div
+                key={tab}
+                ref={addDesktopRefs}
+                data-index={index}
+                className="min-h-[60vh] flex flex-col justify-center"
+              >
+                <h2 className="text-3xl font-bold text-black">
+                  {TAB_CONTENT[tab].title}
+                </h2>
+                <p className="text-gray-600 mt-6 text-lg max-w-xl">
+                  {TAB_CONTENT[tab].desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ================= MOBILE ONLY ================= */}
+      <div className="block md:hidden w-full relative">
+        {/* ===== STICKY CENTER-LOCKED TITLE ===== */}
+        <div className="sticky top-16 z-20 bg-white py-4 ">
+          <div className="relative w-full overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(calc(50% - ${(activeTab + 0.5) * 50}%))`,
+              }}
+            >
+              {TABS.map((tab, index) => (
+                <div
+                  key={tab}
+                  className="w-[50%] flex justify-center items-center gap-10"
+                >
+                  <h1
+                    className={`text-sm font-semibold whitespace-nowrap transition-all duration-300 ml-16 ${index === activeTab
+                      ? "text-black opacity-100 scale-100"
+                      : "text-gray-400 opacity-40 scale-95"
+                      }`}
+                  >
+                    {TAB_CONTENT[tab].title}
+                  </h1>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="w-full">
+          {TABS.map((tab, index) => (
+            <div
+              key={tab}
+              ref={addMobileRefs}
+              data-index={index}
+              className="min-h-[80vh] flex flex-col items-center justify-center px-6"
+            >
+              <p
+                className="text-center text-gray-600 text-sm "
+              >
+                {TAB_CONTENT[tab].desc}
+              </p>
+              {/* ===== CTA ===== */}
+              <div className="flex justify-center mt-4">
+                <button className="inline-flex items-center gap-2 font-medium text-black underline">
+                  Digital Transformation
+                  <span className="w-7 h-7 rounded-full bg-yellow-400 flex items-center justify-center">
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -28,81 +28,128 @@ const TestimonialCarousel = () => {
   const [current, setCurrent] = useState(0);
 
   return (
-    <section className="w-full bg-white flex flex-col justify-center items-center ">
-      <div className="max-w-[800px] px-6 relative">
+    <section className="w-full bg-white">
 
-        {/* SLIDER */}
-        <div className="overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
-            {testimonials.map((item) => (
-              <div key={item.id} className="min-w-full">
-                <div className="flex flex-col md:flex-row items-center gap-12">
+      {/* ================= DESKTOP & TABLET ================= */}
+      <div className="hidden md:flex justify-center">
+        <div className="max-w-[800px] px-6 relative">
 
-                  {/* IMAGE */}
-                  <div className="w-full md:w-[150px] h-[220px] relative rounded-2xl overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.client}
-                      fill
-                      className="object-cover"
-                    />
+          {/* SLIDER */}
+          <div className="md:overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
+              {testimonials.map((item) => (
+                <div key={item.id} className="min-w-full">
+                  <div className="flex items-center gap-12">
+
+                    {/* IMAGE */}
+                    <div className="w-[150px] h-[220px] relative rounded-2xl overflow-hidden">
+                      <Image
+                        src={item.image}
+                        alt={item.client}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* CONTENT */}
+                    <div className="flex-1">
+                      <p className="text-[28px] leading-snug text-black font-medium max-w-[600px]">
+                        {item.text}
+                      </p>
+                      <p className="mt-6 text-[18px] font-semibold text-black">
+                        {item.client}
+                      </p>
+                    </div>
+
                   </div>
-
-                  {/* CONTENT */}
-                  <div className="flex-1">
-                    <p className="text-[28px] leading-snug text-black font-medium max-w-[600px]">
-                      {item.text}
-                    </p>
-
-                    <p className="mt-6 text-[18px] font-semibold text-black">
-                      {item.client}
-                    </p>
-                  </div>
-
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* CONTROLS */}
+          <div className="flex items-center justify-center gap-6 mt-14">
+            <div className="flex gap-3">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrent(index)}
+                  className={`h-3 rounded-full transition-all duration-300
+                    ${current === index
+                      ? "w-10 bg-yellow-400"
+                      : "w-3 bg-zinc-300 hover:bg-zinc-400"}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* CONTROLS */}
-        <div className="flex items-center justify-center gap-6 mt-14">
+    
+      {/* ================= MOBILE (NEW ONLY) ================= */}
+      <div className="md:hidden px-4 py-6">
+        <div className="relative">
 
-          {/* DOTS */}
-          <div className="flex gap-3">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrent(index)}
-                className={`h-3 rounded-full transition-all duration-300
-                  ${current === index
-                    ? "w-10 bg-yellow-400"
-                    : "w-3 bg-zinc-300 hover:bg-zinc-400"}
-                `}
-              />
-            ))}
+          {/* SLIDER */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out "
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
+              {testimonials.map((item) => (
+                <div key={item.id} className="min-w-full">
+                  <div className="flex items-start gap-4">
+
+                    {/* IMAGE */}
+                    <div className="w-[110px] h-[120px] relative rounded-xl overflow-hidden border-2 border-blue-500">
+                      <Image
+                        src={item.image}
+                        alt={item.client}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* TEXT */}
+                    <div className="flex-1">
+                      <p className="text-sm text-black leading-snug">
+                        {item.text}
+                      </p>
+
+                      <p className="mt-3 text-xs font-semibold text-black">
+                        {item.client}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* PLAY BUTTON */}
-          <button
-            aria-label="Play"
-            className="w-12 h-12 rounded-full border border-zinc-300 flex items-center justify-center hover:bg-zinc-100 transition"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="black"
-            >
-              <polygon points="5,3 19,12 5,21" />
-            </svg>
-          </button>
+          {/* DOTS + PLAY */}
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <div className="flex gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrent(index)}
+                  className={`h-2 rounded-full transition-all
+                    ${current === index
+                      ? "w-6 bg-yellow-400"
+                      : "w-2 bg-zinc-300"}`}
+                />
+              ))}
+            </div>
+
+          </div>
 
         </div>
       </div>
+
     </section>
   );
 };

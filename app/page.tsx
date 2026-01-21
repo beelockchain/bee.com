@@ -20,7 +20,7 @@ import TestimonialCarousel from "./components/TestimonialCarousel";
 
 export default function Home() {
   return (
-    <div className="bg-[#fffff]">
+    <div className="bg-white">
       <Topnav />
       <Herosection />
       <Customers />
@@ -29,17 +29,13 @@ export default function Home() {
       <Testimonial />
       <TestimonialCarousel/>
       <OverView />
-      {/* <Strategie /> */}
-
-      {/* <Discover/>
-      <Awards/>
-      <Solution/> */}
-      <Technologies/>
+     
+      {/* <Technologies/>
       <IndustryWeServe/>
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
-      <Footer/>
+      <Footer/> */}
     </div>
   );
 }
