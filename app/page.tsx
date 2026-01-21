@@ -30,12 +30,12 @@ export default function Home() {
       <TestimonialCarousel/>
       <OverView />
      
-      {/* <Technologies/>
+      <Technologies/>
       <IndustryWeServe/>
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
-      <Footer/> */}
+      <Footer/>
     </div>
   );
 }
