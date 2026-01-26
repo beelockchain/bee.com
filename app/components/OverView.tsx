@@ -30,53 +30,53 @@ const highlightNumbers = (text: string) => {
 const cardsData = [
   {
     initialLogo: "/Group 300 2.svg",
-    initialText: "100+ Tech Maestros",
+    initialText: "People-centric Digital Transformation",
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Enterprise-Grade Security 100",
     hoverSubtitle: "For Your Business",
     image: "/assets/images/why-choose-img1.png",
     description:
-      "We provide enterprise-level blockchain security, ensuring reliability and protection.",
+      "We believe digital transformation succeeds when people come first. At Beelockchain, we design solutions around real user needs, empower teams, and drive adoption that creates meaningful, lasting impact beyond technology alone.",
   },
   {
     initialLogo: "/Group 300 2.svg",
-    initialText: "350+ Successful Projects",
+    initialText: "Vendor-neutral & strategy-first approach",
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Automation Excellence 7",
     hoverSubtitle: "Process Reliability",
     image: "/assets/images/why-choose-img1.png",
     description:
-      "We deliver consistent quality and outstanding digital transformation results.",
+      "Our vendor-neutral, strategy-first approach is why organizations choose Beelockchain. We focus on business outcomes, not tools, delivering unbiased guidance and flexible solutions aligned with long-term goals.",
   },
   {
     initialLogo: "/Group 300 2.svg",
-    initialText: "Trusted by 350+ Industries",
+    initialText: "Market Responsiveness",
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Safe & Scalable 24x7",
     hoverSubtitle: "Data Infrastructure",
     image: "/assets/images/why-choose-img1.png",
     description:
-      "We deliver secure, scalable, high-performance systems for enterprises.",
+      "Beelockchain helps organizations stay ahead of change. We respond quickly to market shifts, emerging technologies, and customer demands—enabling confident decisions and sustained competitiveness in dynamic environments.",
   },
   {
     initialLogo: "/Group 300 2.svg",
-    initialText: "7+ Years of Quality",
+    initialText: "Proactive Risk Mitigation",
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Real-Time Insights 24",
     hoverSubtitle: "Modern Intelligence",
     image: "/assets/images/why-choose-img1.png",
     description:
-      "We deliver analytics and blockchain-powered insights for modern businesses.",
+      "We proactively identify and reduce risks before they become barriers. Beelockchain embeds security, compliance, and resilience into every solution, protecting operations, reputation, and future growth.",
   },
   {
     initialLogo: "/Group 300 2.svg",
-    initialText: "24x7 Global Support",
+    initialText: "Agile Methodologies",
     hoverLogo: "/Group 300 2.svg",
     hoverTitle: "Always-On Support 24x7",
     hoverSubtitle: "Dedicated Experts",
     image: "/assets/images/why-choose-img1.png",
     description:
-      "Our experts provide round-the-clock support to ensure business continuity.",
+      "Our agile methodologies enable faster delivery and continuous improvement. Beelockchain works collaboratively with teams to adapt quickly, deliver value early, and evolve solutions as business needs change.",
   },
 ];
 
@@ -126,7 +126,7 @@ const OverView = () => {
           Why <span>Beelockchain</span>
         </h1>
         <p className="w-full md:w-[500px] max-w-full text-black text-lg">
-          Entrepreneurs worldwide trust BeelockChain digital solutions
+          As experts in digital transformation, we create customized, future-ready solutions that ensure your investment counts by focusing on your unique customer and market needs.
         </p>
       </div>
 
@@ -193,7 +193,7 @@ const OverView = () => {
               /* Collapsed (DESKTOP SAME AS ORIGINAL) */
               <div className="w-full h-full flex flex-col justify-between items-center py-6 px-4">
                 <h3
-                  className="text-3xl font-semibold text-black"
+                  className="text-xl font-semibold text-black"
                   style={{
                     writingMode: "vertical-rl",
                     transform: "rotate(180deg)",

@@ -21,23 +21,23 @@ const TAB_CONTENT: Record<TabType, { title: string; desc: string }> = {
   },
   AI: {
     title: "Software Development",
-    desc: "We create intelligent automation, AI-driven analytics, and custom machine learning models that accelerate growth and efficiency.",
+    desc: "We specialize in bespoke software development solutions that help startups and enterprises grow with future-focused technology.",
   },
   Game: {
     title: "Blockchain Development",
-    desc: "We develop immersive gaming experiences using Unity, Unreal Engine, and WebGL technologies.",
+    desc: "Enterprise-grade Custom Blockchain Development services for creating decentralized applications, smart contracts, and robust blockchain ecosystems.",
   },
   Consultant: {
     title: "AI Development",
-    desc: "We guide businesses with digital transformation strategies, system architecture, and technology roadmaps.",
+    desc: "Beelockchain’s AI Development services provide custom machine learning and intelligent automation to improve decision-making and help businesses remain competitive.",
   },
   Software: {
     title: "DevOps Services",
-    desc: "We build robust, scalable software tailored to your business workflows.",
+    desc: "Beelockchain specializes in end-to-end DevOps solutions, offering CI/CD automation, cloud DevOps services, and faster, reliable software deployments.",
   },
   Web3: {
     title: "Digital Marketing",
-    desc: "We deliver next-gen decentralized apps, NFT platforms, and crypto payment integrations.",
+    desc: "Grow faster with our full-service Digital Marketing Services, including SEO, PPC, content marketing, and social media management to achieve your brand’s goals.",
   },
 };
 

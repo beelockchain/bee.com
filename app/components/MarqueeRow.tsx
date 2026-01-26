@@ -5,11 +5,11 @@ interface MarqueeRowProps {
 }
 
 const users = [
-  { name: "Courtney Henry", email: "debra.holt@example.com", image: "/avatars/1.jpg" },
-  { name: "Wade Warren", email: "wade@example.com", image: "/avatars/2.jpg" },
-  { name: "Savannah Nguyen", email: "savannah@example.com", image: "/avatars/3.jpg" },
-  { name: "Brooklyn Simmons", email: "brooklyn@example.com", image: "/avatars/4.jpg" },
-  { name: "Leslie Alexander", email: "leslie@example.com", image: "/avatars/5.jpg" },
+  { name: "Courtney Henry", email: "debra.holt@example.com", image: "/assets/images/testimoniAL1.svg" },
+  { name: "Wade Warren", email: "wade@example.com", image: "/assets/images/testimoniAL1.svg" },
+  { name: "Savannah Nguyen", email: "savannah@example.com", image: "/assets/images/testimoniAL1.svg" },
+  { name: "Brooklyn Simmons", email: "brooklyn@example.com", image: "/assets/images/testimoniAL1.svg" },
+  { name: "Leslie Alexander", email: "leslie@example.com", image: "/assets/images/testimoniAL1.svg" },
 ];
 
 const MarqueeRow = ({ direction }: MarqueeRowProps) => {

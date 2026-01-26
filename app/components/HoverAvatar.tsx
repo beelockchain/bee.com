@@ -15,7 +15,7 @@ const HoverAvatar = ({ user }: HoverAvatarProps) => {
       <img
         src={user.image}
         alt={user.name}
-        className="w-12 h-12 rounded-full object-cover opacity-70
+        className="md:w-12 md:h-12 h-10 w-10 rounded-full object-cover opacity-70
                    group-hover:opacity-100 transition cursor-pointer"
       />
 

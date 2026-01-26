@@ -168,7 +168,7 @@ const Topnav = () => {
             >
               {sideMenuOpen ? "Close" : "Menu"}
 
-              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center bg-yellow-500">
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center ">
                 {sideMenuOpen ? (
                   <X className="h-4 w-4 md:h-5 md:w-5" />
                 ) : (

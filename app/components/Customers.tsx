@@ -1,9 +1,9 @@
 const Customers = () => {
-    return (
-       <section className="w-full bg-white relative z-10">
+  return (
+    <section className="w-full bg-white relative z-10 flex">
 
       {/* ================= MOBILE VERSION ================= */}
-      <div className="flex md:hidden w-full py-10 overflow-hidden">
+      {/* <div className="flex md:hidden w-full py-10 overflow-hidden">
         <div className="relative w-full">
           <div
             className="flex items-center gap-3"
@@ -20,10 +20,10 @@ const Customers = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ================= DESKTOP + TABLET VERSION ================= */}
-      <div className="hidden md:flex w-full py-16 overflow-hidden">
+      {/* <div className="hidden md:flex w-full py-16 overflow-hidden">
         <div className="relative w-full">
           <div
             className="flex items-center gap-6"
@@ -40,10 +40,27 @@ const Customers = () => {
             ))}
           </div>
         </div>
+      </div> */}
+
+      <div className="">
+        <img src="/assets/images/Background (4).svg"></img>
+      </div>
+      <div className="">
+        <img src="/assets/images/sidelogo.svg"></img>
+      </div>
+      <div className="">
+        <img src="/assets/images/Background (6).svg"></img>
+
+      </div>
+      <div>
+        <img src="/assets/images/Background (7).svg"></img>
+      </div>
+      <div className="">
+        <img src="/assets/images/sidelogo.svg"></img>
       </div>
 
     </section>
-    );
+  );
 };
 
 export default Customers;
