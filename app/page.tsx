@@ -14,27 +14,28 @@ import Footer from "./components/footer";
 import OurInsights from "./components/OurInsights";
 import BeelockchainTransformation from "./components/beelockchainTransformation";
 import Transformes from "./components/Transformes";
+import IndustryWeServe from "./components/IndustryWeServe";
+import Technologies from "./components/Technologies";
+import TestimonialCarousel from "./components/TestimonialCarousel";
 
 export default function Home() {
   return (
-    <div className="bg-[#F2EEE5]">
+    <div className="bg-white">
       <Topnav />
       <Herosection />
       <Customers />
       <Digitaltransformation />
       <Transformes />
       <Testimonial />
+      <TestimonialCarousel/>
       <OverView />
-      {/* <Strategie /> */}
-
-      {/* <Discover/>
-      <Awards/>
-      <Solution/>
+{/*      
+      <Technologies/>
+      <IndustryWeServe/>
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
-      <Footer/>
-      <Solution/> */}
+      <Footer/> */}
     </div>
   );
 }
