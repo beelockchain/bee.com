@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -26,6 +26,15 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   const [current, setCurrent] = useState(0);
+
+  // 🔁 Auto slide every 20 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="w-full bg-white">
@@ -70,7 +79,7 @@ const TestimonialCarousel = () => {
             </div>
           </div>
 
-          {/* CONTROLS */}
+          {/* DOTS */}
           <div className="flex items-center justify-center gap-6 mt-14">
             <div className="flex gap-3">
               {testimonials.map((_, index) => (
@@ -78,25 +87,27 @@ const TestimonialCarousel = () => {
                   key={index}
                   onClick={() => setCurrent(index)}
                   className={`h-3 rounded-full transition-all duration-300
-                    ${current === index
-                      ? "w-10 bg-yellow-400"
-                      : "w-3 bg-zinc-300 hover:bg-zinc-400"}`}
+                    ${
+                      current === index
+                        ? "w-10 bg-yellow-400"
+                        : "w-3 bg-zinc-300 hover:bg-zinc-400"
+                    }`}
                 />
               ))}
             </div>
           </div>
+
         </div>
       </div>
 
-    
-      {/* ================= MOBILE (NEW ONLY) ================= */}
+      {/* ================= MOBILE ================= */}
       <div className="md:hidden px-4 py-6">
         <div className="relative">
 
           {/* SLIDER */}
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-in-out "
+              className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {testimonials.map((item) => (
@@ -118,7 +129,6 @@ const TestimonialCarousel = () => {
                       <p className="text-sm text-black leading-snug">
                         {item.text}
                       </p>
-
                       <p className="mt-3 text-xs font-semibold text-black">
                         {item.client}
                       </p>
@@ -130,7 +140,7 @@ const TestimonialCarousel = () => {
             </div>
           </div>
 
-          {/* DOTS + PLAY */}
+          {/* DOTS */}
           <div className="flex items-center justify-center gap-4 mt-6">
             <div className="flex gap-2">
               {testimonials.map((_, index) => (
@@ -138,13 +148,14 @@ const TestimonialCarousel = () => {
                   key={index}
                   onClick={() => setCurrent(index)}
                   className={`h-2 rounded-full transition-all
-                    ${current === index
-                      ? "w-6 bg-yellow-400"
-                      : "w-2 bg-zinc-300"}`}
+                    ${
+                      current === index
+                        ? "w-6 bg-yellow-400"
+                        : "w-2 bg-zinc-300"
+                    }`}
                 />
               ))}
             </div>
-
           </div>
 
         </div>
