@@ -87,7 +87,7 @@ Area We Occupied
         <h4 className="text-[20px] sm:text-[24px] md:text-[20px]  xl:text-[24px] lg:text-[26px] font-bold font-poppins text-black">
           {card.title}
         </h4>
-        <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[14px] lg:text-[16px]  leading-relaxed text-black/70 font-poppins">
+        <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[14px] lg:text-[16px]  leading-relaxed text-black font-poppins">
           {card.desc}
         </p>
         <div className="flex items-center gap-3 mt-2">
