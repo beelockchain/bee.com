@@ -17,7 +17,7 @@ import Transformes from "./components/Transformes";
 import IndustryWeServe from "./components/IndustryWeServe";
 import Technologies from "./components/Technologies";
 import TestimonialCarousel from "./components/TestimonialCarousel";
-
+import Testi from "./components/Testi";
 export default function Home() {
   return (
     <div className="bg-white">
@@ -26,7 +26,8 @@ export default function Home() {
       <Customers />
       <Digitaltransformation />
       <Transformes />
-      <Testimonial />
+      {/* <Testimonial /> */}
+      <Testi/>
       <TestimonialCarousel/>
       <OverView />
      
