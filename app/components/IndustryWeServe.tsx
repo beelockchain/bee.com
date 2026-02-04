@@ -34,7 +34,7 @@ const IndustryWeServe = () => {
   return (
     <section className="w-full bg-white py-12 sm:py-16 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
-      <h2 className="block md:hidden text-3xl font-medium font-[Poppins] text-center mb-8">
+      <h2 className="block md:hidden text-3xl font-medium font-[Poppins] text-center text-black mb-8">
         Industries We Serve
       </h2>
 
@@ -67,7 +67,7 @@ const IndustryWeServe = () => {
         {/* RIGHT – CONTENT */}
         <div className="md:pt-2 lg:pt-0">
           {/* TABLET + DESKTOP TITLE */}
-          <h2 className="hidden md:block text-3xl lg:text-5xl font-medium font-[Poppins] mb-6 ">
+          <h2 className="hidden md:block text-3xl lg:text-5xl font-medium text-black font-[Poppins] mb-6 ">
             Industries We Serve
           </h2>
 
@@ -103,7 +103,7 @@ const IndustryWeServe = () => {
   <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
 
   {/* Text */}
-  <span className="relative z-10 font-poppins text-sm md:text-xs lg:text-base whitespace-nowrap">
+  <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-base whitespace-nowrap">
     Consult Our Experts
   </span>
 

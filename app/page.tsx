@@ -29,13 +29,13 @@ export default function Home() {
       <Testimonial />
       <TestimonialCarousel/>
       <OverView />
-{/*      
+     
       <Technologies/>
       <IndustryWeServe/>
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
-      <Footer/> */}
+      <Footer/>
     </div>
   );
 }

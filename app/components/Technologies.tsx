@@ -20,7 +20,7 @@ const Technologies = () => {
 
       gsap.fromTo(
         icons,
-        { scale: 0.3, opacity: 0 },
+        { scale: 0.2, opacity: 0 },
         {
           scale: 1,
           opacity: 1,
@@ -333,7 +333,7 @@ const Technologies = () => {
 
   return (
     <div ref={sectionRef}>
-      <div ref={gridRef}   className="w-full bg-white py-0">
+      <div ref={gridRef} className="w-full bg-white py-0">
         <div className="max-w-[1400px] mx-auto px-6">
           {/* Heading */}
           <h2 className="text-center text-black text-[20px] sm:text-[18px] md:text-[26px] xl:text-[40px] lg:text-[40px] font-semibold font-['Poppins'] leading-snug mb-4">
@@ -345,8 +345,8 @@ const Technologies = () => {
             Unlock new opportunities with tailored digital transformation strategies
           </p>
 
-          {/* Category Buttons */}
-          <div className="flex flex-wrap justify-center gap-2 lg:gap-4 top-gap hidden md:flex">
+          {/* Category Buttons - Desktop/Tablet Only */}
+          <div className="flex flex-wrap justify-center gap-2 lg:gap-4 top-gap hidden lg:flex">
             {categories.map((category) => (
               <button
                 key={category.key || "all"}
@@ -370,11 +370,9 @@ const Technologies = () => {
       </div>
       <div className="h-[5px]"></div>
 
-      <div  
-       
-        className="w-full min-h-screen  flex-col items-center justify-center bg-white px-4 py-12"
-      >
-        <div className="loader">
+      <div className="w-full flex-col items-center justify-center bg-white px-4 py-2 sm:py-12 md:py-4 lg:py-12">
+        {/* Desktop/Tablet View - Hex Grid */}
+        <div className="loader hidden lg:flex">
           {currentLayout.map((tech, i) => {
             const isHighlighted =
               activeCategory === null || activeCategory === tech.category;
@@ -410,57 +408,56 @@ const Technologies = () => {
           })}
         </div>
 
-        {/* Mobile view only */}
-        <div className="block md:hidden px-2">
-          {["frontend", "backend", "design", "database", "mobile", "qa"].map(
-            (category) => {
-              const tools = currentLayout.filter(
-                (tech) => tech.category === category
-              );
+        {/* Mobile View */}
+        <div className="block lg:hidden w-full">
+          {/* Mobile Category Buttons */}
+          <div className="flex flex-wrap justify-center gap-2 mb-12 px-2">
+            {categories.map((category) => (
+              <button
+                key={category.key || "all"}
+                onClick={() => setActiveCategory(category.key)}
+                className={`cursor-pointer filter-btn 
+                  h-8 px-3 py-1.5
+                  rounded-[20px] outline outline-1
+                  text-[11px] font-normal text-black font-['Poppins']
+                  transition-all duration-300
+                  ${
+                    activeCategory === category.key
+                      ? "bg-yellow-400 outline-yellow-400 shadow-md"
+                      : "bg-white outline-yellow-400 active:bg-yellow-200"
+                  }`}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
 
-              // Find the label for this category
-              const categoryLabel =
-                categories.find((c) => c.key === category)?.label || category;
-
-              if (tools.length === 0) return null;
-
-              return (
-                <div key={category} className="mb-6">
-                  {/* Heading */}
-                  <h2 className="text-md font-bold mb-3 capitalize">
-                    {categoryLabel}
-                  </h2>
-
-                  {/* Tools */}
-                  <div className="flex flex-wrap gap-3">
-                    {tools.map((tool, i) => (
-                      <div
-                        key={i}
-                        className="flex items-center justify-center w-16 h-16 bg-gray-100 rounded-md shadow-sm"
-                      >
-                        <img
-                          src={tool.icon}
-                          alt={tool.name}
-                          className="w-10 h-10"
-                        />
-                      </div>
-                    ))}
+          {/* Mobile Hex Grid */}
+          <div className="mobile-hex-container">
+            {currentLayout
+              .filter((tech) => activeCategory === null || activeCategory === tech.category)
+              .map((tech, i) => (
+                <div key={i} className="mobile-hex-wrapper">
+                  <div className="mobile-hex">
+                    <div className="mobile-hex-content">
+                      <img
+                        src={tech.icon}
+                        alt={tech.name}
+                        className="mobile-tech-icon"
+                      />
+                    </div>
                   </div>
                 </div>
-              );
-            }
-          )}
+              ))}
+          </div>
         </div>
 
         <style jsx>{`
-          @media (max-width: 767px) {
-            .loader {
-              display: none !important;
-            }
-          }
           .top-gap {
             margin-bottom: 200px;
           }
+
+          /* Desktop Loader */
           .loader {
             position: relative;
             width: 100%;
@@ -546,7 +543,67 @@ const Technologies = () => {
             opacity: 1 !important;
           }
 
-          /* Row 1 - 9 hexagons */
+          /* Mobile Hex Container */
+          .mobile-hex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:40px 20px;
+            padding: 0px;
+            max-width: 100%;
+          }
+
+          .mobile-hex-wrapper {
+            display: inline-block;
+          }
+
+          .mobile-hex {
+            position: relative;
+            width: 50px;
+            height: 28.87px;
+            background: #d1d5db;
+            cursor: pointer;
+          }
+
+          .mobile-hex:before,
+          .mobile-hex:after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 28.87px;
+            background: #d1d5db;
+          }
+
+          .mobile-hex:before {
+            transform: rotate(60deg);
+          }
+
+          .mobile-hex:after {
+            transform: rotate(-60deg);
+          }
+
+          .mobile-hex-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+          }
+
+          .mobile-tech-icon {
+            width: 24px;
+            height: 24px;
+          }
+
+          .mobile-hex-wrapper:active .mobile-hex {
+            transform: scale(1.1);
+          }
+
+          /* Desktop Hex Positions - Row 1 (9 hexagons) */
           .hex-wrapper:nth-of-type(1) {
             margin-left: -560px;
             margin-top: -108px;
@@ -584,7 +641,7 @@ const Technologies = () => {
             margin-top: -108px;
           }
 
-          /* Row 2 - 10 hexagons */
+          /* Row 2 (10 hexagons) */
           .hex-wrapper:nth-of-type(10) {
             margin-left: -630px;
             margin-top: 0px;
@@ -626,7 +683,7 @@ const Technologies = () => {
             margin-top: 0px;
           }
 
-          /* Row 3 - 8 hexagons */
+          /* Row 3 (8 hexagons) */
           .hex-wrapper:nth-of-type(20) {
             margin-left: -560px;
             margin-top: 108px;
@@ -663,6 +720,7 @@ const Technologies = () => {
           @media (max-width: 1600px) {
             .loader {
               height: 450px;
+
             }
             .hex {
               width: 80px;
@@ -673,25 +731,6 @@ const Technologies = () => {
             .hex:after {
               width: 80px;
               height: 46.19px;
-            }
-          }
-
-          @media (max-width: 768px) {
-            .loader {
-              height: 350px;
-            }
-            .hex {
-              width: 40px;
-              height: 23.09px;
-            }
-            .hex:before,
-            .hex:after {
-              width: 40px;
-              height: 23.09px;
-            }
-            .tech-icon img {
-              width: 16px;
-              height: 16px;
             }
           }
 
@@ -717,6 +756,39 @@ const Technologies = () => {
               height: 24px;
             }
           }
+/* Force hide desktop hex grid on mobile */
+@media (max-width: 1023px) {
+  .loader {
+    display: none !important;
+  }
+}
+
+          /* Smaller mobile screens */
+          @media (max-width: 375px) {
+            .mobile-hex {
+              width: 45px;
+              height: 25.98px;
+            }
+
+            .mobile-hex:before,
+            .mobile-hex:after {
+              width: 45px;
+              height: 25.98px;
+            }
+
+            .mobile-tech-icon {
+              width: 20px;
+              height: 20px;
+            }
+
+            .mobile-hex-container {
+              gap: 30px;
+                 padding: 0 !important;
+
+            }
+             
+          }
+            
         `}</style>
       </div>
     </div>
