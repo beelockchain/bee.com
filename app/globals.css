@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-    --font-poppins: var(--font-poppins);
+  --font-poppins: var(--font-poppins);
   --font-manrope: var(--font-manrope);
 }
 
@@ -13,7 +13,21 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+@keyframes scroll {
 
+  0% {
+
+    transform: translateX(0);
+
+  }
+
+  100% {
+
+    transform: translateX(-50%);
+
+  }
+
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -21,6 +35,7 @@
   }
 }
 
+/* Marquee Animations */
 @keyframes marquee-left {
   0% {
     transform: translateX(0);
@@ -47,27 +62,18 @@
   animation: marquee-right 25s linear infinite;
 }
 
-/* Optional: pause on hover */
+/* Pause on hover */
 .animate-marquee-left:hover,
 .animate-marquee-right:hover {
   animation-play-state: paused;
 }
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
 }
+
 /* Utility classes */
 .font-poppins {
   font-family: var(--font-poppins), sans-serif !important;
@@ -77,31 +83,6 @@ body {
   font-family: var(--font-manrope), sans-serif !important;
 }
 
-@keyframes marquee-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.animate-marquee-left {
-  animation: marquee-left 30s linear infinite;
-}
-
-.animate-marquee-right {
-  animation: marquee-right 30s linear infinite;
-}
 .loader {
   position: relative;
 }

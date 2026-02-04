@@ -7,6 +7,7 @@ interface HoverAvatarProps {
     name: string;
     email: string;
     image: string;
+    role: string;
   };
 }
 
@@ -48,7 +49,7 @@ const HoverAvatar = ({ user }: HoverAvatarProps) => {
           invisible opacity-0 scale-95
           group-hover:visible group-hover:opacity-100 group-hover:scale-100
           transition-all duration-200 ease-out
-          z-[100] pointer-events-none
+          z-50 pointer-events-none
         "
         style={{ top: "100%", marginTop: "12px" }}
       >
@@ -62,6 +63,9 @@ const HoverAvatar = ({ user }: HoverAvatarProps) => {
           </p>
           <p className="text-xs text-gray-500 whitespace-nowrap">
             {user.email}
+          </p>
+          <p className="text-xs text-gray-500 whitespace-nowrap">
+            {user.role}
           </p>
         </div>
       </div>
@@ -87,6 +91,7 @@ const HoverAvatar = ({ user }: HoverAvatarProps) => {
                   {user.name}
                 </p>
                 <p className="text-xs text-gray-500">{user.email}</p>
+                <p className="text-xs text-gray-500">{user.role}</p>
               </div>
             </div>
 

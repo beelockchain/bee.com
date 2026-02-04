@@ -17,6 +17,7 @@ const Digitaltransformation = () => {
               from-yellow-300
               via-yellow-500
               to-yellow-700
+           
             "
           >
           Transformation Company
@@ -61,7 +62,7 @@ const Digitaltransformation = () => {
             transition
           "
         >
-          Consult Our Experts
+          Consult Now
           <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
             <img
               src="/majesticons_arrow-up-line.png"
@@ -87,6 +88,7 @@ const Digitaltransformation = () => {
                 from-yellow-300
                 via-yellow-500
                 to-yellow-700
+                ml-2
               "
             >
               Digital <br /> Transformation Company
@@ -122,7 +124,7 @@ const Digitaltransformation = () => {
               transition
             "
           >
-            Consult Our Experts
+            Consult Now
             <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
               <img
                 src="/majesticons_arrow-up-line.png"

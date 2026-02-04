@@ -6,20 +6,26 @@ import { useState, useEffect } from "react";
 const testimonials = [
   {
     id: 1,
-    text: "BeeLockChain helped us eliminate paper records while securing sensitive patient data",
-    client: "Healthcare Client",
+    text: "We appreciated the Beelockchain team's strong understanding of healthcare operations. The mobile app they built improved internal coordination and patient communication. Most importantly, the team managed the project efficiently and helped us launch the app at the right time without compromising quality. They were professional, realistic, and consistent throughout the process.",
+    client: "James Anderson – Chief Technology Officer (CTO)",
     image: "/assets/images/insight-one.png",
   },
   {
     id: 2,
-    text: "BeeLockChain streamlined our operations and improved data transparency",
-    client: "Finance Client",
+    text: "Collaborating with the Beelockchain developer team, we migrated our existing system into a fully integrated ERP solution for our manufacturing operations. Their technical execution, business alignment, and launch support ensured a smooth go-live. ",
+    client: "Michael Thompson – Founder & CEO",
     image: "/assets/images/insight-two.png",
   },
   {
     id: 3,
-    text: "BeeLockChain provided secure and scalable digital transformation",
-    client: "Enterprise Client",
+    text: "Our experience with the Beelockchain development team was consistently positive from start to launch. Their strong technical expertise and clear alignment with our business goals enabled the successful deployment of an AI chatbot that supports our e-commerce platform and strengthens customer service operations.",
+    client: "Emma Wilson – Startup Co-Founder",
+    image: "/assets/images/insight-three.png",
+  },
+  {
+    id: 4,
+    text: "The Beelockchain team supported our beauty care brand with a well-planned digital marketing strategy. Their thoughtful content planning, targeted campaign execution, and consistent performance tracking helped improve brand awareness, audience engagement, and overall digital presence.",
+    client: "Emily Roberts – Product Manager",
     image: "/assets/images/insight-three.png",
   },
 ];
@@ -65,7 +71,7 @@ const TestimonialCarousel = () => {
 
                     {/* CONTENT */}
                     <div className="flex-1">
-                      <p className="text-[28px] leading-snug text-black font-medium max-w-[600px]">
+                      <p className="text-lg leading-snug text-black font-medium max-w-[600px]">
                         {item.text}
                       </p>
                       <p className="mt-6 text-[18px] font-semibold text-black">
@@ -126,7 +132,7 @@ const TestimonialCarousel = () => {
 
                     {/* TEXT */}
                     <div className="flex-1">
-                      <p className="text-sm text-black leading-snug">
+                      <p className="text-xs text-black leading-snug">
                         {item.text}
                       </p>
                       <p className="mt-3 text-xs font-semibold text-black">
