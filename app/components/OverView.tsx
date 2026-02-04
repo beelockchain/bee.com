@@ -232,7 +232,7 @@ const OverView = () => {
           >
             {/* Header */}
             <div className="p-4 flex justify-between items-center">
-              <h3 className="text-lg font-semibold text-black">
+              <h3 className="text-md font-semibold text-black">
                 {card.initialText}
               </h3>
               <Image

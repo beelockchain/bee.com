@@ -1,31 +1,46 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const testimonials = [
   {
     id: 1,
-    text: "BeeLockChain helped us eliminate paper records while securing sensitive patient data",
-    client: "Healthcare Client",
+    text: "We appreciated the Beelockchain team's strong understanding of healthcare operations. The mobile app they built improved internal coordination and patient communication. Most importantly, the team managed the project efficiently and helped us launch the app at the right time without compromising quality. They were professional, realistic, and consistent throughout the process.",
+    client: "James Anderson – Chief Technology Officer (CTO)",
     image: "/assets/images/insight-one.png",
   },
   {
     id: 2,
-    text: "BeeLockChain streamlined our operations and improved data transparency",
-    client: "Finance Client",
+    text: "Collaborating with the Beelockchain developer team, we migrated our existing system into a fully integrated ERP solution for our manufacturing operations. Their technical execution, business alignment, and launch support ensured a smooth go-live. ",
+    client: "Michael Thompson – Founder & CEO",
     image: "/assets/images/insight-two.png",
   },
   {
     id: 3,
-    text: "BeeLockChain provided secure and scalable digital transformation",
-    client: "Enterprise Client",
+    text: "Our experience with the Beelockchain development team was consistently positive from start to launch. Their strong technical expertise and clear alignment with our business goals enabled the successful deployment of an AI chatbot that supports our e-commerce platform and strengthens customer service operations.",
+    client: "Emma Wilson – Startup Co-Founder",
+    image: "/assets/images/insight-three.png",
+  },
+  {
+    id: 4,
+    text: "The Beelockchain team supported our beauty care brand with a well-planned digital marketing strategy. Their thoughtful content planning, targeted campaign execution, and consistent performance tracking helped improve brand awareness, audience engagement, and overall digital presence.",
+    client: "Emily Roberts – Product Manager",
     image: "/assets/images/insight-three.png",
   },
 ];
 
 const TestimonialCarousel = () => {
   const [current, setCurrent] = useState(0);
+
+  // 🔁 Auto slide every 20 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="w-full bg-white">
@@ -56,7 +71,7 @@ const TestimonialCarousel = () => {
 
                     {/* CONTENT */}
                     <div className="flex-1">
-                      <p className="text-[28px] leading-snug text-black font-medium max-w-[600px]">
+                      <p className="text-lg leading-snug text-black font-medium max-w-[600px]">
                         {item.text}
                       </p>
                       <p className="mt-6 text-[18px] font-semibold text-black">
@@ -70,7 +85,7 @@ const TestimonialCarousel = () => {
             </div>
           </div>
 
-          {/* CONTROLS */}
+          {/* DOTS */}
           <div className="flex items-center justify-center gap-6 mt-14">
             <div className="flex gap-3">
               {testimonials.map((_, index) => (
@@ -78,25 +93,27 @@ const TestimonialCarousel = () => {
                   key={index}
                   onClick={() => setCurrent(index)}
                   className={`h-3 rounded-full transition-all duration-300
-                    ${current === index
-                      ? "w-10 bg-yellow-400"
-                      : "w-3 bg-zinc-300 hover:bg-zinc-400"}`}
+                    ${
+                      current === index
+                        ? "w-10 bg-yellow-400"
+                        : "w-3 bg-zinc-300 hover:bg-zinc-400"
+                    }`}
                 />
               ))}
             </div>
           </div>
+
         </div>
       </div>
 
-    
-      {/* ================= MOBILE (NEW ONLY) ================= */}
+      {/* ================= MOBILE ================= */}
       <div className="md:hidden px-4 py-6">
         <div className="relative">
 
           {/* SLIDER */}
           <div className="overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-in-out "
+              className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {testimonials.map((item) => (
@@ -115,10 +132,9 @@ const TestimonialCarousel = () => {
 
                     {/* TEXT */}
                     <div className="flex-1">
-                      <p className="text-sm text-black leading-snug">
+                      <p className="text-xs text-black leading-snug">
                         {item.text}
                       </p>
-
                       <p className="mt-3 text-xs font-semibold text-black">
                         {item.client}
                       </p>
@@ -130,7 +146,7 @@ const TestimonialCarousel = () => {
             </div>
           </div>
 
-          {/* DOTS + PLAY */}
+          {/* DOTS */}
           <div className="flex items-center justify-center gap-4 mt-6">
             <div className="flex gap-2">
               {testimonials.map((_, index) => (
@@ -138,13 +154,14 @@ const TestimonialCarousel = () => {
                   key={index}
                   onClick={() => setCurrent(index)}
                   className={`h-2 rounded-full transition-all
-                    ${current === index
-                      ? "w-6 bg-yellow-400"
-                      : "w-2 bg-zinc-300"}`}
+                    ${
+                      current === index
+                        ? "w-6 bg-yellow-400"
+                        : "w-2 bg-zinc-300"
+                    }`}
                 />
               ))}
             </div>
-
           </div>
 
         </div>
