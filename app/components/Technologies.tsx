@@ -370,7 +370,7 @@ const Technologies = () => {
       </div>
       <div className="h-[5px]"></div>
 
-      <div className="w-full flex-col items-center justify-center bg-white px-4 py-2 sm:py-12 md:py-4 lg:py-12">
+      <div className="w-full flex-col items-center justify-center bg-white px-4 py-2 ">
         {/* Desktop/Tablet View - Hex Grid */}
         <div className="loader hidden lg:flex">
           {currentLayout.map((tech, i) => {
@@ -465,8 +465,9 @@ const Technologies = () => {
             display: flex;
             align-items: center;
             justify-content: center;
-          }
+              height: 420px;
 
+          }
           .hex-wrapper {
             position: absolute;
             top: 50%;

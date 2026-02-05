@@ -46,8 +46,8 @@ const HoverAvatar = ({
           hidden md:block absolute left-1/2 -translate-x-1/2
           invisible opacity-0 scale-95
           group-hover:visible group-hover:opacity-100 group-hover:scale-100
-          transition-all duration-200 z-50 pointer-events-none
-          ${hoverPosition === "top" ? "bottom-full mb-2" : "top-full mt-2"}
+          transition-all duration-200 z-50 pointer-events-none 
+          ${hoverPosition === "top" ? "bottom-full mb-4" : "top-full mt-2"}
         `}
       >
         {/* Arrow */}
@@ -150,8 +150,8 @@ const Testi = () => {
           />
 
           <section className="flex flex-col items-center">
-            <h1 className="text-2xl font-bold mt-4">What We've Done</h1>
-            <p className="text-sm">
+            <h1 className="text-2xl font-bold mt-4 text-black">What We've Done</h1>
+            <p className="text-sm text-black">
               Trusted by Leading Enterprises and Innovators
             </p>
 
@@ -170,10 +170,10 @@ const Testi = () => {
           className="w-full"
         />
 
-        <h1 className="text-xl font-bold mt-4 text-center">
+        <h1 className="text-xl font-bold mt-4 text-center text-black">
           What We've Done
         </h1>
-        <p className="text-xs text-center">
+        <p className="text-xs text-center text-black">
           Trusted by Leading Enterprises and Innovators
         </p>
 
