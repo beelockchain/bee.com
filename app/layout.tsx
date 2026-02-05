@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     alternateLocale: ["en_GB", "en_AE", "en_IN"],
     images: [
       {
-        url: "https://ik.imagekit.io/racjwdojq/ogimg.webp",
+        url: "https://ik.imagekit.io/racjwdojq/ogimg?updatedAt=1770289060198",
         width: 1200,
         height: 630,
         alt:
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
       "Best Digital Transformation Company | Digital Transformation Solutions",
     description:
       "Beelockchain offers next-generation digital transformation through AI-powered software and advanced blockchain solutions for enterprise growth.",
-    images: ["https://ik.imagekit.io/racjwdojq/ogimg.webp"],
+    images: ["https://ik.imagekit.io/racjwdojq/twitter.webp"],
   },
 
   verification: {
@@ -112,7 +112,7 @@ export default function RootLayout({
         {children}
 
         {/* ================= Product Schema ================= */}
-        <Script
+       <Script
           id="product-schema"
           type="application/ld+json"
           strategy="afterInteractive"
@@ -120,32 +120,50 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Product",
-              name:
-                "Beelockchain - Digital Transformation & Blockchain Services",
-              image: "https://ik.imagekit.io/racjwdojq/ogimg.webp",
-              description:
-                "AI-powered digital transformation, blockchain, software development, and automation services for enterprises worldwide.",
-              brand: {
+              "name": "Top Digital Transformation Services Company",
+              "image": "https://www.beelockchain.com/path-to-image.jpg",
+              "description":
+                "Beelockchain.com is a prominent digital transformation company offering digital transformation services and solutions that help leading enterprises transform their businesses and modernize operations.",
+              "brand": {
                 "@type": "Brand",
-                name: "Beelockchain",
+                "name": "Beelockchain.com"
               },
-              offers: {
+              "offers": {
                 "@type": "AggregateOffer",
-                url: "https://beelockchain.com/",
-                priceCurrency: "USD",
-                lowPrice: "5000",
-                highPrice: "10000",
-                offerCount: "10",
+                "url": "https://www.beelockchain.com/",
+                "priceCurrency": "USD",
+                "lowPrice": "10000",
+                "highPrice": "15000",
+                "offerCount": "25"
               },
-              aggregateRating: {
+              "aggregateRating": {
                 "@type": "AggregateRating",
-                ratingValue: "4.7",
-                ratingCount: "1587",
-              },
+                "ratingValue": "4.3",
+                "ratingCount": "1980"
+              }
             }),
           }}
         />
-
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Beelockchain.com",
+              url: "https://beelockchain.com",
+              sameAs: [
+                "https://www.linkedin.com/company/beelockchain",
+                "https://x.com/beelockchain",
+                "https://www.instagram.com/beelockchain_com/",
+                "https://www.facebook.com/profile.php?id=61585250317865",
+                "https://in.pinterest.com/beelockchain/",
+              ],
+            }),
+          }}
+        />
         {/* ================= Microsoft Clarity ================= */}
         <Script
           id="microsoft-clarity"

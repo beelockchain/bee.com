@@ -122,9 +122,9 @@ const OverView = () => {
     <div className="w-full bg-white flex flex-col items-center py-20">
       {/* ================= TITLE ================= */}
       <div className="mb-10 text-center">
-        <h1 className="text-black text-[34px] font-bold">
+        <h2 className="text-black text-[34px] font-bold">
           Why <span>Beelockchain</span>
-        </h1>
+        </h2>
         <p className="w-full md:w-[500px] max-w-full text-black text-lg">
           As experts in digital transformation, we create customized, future-ready solutions that ensure your investment counts by focusing on your unique customer and market needs.
         </p>

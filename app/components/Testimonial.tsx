@@ -14,9 +14,9 @@ const Testimonial = () => {
 
           <section className="w-full flex flex-col items-center justify-center">
             <div className="flex flex-col justify-center items-center gap-2">
-              <h1 className="text-black text-2xl font-bold">
+              <h2 className="text-black text-2xl font-bold">
                 What We've Done
-              </h1>
+              </h2>
               <p className="text-black">
                 Trusted by Leading Enterprises and Innovators
               </p>
@@ -42,9 +42,9 @@ const Testimonial = () => {
 
           <section className="w-full flex flex-col items-center mt-4">
             <div className="flex flex-col items-center gap-1 text-center">
-              <h1 className="text-black text-xl font-bold">
+              <h2 className="text-black text-xl font-bold">
                 What We've Done
-              </h1>
+              </h2>
               <p className="text-black text-xs">
                 Trusted by Leading Enterprises and Innovators
               </p>

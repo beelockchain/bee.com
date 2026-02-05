@@ -8,10 +8,10 @@ const insights = [
   { id: 1, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-one.png" },
   { id: 2, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-two.png" },
   { id: 3, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-three.png" },
-  { id: 4, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-one.png" },
-  { id: 5, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-two.png" },
+  { id: 4, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-four.png" },
+  { id: 5, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-one.png" },
   { id: 6, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-three.png" },
-  { id: 7, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-one.png" },
+  { id: 7, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-four.png" },
   { id: 8, title: "How does Beelockchain help businesses with digital transformation?", image: "/assets/images/insight-two.png" },
 ];
 

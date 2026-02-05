@@ -65,7 +65,7 @@ const IndustryWeServe = () => {
 
 
         {/* RIGHT – CONTENT */}
-        <div className="md:pt-2 lg:pt-0">
+        <div className="md:pt-2 lg:pt-0 mt-10">
           {/* TABLET + DESKTOP TITLE */}
           <h2 className="hidden md:block text-3xl lg:text-5xl font-medium text-black font-[Poppins] mb-6 ">
             Industries We Serve

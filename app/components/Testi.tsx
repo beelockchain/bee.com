@@ -150,7 +150,7 @@ const Testi = () => {
           />
 
           <section className="flex flex-col items-center">
-            <h1 className="text-2xl font-bold mt-4 text-black">What We've Done</h1>
+            <h2 className="text-2xl font-bold mt-4 text-black">What We've Done</h2>
             <p className="text-sm text-black">
               Trusted by Leading Enterprises and Innovators
             </p>
@@ -170,9 +170,9 @@ const Testi = () => {
           className="w-full"
         />
 
-        <h1 className="text-xl font-bold mt-4 text-center text-black">
+        <h2 className="text-xl font-bold mt-4 text-center text-black">
           What We've Done
-        </h1>
+        </h2>
         <p className="text-xs text-center text-black">
           Trusted by Leading Enterprises and Innovators
         </p>

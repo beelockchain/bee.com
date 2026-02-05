@@ -87,7 +87,7 @@ const Digitaltransformation = () => {
       {/* ⚠️ UNTOUCHED DESIGN */}
       <div className="hidden md:flex w-full h-screen justify-center items-center bg-white">
         <div className="w-[50%] h-full flex flex-col justify-center items-start gap-6 p-5">
-          <h1 className="text-4xl font-bold mb-6 text-black">
+          <h2 className="text-4xl font-bold mb-6 text-black">
             Beelockchain Your Trusted
             <span
               className="
@@ -103,7 +103,7 @@ const Digitaltransformation = () => {
             >
               Digital <br /> Transformation Company
             </span>
-          </h1>
+          </h2>
 
           <p className="text-lg leading-8 text-gray-700">
             As a forward-thinking

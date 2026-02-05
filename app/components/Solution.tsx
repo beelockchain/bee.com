@@ -6,7 +6,7 @@ const Solution = () => {
             </div>
             <div className="w-[400px] h-96 ">
                 <div className="w-full h-full flex flex-col justify-center items-start space-y-5">
-                    <h1 className=" text-[34px] leading-10 text-black font-bold">Industries Transformed<br /> by Our Digital Solutions</h1>
+                    <h2 className=" text-[34px] leading-10 text-black font-bold">Industries Transformed<br /> by Our Digital Solutions</h2>
                     <p className="text-black text-lg">We drive growth across various industries with our digital transformation solutions, constantly adapting to new sectors with creative approaches.</p>
                     <button className="flex items-center gap-2 bg-black text-white px-2 py-1 rounded-lg font-medium shadow">
                         Realize your vision

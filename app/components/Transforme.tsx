@@ -130,9 +130,9 @@ const Transforme = () => {
 
             {/* Header */}
             <div className="w-full flex flex-col justify-center items-center gap-4">
-                <h1 className="text-[34px] leading-10 text-black font-bold">
+                <h2 className="text-[34px] leading-10 text-black font-bold">
                     Transforming Businesses Digitally
-                </h1>
+                </h2>
                 <p className="text-black text-lg text-center">
                     BeelochChain empowers businesses with solutions that boost operations,<br />
                     enhance customer relationships, and drive growth.
@@ -174,7 +174,7 @@ const Transforme = () => {
                         data-index={index}
                         className="h-screen flex flex-col justify-center px-10"
                     >
-                        <h1 className="text-4xl font-bold text-black">{content.title}</h1>
+                        <h2 className="text-4xl font-bold text-black">{content.title}</h2>
 
                         <p className="text-lg mt-4 w-[500px] text-black">
                             {content.desc}

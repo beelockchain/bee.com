@@ -11,11 +11,13 @@ const steps = [
     description: (
       <>
         We evaluate your workflows and identify areas for{" "}
-        <span className="text-black/80 font-semibold">
+        <span className="text-black font-bold">
           blockchain-powered digital transformation
         </span>
+        .
       </>
     ),
+    image: "/assets/images/beelock-trans-icon1.png",
     rotate: "-rotate-2",
   },
   {
@@ -24,12 +26,13 @@ const steps = [
     description: (
       <>
         We design and implement{" "}
-        <span className="text-black/80 font-semibold">
+        <span className="text-black font-bold">
           custom blockchain networks, smart contracts, and AI integrations
         </span>{" "}
         to digitize your operations.
       </>
     ),
+    image: "/assets/images/beelock-trans-icon2.png",
     rotate: "",
   },
   {
@@ -38,20 +41,21 @@ const steps = [
     description: (
       <>
         Our AI-powered analytics{" "}
-        <span className="text-black/80 font-semibold">
-          monitor processes, detect anomalies, and optimize efficiency.
+        <span className="text-black font-bold">
+          monitor processes, detect anomalies, and optimize efficiency
         </span>
+        .
       </>
     ),
+    image: "/assets/images/beelock-trans-icon3.png",
     rotate: "rotate-2",
   },
 ];
 
 const BeelockchainTransformation = () => {
   return (
-    <section className="w-full bg-white py-20 overflow-hidden">
+    <section className="w-full bg-white py-20">
       <div className="max-w-[1200px] mx-auto px-6">
-
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-[Poppins] text-zinc-800 mb-4">
@@ -67,29 +71,34 @@ const BeelockchainTransformation = () => {
           {steps.map((item, index) => (
             <div
               key={index}
-              className={`bg-neutral-100 rounded-xl shadow-lg p-8 relative transition transform ${item.rotate}`}
+              className={`bg-neutral-100 rounded-xl shadow-lg flex flex-col transition transform ${item.rotate}`}
             >
-              <span className="text-zinc-500 font-semibold">{item.step}</span>
+              {/* Text content (with padding) */}
+              <div className="p-8">
+                <span className="text-zinc-500 font-semibold mb-3 block">
+                  {item.step}
+                </span>
 
-              <div className="flex justify-end my-6">
-                <img
-                  src="/assets/images/beelock-trans-icon.png"
-                  alt={item.step}
-                  className="w-32 h-32 md:h-20 md:w-20   lg:h-32 lg:w-32  object-contain"
-                />
+                <h3 className="text-[20px] font-semibold font-[Poppins] text-zinc-800 mb-3">
+                  {item.title}
+                </h3>
+
+                <p className="text-zinc-500 text-[15px] leading-6">
+                  {item.description}
+                </p>
               </div>
 
-              <h3 className="text-[20px] sm:text-[14px] md:text-[16px] xl:text-[20px] lg:text-[20px] font-semibold font-[Poppins] text-zinc-800 mb-4">
-                {item.title}
-              </h3>
-
-              <p className="text-zinc-400 leading-6 md:leading-4 lg:leading-6 text-[16px] sm:text-[14px] md:text-[10px] xl:text-[18px] lg:text-[20px]">
-                {item.description}
-              </p>
+              {/* Image – flush bottom, full width */}
+              <div className="mt-auto">
+                <img
+                  src={item.image}
+                  alt={item.step}
+                  className="w-full max-h-44 object-contain"
+                />
+              </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

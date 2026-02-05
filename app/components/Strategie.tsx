@@ -7,7 +7,7 @@ const Strategie = () => {
                 </div>
                 <div className="w-[80%]  h-full flex flex-col justify-center bg-cover bg-center bg-no-repeat rounded-2xl" style={{ backgroundImage: "url('/Frame 76.svg')" }}>
                     <div className="w-[450px] space-y-6">
-                        <h1 className="text-black text-2xl font-bold ">Facing challenges with outdated<br /> technology, limited visibility, or unclear<br /> growth strategies?</h1>
+                        <h2 className="text-black text-2xl font-bold ">Facing challenges with outdated<br /> technology, limited visibility, or unclear<br /> growth strategies?</h2>
                         <p className="text-black ">BeelochChain, we blend innovative digital solutions with proven<br /> market strategies to eliminate obstacles and accelerate your <br />path to success. We don’t just offer services; we partner with<br /> you to understand your unique challenges, create customized<br /> solutions, and support you throughout your digital<br /> transformation journey.</p>
                         <button className="flex items-center gap-2 bg-black text-white px-2 py-1 rounded-lg font-medium shadow">
                             Realize your vision

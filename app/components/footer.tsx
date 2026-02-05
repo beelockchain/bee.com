@@ -9,54 +9,57 @@ const Footer = () => {
       title: "CANADA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+02 3486 4631",
+      src: "/assets/images/location1.png",
     },
     {
       title: "USA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+01 9876 5432",
+      src: "/assets/images/location2.png",
     },
     {
       title: "UK",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+44 7654 3210",
+      src: "/assets/images/location3.png",
     },
     {
       title: "INDIA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+91 98765 43210",
+      src: "/assets/images/location4.png",
     },
   ];
   
 
 
-const socialIcons = [
+  const socialIcons = [
   {
     name: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61585250317865",
     src: "/assets/images/fb-icon.png",
   },
   {
     name: "Twitter",
-    href: "#",
+    href: "https://x.com/beelockchain",
     src: "/assets/images/x-icon.png",
   },
   {
-    name: "Discord",
-    href: "#",
-    src: "/assets/images/discord-icon.png",
+    name: "Whatsapp",
+    href: "https://wa.me/+919025217523",
+    src: "/assets/images/whatsapp-icon.png",
   },
   {
     name: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/company/beelockchain",
     src: "/assets/images/linkedin-icon.png",
   },
   {
-    name: "Pinterest",
-    href: "#",
-    src: "/assets/images/pin-icon.png",
+    name: "Telegram",
+    href: "https://t.me/+919025217523",
+    src: "/assets/images/telegram-icon.png",
   },
 ];
-
 
   return (
    <footer className="w-full bg-white py-20">
@@ -78,32 +81,78 @@ Area We Occupied
   ></div>
 
   {/* Card Grid */}
-  <div className="grid grid-cols-2   sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-2 sm:gap-2 relative z-10">
-    {cards.map((card, index) => (
-      <div
-        key={index}
-        className="rounded-xl bg-[#F2F2F2] p-4 lg:p-6 flex flex-col gap-4"
-      >
-        <h4 className="text-[20px] sm:text-[24px] md:text-[20px]  xl:text-[24px] lg:text-[26px] font-bold font-poppins text-black">
+<div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 relative z-10">
+  {cards.map((card, index) => (
+    <div
+      key={index}
+      className="
+        relative rounded-xl md:rounded-2xl overflow-hidden
+        flex flex-col justify-between
+        p-3 sm:p-4 lg:p-6
+        min-h-[170px] sm:min-h-[200px] lg:min-h-[220px]
+      "
+      style={{
+        backgroundImage: "url('/assets/images/location-bgcard.png')",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
+      {/* Content */}
+      <div className="relative z-10">
+        <h4 className="text-[16px] sm:text-[18px] lg:text-[22px] font-bold font-poppins text-black mb-2 sm:mb-3">
           {card.title}
         </h4>
-        <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[14px] lg:text-[16px]  leading-relaxed text-black font-poppins">
+
+        <p className="text-[12px] sm:text-[13px] lg:text-[14px] leading-relaxed text-black/80 font-poppins mb-4 sm:mb-6">
           {card.desc}
         </p>
-        <div className="flex items-center gap-3 mt-2">
-          <Image
-            src="/assets/images/location-icon.png"
-            alt="Location Icon"
-            width={22}
-            height={22}
-          />
-          <span className="text-[9px] sm:text-[14px] md:text-[12px]  xl:text-[14px] lg:text-[16px]  font-poppins font-medium text-black">
-            {card.contact}
-          </span>
-        </div>
       </div>
-    ))}
+
+      {/* Bottom row */}
+     <div className="
+  relative z-10 flex
+  flex-col md:flex-row
+  lg:flex-row
+  sm:items-center
+  sm:justify-between
+  gap-2 sm:gap-0
+">
+  {/* Phone */}
+  <div className="flex items-center gap-1.5 sm:gap-2">
+    <Image
+      src="/assets/images/location-icon.png"
+      alt="Location"
+      width={14}
+      height={14}
+      className="sm:w-[16px] sm:h-[16px]"
+    />
+    <span className="text-[10px] sm:text-[13px] lg:text-[14px] font-medium text-black font-poppins">
+      {card.contact}
+    </span>
   </div>
+
+  {/* City icon */}
+  <Image
+    src={card.src}
+    alt={`${card.title} icon`}
+    width={56}
+    height={56}
+    className="
+      object-contain
+      self-center sm:self-auto
+      sm:w-[64px] sm:h-[64px]
+      lg:w-[80px] lg:h-[80px]
+    "
+  />
+</div>
+
+    </div>
+  ))}
+</div>
+
+
+
 </div>
 
 
@@ -150,7 +199,7 @@ Area We Occupied
 
 <div className="flex gap-2 md:gap-2 lg:gap-1 xl:gap-4">
   {socialIcons.map((icon, i) => (
-    <Link key={i} href={icon.href} aria-label={icon.name}>
+    <Link key={i} href={icon.href} aria-label={icon.name} target="_blank" rel="noopener noreferrer">
     
         <Image
           src={icon.src}

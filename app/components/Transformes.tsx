@@ -218,9 +218,9 @@ export default function Transformes() {
           </div>
 
           <div className="text-center mb-8 md:mb-12 px-6">
-            <h1 className="text-xl md:text-4xl font-bold text-black">
+            <h2 className="text-xl md:text-4xl font-bold text-black">
               Digital Transformation
-            </h1>
+            </h2>
             <p className="text-gray-600 mt-2 md:mt-4 max-w-2xl mx-auto text-xs md:text-base">
               A full spectrum of digital transformation services to elevate your
               business
