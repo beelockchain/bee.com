@@ -11,7 +11,7 @@ const Customers = () => {
 
   return (
     <section className="w-full bg-white relative z-10">
-      <div className="w-full py-10 overflow-hidden">
+      <div className="w-full md:py-10 py-2 overflow-hidden">
         <div className="relative w-full overflow-hidden">
           {/* Marquee track */}
           <div
@@ -24,23 +24,23 @@ const Customers = () => {
             {/* First set of images */}
             {customerImages.map((src, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 px-4">
-                <img src={src} alt={`Customer ${index + 1}`} className="h-40 w-80 object-contain" />
+                <img src={src} alt={`Customer ${index + 1}`} className="md:h-40 md:w-80 w-40 h-20 object-contain" />
               </div>
             ))}
             {/* Second set (duplicate) for seamless loop */}
             {customerImages.map((src, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 px-4">
-                <img src={src} alt={`Customer ${index + 1}`} className="h-40 w-80 object-contain" />
+                <img src={src} alt={`Customer ${index + 1}`} className="md:h-40 md:w-80 w-40 h-20 object-contain" />
               </div>
             ))}
            {customerImages.map((src, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 px-4">
-                <img src={src} alt={`Customer ${index + 1}`} className="h-40 w-80 object-contain" />
+                <img src={src} alt={`Customer ${index + 1}`} className="md:h-40 md:w-80 w-40 h-20 object-contain" />
               </div>
             ))}
             {customerImages.map((src, index) => (
               <div key={`first-${index}`} className="flex-shrink-0 px-4">
-                <img src={src} alt={`Customer ${index + 1}`} className="h-40 w-80 object-contain" />
+                <img src={src} alt={`Customer ${index + 1}`} className="md:h-40 md:w-80 w-40 h-20 object-contain" />
               </div>
             ))}
           </div>

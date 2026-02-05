@@ -2,11 +2,12 @@
 
 import { ArrowUpRight, X } from "lucide-react";
 import { useState } from "react";
-import MegaHover from "./NavItem";
+import NavItem from "./NavItem";
 import SideMenu from "./SideMenu";
 
 const Topnav = () => {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const primaryMobileNav = [
     { label: "Home", href: "/" },
@@ -23,12 +24,90 @@ const Topnav = () => {
     { label: "Career", href: "/career" },
   ];
 
+  const navItems = [
+    {
+      label: "Home",
+      content: (
+        <ul className="space-y-3 text-sm">
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Digital Transformation
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Software Development
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Blockchain Solutions
+          </li>
+        </ul>
+      ),
+    },
+    {
+      label: "Service",
+      content: (
+        <ul className="space-y-3 text-sm">
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Digital Transformation
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Software Development
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Blockchain Solutions
+          </li>
+        </ul>
+      ),
+    },
+    {
+      label: "Blog",
+      content: (
+        <ul className="space-y-3 text-sm">
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Digital Transformation
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Software Development
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Blockchain Solutions
+          </li>
+        </ul>
+      ),
+    },
+    {
+      label: "Contact us",
+      content: (
+        <ul className="space-y-3 text-sm">
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Digital Transformation
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Software Development
+          </li>
+          <li className="flex gap-3 items-center">
+            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
+            Blockchain Solutions
+          </li>
+        </ul>
+      ),
+    },
+  ];
+
   return (
     <>
       {/* ================= TOP NAV ================= */}
       <div className="fixed z-50 w-full bg-white">
         <div className="h-20 flex items-center justify-between px-4 lg:px-8">
-
           {/* LOGO */}
           <div className="w-[40%] sm:w-[30%] lg:w-[25%]">
             <img
@@ -54,93 +133,38 @@ const Topnav = () => {
               lg:text-base
             "
           >
-            <MegaHover label="Home">
-              <ul className="space-y-3 text-sm">
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Digital Transformation
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Software Development
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Blockchain Solutions
-                </li>
-              </ul>
-            </MegaHover>
-
-            <MegaHover label="Service">
-              <ul className="space-y-3 text-sm">
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Digital Transformation
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Software Development
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Blockchain Solutions
-                </li>
-              </ul>
-            </MegaHover>
-
-            <MegaHover label="Blog">
-              <ul className="space-y-3 text-sm">
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Digital Transformation
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Software Development
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Blockchain Solutions
-                </li>
-              </ul>
-            </MegaHover>
-
-            <MegaHover label="Contact us">
-              <ul className="space-y-3 text-sm">
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Digital Transformation
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Software Development
-                </li>
-                <li className="flex gap-3 items-center">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-                  Blockchain Solutions
-                </li>
-              </ul>
-            </MegaHover>
+            {navItems.map((item, index) => (
+              <NavItem
+                key={item.label}
+                label={item.label}
+                isFirst={index === 0}
+                isHovered={hoveredIndex === index}
+                anyHovered={hoveredIndex !== null}
+                onHover={(hovered) => setHoveredIndex(hovered ? index : null)}
+              >
+                {item.content}
+              </NavItem>
+            ))}
           </div>
 
           {/* RIGHT ACTIONS */}
           <div className="flex items-center justify-end gap-3 w-[60%] sm:w-[30%] lg:w-[25%]">
-
             {/* GET STARTED (HIDDEN ON MOBILE) */}
             <button
               className="
                 hidden
                 sm:flex
+                items-center
                 bg-black
                 text-white
-                px-3
-                md:px-4
-                py-2
+                px-3 py-2
+                md:px-4 md:py-2.5
                 rounded-full
                 text-xs
                 md:text-sm
                 hover:bg-gray-800
                 transition
+                border border-black
               "
             >
               Get started
@@ -153,11 +177,11 @@ const Topnav = () => {
               className="
                 flex
                 items-center
-                gap-2
+                gap-1
                 border
                 border-black
-                px-2
-                py-1
+                px-2 py-1
+                md:px-4 md:py-[8.5px]
                 rounded-full
                 text-xs
                 md:text-sm
@@ -168,14 +192,14 @@ const Topnav = () => {
             >
               {sideMenuOpen ? "Close" : "Menu"}
 
-              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center ">
+              <div className="w-6 h-6 md:w-6 md:h-6 rounded-full flex items-center justify-center">
                 {sideMenuOpen ? (
                   <X className="h-4 w-4 md:h-5 md:w-5" />
                 ) : (
                   <img
                     src="/Background.svg"
                     alt="menu"
-                    className="h-6 w-6 md:h-7 md:w-7"
+                    className="h-4 w-4 md:h-5 md:w-5"
                   />
                 )}
               </div>
@@ -185,9 +209,9 @@ const Topnav = () => {
       </div>
 
       {/* ================= SIDE MENU (MOBILE NAV) ================= */}
+      {/* ================= SIDE MENU (MOBILE NAV) ================= */}
       <SideMenu isOpen={sideMenuOpen} onClose={() => setSideMenuOpen(false)}>
         <div className="flex flex-col items-end pr-8 space-y-8">
-
           {/* PRIMARY MOBILE LINKS */}
           <div className="space-y-6 text-right flex flex-col sm:block md:hidden">
             {primaryMobileNav.map((item) => (

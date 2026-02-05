@@ -121,7 +121,7 @@ const TestimonialCarousel = () => {
                   <div className="flex items-start gap-4">
 
                     {/* IMAGE */}
-                    <div className="w-[110px] h-[120px] relative rounded-xl overflow-hidden border-2 border-blue-500">
+                    <div className="w-[110px] h-[180px] relative rounded-xl overflow-hidden border-2 border-blue-500">
                       <Image
                         src={item.image}
                         alt={item.client}

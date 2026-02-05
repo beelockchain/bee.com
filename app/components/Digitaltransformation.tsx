@@ -1,13 +1,11 @@
 const Digitaltransformation = () => {
-    return (
-       <section className="w-full bg-white">
-
+  return (
+    <section className="w-full bg-white">
       {/* ================= MOBILE LAYOUT ================= */}
       <div className="flex md:hidden flex-col w-full px-6 py-16 gap-10 justify-center items-center">
-
         {/* Heading */}
         <h3 className="text-sm font-bold text-black leading-snug text-center w-full">
-          Beelockchain Your Trusted Digital 
+          Beelockchain Your Trusted Digital
           <span
             className="
               font-semibold
@@ -20,27 +18,39 @@ const Digitaltransformation = () => {
            
             "
           >
-          Transformation Company
+            Transformation Company
           </span>
         </h3>
 
         {/* Image */}
         <div className="w-full">
           <img
-            src="assets/images/trusted-digital.svg"
+            src="/Group 1707480421.svg"
             alt="trusted digital"
             className="w-full max-w-sm mx-auto object-contain"
           />
         </div>
 
         {/* Content */}
-        <p className="text-sm leading-7 text-gray-700 text-center">
-          As a forward-thinking Digital Transformation Company, Beelockchain
-          empowers organizations to achieve measurable business outcomes through
-          automation, innovation, and scalable technologies. With over 8 years of
-          experience in delivering enterprise-grade Digital transformation
+        <p className="text-md leading-8 text-gray-700 text-center">
+          As a forward-thinking
+          <span className="text-[#FFCC00] ml-1">
+            Digital Transformation Company
+          </span>
+          , Beelockchain empowers organizations to achieve measurable business
+          outcomes through automation, innovation, and scalable technologies.
+        </p>
+        <p className="text-md leading-8 text-gray-700 text-center">
+          With over <span className="text-[#FFCC00] ml-1">8 years</span> of
+          experience in delivering enterprise grade Digital transformation
           services and solutions, we help businesses modernize applications,
           optimize operations, and unlock new digital capabilities.
+        </p>
+        <p className="text-md leading-8 text-gray-700 text-center">
+          Our future ready experts mitigate risks, streamline workflows, and
+          solve complex
+          <span className="text-[#FFCC00] ml-1">digital challenges</span> using
+          front-line strategies.
         </p>
 
         {/* CTA */}
@@ -96,15 +106,24 @@ const Digitaltransformation = () => {
           </h1>
 
           <p className="text-lg leading-8 text-gray-700">
-            As a forward-thinking Digital Transformation Company, Beelockchain
-            empowers organizations to achieve measurable business outcomes
-            through automation, innovation, and scalable technologies. With over
-            8 years of experience in delivering enterprise-grade Digital
-            transformation services and solutions, we help businesses modernize
-            applications, optimize operations, and unlock new digital
-            capabilities. Our future-ready experts mitigate risks, streamline
-            workflows, and solve complex digital challenges using front-line
-            strategies.
+            As a forward-thinking
+            <span className="text-[#FFCC00] ml-1">
+              Digital Transformation Company
+            </span>
+            , Beelockchain empowers organizations to achieve measurable business
+            outcomes through automation, innovation, and scalable technologies.
+          </p>
+          <p className="text-lg leading-8 text-gray-700">
+            With over <span className="text-[#FFCC00] ml-1">8 years</span> of
+            experience in delivering enterprise grade Digital transformation
+            services and solutions, we help businesses modernize applications,
+            optimize operations, and unlock new digital capabilities.
+          </p>
+          <p className="text-lg leading-8 text-gray-700">
+            Our future ready experts mitigate risks, streamline workflows, and
+            solve complex
+            <span className="text-[#FFCC00] ml-1">digital challenges</span>{" "}
+            using front-line strategies.
           </p>
 
           <button
@@ -135,16 +154,16 @@ const Digitaltransformation = () => {
           </button>
         </div>
 
-        <div className="w-[45%] h-full">
+        <div className="w-[45%] h-full flex justify-center items-center">
           <img
-            src="assets/images/trusted-digital.svg"
+            src="/Group 1707480421.svg"
             alt="trusted digital"
-            className="w-full h-full object-contain"
+            className="w-[500px] h-[500px] object-contain"
           />
         </div>
       </div>
     </section>
-    );
-}
+  );
+};
 
 export default Digitaltransformation;
