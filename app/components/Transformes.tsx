@@ -73,13 +73,13 @@ function RouteTag({ label, href }: { label: string; href: string }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1 text-sm text-gray-700 hover:text-black transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-gray-500"
+      className="inline-flex items-center gap-1 text-lg text-gray-700 hover:text-black transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-gray-500"
     >
       {label}
       <span className="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs group-hover:bg-yellow-500 transition-colors">
         <svg
-          width="8"
-          height="8"
+          width="10"
+          height="10"
           viewBox="0 0 12 12"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -256,14 +256,14 @@ export default function Transformes() {
                   return (
                     <div
                       key={tab}
-                      className="absolute inset-0 flex flex-col justify-center transition-all duration-500"
+                      className="absolute inset-0 flex flex-col justify-start transition-all duration-500"
                       style={{
                         opacity: isActive ? 1 : 0,
                         transform: `translateY(${isActive ? 0 : index < activeTab ? -30 : 30}px)`,
                         pointerEvents: isActive ? "auto" : "none",
                       }}
                     >
-                      <p className="text-gray-600 text-lg max-w-xl">
+                      <p className="text-gray-600 text-xl font-semibold max-w-xl">
                         {TAB_CONTENT[tab].desc}
                       </p>
 
@@ -332,7 +332,7 @@ export default function Transformes() {
                       pointerEvents: isActive ? "auto" : "none",
                     }}
                   >
-                    <p className="text-center text-gray-600 text-sm gap-10">
+                    <p className="text-center text-gray-600 text-md font-semibold gap-10">
                       {TAB_CONTENT[tab].desc}
                     </p>
 
