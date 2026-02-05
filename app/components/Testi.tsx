@@ -155,7 +155,7 @@ const Testi = () => {
               Trusted by Leading Enterprises and Innovators
             </p>
 
-            <div className="w-[600px] h-80 flex flex-col gap-3 mt-6 overflow-hidden pt-6">
+            <div className="w-[600px] h-60 flex flex-col gap-3 mt-6 overflow-hidden pt-6">
               <MarqueeRow direction="left" />
               <MarqueeRow direction="right" />
             </div>
