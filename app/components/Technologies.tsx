@@ -336,7 +336,7 @@ const Technologies = () => {
       <div ref={gridRef} className="w-full bg-white py-0">
         <div className="max-w-[1400px] mx-auto px-6">
           {/* Heading */}
-          <h2 className="text-center text-black text-[20px] sm:text-[18px] md:text-[26px] xl:text-[40px] lg:text-[40px] font-semibold font-['Poppins'] leading-snug mb-4">
+          <h2 className="text-center text-black text-[26px] sm:text-[18px] md:text-[26px] xl:text-[40px] lg:text-[40px] font-semibold font-['Poppins'] leading-snug mb-4">
             Core Technologies We Implemented
           </h2>
 

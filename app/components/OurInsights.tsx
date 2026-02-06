@@ -25,7 +25,7 @@ const OurInsights = () => {
   }
 
   return (
-    <section className="w-full bg-white py-20 overflow-hidden">
+    <section className="w-full bg-white py-14 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         {/* TITLE */}
         <h2 className="text-[36px] text-center font-semibold text-black font-poppins mb-12">
