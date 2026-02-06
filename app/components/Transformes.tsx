@@ -73,7 +73,7 @@ function RouteTag({ label, href }: { label: string; href: string }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1 text-lg text-gray-700 hover:text-yellow-400 transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-yellow-500 "
+      className="inline-flex items-center gap-1 text-sm md:text-lg text-gray-700 hover:text-yellow-400 transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-yellow-500 "
     >
       {label}
       <span className="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs group-hover:bg-yellow-500 transition-colors">
@@ -332,7 +332,7 @@ export default function Transformes() {
                       pointerEvents: isActive ? "auto" : "none",
                     }}
                   >
-                    <p className="text-center text-gray-600 text-md font-semibold gap-10">
+                    <p className="text-center text-gray-600 text-sm font-semibold gap-10">
                       {TAB_CONTENT[tab].desc}
                     </p>
 

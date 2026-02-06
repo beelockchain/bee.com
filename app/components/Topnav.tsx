@@ -26,32 +26,32 @@ const Topnav = () => {
   ];
 
   const socialIcons = [
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61585250317865",
-    src: "/assets/images/fb-icon.png",
-  },
-  {
-    name: "Twitter",
-    href: "https://x.com/beelockchain",
-    src: "/assets/images/x-icon.png",
-  },
-  {
-    name: "Whatsapp",
-    href: "https://wa.me/+919025217523",
-    src: "/assets/images/whatsapp-icon.png",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/beelockchain",
-    src: "/assets/images/linkedin-icon.png",
-  },
-  {
-    name: "Telegram",
-    href: "https://t.me/+919025217523",
-    src: "/assets/images/telegram-icon.png",
-  },
-];
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/profile.php?id=61585250317865",
+      src: "/assets/images/fb-icon.png",
+    },
+    {
+      name: "Twitter",
+      href: "https://x.com/beelockchain",
+      src: "/assets/images/x-icon.png",
+    },
+    {
+      name: "Whatsapp",
+      href: "https://wa.me/+919025217523",
+      src: "/assets/images/whatsapp-icon.png",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/beelockchain",
+      src: "/assets/images/linkedin-icon.png",
+    },
+    {
+      name: "Telegram",
+      href: "https://t.me/+919025217523",
+      src: "/assets/images/telegram-icon.png",
+    },
+  ];
 
   const navItems = [
     {
@@ -111,7 +111,6 @@ const Topnav = () => {
         </ul>
       ),
     },
-    
   ];
 
   return (
@@ -222,14 +221,11 @@ const Topnav = () => {
 
       {/* ================= SIDE MENU (MOBILE NAV) ================= */}
       {/* ================= SOCIAL ICONS (BOTTOM RIGHT) ================= */}
- 
-
-
 
       <SideMenu isOpen={sideMenuOpen} onClose={() => setSideMenuOpen(false)}>
         <div className="flex flex-col items-end pr-8 space-y-8">
           {/* PRIMARY MOBILE LINKS */}
-          <div className="space-y-6 text-right flex flex-col sm:block md:hidden">
+          <div className="space-y-2 text-right flex flex-col sm:block md:hidden">
             {primaryMobileNav.map((item) => (
               <a
                 key={item.label}
@@ -259,24 +255,24 @@ const Topnav = () => {
           </div>
         </div>
 
-         <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto pr-8">
-     <h4 className="w-full text-end mb-4 md:text-right text-[18px] sm:text-[16px] md:text-[18px]  xl:text-[18px] lg:text-[20px]  text-black font-poppins">
-              Connect With Us:
-            </h4>
+        <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto pr-8">
+          <h4 className="w-full text-end mb-4 md:text-right text-[15px] sm:text-[10px] md:text-[18px]  xl:text-[18px] lg:text-[20px]  text-black font-poppins">
+            Connect With Us:
+          </h4>
 
-    <div className="flex gap-3">
-      {socialIcons.map((icon, i) => (
-        <Link key={i} href={icon.href} target="_blank" rel="noopener noreferrer">
-          <Image
-            src={icon.src}
-            alt={icon.name}
-            width={42}
-            height={42}
-          />
-        </Link>
-      ))}
-    </div>
-  </div>
+          <div className="flex gap-3">
+            {socialIcons.map((icon, i) => (
+              <Link
+                key={i}
+                href={icon.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={icon.src} alt={icon.name} width={42} height={42} />
+              </Link>
+            ))}
+          </div>
+        </div>
       </SideMenu>
     </>
   );

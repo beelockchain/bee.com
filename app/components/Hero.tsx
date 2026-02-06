@@ -109,7 +109,7 @@ const Herosection = () => {
       {/* ⚠️ UNTOUCHED JSX */}
       <div className="hidden md:flex h-screen w-full flex-col justify-center items-center bg-white">
         <div className="h-[77%] w-full flex justify-center items-center mb-10">
-          <div className="w-[33%] h-[70%] relative flex justify-start items-start mt-36 pl-10">
+          <div className="w-[33%] h-[70%] relative flex justify-start items-start mt-60 pl-10">
             <div className="relative">
               <h1 className="text-[24px] leading-10 text-black font-extrabold">
                 Digital Transformation Company

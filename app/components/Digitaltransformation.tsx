@@ -32,7 +32,7 @@ const Digitaltransformation = () => {
         </div>
 
         {/* Content */}
-        <p className="text-md leading-8 text-gray-700 text-center">
+        <p className="text-sm leading-8 text-gray-700 text-center">
           As a forward-thinking
           <span className="text-[#FFCC00] ml-1">
             Digital Transformation Company
@@ -40,13 +40,13 @@ const Digitaltransformation = () => {
           , Beelockchain empowers organizations to achieve measurable business
           outcomes through automation, innovation, and scalable technologies.
         </p>
-        <p className="text-md leading-8 text-gray-700 text-center">
+        <p className="text-sm leading-8 text-gray-700 text-center">
           With over <span className="text-[#FFCC00] ml-1">8 years</span> of
           experience in delivering enterprise grade Digital transformation
           services and solutions, we help businesses modernize applications,
           optimize operations, and unlock new digital capabilities.
         </p>
-        <p className="text-md leading-8 text-gray-700 text-center">
+        <p className="text-sm leading-8 text-gray-700 text-center">
           Our future ready experts mitigate risks, streamline workflows, and
           solve complex
           <span className="text-[#FFCC00] ml-1">digital challenges</span> using
