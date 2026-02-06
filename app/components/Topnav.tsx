@@ -58,7 +58,7 @@ const Topnav = () => {
       label: "Home",
       content: (
         <ul className="space-y-3 text-sm">
-          <li className="flex gap-3 items-center">
+          {/* <li className="flex gap-3 items-center">
             <span className="w-2 h-2 bg-yellow-400 rounded-full" />
             Digital Transformation
           </li>
@@ -69,7 +69,7 @@ const Topnav = () => {
           <li className="flex gap-3 items-center">
             <span className="w-2 h-2 bg-yellow-400 rounded-full" />
             Blockchain Solutions
-          </li>
+          </li> */}
         </ul>
       ),
     },
@@ -77,7 +77,7 @@ const Topnav = () => {
       label: "Service",
       content: (
         <ul className="space-y-3 text-sm">
-          <li className="flex gap-3 items-center">
+          {/* <li className="flex gap-3 items-center">
             <span className="w-2 h-2 bg-yellow-400 rounded-full" />
             Digital Transformation
           </li>
@@ -88,7 +88,7 @@ const Topnav = () => {
           <li className="flex gap-3 items-center">
             <span className="w-2 h-2 bg-yellow-400 rounded-full" />
             Blockchain Solutions
-          </li>
+          </li> */}
         </ul>
       ),
     },
@@ -96,7 +96,7 @@ const Topnav = () => {
       label: "Blog",
       content: (
         <ul className="space-y-3 text-sm">
-          <li className="flex gap-3 items-center">
+          {/* <li className="flex gap-3 items-center">
             <span className="w-2 h-2 bg-yellow-400 rounded-full" />
             Digital Transformation
           </li>
@@ -107,29 +107,11 @@ const Topnav = () => {
           <li className="flex gap-3 items-center">
             <span className="w-2 h-2 bg-yellow-400 rounded-full" />
             Blockchain Solutions
-          </li>
+          </li> */}
         </ul>
       ),
     },
-    {
-      label: "Contact us",
-      content: (
-        <ul className="space-y-3 text-sm">
-          <li className="flex gap-3 items-center">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-            Digital Transformation
-          </li>
-          <li className="flex gap-3 items-center">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-            Software Development
-          </li>
-          <li className="flex gap-3 items-center">
-            <span className="w-2 h-2 bg-yellow-400 rounded-full" />
-            Blockchain Solutions
-          </li>
-        </ul>
-      ),
-    },
+    
   ];
 
   return (

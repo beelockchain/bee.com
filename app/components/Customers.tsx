@@ -11,7 +11,7 @@ const Customers = () => {
 
   return (
     <section className="w-full bg-white relative z-10">
-      <div className="w-full md:py-10 py-2 overflow-hidden">
+      <div className="w-full py-2 overflow-hidden">
         <div className="relative w-full overflow-hidden">
           {/* Marquee track */}
           <div
