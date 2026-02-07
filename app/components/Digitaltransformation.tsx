@@ -25,7 +25,7 @@ const Digitaltransformation = () => {
         {/* Image */}
         <div className="w-full">
           <img
-            src="/Group 1707480421.svg"
+            src="/assets/images/Digitalbuttoniimg.svg"
             alt="trusted digital"
             className="w-full max-w-sm mx-auto object-contain"
           />
@@ -75,7 +75,7 @@ const Digitaltransformation = () => {
           Consult Now
           <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
             <img
-              src="/majesticons_arrow-up-line.png"
+              src="/assets/images/Herobuttonimg.png"
               alt="arrow"
               className="h-8 w-8"
             />
@@ -146,7 +146,7 @@ const Digitaltransformation = () => {
             Consult Now
             <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
               <img
-                src="/majesticons_arrow-up-line.png"
+                src="/assets/images/Herobuttonimg.png"
                 alt="arrow"
                 className="h-8 w-8"
               />
@@ -156,7 +156,7 @@ const Digitaltransformation = () => {
 
         <div className="w-[45%] h-full flex justify-center items-center">
           <img
-            src="/Group 1707480421.svg"
+            src="/assets/images/Digitalbuttoniimg.svg"
             alt="trusted digital"
             className="w-[500px] h-[500px] object-contain"
           />

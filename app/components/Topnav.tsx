@@ -121,7 +121,7 @@ const Topnav = () => {
           {/* LOGO */}
           <div className="w-[40%] sm:w-[30%] lg:w-[25%]">
             <img
-              src="/Frame 14 1.svg"
+              src="/assets/images/Mainlogo.svg"
               alt="logo"
               className="h-8 sm:h-9 md:h-10 lg:h-12"
             />
@@ -208,7 +208,7 @@ const Topnav = () => {
                   <X className="h-4 w-4 md:h-5 md:w-5" />
                 ) : (
                   <img
-                    src="/Background.svg"
+                    src="/assets/images/Hamburger.svg"
                     alt="menu"
                     className="h-4 w-4 md:h-5 md:w-5"
                   />

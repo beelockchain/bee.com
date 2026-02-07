@@ -52,8 +52,9 @@ const TAB_CONTENT: Record<
       { label: "AI Strategy Consulting", href: "#" },
       { label: "AI UI/UX Design Services", href: "#" },
       { label: "Machine Learning Development ", href: "#" },
-      { label: "Custom AI Development", href: "#" },
       { label: "LLM Development", href: "#" },
+      { label: "Custom AI Development", href: "#" },
+      
     ],
   },
   Software: {
@@ -73,7 +74,7 @@ function RouteTag({ label, href }: { label: string; href: string }) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1 text-sm md:text-lg text-gray-700 hover:text-yellow-400 transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-yellow-500 "
+      className="inline-flex items-center gap-1 text-sm md:text-lg text-gray-700  transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-yellow-500 "
     >
       {label}
       <span className="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs group-hover:bg-yellow-500 transition-colors">
@@ -214,7 +215,7 @@ export default function Transformes() {
         >
           {/* ---------------- HEADER ---------------- */}
           <div className="pt-8 pb-4">
-            <img src="/Services.png" alt="Services" className="" />
+            <img src="/assets/images/Services.png" alt="Services" className="" />
           </div>
 
           <div className="text-center mb-8 md:mb-12 px-6">
