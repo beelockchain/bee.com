@@ -255,7 +255,7 @@ const Topnav = () => {
           </div>
         </div>
 
-        <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto pr-8">
+        <div className="fixed top-130 md:top-90 z-[9999] pointer-events-auto pr-8">
           <h4 className="w-full text-end mb-4 md:text-right text-[15px] sm:text-[10px] md:text-[18px]  xl:text-[18px] lg:text-[20px]  text-black font-poppins">
             Connect With Us:
           </h4>

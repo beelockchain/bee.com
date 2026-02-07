@@ -49,11 +49,11 @@ const TAB_CONTENT: Record<
     routes: [
       { label: "Generative AI Development", href: "#" },
       { label: "Chat AI  App Development", href: "#" },
-      { label: "LLM Development", href: "#" },
       { label: "AI Strategy Consulting", href: "#" },
       { label: "AI UI/UX Design Services", href: "#" },
       { label: "Machine Learning Development ", href: "#" },
       { label: "Custom AI Development", href: "#" },
+      { label: "LLM Development", href: "#" },
     ],
   },
   Software: {
