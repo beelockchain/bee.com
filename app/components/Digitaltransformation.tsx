@@ -25,14 +25,14 @@ const Digitaltransformation = () => {
         {/* Image */}
         <div className="w-full">
           <img
-            src="/Group 1707480421.svg"
+            src="/assets/images/Digitalbuttoniimg.svg"
             alt="trusted digital"
             className="w-full max-w-sm mx-auto object-contain"
           />
         </div>
 
         {/* Content */}
-        <p className="text-md leading-8 text-gray-700 text-center">
+        <p className="text-sm leading-8 text-gray-700 text-center">
           As a forward-thinking
           <span className="text-[#FFCC00] ml-1">
             Digital Transformation Company
@@ -40,13 +40,13 @@ const Digitaltransformation = () => {
           , Beelockchain empowers organizations to achieve measurable business
           outcomes through automation, innovation, and scalable technologies.
         </p>
-        <p className="text-md leading-8 text-gray-700 text-center">
+        <p className="text-sm leading-8 text-gray-700 text-center">
           With over <span className="text-[#FFCC00] ml-1">8 years</span> of
           experience in delivering enterprise grade Digital transformation
           services and solutions, we help businesses modernize applications,
           optimize operations, and unlock new digital capabilities.
         </p>
-        <p className="text-md leading-8 text-gray-700 text-center">
+        <p className="text-sm leading-8 text-gray-700 text-center">
           Our future ready experts mitigate risks, streamline workflows, and
           solve complex
           <span className="text-[#FFCC00] ml-1">digital challenges</span> using
@@ -75,7 +75,7 @@ const Digitaltransformation = () => {
           Consult Now
           <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
             <img
-              src="/majesticons_arrow-up-line.png"
+              src="/assets/images/Herobuttonimg.png"
               alt="arrow"
               className="h-8 w-8"
             />
@@ -146,7 +146,7 @@ const Digitaltransformation = () => {
             Consult Now
             <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
               <img
-                src="/majesticons_arrow-up-line.png"
+                src="/assets/images/Herobuttonimg.png"
                 alt="arrow"
                 className="h-8 w-8"
               />
@@ -156,7 +156,7 @@ const Digitaltransformation = () => {
 
         <div className="w-[45%] h-full flex justify-center items-center">
           <img
-            src="/Group 1707480421.svg"
+            src="/assets/images/Digitalbuttoniimg.svg"
             alt="trusted digital"
             className="w-[500px] h-[500px] object-contain"
           />

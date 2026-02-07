@@ -58,7 +58,7 @@ const Herosection = () => {
 
         {/* Center Image */}
         <div className="w-full max-w-xs mb-10">
-          <img src="/Frame 4 2.svg" alt="BeeLockchain" className="w-full" />
+          <img src="/assets/images/Heromainimg.svg" alt="BeeLockchain" className="w-full" />
         </div>
 
         {/* Stats */}
@@ -96,7 +96,7 @@ const Herosection = () => {
             Consult Our Experts
             <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
               <img
-                src="/majesticons_arrow-up-line.png"
+                src="/assets/images/Herobuttonimg.png"
                 alt="arrow"
                 className="h-8 w-8"
               />
@@ -109,7 +109,7 @@ const Herosection = () => {
       {/* ⚠️ UNTOUCHED JSX */}
       <div className="hidden md:flex h-screen w-full flex-col justify-center items-center bg-white">
         <div className="h-[77%] w-full flex justify-center items-center mb-10">
-          <div className="w-[33%] h-[70%] relative flex justify-start items-start mt-36 pl-10">
+          <div className="w-[33%] h-[70%] relative flex justify-start items-start mt-60 pl-10">
             <div className="relative">
               <h1 className="text-[24px] leading-10 text-black font-extrabold">
                 Digital Transformation Company
@@ -123,7 +123,7 @@ const Herosection = () => {
           <div className="w-[30%] h-[70%]">
             <img
               ref={imgRef}
-              src="/Frame 4 2.svg"
+              src="/assets/images/Heromainimg.svg"
               className="w-full"
               style={{ transformStyle: "preserve-3d" }}
               onMouseMove={handleMouseMove}
@@ -136,7 +136,7 @@ const Herosection = () => {
               {/* Background image with opacity */}
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-30"
-                style={{ backgroundImage: "url('/Frame 67 1.svg')" }}
+                style={{ backgroundImage: "url('/assets/images/Herosideimg2.svg')" }}
               />
 
               {/* Content */}
@@ -152,7 +152,7 @@ const Herosection = () => {
                   Consult Our Experts
                   <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
                     <img
-                      src="/majesticons_arrow-up-line.png"
+                      src="/assets/images/Herobuttonimg.png"
                       alt="arrow"
                       className="h-8 w-8"
                     />

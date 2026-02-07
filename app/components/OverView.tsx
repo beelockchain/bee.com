@@ -29,19 +29,19 @@ const highlightNumbers = (text: string) => {
 ====================== */
 const cardsData = [
   {
-    initialLogo: "/Group 300 2.svg",
+    initialLogo: "/assets/images/Overviewlogo.svg",
     initialText: "People-centric Digital Transformation",
-    hoverLogo: "/Group 300 2.svg",
+    hoverLogo: "/assets/images/Overviewlogo.svg",
     hoverTitle: "Enterprise-Grade Security 100",
     hoverSubtitle: "For Your Business",
-    image: "/assets/images/why-choose-img1.png",
+    image: "/assets/images/whychooseusimg1.svg",
     description:
       "We believe digital transformation succeeds when people come first. At Beelockchain, we design solutions around real user needs, empower teams, and drive adoption that creates meaningful, lasting impact beyond technology alone.",
   },
   {
-    initialLogo: "/Group 300 2.svg",
+    initialLogo: "/assets/images/Overviewlogo.svg",
     initialText: "Vendor-neutral & strategy-first approach",
-    hoverLogo: "/Group 300 2.svg",
+    hoverLogo: "/assets/images/Overviewlogo.svg",
     hoverTitle: "Automation Excellence 7",
     hoverSubtitle: "Process Reliability",
     image: "/assets/images/why-choose-img1.png",
@@ -49,32 +49,32 @@ const cardsData = [
       "Our vendor-neutral, strategy-first approach is why organizations choose Beelockchain. We focus on business outcomes, not tools, delivering unbiased guidance and flexible solutions aligned with long-term goals.",
   },
   {
-    initialLogo: "/Group 300 2.svg",
+    initialLogo: "/assets/images/Overviewlogo.svg",
     initialText: "Market Responsiveness",
-    hoverLogo: "/Group 300 2.svg",
+    hoverLogo: "/assets/images/Overviewlogo.svg",
     hoverTitle: "Safe & Scalable 24x7",
     hoverSubtitle: "Data Infrastructure",
-    image: "/assets/images/why-choose-img1.png",
+    image: "/assets/images/whychooseusimg3.svg",
     description:
       "Beelockchain helps organizations stay ahead of change. We respond quickly to market shifts, emerging technologies, and customer demands—enabling confident decisions and sustained competitiveness in dynamic environments.",
   },
   {
-    initialLogo: "/Group 300 2.svg",
+    initialLogo: "/assets/images/Overviewlogo.svg",
     initialText: "Proactive Risk Mitigation",
-    hoverLogo: "/Group 300 2.svg",
+    hoverLogo: "/assets/images/Overviewlogo.svg",
     hoverTitle: "Real-Time Insights 24",
     hoverSubtitle: "Modern Intelligence",
-    image: "/assets/images/why-choose-img1.png",
+    image: "/assets/images/whychooseusimg4.svg",
     description:
       "We proactively identify and reduce risks before they become barriers. Beelockchain embeds security, compliance, and resilience into every solution, protecting operations, reputation, and future growth.",
   },
   {
-    initialLogo: "/Group 300 2.svg",
+    initialLogo: "/assets/images/Overviewlogo.svg",
     initialText: "Agile Methodologies",
-    hoverLogo: "/Group 300 2.svg",
+    hoverLogo: "/assets/images/Overviewlogo.svg",
     hoverTitle: "Always-On Support 24x7",
     hoverSubtitle: "Dedicated Experts",
-    image: "/assets/images/why-choose-img1.png",
+    image: "/assets/images/whychooseusimg.svg",
     description:
       "Our agile methodologies enable faster delivery and continuous improvement. Beelockchain works collaboratively with teams to adapt quickly, deliver value early, and evolve solutions as business needs change.",
   },
@@ -123,9 +123,9 @@ const OverView = () => {
       {/* ================= TITLE ================= */}
       <div className="mb-10 text-center">
         <h2 className="text-black text-[34px] font-bold">
-          Why <span>Beelockchain</span>
+          Why Choose <span>Beelockchain</span>
         </h2>
-        <p className="w-full md:w-[500px] max-w-full text-black text-lg">
+        <p className="w-full md:w-[750px] max-w-full text-black text-lg">
           As experts in digital transformation, we create customized, future-ready solutions that ensure your investment counts by focusing on your unique customer and market needs.
         </p>
       </div>

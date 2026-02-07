@@ -8,25 +8,25 @@ const testimonials = [
     id: 1,
     text: "We appreciated the Beelockchain team's strong understanding of healthcare operations. The mobile app they built improved internal coordination and patient communication. Most importantly, the team managed the project efficiently and helped us launch the app at the right time without compromising quality. They were professional, realistic, and consistent throughout the process.",
     client: "James Anderson – Chief Technology Officer (CTO)",
-    image: "/assets/images/insight-one.png",
+    image: "/assets/images/testimonialcurosal2.svg",
   },
   {
     id: 2,
     text: "Collaborating with the Beelockchain developer team, we migrated our existing system into a fully integrated ERP solution for our manufacturing operations. Their technical execution, business alignment, and launch support ensured a smooth go-live. ",
     client: "Michael Thompson – Founder & CEO",
-    image: "/assets/images/insight-two.png",
+    image: "/assets/images/testimonialcurosal3.svg",
   },
   {
     id: 3,
     text: "Our experience with the Beelockchain development team was consistently positive from start to launch. Their strong technical expertise and clear alignment with our business goals enabled the successful deployment of an AI chatbot that supports our e-commerce platform and strengthens customer service operations.",
     client: "Emma Wilson – Startup Co-Founder",
-    image: "/assets/images/insight-three.png",
+    image: "/assets/images/testimonialcurosal.svg",
   },
   {
     id: 4,
     text: "The Beelockchain team supported our beauty care brand with a well-planned digital marketing strategy. Their thoughtful content planning, targeted campaign execution, and consistent performance tracking helped improve brand awareness, audience engagement, and overall digital presence.",
     client: "Emily Roberts – Product Manager",
-    image: "/assets/images/insight-three.png",
+    image: "/assets/images/testimonialcurosal4.svg",
   },
 ];
 
