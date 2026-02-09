@@ -17,7 +17,7 @@ const steps = [
         .
       </>
     ),
-    image: "/assets/images/beelock-trans-icon1.png",
+    image: "/assets/images/beelock-trans-icon1.webp",
     rotate: "-rotate-2",
   },
   {
@@ -32,7 +32,7 @@ const steps = [
         to digitize your operations.
       </>
     ),
-    image: "/assets/images/beelock-trans-icon2.png",
+    image: "/assets/images/beelock-trans-icon2.webp",
     rotate: "",
   },
   {
@@ -47,7 +47,7 @@ const steps = [
         .
       </>
     ),
-    image: "/assets/images/beelock-trans-icon3.png",
+    image: "/assets/images/beelock-trans-icon3.webp",
     rotate: "rotate-2",
   },
 ];

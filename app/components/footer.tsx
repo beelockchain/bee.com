@@ -9,25 +9,25 @@ const Footer = () => {
       title: "CANADA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+02 3486 4631",
-      src: "/assets/images/location1.png",
+      src: "/assets/images/location1.webp",
     },
     {
       title: "USA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+01 9876 5432",
-      src: "/assets/images/location2.png",
+      src: "/assets/images/location2.webp",
     },
     {
       title: "UK",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+44 7654 3210",
-      src: "/assets/images/location3.png",
+      src: "/assets/images/location3.webp",
     },
     {
       title: "INDIA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+91 98765 43210",
-      src: "/assets/images/location4.png",
+      src: "/assets/images/location4.webp",
     },
   ];
   
@@ -37,27 +37,33 @@ const Footer = () => {
   {
     name: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61585250317865",
-    src: "/assets/images/fb-icon.png",
+    src: "/assets/images/fb-icon.webp",
+    
   },
   {
     name: "Twitter",
     href: "https://x.com/beelockchain",
-    src: "/assets/images/x-icon.png",
+    src: "/assets/images/x-icon.webp",
   },
   {
     name: "Whatsapp",
     href: "https://wa.me/+919025217523",
-    src: "/assets/images/whatsapp-icon.png",
+    src: "/assets/images/whatsapp-icon.webp",
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/beelockchain",
-    src: "/assets/images/linkedin-icon.png",
+    src: "/assets/images/linkedin-icon.webp",
   },
-  {
-    name: "Telegram",
-    href: "https://t.me/+919025217523",
-    src: "/assets/images/telegram-icon.png",
+  // {
+  //   name: "Telegram",
+  //   href: "https://t.me/+919025217523",
+  //   src: "/assets/images/telegram-icon.webp",
+  // },
+   {
+    name: "Instagram",
+    href: "https://www.instagram.com/beelockchain_com",
+    src: "/assets/images/insta-icon.png",
   },
 ];
 
@@ -75,7 +81,7 @@ Area We Occupied
   <div
     className="absolute inset-0 bg-cover bg-center rounded-xl opacity-20 pointer-events-none"
     style={{
-      backgroundImage: "url('/assets/images/line-wave.png')",
+      backgroundImage: "url('/assets/images/line-wave.webp')",
       minHeight: "100%", 
     }}
   ></div>
@@ -119,15 +125,15 @@ Area We Occupied
   gap-2 sm:gap-0
 ">
   {/* Phone */}
-  <div className="flex items-center gap-1.5 sm:gap-2">
+  <div className="flex items-center gap-1 sm:gap-2">
     <Image
-      src="/assets/images/location-icon.png"
+      src="/assets/images/location-icon.webp"
       alt="Location"
       width={14}
       height={14}
       className="sm:w-[16px] sm:h-[16px]"
     />
-    <span className="text-[10px] sm:text-[13px] lg:text-[14px] font-medium text-black font-poppins">
+    <span className="text-[10px] sm:text-[8px]  xl:text-[12px] lg:text-[11px] font-medium text-black font-poppins">
       {card.contact}
     </span>
   </div>
@@ -141,8 +147,9 @@ Area We Occupied
     className="
       object-contain
       self-center sm:self-auto
-      sm:w-[64px] sm:h-[64px]
-      lg:w-[80px] lg:h-[80px]
+      sm:w-[40px] sm:h-[40px]
+      xl:w-[70px] xl:h-[70px]
+      lg:w-[70px] lg:h-[70px]
     "
   />
 </div>
@@ -163,7 +170,7 @@ Area We Occupied
           {/* LEFT — LOGO */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
             <Image
-              src="/assets/images/footer-logo.png"
+              src="/assets/images/footer-logo.webp"
               alt="Company Logo"
               width={160}
               height={40}
@@ -221,7 +228,7 @@ Area We Occupied
      <div className="pt-10">
   <div className="flex justify-center mb-6">
     <Image
-      src="/assets/images/footer-text.png"
+      src="/assets/images/footer-text.webp"
       alt="Footer Text"
       width={1400}
       height={219}

@@ -1,12 +1,12 @@
 const Customers = () => {
   // Your customer logos/images
   const customerImages = [
-    "/assets/images/Customerimg1.svg",
-    "/assets/images/Customerimg2.svg",
-    "/assets/images/Customerimg3.svg",
-    "/assets/images/Customerimg4.svg",
-    "/assets/images/Customerimg2.svg",
-    "/assets/images/Customerimg4.svg",
+    "/assets/images/Customerimg1.webp",
+    "/assets/images/Customerimg2.webp",
+    "/assets/images/Customerimg3.webp",
+    "/assets/images/Customerimg4.webp",
+    "/assets/images/Customerimg2.webp",
+    "/assets/images/Customerimg4.webp",
   ];
 
   return (

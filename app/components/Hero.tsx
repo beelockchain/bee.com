@@ -58,7 +58,7 @@ const Herosection = () => {
 
         {/* Center Image */}
         <div className="w-full max-w-xs mb-10">
-          <img src="/assets/images/Heromainimg.svg" alt="BeeLockchain" className="w-full" />
+          <img src="/assets/images/Heromainimg.webp" alt="BeeLockchain" className="w-full" />
         </div>
 
         {/* Stats */}
@@ -123,7 +123,7 @@ const Herosection = () => {
           <div className="w-[30%] h-[70%]">
             <img
               ref={imgRef}
-              src="/assets/images/Heromainimg.svg"
+              src="/assets/images/Heromainimg.webp"
               className="w-full"
               style={{ transformStyle: "preserve-3d" }}
               onMouseMove={handleMouseMove}

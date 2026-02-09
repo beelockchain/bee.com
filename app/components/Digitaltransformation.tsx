@@ -25,7 +25,7 @@ const Digitaltransformation = () => {
         {/* Image */}
         <div className="w-full">
           <img
-            src="/assets/images/Digitalbuttoniimg.svg"
+            src="/assets/images/Digitalbuttoniimg.webp"
             alt="trusted digital"
             className="w-full max-w-sm mx-auto object-contain"
           />
@@ -156,7 +156,7 @@ const Digitaltransformation = () => {
 
         <div className="w-[45%] h-full flex justify-center items-center">
           <img
-            src="/assets/images/Digitalbuttoniimg.svg"
+            src="/assets/images/Digitalbuttoniimg.webp"
             alt="trusted digital"
             className="w-[500px] h-[500px] object-contain"
           />

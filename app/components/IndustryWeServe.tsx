@@ -16,18 +16,18 @@ const industries = [
 ];
 
 const industryImages = [
-  "ind-icon1.png",
-  "ind-icon2.png",
-  "ind-icon3.png",
-  "ind-icon4.png",
-  "ind-icon5.png",
-  "ind-icon6.png",
-  "ind-icon7.png",
-  "ind-icon8.png",
-  "ind-icon9.png",
-  "ind-icon10.png",
-  "ind-icon11.png",
-  "ind-icon12.png",
+  "ind-icon1.webp",
+  "ind-icon2.webp",
+  "ind-icon3.webp",
+  "ind-icon4.webp",
+  "ind-icon5.webp",
+  "ind-icon6.webp",
+  "ind-icon7.webp",
+  "ind-icon8.webp",
+  "ind-icon9.webp",
+  "ind-icon10.webp",
+  "ind-icon11.webp",
+  "ind-icon12.webp",
 ];
 
 const IndustryWeServe = () => {

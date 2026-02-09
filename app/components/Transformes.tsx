@@ -215,7 +215,7 @@ export default function Transformes() {
         >
           {/* ---------------- HEADER ---------------- */}
           <div className="pt-8 pb-4">
-            <img src="/assets/images/Services.png" alt="Services" className="" />
+            <img src="/assets/images/Services.webp" alt="Services" className="" />
           </div>
 
           <div className="text-center mb-8 md:mb-12 px-6">

@@ -29,28 +29,33 @@ const Topnav = () => {
     {
       name: "Facebook",
       href: "https://www.facebook.com/profile.php?id=61585250317865",
-      src: "/assets/images/fb-icon.png",
+      src: "/assets/images/fb-icon.webp",
     },
     {
       name: "Twitter",
       href: "https://x.com/beelockchain",
-      src: "/assets/images/x-icon.png",
+      src: "/assets/images/x-icon.webp",
     },
     {
       name: "Whatsapp",
       href: "https://wa.me/+919025217523",
-      src: "/assets/images/whatsapp-icon.png",
+      src: "/assets/images/whatsapp-icon.webp",
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/company/beelockchain",
-      src: "/assets/images/linkedin-icon.png",
+      src: "/assets/images/linkedin-icon.webp",
     },
-    {
-      name: "Telegram",
-      href: "https://t.me/+919025217523",
-      src: "/assets/images/telegram-icon.png",
-    },
+    // {
+    //   name: "Telegram",
+    //   href: "https://t.me/+919025217523",
+    //   src: "/assets/images/telegram-icon.webp",
+    // },
+     {
+    name: "Instagram",
+    href: "https://www.instagram.com/beelockchain_com",
+    src: "/assets/images/insta-icon.png",
+  },
   ];
 
   const navItems = [
@@ -121,9 +126,9 @@ const Topnav = () => {
           {/* LOGO */}
           <div className="w-[40%] sm:w-[30%] lg:w-[25%]">
             <img
-              src="/assets/images/Mainlogo.svg"
+              src="/assets/images/footer-logo.webp"
               alt="logo"
-              className="h-8 sm:h-9 md:h-10 lg:h-12"
+              className="h-8 sm:h-9 md:h-10 lg:h-14"
             />
           </div>
 
@@ -208,7 +213,7 @@ const Topnav = () => {
                   <X className="h-4 w-4 md:h-5 md:w-5" />
                 ) : (
                   <img
-                    src="/assets/images/Hamburger.svg"
+                    src="/assets/images/Hamburger.webp"
                     alt="menu"
                     className="h-4 w-4 md:h-5 md:w-5"
                   />
