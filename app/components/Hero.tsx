@@ -84,7 +84,7 @@ const Herosection = () => {
             </div>
           ))}
         </div>
-        <div className="h-72 w-full flex flex-col justify-center items-center bg-cover bg-center gap-2">
+        <div className="h-60 w-full flex flex-col justify-center items-center bg-cover bg-center gap-2">
           <div className="text-black text-sm text-center">
             Beelockchain is a global digital transformation company that
             integrates future-ready solutions across AI, Blockchain, Cloud
@@ -107,24 +107,24 @@ const Herosection = () => {
 
       {/* ================= DESKTOP + TABLET LAYOUT ================= */}
       {/* ⚠️ UNTOUCHED JSX */}
-      <div className="hidden md:flex h-screen w-full flex-col justify-center items-center bg-white">
-        <div className="h-[77%] w-full flex justify-center items-center mb-10">
-          <div className="w-[33%] h-[70%] relative flex justify-start items-start mt-60 pl-10">
+      <div className="hidden md:flex md:h-[700px] lg:h-screen w-full flex-col justify-center items-center bg-white">
+        <div className="lg:h-[77%] md:h-full w-full flex justify-center items-center mb-10">
+          <div className="w-[33%] h-[70%] relative flex justify-start items-start mt-20 lg:mt-60 pl-2 lg:pl-10">
             <div className="relative">
-              <h1 className="text-[24px] leading-10 text-black font-extrabold">
+              <h1 className="md:text-sm lg:text-[24px] leading-10 text-black font-extrabold">
                 Digital Transformation Company
               </h1>
-              <h1 className="text-[24px] leading-10 text-black font-extrabold">
+              <h1 className="md:text-sm lg:text-[24px] leading-10 text-black font-extrabold">
                 Modernizing The Way You Work
               </h1>
             </div>
           </div>
 
-          <div className="w-[30%] h-[70%]">
+          <div className="w-[30%] h-[70%] flex justify-center md:items-center lg:items-start ">
             <img
               ref={imgRef}
               src="/assets/images/Heromainimg.webp"
-              className="w-full"
+              className="w-full "
               style={{ transformStyle: "preserve-3d" }}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
@@ -140,21 +140,21 @@ const Herosection = () => {
               />
 
               {/* Content */}
-              <div className="relative z-10 h-full flex flex-col justify-center items-start gap-6 px-6">
-                <div className="text-black text-lg">
+              <div className="relative z-10 h-full flex flex-col justify-center items-start gap-6 sm:px-6 md:px-2 lg:px-6">
+                <div className="text-black text-sm md:text-sm lg:text-lg">
                   Beelockchain is a global digital transformation company that
                   integrates future-ready solutions across AI, Blockchain, Cloud
                   Infrastructure, Big Data, and Mobile Applications with an
                   advanced, customer-centric experience.
                 </div>
 
-                <button className="flex items-center gap-2 text-black border border-black px-2 py-1 rounded-full font-medium shadow hover:bg-gray-100 transition">
+                <button className="flex items-center gap-2 text-black border border-black px-2 py-1 rounded-full font-medium shadow hover:bg-gray-100 transition text-xs lg:text-lg">
                   Consult Our Experts
-                  <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
+                  <div className="lg:h-8 lg:w-8 md:h-4 md:w-4 rounded-full flex justify-center items-center bg-yellow-500">
                     <img
                       src="/assets/images/Herobuttonimg.webp"
-                      alt="arrow"
-                      className="h-8 w-8"
+                      alt="arrow" 
+                      className="lg:h-8 lg:w-8 md:h-4 md:w-4"
                     />
                   </div>
                 </button>

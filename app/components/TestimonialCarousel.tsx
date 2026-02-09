@@ -50,7 +50,7 @@ const TestimonialCarousel = () => {
         <div className="max-w-[800px] px-6 relative">
 
           {/* SLIDER */}
-          <div className="md:overflow-hidden">
+          <div className="md:overflow-hidden m-8">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${current * 100}%)` }}

@@ -173,17 +173,19 @@ const Topnav = () => {
                 bg-black
                 text-white
                 px-3 py-2
-                md:px-4 md:py-2.5
+                md:px-2 md:py-1.5
+                lg:px-4 lg:py-2.5
                 rounded-full
                 text-xs
-                md:text-sm
+                lg:text-sm
+                md:text-xs
                 hover:bg-gray-800
                 transition
                 border border-black
               "
             >
               Get started
-              <ArrowUpRight className="ml-2 h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
+              <ArrowUpRight className=" h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
             </button>
 
             {/* MENU BUTTON (ALL SCREENS) */}

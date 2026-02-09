@@ -30,7 +30,6 @@ export default function Home() {
       <Testi/>
       <TestimonialCarousel/>
       <OverView />
-     
       <Technologies/>
       <IndustryWeServe/>
       <BeelockchainTransformation/>

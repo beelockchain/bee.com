@@ -326,7 +326,7 @@ export default function Transformes() {
                 return (
                   <div
                     key={tab}
-                    className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-500 px-6"
+                    className="absolute inset-0 flex flex-col items-center justify-start transition-all duration-500 px-6"
                     style={{
                       opacity: isActive ? 1 : 0,
                       transform: `translateY(${isActive ? 0 : index < activeTab ? -20 : 20}px)`,
