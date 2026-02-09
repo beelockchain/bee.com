@@ -122,7 +122,7 @@ const Digitaltransformation = () => {
           <p className="md:text-sm lg:text-lg leading-8 text-gray-700">
             Our future ready experts mitigate risks, streamline workflows, and
             solve complex
-            <span className="text-[#FFCC00] ml-1">digital challenges</span>{" "}
+            <span className="text-[#FFCC00] ml-1">digital challenges</span>
             using front-line strategies.
           </p>
 
