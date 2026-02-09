@@ -139,7 +139,7 @@ const Digitaltransformation = () => {
               rounded-full
               font-medium
               shadow
-              hover:bg-gray-100
+              hover:bg-gray-100 
               transition
             "
           >
