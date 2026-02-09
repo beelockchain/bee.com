@@ -5,16 +5,16 @@ interface MarqueeRowProps {
 }
 
 const users = [
-  { name: "James Anderson", email: "debra.holt@example.com",role:"Mobile App", image: "assets/images/testimonial2.svg" },
-  { name: "Sophia Martinez ", email: "wade@example.com",role:"Pay-Per-Click", image: "assets/images/testimonial3.svg" },
-  { name: "Savannah Nguyen", email: "savannah@example.com",role:"ERP solution", image: "assets/images/testimonial4.svg" },
-  { name: "Brooklyn Simmons", email: "brooklyn@example.com",role:"Digital marketing", image: "assets/images/testimonial5.svg" },
-  { name: "Leslie Alexander", email: "leslie@example.com",role:"Web App", image: "assets/images/testimonial6.svg" },
-   { name: "Courtney Henry", email: "debra.holt@example.com",role:"DevOps Services", image: "assets/images/testimonial7.svg" },
-  { name: "Wade Warren", email: "wade@example.com",role:"Android App", image: "assets/images/testimonial8.svg" },
-  { name: "Savannah Nguyen", email: "savannah@example.com",role:"UI/UX Design", image: "assets/images/testimonial9.svg" },
-  { name: "Brooklyn Simmons", email: "brooklyn@example.com",role:"Digital Transformation", image: "assets/images/testimonial10.svg" },
-  { name: "Leslie Alexander", email: "leslie@example.com",role:"AI chatbot", image: "assets/images/testimonial11.svg" },
+  { name: "James Anderson", email: "debra.holt@example.com",role:"Mobile App", image: "assets/images/testimonial2.webp" },
+  { name: "Sophia Martinez ", email: "wade@example.com",role:"Pay-Per-Click", image: "assets/images/testimonial3.webp" },
+  { name: "Savannah Nguyen", email: "savannah@example.com",role:"ERP solution", image: "assets/images/testimonial4.webp" },
+  { name: "Brooklyn Simmons", email: "brooklyn@example.com",role:"Digital marketing", image: "assets/images/testimonial5.webp" },
+  { name: "Leslie Alexander", email: "leslie@example.com",role:"Web App", image: "assets/images/testimonial6.webp" },
+   { name: "Courtney Henry", email: "debra.holt@example.com",role:"DevOps Services", image: "assets/images/testimonial7.webp" },
+  { name: "Wade Warren", email: "wade@example.com",role:"Android App", image: "assets/images/testimonial8.webp" },
+  { name: "Savannah Nguyen", email: "savannah@example.com",role:"UI/UX Design", image: "assets/images/testimonial9.webp" },
+  { name: "Brooklyn Simmons", email: "brooklyn@example.com",role:"Digital Transformation", image: "assets/images/testimonial10.webp" },
+  { name: "Leslie Alexander", email: "leslie@example.com",role:"AI chatbot", image: "assets/images/testimonial11.webp" },
 ];
 
 const MarqueeRow = ({ direction }: MarqueeRowProps) => {

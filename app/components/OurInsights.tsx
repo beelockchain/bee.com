@@ -8,38 +8,38 @@ const insights = [
   {
     id: 1,
     title: "Low-Code App Development Company: Build Enterprise-Ready Apps Faster",
-    image: "/assets/images/insight-one.jpg",
+    image: "/assets/images/insight-one.webp",
     tags: [ "App Development"]
   },
   // {
   //   id: 2,
   //   title: "How AR and VR Are Transforming Digital Experiences in 2026",
-  //   image: "/assets/images/insight-two.jpg",
+  //   image: "/assets/images/insight-two.webp",
   //   tags: ["AR", "VR", "Digital Experience"]
   // },
     {
     id: 2,
     title: "How AI-Powered Blockchain Is Redefining Enterprise Digital Transformation in 2026",
-    image: "/assets/images/insight-five.jpg",
+    image: "/assets/images/insight-five.webp",
     tags: ["Digital Transformation"]
   },
   // {
   //   id: 3,
   //   title: "Top Unique And Profitable Business Ideas For 2026",
-  //   image: "/assets/images/insight-three.jpg",
+  //   image: "/assets/images/insight-three.webp",
   //   tags: ["Business", "Startups", "Trends 2026"]
   // },
   {
     id: 3,
     title: "How to Choose the Right Mobile App Development Partner for Your Industry",
-    image: "/assets/images/insight-four.jpg",
+    image: "/assets/images/insight-four.webp",
     tags: ["Mobile Development"]
   },
 
   {
     id: 4,
     title: "AI-Driven Blockchain vs Traditional Systems: What Businesses Must Know",
-    image: "/assets/images/insight-six.jpg",
+    image: "/assets/images/insight-six.webp",
     tags: [ "AI"]
   }
 ];
@@ -112,7 +112,7 @@ const OurInsights = () => {
                   <Image src={item.image} alt={item.title} fill className="object-cover" />
                 </div>
                 <div className="flex flex-col justify-between flex-1 p-5">
-                  <h3 className="text-[14px] sm:text-[16px] md:text-[16px] lg:text-[16px] font-semibold text-black font-poppins leading-snug">
+                  <h3 className="text-[14px] sm:text-[16px] md:text-[16px] lg:text-[14px] font-semibold text-black font-poppins leading-snug">
                     {item.title}
                   </h3>
                   <div className="flex items-center justify-between text-[12px] sm:text-[14px] lg:text-[11px] text-black/70 font-poppins mt-4">

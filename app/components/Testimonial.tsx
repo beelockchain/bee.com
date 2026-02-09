@@ -7,7 +7,7 @@ const Testimonial = () => {
       <div className="hidden md:flex justify-center items-center w-full bg-white mt-10">
         <div className="flex flex-col justify-center items-center w-full">
           <img
-            src="/assets/images/TESTIMONIALS.png"
+            src="/assets/images/TESTIMONIALS.webp"
             alt="Testimonial"
             className="w-[80%]"
           />
@@ -35,7 +35,7 @@ const Testimonial = () => {
       <div className="flex md:hidden w-full bg-white mt-6 px-4">
         <div className="flex flex-col w-full items-center">
           <img
-            src="/assets/images/TESTIMONIALS.png"
+            src="/assets/images/TESTIMONIALS.webp"
             alt="Testimonial"
             className="w-full"
           />

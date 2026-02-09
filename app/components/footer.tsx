@@ -63,7 +63,7 @@ const Footer = () => {
    {
     name: "Instagram",
     href: "https://www.instagram.com/beelockchain_com",
-    src: "/assets/images/insta-icon.png",
+    src: "/assets/images/insta-icon.webp",
   },
 ];
 
@@ -98,7 +98,7 @@ Area We Occupied
         min-h-[170px] sm:min-h-[200px] lg:min-h-[220px]
       "
       style={{
-        backgroundImage: "url('/assets/images/location-bgcard.png')",
+        backgroundImage: "url('/assets/images/location-bgcard.webp')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -170,7 +170,7 @@ Area We Occupied
           {/* LEFT — LOGO */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
             <Image
-              src="/assets/images/footer-logo.webp"
+              src="/assets/images/Mainlogo.webp"
               alt="Company Logo"
               width={160}
               height={40}

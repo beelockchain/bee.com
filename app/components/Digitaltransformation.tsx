@@ -75,7 +75,7 @@ const Digitaltransformation = () => {
           Consult Now
           <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
             <img
-              src="/assets/images/Herobuttonimg.png"
+              src="/assets/images/Herobuttonimg.webp"
               alt="arrow"
               className="h-8 w-8"
             />
@@ -146,7 +146,7 @@ const Digitaltransformation = () => {
             Consult Now
             <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
               <img
-                src="/assets/images/Herobuttonimg.png"
+                src="/assets/images/Herobuttonimg.webp"
                 alt="arrow"
                 className="h-8 w-8"
               />

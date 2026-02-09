@@ -29,52 +29,52 @@ const highlightNumbers = (text: string) => {
 ====================== */
 const cardsData = [
   {
-    initialLogo: "/assets/images/Overviewlogo.svg",
+    initialLogo: "/assets/images/Overviewlogo.webp",
     initialText: "People-centric Digital Transformation",
-    hoverLogo: "/assets/images/Overviewlogo.svg",
+    hoverLogo: "/assets/images/Overviewlogo.webp",
     hoverTitle: "Enterprise-Grade Security 100",
     hoverSubtitle: "For Your Business",
-    image: "/assets/images/whychooseusimg1.svg",
+    image: "/assets/images/whychooseusimg1.webp",
     description:
       "We believe digital transformation succeeds when people come first. At Beelockchain, we design solutions around real user needs, empower teams, and drive adoption that creates meaningful, lasting impact beyond technology alone.",
   },
   {
-    initialLogo: "/assets/images/Overviewlogo.svg",
+    initialLogo: "/assets/images/Overviewlogo.webp",
     initialText: "Vendor-neutral & strategy-first approach",
-    hoverLogo: "/assets/images/Overviewlogo.svg",
+    hoverLogo: "/assets/images/Overviewlogo.webp",
     hoverTitle: "Automation Excellence 7",
     hoverSubtitle: "Process Reliability",
-    image: "/assets/images/why-choose-img1.png",
+    image: "/assets/images/why-choose-img1.webp",
     description:
       "Our vendor-neutral, strategy-first approach is why organizations choose Beelockchain. We focus on business outcomes, not tools, delivering unbiased guidance and flexible solutions aligned with long-term goals.",
   },
   {
-    initialLogo: "/assets/images/Overviewlogo.svg",
+    initialLogo: "/assets/images/Overviewlogo.webp",
     initialText: "Market Responsiveness",
-    hoverLogo: "/assets/images/Overviewlogo.svg",
+    hoverLogo: "/assets/images/Overviewlogo.webp",
     hoverTitle: "Safe & Scalable 24x7",
     hoverSubtitle: "Data Infrastructure",
-    image: "/assets/images/whychooseusimg3.svg",
+    image: "/assets/images/whychooseusimg3.webp",
     description:
       "Beelockchain helps organizations stay ahead of change. We respond quickly to market shifts, emerging technologies, and customer demands—enabling confident decisions and sustained competitiveness in dynamic environments.",
   },
   {
-    initialLogo: "/assets/images/Overviewlogo.svg",
+    initialLogo: "/assets/images/Overviewlogo.webp",
     initialText: "Proactive Risk Mitigation",
-    hoverLogo: "/assets/images/Overviewlogo.svg",
+    hoverLogo: "/assets/images/Overviewlogo.webp",
     hoverTitle: "Real-Time Insights 24",
     hoverSubtitle: "Modern Intelligence",
-    image: "/assets/images/whychooseusimg4.svg",
+    image: "/assets/images/whychooseusimg4.webp",
     description:
       "We proactively identify and reduce risks before they become barriers. Beelockchain embeds security, compliance, and resilience into every solution, protecting operations, reputation, and future growth.",
   },
   {
-    initialLogo: "/assets/images/Overviewlogo.svg",
+    initialLogo: "/assets/images/Overviewlogo.webp",
     initialText: "Agile Methodologies",
-    hoverLogo: "/assets/images/Overviewlogo.svg",
+    hoverLogo: "/assets/images/Overviewlogo.webp",
     hoverTitle: "Always-On Support 24x7",
     hoverSubtitle: "Dedicated Experts",
-    image: "/assets/images/whychooseusimg.svg",
+    image: "/assets/images/whychooseusimg.webp",
     description:
       "Our agile methodologies enable faster delivery and continuous improvement. Beelockchain works collaboratively with teams to adapt quickly, deliver value early, and evolve solutions as business needs change.",
   },

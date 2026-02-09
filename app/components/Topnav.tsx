@@ -54,7 +54,7 @@ const Topnav = () => {
      {
     name: "Instagram",
     href: "https://www.instagram.com/beelockchain_com",
-    src: "/assets/images/insta-icon.png",
+    src: "/assets/images/insta-icon.webp",
   },
   ];
 

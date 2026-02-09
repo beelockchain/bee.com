@@ -112,9 +112,7 @@ const MarqueeRow = ({ direction }: { direction: "left" | "right" }) => {
 
   return (
     <div className="relative w-full">
-      {/* Fades */}
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-white to-transparent z-20" />
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent z-20" />
+
 
       {/* Track */}
       <div
@@ -155,7 +153,7 @@ const Testi = () => {
               Trusted by Leading Enterprises and Innovators
             </p>
 
-            <div className="w-[600px] h-60 flex flex-col gap-3 mt-6 overflow-hidden pt-6">
+            <div className="w-[600px] h-60 flex flex-col gap-3 mt-6 overflow-hidden">
               <MarqueeRow direction="left" />
               <MarqueeRow direction="right" />
             </div>

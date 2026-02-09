@@ -79,11 +79,11 @@ const BeelockchainTransformation = () => {
                   {item.step}
                 </span>
 
-                <h3 className="text-[20px] font-semibold font-[Poppins] text-zinc-800 mb-3">
+                <h3 className="text-[18px] sm:text-[12px] md:text-[12px] lg:text-[20px]  font-semibold font-[Poppins] text-zinc-800 mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-zinc-500 text-[15px] leading-6">
+                <p className="text-zinc-500 text-[14px] sm:text-[12px] md:text-[10px] lg:text-[15px] leading-6">
                   {item.description}
                 </p>
               </div>
