@@ -467,9 +467,9 @@ const Technologies = () => {
             display: flex;
             align-items: center;
             justify-content: center;
-              height: 420px;
-
+            height: 420px;
           }
+          
           .hex-wrapper {
             position: absolute;
             top: 50%;
@@ -551,7 +551,7 @@ const Technologies = () => {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap:40px 20px;
+            gap: 40px 20px;
             padding: 0px;
             max-width: 100%;
           }
@@ -607,191 +607,135 @@ const Technologies = () => {
           }
 
           /* Desktop Hex Positions - Row 1 (9 hexagons) */
-          .hex-wrapper:nth-of-type(1) {
-            margin-left: -560px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(2) {
-            margin-left: -420px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(3) {
-            margin-left: -280px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(4) {
-            margin-left: -140px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(5) {
-            margin-left: 0px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(6) {
-            margin-left: 140px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(7) {
-            margin-left: 280px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(8) {
-            margin-left: 420px;
-            margin-top: -108px;
-          }
-          .hex-wrapper:nth-of-type(9) {
-            margin-left: 560px;
-            margin-top: -108px;
-          }
+          .hex-wrapper:nth-of-type(1) { margin-left: -560px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(2) { margin-left: -420px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(3) { margin-left: -280px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(4) { margin-left: -140px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(5) { margin-left: 0px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(6) { margin-left: 140px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(7) { margin-left: 280px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(8) { margin-left: 420px; margin-top: -108px; }
+          .hex-wrapper:nth-of-type(9) { margin-left: 560px; margin-top: -108px; }
 
           /* Row 2 (10 hexagons) */
-          .hex-wrapper:nth-of-type(10) {
-            margin-left: -630px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(11) {
-            margin-left: -490px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(12) {
-            margin-left: -350px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(13) {
-            margin-left: -210px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(14) {
-            margin-left: -70px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(15) {
-            margin-left: 70px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(16) {
-            margin-left: 210px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(17) {
-            margin-left: 350px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(18) {
-            margin-left: 490px;
-            margin-top: 0px;
-          }
-          .hex-wrapper:nth-of-type(19) {
-            margin-left: 630px;
-            margin-top: 0px;
-          }
+          .hex-wrapper:nth-of-type(10) { margin-left: -630px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(11) { margin-left: -490px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(12) { margin-left: -350px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(13) { margin-left: -210px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(14) { margin-left: -70px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(15) { margin-left: 70px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(16) { margin-left: 210px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(17) { margin-left: 350px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(18) { margin-left: 490px; margin-top: 0px; }
+          .hex-wrapper:nth-of-type(19) { margin-left: 630px; margin-top: 0px; }
 
           /* Row 3 (8 hexagons) */
-          .hex-wrapper:nth-of-type(20) {
-            margin-left: -560px;
-            margin-top: 108px;
-          }
-          .hex-wrapper:nth-of-type(21) {
-            margin-left: -420px;
-            margin-top: 108px;
-          }
-          .hex-wrapper:nth-of-type(22) {
-            margin-left: -280px;
-            margin-top: 108px;
-          }
-          .hex-wrapper:nth-of-type(23) {
-            margin-left: -140px;
-            margin-top: 108px;
-          }
-          .hex-wrapper:nth-of-type(24) {
-            margin-left: 0px;
-            margin-top: 108px;
-          }
-          .hex-wrapper:nth-of-type(25) {
-            margin-left: 140px;
-            margin-top: 108px;
-          }
-          .hex-wrapper:nth-of-type(26) {
-            margin-left: 280px;
-            margin-top: 108px;
-          }
-          .hex-wrapper:nth-of-type(27) {
-            margin-left: 420px;
-            margin-top: 108px;
-          }
+          .hex-wrapper:nth-of-type(20) { margin-left: -560px; margin-top: 108px; }
+          .hex-wrapper:nth-of-type(21) { margin-left: -420px; margin-top: 108px; }
+          .hex-wrapper:nth-of-type(22) { margin-left: -280px; margin-top: 108px; }
+          .hex-wrapper:nth-of-type(23) { margin-left: -140px; margin-top: 108px; }
+          .hex-wrapper:nth-of-type(24) { margin-left: 0px; margin-top: 108px; }
+          .hex-wrapper:nth-of-type(25) { margin-left: 140px; margin-top: 108px; }
+          .hex-wrapper:nth-of-type(26) { margin-left: 280px; margin-top: 108px; }
+          .hex-wrapper:nth-of-type(27) { margin-left: 420px; margin-top: 108px; }
 
+          /* Larger screens - slightly bigger hexagons */
           @media (max-width: 1600px) {
-            .loader {
-              height: 450px;
-
-            }
-            .hex {
-              width: 80px;
-              height: 46.19px;
-            }
-
-            .hex:before,
-            .hex:after {
-              width: 80px;
-              height: 46.19px;
-            }
+            .loader { height: 450px; }
+            .hex { width: 80px; height: 46.19px; }
+            .hex:before, .hex:after { width: 80px; height: 46.19px; }
           }
 
-          /* Tablet view */
-          @media (max-width: 1024px) and (min-width: 769px) {
-            .loader {
-              height: 400px;
-            }
+          /* Medium-large tablets (1200px-1400px) */
+          @media (max-width: 1400px) {
+            .loader { height: 380px; }
+            .hex { width: 60px; height: 34.64px; }
+            .hex:before, .hex:after { width: 60px; height: 34.64px; }
+            .tech-icon img { width: 30px; height: 30px; }
 
-            .hex {
-              width: 50px;
-              height: 28.87px;
-            }
+            /* Scale positions by ~80% */
+            .hex-wrapper:nth-of-type(1) { margin-left: -448px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(2) { margin-left: -336px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(3) { margin-left: -224px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(4) { margin-left: -112px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(5) { margin-left: 0px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(6) { margin-left: 112px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(7) { margin-left: 224px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(8) { margin-left: 336px; margin-top: -86.4px; }
+            .hex-wrapper:nth-of-type(9) { margin-left: 448px; margin-top: -86.4px; }
 
-            .hex:before,
-            .hex:after {
-              width: 50px;
-              height: 28.87px;
-            }
+            .hex-wrapper:nth-of-type(10) { margin-left: -504px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(11) { margin-left: -392px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(12) { margin-left: -280px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(13) { margin-left: -168px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(14) { margin-left: -56px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(15) { margin-left: 56px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(16) { margin-left: 168px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(17) { margin-left: 280px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(18) { margin-left: 392px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(19) { margin-left: 504px; margin-top: 0px; }
 
-            .tech-icon img {
-              width: 24px;
-              height: 24px;
-            }
+            .hex-wrapper:nth-of-type(20) { margin-left: -448px; margin-top: 86.4px; }
+            .hex-wrapper:nth-of-type(21) { margin-left: -336px; margin-top: 86.4px; }
+            .hex-wrapper:nth-of-type(22) { margin-left: -224px; margin-top: 86.4px; }
+            .hex-wrapper:nth-of-type(23) { margin-left: -112px; margin-top: 86.4px; }
+            .hex-wrapper:nth-of-type(24) { margin-left: 0px; margin-top: 86.4px; }
+            .hex-wrapper:nth-of-type(25) { margin-left: 112px; margin-top: 86.4px; }
+            .hex-wrapper:nth-of-type(26) { margin-left: 224px; margin-top: 86.4px; }
+            .hex-wrapper:nth-of-type(27) { margin-left: 336px; margin-top: 86.4px; }
           }
-/* Force hide desktop hex grid on mobile */
-@media (max-width: 1023px) {
-  .loader {
-    display: none !important;
-  }
-}
+
+          /* Standard tablets (1024px-1200px) */
+          @media (max-width: 1200px) {
+            .loader { height: 340px; }
+            .hex { width: 50px; height: 28.87px; }
+            .hex:before, .hex:after { width: 50px; height: 28.87px; }
+            .tech-icon img { width: 24px; height: 24px; }
+
+            /* Scale positions by ~66% */
+            .hex-wrapper:nth-of-type(1) { margin-left: -373px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(2) { margin-left: -280px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(3) { margin-left: -187px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(4) { margin-left: -93px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(5) { margin-left: 0px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(6) { margin-left: 93px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(7) { margin-left: 187px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(8) { margin-left: 280px; margin-top: -72px; }
+            .hex-wrapper:nth-of-type(9) { margin-left: 373px; margin-top: -72px; }
+
+            .hex-wrapper:nth-of-type(10) { margin-left: -420px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(11) { margin-left: -327px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(12) { margin-left: -233px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(13) { margin-left: -140px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(14) { margin-left: -47px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(15) { margin-left: 47px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(16) { margin-left: 140px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(17) { margin-left: 233px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(18) { margin-left: 327px; margin-top: 0px; }
+            .hex-wrapper:nth-of-type(19) { margin-left: 420px; margin-top: 0px; }
+
+            .hex-wrapper:nth-of-type(20) { margin-left: -373px; margin-top: 72px; }
+            .hex-wrapper:nth-of-type(21) { margin-left: -280px; margin-top: 72px; }
+            .hex-wrapper:nth-of-type(22) { margin-left: -187px; margin-top: 72px; }
+            .hex-wrapper:nth-of-type(23) { margin-left: -93px; margin-top: 72px; }
+            .hex-wrapper:nth-of-type(24) { margin-left: 0px; margin-top: 72px; }
+            .hex-wrapper:nth-of-type(25) { margin-left: 93px; margin-top: 72px; }
+            .hex-wrapper:nth-of-type(26) { margin-left: 187px; margin-top: 72px; }
+            .hex-wrapper:nth-of-type(27) { margin-left: 280px; margin-top: 72px; }
+          }
+
+          /* Force hide desktop hex grid on mobile/small tablets */
+          @media (max-width: 1023px) {
+            .loader { display: none !important; }
+          }
 
           /* Smaller mobile screens */
           @media (max-width: 375px) {
-            .mobile-hex {
-              width: 45px;
-              height: 25.98px;
-            }
-
-            .mobile-hex:before,
-            .mobile-hex:after {
-              width: 45px;
-              height: 25.98px;
-            }
-
-            .mobile-tech-icon {
-              width: 20px;
-              height: 20px;
-            }
-
-            .mobile-hex-container {
-              gap: 30px;
-                 padding: 0 !important;
-
-            }
-             
+            .mobile-hex { width: 45px; height: 25.98px; }
+            .mobile-hex:before, .mobile-hex:after { width: 45px; height: 25.98px; }
+            .mobile-tech-icon { width: 20px; height: 20px; }
+            .mobile-hex-container { gap: 30px; padding: 0 !important; }
           }
-            
         `}</style>
       </div>
     </div>

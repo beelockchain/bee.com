@@ -69,7 +69,7 @@ const steps = [
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-10">
           {steps.map((item, index) => (
             <div
               key={index}
@@ -81,11 +81,11 @@ const steps = [
                   {item.step}
                 </span>
 
-                <h3 className="text-[18px] sm:text-[12px] md:text-[12px] lg:text-[20px]  font-semibold font-[Poppins] text-zinc-800 mb-3">
+                <h3 className="text-[18px] sm:text-[10px] md:text-[12px] lg:text-[20px]  font-semibold font-[Poppins] text-zinc-800 mb-3">
                   {item.title}
                 </h3>
 
-                <p className="text-zinc-500 text-[14px] sm:text-[12px] md:text-[10px] lg:text-[15px] leading-6">
+                <p className="text-zinc-500 text-[14px] sm:text-[10px] md:text-[10px] lg:text-[15px] leading-6 sm:leading-4 md:leading-5 lg:leading-7 mb-6">
                   {item.description}
                 </p>
               </div>

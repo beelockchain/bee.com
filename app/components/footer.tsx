@@ -112,7 +112,7 @@ Area We Occupied
           {card.title}
         </h4>
 
-        <p className="text-[12px] sm:text-[13px] lg:text-[14px] leading-relaxed text-black/80 font-poppins mb-4 sm:mb-6">
+        <p className="text-[11px] sm:text-[13px] lg:text-[14px] leading-relaxed text-black/80 font-poppins mb-4 sm:mb-6">
           {card.desc}
         </p>
       </div>
@@ -120,7 +120,9 @@ Area We Occupied
       {/* Bottom row */}
      <div className="
   relative z-10 flex
-  flex-col md:flex-row
+  flex-col 
+  sm:flex-col
+    md:flex-col
   lg:flex-row
   sm:items-center
   sm:justify-between
@@ -135,7 +137,7 @@ Area We Occupied
       height={14}
       className="sm:w-[16px] sm:h-[16px]"
     />
-    <span className="text-[10px] sm:text-[8px]  xl:text-[12px] lg:text-[11px] font-medium text-black font-poppins">
+    <span className="text-[10px] sm:text-[12px]  xl:text-[12px] lg:text-[11px] font-medium text-black font-poppins">
       {card.contact}
     </span>
   </div>
@@ -149,9 +151,10 @@ Area We Occupied
     className="
       object-contain
       self-center sm:self-auto
-      sm:w-[40px] sm:h-[40px]
-      xl:w-[70px] xl:h-[70px]
-      lg:w-[70px] lg:h-[70px]
+      sm:w-[60px] sm:h-[60px]
+      md:w-[70px] md:h-[70px]
+      xl:w-[80px] xl:h-[80px]
+      lg:w-[90px] lg:h-[90px]
     "
   />
 </div>

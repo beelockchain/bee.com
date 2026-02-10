@@ -40,7 +40,7 @@ const IndustryWeServe = () => {
         Industries We Serve
       </h2>
 
-      <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 items-start">
+      <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-16 items-start">
 {/* LEFT – IMAGE STACK GRID */}
 <div className="industry-grid grid grid-cols-3 gap-2 cursor-pointer">
   {industryImages.map((img, i) => (
@@ -67,13 +67,13 @@ const IndustryWeServe = () => {
 
 
         {/* RIGHT – CONTENT */}
-        <div className="md:pt-2 lg:pt-0 mt-10">
+        <div className="md:pt-2 lg:pt-0 lg:mt-10">
           {/* TABLET + DESKTOP TITLE */}
           <h2 className="hidden md:block text-3xl lg:text-5xl font-medium text-black font-[Poppins] mb-6 ">
             Industries We Serve
           </h2>
 
-          <p className="text-black max-w-xl mb-10 md:mb-6  lg:mb-20  sm:mb-14 text-[12px] sm:text-[12px] md:text-[14px] lg:text-[20px] leading-relaxed">
+          <p className="text-black max-w-xl mb-10 md:mb-6  lg:mb-20  sm:mb-4 text-[12px] sm:text-[12px] md:text-[14px] lg:text-[20px] leading-relaxed">
             Beelockchain tackles the world’s biggest challenges by building great
             digital products and delivering customized services that help
             businesses overcome challenges and reach their goals.
@@ -96,7 +96,7 @@ const IndustryWeServe = () => {
   className=" cursor-pointer
     relative flex items-center
     gap-2 md:gap-2 lg:gap-3
-    px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2
+    px-4 py-1.5 md:px-3  md:py-1.5 lg:px-6 lg:py-2
     border border-black rounded-full
     overflow-hidden
   "
