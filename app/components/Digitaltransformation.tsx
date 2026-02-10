@@ -33,24 +33,22 @@ const Digitaltransformation = () => {
 
         {/* Content */}
         <p className="text-sm leading-8 text-gray-700 text-center">
-          As a forward-thinking
-          <span className="text-[#FFCC00] ml-1">
-            Digital Transformation Company
-          </span>
-          , Beelockchain empowers organizations to achieve measurable business
-          outcomes through automation, innovation, and scalable technologies.
+          As a forward-thinking Digital Transformation Company , Beelockchain
+          empowers organizations to achieve measurable business outcomes through
+          automation, innovation, and scalable technologies.
         </p>
         <p className="text-sm leading-8 text-gray-700 text-center">
-          With over <span className="text-[#FFCC00] ml-1">8 years</span> of
-          experience in delivering enterprise grade Digital transformation
-          services and solutions, we help businesses modernize applications,
-          optimize operations, and unlock new digital capabilities.
+          With over 8 years of experience in delivering enterprise grade{" "}
+          <span className="text-yellow-600 ml-1 mr-1">
+            Digital transformation services and solutions
+          </span>
+          Digital transformation services and solutions, we help businesses
+          modernize applications, optimize operations, and unlock new digital
+          capabilities.
         </p>
         <p className="text-sm leading-8 text-gray-700 text-center">
           Our future ready experts mitigate risks, streamline workflows, and
-          solve complex
-          <span className="text-[#FFCC00] ml-1">digital challenges</span> using
-          front-line strategies.
+          solve complex digital challenges using front-line strategies.
         </p>
 
         {/* CTA */}
@@ -73,13 +71,28 @@ const Digitaltransformation = () => {
           "
         >
           Consult Now
-          <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
-            <img
-              src="/assets/images/Herobuttonimg.webp"
-              alt="arrow"
-              className="h-8 w-8"
+          <svg
+            className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14"
+            viewBox="0 0 56 55"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="28.2473"
+              cy="27.0945"
+              r="15.912"
+              fill="#F6E000"
+              stroke="#F9C901"
+              strokeWidth="1.51543"
             />
-          </div>
+            <path
+              d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+              stroke="black"
+              strokeWidth="3.03086"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </button>
       </div>
 
@@ -106,24 +119,22 @@ const Digitaltransformation = () => {
           </h2>
 
           <p className="md:text-sm lg:text-lg leading-8 text-gray-700">
-            As a forward-thinking
-            <span className="text-[#FFCC00] ml-1">
-              Digital Transformation Company
-            </span>
-            , Beelockchain empowers organizations to achieve measurable business
-            outcomes through automation, innovation, and scalable technologies.
+            As a forward-thinking Digital Transformation Company , Beelockchain
+            empowers organizations to achieve measurable business outcomes
+            through automation, innovation, and scalable technologies.
           </p>
           <p className="md:text-sm lg:text-lg leading-8 text-gray-700">
-            With over <span className="text-[#FFCC00] ml-1">8 years</span> of
-            experience in delivering enterprise grade Digital transformation
-            services and solutions, we help businesses modernize applications,
-            optimize operations, and unlock new digital capabilities.
+            With over 8 years of experience in delivering enterprise grade
+            <span className="text-yellow-600 ml-1 mr-1">
+              Digital transformation services and solutions
+            </span>
+            Digital transformation services and solutions, we help businesses
+            modernize applications, optimize operations, and unlock new digital
+            capabilities.
           </p>
           <p className="md:text-sm lg:text-lg leading-8 text-gray-700">
             Our future ready experts mitigate risks, streamline workflows, and
-            solve complex
-            <span className="text-[#FFCC00] ml-1">digital challenges</span>
-            using front-line strategies.
+            solve complex digital challenges using front-line strategies.
           </p>
 
           <button
@@ -144,13 +155,28 @@ const Digitaltransformation = () => {
             "
           >
             Consult Now
-            <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
-              <img
-                src="/assets/images/Herobuttonimg.webp"
-                alt="arrow"
-                className="h-8 w-8"
+            <svg
+              className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14"
+              viewBox="0 0 56 55"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="28.2473"
+                cy="27.0945"
+                r="15.912"
+                fill="#F6E000"
+                stroke="#F9C901"
+                strokeWidth="1.51543"
               />
-            </div>
+              <path
+                d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                stroke="black"
+                strokeWidth="3.03086"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         </div>
 
@@ -158,7 +184,7 @@ const Digitaltransformation = () => {
           <img
             src="/assets/images/Digitalbuttoniimg.webp"
             alt="trusted digital"
-            className="w-[700px] h-[700px] object-contain"
+            className="w-[500px] h-[500px] object-contain"
           />
         </div>
       </div>

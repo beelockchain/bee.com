@@ -57,7 +57,7 @@ const TestimonialCarousel = () => {
             >
               {testimonials.map((item) => (
                 <div key={item.id} className="min-w-full">
-                  <div className="flex items-center gap-12">
+                  <div className="flex items-center justify-center gap-12">
 
                     {/* IMAGE */}
                     <div className="w-[150px] h-[220px] relative rounded-2xl overflow-hidden">
@@ -65,7 +65,7 @@ const TestimonialCarousel = () => {
                         src={item.image}
                         alt={item.client}
                         fill
-                        className="object-cover"
+                        className="object-center"
                       />
                     </div>
 
