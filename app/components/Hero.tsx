@@ -136,7 +136,7 @@ const Herosection = () => {
               {/* Background image with opacity */}
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-30"
-                style={{ backgroundImage: "url('/assets/images/Herosideimg2.svg')" }}
+                style={{ backgroundImage: "url('/assets/images/Herosideimg2.webp')" }}
               />
 
               {/* Content */}
