@@ -1,5 +1,9 @@
 "use client";
 
+
+
+const BeelockchainTransformation = () => {
+  const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 const steps = [
   {
     step: "Step 1",
@@ -17,7 +21,7 @@ const steps = [
         .
       </>
     ),
-    image: "/assets/images/beelock-trans-icon1.webp",
+    image: `${ASSET_URL}/images/beelock-trans-icon1.webp`,
     rotate: "-rotate-2",
   },
   {
@@ -32,7 +36,7 @@ const steps = [
         to digitize your operations.
       </>
     ),
-    image: "/assets/images/beelock-trans-icon2.webp",
+    image: `${ASSET_URL}/images/beelock-trans-icon2.webp`,
     rotate: "",
   },
   {
@@ -47,12 +51,10 @@ const steps = [
         .
       </>
     ),
-    image: "/assets/images/beelock-trans-icon3.webp",
+    image: `${ASSET_URL}/images/beelock-trans-icon3.webp`,
     rotate: "rotate-2",
   },
 ];
-
-const BeelockchainTransformation = () => {
   return (
     <section className="w-full bg-white">
       <div className="max-w-[1200px] mx-auto px-6">

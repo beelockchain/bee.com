@@ -7,6 +7,8 @@ import SideMenu from "./SideMenu";
 import Link from "next/link";
 import Image from "next/image";
 const Topnav = () => {
+      const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
+
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -29,32 +31,32 @@ const Topnav = () => {
     {
       name: "Facebook",
       href: "https://www.facebook.com/profile.php?id=61585250317865",
-      src: "/assets/images/fb-icon.webp",
+      src: `${ASSET_URL}/images/fb-icon.webp`,
     },
     {
       name: "Twitter",
       href: "https://x.com/beelockchain",
-      src: "/assets/images/x-icon.webp",
+      src: `${ASSET_URL}/images/x-icon.webp`,
     },
     {
       name: "Whatsapp",
       href: "https://wa.me/+919025217523",
-      src: "/assets/images/whatsapp-icon.webp",
+      src: `${ASSET_URL}/images/whatsapp-icon.webp`,
     },
     {
       name: "LinkedIn",
       href: "https://www.linkedin.com/company/beelockchain",
-      src: "/assets/images/linkedin-icon.webp",
+      src: `${ASSET_URL}/images/linkedin-icon.webp`,
     },
     // {
     //   name: "Telegram",
     //   href: "https://t.me/+919025217523",
-    //   src: "/assets/images/telegram-icon.webp",
+    //   src: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/telegram-icon.webp",
     // },
      {
     name: "Instagram",
     href: "https://www.instagram.com/beelockchain_com",
-    src: "/assets/images/insta-icon.webp",
+    src: `${ASSET_URL}/images/insta-icon.webp`,
   },
   ];
 
@@ -126,7 +128,7 @@ const Topnav = () => {
           {/* LOGO */}
           <div className="w-[40%] sm:w-[30%] lg:w-[25%]">
             <img
-              src="/assets/images/footer-logo.webp"
+              src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
               alt="logo"
               className="h-8 sm:h-9 md:h-10 lg:h-14"
             />
@@ -215,7 +217,7 @@ const Topnav = () => {
                   <X className="h-4 w-4 md:h-5 md:w-5" />
                 ) : (
                   <img
-                    src="/assets/images/Hamburger.webp"
+                    src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/Hamburger.webp"
                     alt="menu"
                     className="h-4 w-4 md:h-5 md:w-5"
                   />

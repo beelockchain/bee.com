@@ -3,48 +3,50 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-/* ---------------- DATA ---------------- */
+
+
+const OurInsights = () => { 
+    const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
+    /* ---------------- DATA ---------------- */
 const insights = [
   {
     id: 1,
     title: "Low-Code App Development Company: Build Enterprise-Ready Apps Faster",
-    image: "/assets/images/insight-one.webp",
+    image: `${ASSET_URL}/images/insight-one.webp`,
     tags: [ "App Development"]
   },
   // {
   //   id: 2,
   //   title: "How AR and VR Are Transforming Digital Experiences in 2026",
-  //   image: "/assets/images/insight-two.webp",
+  //   image: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/insight-two.webp",
   //   tags: ["AR", "VR", "Digital Experience"]
   // },
     {
     id: 2,
     title: "How AI-Powered Blockchain Is Redefining Enterprise Digital Transformation in 2026",
-    image: "/assets/images/insight-five.webp",
+    image: `${ASSET_URL}/images/insight-five.webp`,
     tags: ["Digital Transformation"]
   },
   // {
   //   id: 3,
   //   title: "Top Unique And Profitable Business Ideas For 2026",
-  //   image: "/assets/images/insight-three.webp",
+  //   image: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/insight-three.webp",
   //   tags: ["Business", "Startups", "Trends 2026"]
   // },
   {
     id: 3,
     title: "How to Choose the Right Mobile App Development Partner for Your Industry",
-    image: "/assets/images/insight-four.webp",
+    image: `${ASSET_URL}/images/insight-four.webp`,
     tags: ["Mobile Development"]
   },
 
   {
     id: 4,
     title: "AI-Driven Blockchain vs Traditional Systems: What Businesses Must Know",
-    image: "/assets/images/insight-six.webp",
+    image: `${ASSET_URL}/images/insight-six.webp`,
     tags: [ "AI"]
   }
 ];
-
-const OurInsights = () => { 
   const [currentIndex, setCurrentIndex] = useState(6); // Start at middle set
   const [isTransitioning, setIsTransitioning] = useState(true);
   

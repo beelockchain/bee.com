@@ -2,31 +2,32 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+    const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 
 const testimonials = [
   {
     id: 1,
     text: "We appreciated the Beelockchain team's strong understanding of healthcare operations. The mobile app they built improved internal coordination and patient communication. Most importantly, the team managed the project efficiently and helped us launch the app at the right time without compromising quality. They were professional, realistic, and consistent throughout the process.",
     client: "James Anderson – Chief Technology Officer (CTO)",
-    image: "/assets/images/testimonialcurosal2.webp",
+    image: `${ASSET_URL}/images/testimonialcurosal2.webp`,
   },
   {
     id: 2,
     text: "Collaborating with the Beelockchain developer team, we migrated our existing system into a fully integrated ERP solution for our manufacturing operations. Their technical execution, business alignment, and launch support ensured a smooth go-live. ",
     client: "Michael Thompson – Founder & CEO",
-    image: "/assets/images/testimonialcurosal3.webp",
+    image: `${ASSET_URL}/images/testimonialcurosal3.webp`,
   },
   {
     id: 3,
     text: "Our experience with the Beelockchain development team was consistently positive from start to launch. Their strong technical expertise and clear alignment with our business goals enabled the successful deployment of an AI chatbot that supports our e-commerce platform and strengthens customer service operations.",
     client: "Emma Wilson – Startup Co-Founder",
-    image: "/assets/images/testimonialcurosal.webp",
+    image: `${ASSET_URL}/images/testimonialcurosal.webp`,
   },
   {
     id: 4,
     text: "The Beelockchain team supported our beauty care brand with a well-planned digital marketing strategy. Their thoughtful content planning, targeted campaign execution, and consistent performance tracking helped improve brand awareness, audience engagement, and overall digital presence.",
     client: "Emily Roberts – Product Manager",
-    image: "/assets/images/testimonialcurosal4.webp",
+    image: `${ASSET_URL}/images/testimonialcurosal4.webp`,
   },
 ];
 
@@ -57,16 +58,18 @@ const TestimonialCarousel = () => {
             >
               {testimonials.map((item) => (
                 <div key={item.id} className="min-w-full">
-                  <div className="flex items-center gap-12">
+                  <div className="flex items-center justify-center gap-12">
 
                     {/* IMAGE */}
-                    <div className="w-[150px] h-[220px] relative rounded-2xl overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.client}
-                        fill
-                        className="object-cover"
-                      />
+                   <div className="w-[150px] h-[220px] relative rounded-2xl overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.client}
+                      fill
+                      sizes="150px"
+                      className="object-cover object-top"
+                    />
+
                     </div>
 
                     {/* CONTENT */}

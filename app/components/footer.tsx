@@ -4,30 +4,32 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
+
   const cards = [
     {
       title: "CANADA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+02 3486 4631",
-      src: "/assets/images/location1.webp",
+      src: `${ASSET_URL}/images/location1.webp`,
     },
     {
       title: "USA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+01 9876 5432",
-      src: "/assets/images/location2.webp",
+      src: `${ASSET_URL}/images/location2.webp`,
     },
     {
       title: "UK",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+44 7654 3210",
-      src: "/assets/images/location3.webp",
+      src: `${ASSET_URL}/images/location3.webp`,
     },
     {
       title: "INDIA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+91 98765 43210",
-      src: "/assets/images/location4.webp",
+      src: `${ASSET_URL}/images/location4.webp`,
     },
   ];
   
@@ -37,33 +39,33 @@ const Footer = () => {
   {
     name: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61585250317865",
-    src: "/assets/images/fb-icon.webp",
+    src: `${ASSET_URL}/images/fb-icon.webp`,
     
   },
   {
     name: "Twitter",
     href: "https://x.com/beelockchain",
-    src: "/assets/images/x-icon.webp",
+    src: `${ASSET_URL}/images/x-icon.webp`,
   },
   {
     name: "Whatsapp",
     href: "https://wa.me/+919025217523",
-    src: "/assets/images/whatsapp-icon.webp",
+    src: `${ASSET_URL}/images/whatsapp-icon.webp`,
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/company/beelockchain",
-    src: "/assets/images/linkedin-icon.webp",
+    src: `${ASSET_URL}/images/linkedin-icon.webp`,
   },
   // {
   //   name: "Telegram",
   //   href: "https://t.me/+919025217523",
-  //   src: "/assets/images/telegram-icon.webp",
+  //   src: `${ASSET_URL}/images/telegram-icon.webp`,
   // },
    {
     name: "Instagram",
     href: "https://www.instagram.com/beelockchain_com",
-    src: "/assets/images/insta-icon.webp",
+    src: `${ASSET_URL}/images/insta-icon.webp`,
   },
 ];
 
@@ -81,7 +83,7 @@ Area We Occupied
   <div
     className="absolute inset-0 bg-cover bg-center rounded-xl opacity-20 pointer-events-none"
     style={{
-      backgroundImage: "url('/assets/images/line-wave.webp')",
+      backgroundImage: `url('${ASSET_URL}/images/line-wave.webp')`,
       minHeight: "100%", 
     }}
   ></div>
@@ -98,7 +100,7 @@ Area We Occupied
         min-h-[170px] sm:min-h-[200px] lg:min-h-[220px]
       "
       style={{
-        backgroundImage: "url('/assets/images/location-bgcard.webp')",
+        backgroundImage: `url('${ASSET_URL}/images/location-bgcard.webp')`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -127,7 +129,7 @@ Area We Occupied
   {/* Phone */}
   <div className="flex items-center gap-1 sm:gap-2">
     <Image
-      src="/assets/images/location-icon.webp"
+      src={`${ASSET_URL}/images/location-icon.webp`}
       alt="Location"
       width={14}
       height={14}
@@ -170,7 +172,7 @@ Area We Occupied
           {/* LEFT — LOGO */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
             <Image
-              src="/assets/images/Mainlogo.webp"
+              src={`${ASSET_URL}/images/Mainlogo.webp`}
               alt="Company Logo"
               width={160}
               height={40}
@@ -228,7 +230,7 @@ Area We Occupied
      <div className="pt-10">
   <div className="flex justify-center mb-6">
     <Image
-      src="/assets/images/footer-text.webp"
+      src={`${ASSET_URL}/images/footer-text.webp`}
       alt="Footer Text"
       width={1400}
       height={219}

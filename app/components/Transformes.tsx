@@ -103,6 +103,7 @@ export default function Transformes() {
   const [activeTab, setActiveTab] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+    const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -215,7 +216,7 @@ export default function Transformes() {
         >
           {/* ---------------- HEADER ---------------- */}
           <div className="pt-8 pb-4">
-            <img src="/assets/images/Services.webp" alt="Services" className="" />
+            <img src={`${ASSET_URL}/images/Services.webp`} alt="Services" className="" />
           </div>
 
           <div className="text-center mb-8 md:mb-12 px-6">

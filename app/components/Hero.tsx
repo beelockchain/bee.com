@@ -4,6 +4,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 
 const Herosection = () => {
+  const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
+
   const imgRef = useRef<HTMLImageElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -58,7 +60,11 @@ const Herosection = () => {
 
         {/* Center Image */}
         <div className="w-full max-w-xs mb-10">
-          <img src="/assets/images/Heromainimg.webp" alt="BeeLockchain" className="w-full" />
+          <img
+            src={`${ASSET_URL}/images/Heromainimg.webp`}
+            alt="BeeLockchain"
+            className="w-full"
+          />
         </div>
 
         {/* Stats */}
@@ -94,13 +100,28 @@ const Herosection = () => {
 
           <button className="flex items-center gap-2 text-black border border-black px-2 py-1 rounded-full font-medium shadow hover:bg-gray-100 transition">
             Consult Our Experts
-            <div className="w-8 h-8 rounded-full flex justify-center items-center bg-yellow-500">
-              <img
-                src="/assets/images/Herobuttonimg.webp"
-                alt="arrow"
-                className="h-8 w-8"
+            <svg
+              className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14"
+              viewBox="0 0 56 55"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="28.2473"
+                cy="27.0945"
+                r="15.912"
+                fill="#F6E000"
+                stroke="#F9C901"
+                strokeWidth="1.51543"
               />
-            </div>
+              <path
+                d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                stroke="black"
+                strokeWidth="3.03086"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
         </div>
       </div>
@@ -110,12 +131,9 @@ const Herosection = () => {
       <div className="hidden md:flex md:h-[700px] lg:h-screen w-full flex-col justify-center items-center bg-white">
         <div className="lg:h-[77%] md:h-full w-full flex justify-center items-center mb-10">
           <div className="w-[33%] h-[70%] relative flex justify-start items-start mt-20 lg:mt-60 pl-2 lg:pl-10">
-            <div className="relative">
-              <h1 className="md:text-sm lg:text-[24px] leading-10 text-black font-extrabold">
-                Digital Transformation Company
-              </h1>
-              <h1 className="md:text-sm lg:text-[24px] leading-10 text-black font-extrabold">
-                Modernizing The Way You Work
+            <div className="relative w-full">
+              <h1 className="md:text-sm lg:text-[24px] leading-10 text-black font-extrabold w-96">
+                Digital Transformation Company Modernizing The Way You Work
               </h1>
             </div>
           </div>
@@ -123,7 +141,7 @@ const Herosection = () => {
           <div className="w-[30%] h-[70%] flex justify-center md:items-center lg:items-start ">
             <img
               ref={imgRef}
-              src="/assets/images/Heromainimg.webp"
+              src={`${ASSET_URL}/images/Heromainimg.webp`}
               className="w-full "
               style={{ transformStyle: "preserve-3d" }}
               onMouseMove={handleMouseMove}
@@ -136,7 +154,7 @@ const Herosection = () => {
               {/* Background image with opacity */}
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-30"
-                style={{ backgroundImage: "url('/assets/images/Herosideimg2.webp')" }}
+                style={{ backgroundImage: `url('${ASSET_URL}/images/Herosideimg2.webp')` }}
               />
 
               {/* Content */}
@@ -150,13 +168,28 @@ const Herosection = () => {
 
                 <button className="flex items-center gap-2 text-black border border-black px-2 py-1 rounded-full font-medium shadow hover:bg-gray-100 transition text-xs lg:text-lg">
                   Consult Our Experts
-                  <div className="lg:h-8 lg:w-8 md:h-4 md:w-4 rounded-full flex justify-center items-center bg-yellow-500">
-                    <img
-                      src="/assets/images/Herobuttonimg.webp"
-                      alt="arrow" 
-                      className="lg:h-8 lg:w-8 md:h-4 md:w-4"
+                  <svg
+                    className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14"
+                    viewBox="0 0 56 55"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="28.2473"
+                      cy="27.0945"
+                      r="15.912"
+                      fill="#F6E000"
+                      stroke="#F9C901"
+                      strokeWidth="1.51543"
                     />
-                  </div>
+                    <path
+                      d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                      stroke="black"
+                      strokeWidth="3.03086"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>

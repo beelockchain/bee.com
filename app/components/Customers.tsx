@@ -1,12 +1,14 @@
 const Customers = () => {
+  const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
+
   // Your customer logos/images
   const customerImages = [
-    "/assets/images/Customerimg1.webp",
-    "/assets/images/Customerimg2.webp",
-    "/assets/images/Customerimg3.webp",
-    "/assets/images/Customerimg4.webp",
-    "/assets/images/Customerimg2.webp",
-    "/assets/images/Customerimg4.webp",
+    `${ASSET_URL}/images/Customerimg1.webp`,
+    `${ASSET_URL}/images/Customerimg2.webp`,
+    `${ASSET_URL}/images/Customerimg3.webp`,
+    `${ASSET_URL}/images/Customerimg4.webp`,
+    `${ASSET_URL}/images/Customerimg2.webp`,
+    `${ASSET_URL}/images/Customerimg4.webp`,
   ];
 
   return (

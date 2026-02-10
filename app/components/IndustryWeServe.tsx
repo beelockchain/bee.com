@@ -31,6 +31,8 @@ const industryImages = [
 ];
 
 const IndustryWeServe = () => {
+  const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
+
   return (
     <section className="w-full bg-white py-12 sm:py-10 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
@@ -52,7 +54,7 @@ const IndustryWeServe = () => {
       `}
     >
       <img
-        src={`/assets/images/${img}`}
+        src={`${ASSET_URL}/images/${img}`}
         alt="Industry"
         className="
           w-full h-full object-contain

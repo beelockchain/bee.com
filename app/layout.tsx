@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 
  icons: {
     icon: [
-      { url: "/favicon.webp" },
+      { url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp" },
       // { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       // { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     alternateLocale: ["en_GB", "en_AE", "en_IN"],
     images: [
       {
-        url: "https://ik.imagekit.io/racjwdojq/ogimg?updatedAt=1770289060198",
+        url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/og-img.webp",
         width: 1200,
         height: 630,
         alt:
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
       "Best Digital Transformation Company | Digital Transformation Solutions",
     description:
       "Beelockchain offers next-generation digital transformation through AI-powered software and advanced blockchain solutions for enterprise growth.",
-    images: ["https://ik.imagekit.io/racjwdojq/twitter.webp"],
+    images: ["https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/twitter.webp"],
   },
 
   verification: {
