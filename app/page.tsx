@@ -21,7 +21,7 @@ import Testi from "./components/Testi";
 export default function Home() {
   return (
     <div className="bg-white">
-      <Topnav />
+      
       <Herosection />
       <Customers />
       <Digitaltransformation />

@@ -77,27 +77,21 @@ const HoverAvatar = ({
           onClick={() => setOpen(false)}
         >
           <div
-            className="bg-white rounded-2xl shadow-xl px-5 py-4 w-[90%] max-w-sm"
+            className="bg-white rounded-2xl shadow-xl p-1 w-[20%] max-w-sm"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden">
-                <img
-                  src={user.image}
-                  alt={user.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="flex items-center gap-1">
+              
               <div>
-                <p className="text-sm font-semibold">{user.name}</p>
-                <p className="text-xs text-gray-500">{user.email}</p>
-                <p className="text-xs text-gray-500">{user.role}</p>
+                <p className="text-[10px] text-black font-semibold">{user.name}</p>
+                <p className="text-[8px] text-black">{user.email}</p>
+                <p className="text-[8px] text-black">{user.role}</p>
               </div>
             </div>
 
             <button
               onClick={() => setOpen(false)}
-              className="mt-4 w-full text-sm font-medium text-gray-600 hover:text-black"
+              className="w-full text-xs font-medium text-gray-600 hover:text-black"
             >
               Close
             </button>
