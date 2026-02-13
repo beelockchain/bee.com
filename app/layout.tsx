@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Poppins, Manrope } from "next/font/google";
+import Topnav from "./components/Topnav"; // Adjust the path based on your project structure
 
 /* Fonts */
 const poppins = Poppins({
@@ -54,11 +55,9 @@ export const metadata: Metadata = {
     "max-snippet": -1,
   },
 
- icons: {
+  icons: {
     icon: [
       { url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp" },
-      // { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      // { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: "/apple-touch-icon.png",
   },
@@ -78,8 +77,7 @@ export const metadata: Metadata = {
         url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/og-img.webp",
         width: 1200,
         height: 630,
-        alt:
-          "Digital Transformation Services & Solutions | Beelockchain.com",
+        alt: "Digital Transformation Services & Solutions | Beelockchain.com",
         type: "image/webp",
       },
     ],
@@ -109,10 +107,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${manrope.variable} antialiased`}>
-        {children}
+        {/* ================= TOP NAVIGATION ================= */}
+        <Topnav />
+        
+        {/* ================= MAIN CONTENT ================= */}
+        {/* Add padding-top to account for fixed navbar height (h-20 = 5rem = 80px) */}
+        <main className="pt-20">
+          {children}
+        </main>
 
         {/* ================= Product Schema ================= */}
-       <Script
+        <Script
           id="product-schema"
           type="application/ld+json"
           strategy="afterInteractive"

@@ -124,9 +124,9 @@ const Topnav = () => {
     <>
       {/* ================= TOP NAV ================= */}
       <div className="fixed z-50 w-full bg-white">
-        <div className="h-20 flex items-center justify-between px-4 lg:px-8">
+        <div className="h-20 flex items-center justify-evenly px-4 lg:px-8">
           {/* LOGO */}
-          <div className="w-[40%] sm:w-[30%] lg:w-[25%]">
+          <div className="md:w-[20%] lg:w-[20%]">
             <img
               src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
               alt="logo"
@@ -175,7 +175,8 @@ const Topnav = () => {
                 bg-black
                 text-white
                 px-3 py-2
-                md:px-2 md:py-1.5
+                md:px-2 md:py-3
+                w-fit
                 lg:px-4 lg:py-2.5
                 rounded-full
                 text-xs

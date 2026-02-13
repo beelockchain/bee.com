@@ -22,8 +22,8 @@ const HoverAvatar = ({ user }: HoverAvatarProps) => {
       {/* ================= AVATAR ================= */}
       <div
         className="
-          w-9 h-9
-          sm:w-10 sm:h-10
+          w-7 h-7
+          sm:w-8 sm:h-8
           md:w-12 md:h-12
           rounded-full
           overflow-hidden
@@ -72,13 +72,17 @@ const HoverAvatar = ({ user }: HoverAvatarProps) => {
 
       {/* ================= MOBILE / TABLET TAP CARD ================= */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-[200] flex items-center justify-center bg-black/40">
+        <div
+          className="md:hidden fixed inset-0 z-[200] flex items-center justify-center bg-black/40"
+          onClick={() => setOpen(false)}
+        >
           <div
-            className="bg-white rounded-2xl shadow-xl px-5 py-4 w-[90%] max-w-sm"
+            className="bg-white rounded-xl shadow-xl px-3 py-3 w-[75%] max-w-[240px] sm:max-w-[280px]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3">
+              {/* Smaller avatar on mobile */}
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden flex-shrink-0">
                 <img
                   src={user.image}
                   alt={user.name}
@@ -86,18 +90,22 @@ const HoverAvatar = ({ user }: HoverAvatarProps) => {
                 />
               </div>
 
-              <div>
-                <p className="text-sm font-semibold text-gray-900">
+              <div className="min-w-0">
+                <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">
                   {user.name}
                 </p>
-                <p className="text-xs text-gray-500">{user.email}</p>
-                <p className="text-xs text-gray-500">{user.role}</p>
+                <p className="text-[10px] sm:text-xs text-gray-500 truncate">
+                  {user.email}
+                </p>
+                <p className="text-[10px] sm:text-xs text-gray-500 truncate">
+                  {user.role}
+                </p>
               </div>
             </div>
 
             <button
               onClick={() => setOpen(false)}
-              className="mt-4 w-full text-sm font-medium text-gray-600 hover:text-black"
+              className="mt-3 w-full text-xs sm:text-sm font-medium text-gray-600 hover:text-black py-1"
             >
               Close
             </button>
