@@ -2,6 +2,8 @@
 import React from 'react'
 import BusinessValue from './components/BusinessValue'
 import RoadMapCard from './components/RoadMapCard'
+import DigitalTransformationSection from './components/DigitalTransformation' ;
+import Whatwedo from './components/Whatwedo'
 
 export const metadata = {
   title: ' Digital Transforms | Innovation & Technology',
@@ -16,6 +18,9 @@ export default function DigitalTransforms() {
       <main>
          <BusinessValue />
          <RoadMapCard />
+         <DigitalTransformationSection/>
+         <Whatwedo/>
+
       </main>
 
 
