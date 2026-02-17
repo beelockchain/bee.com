@@ -1,76 +1,259 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const roadmap = [
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+interface RoadmapItem {
+  number: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const roadmapData: RoadmapItem[] = [
   {
+    number: "01",
     title: "Business Discovery",
-    desc: "We analyze your business goals, challenges, and current digital environment to understand where transformation is needed and what success looks like.",
+    description:
+      "We analyze your business goals, challenges, and current digital environment to understand where transformation is needed and what success looks like.",
+    icon: "/assets/images/digital-roadmap-1.png",
   },
   {
+    number: "02",
     title: "Transformation Strategy",
-    desc: "We define a focused digital transformation strategy that aligns technology initiatives with business priorities and long-term objectives.",
+    description:
+      "We define a focused digital transformation strategy that aligns technology initiatives with business priorities and long-term objectives.",
+    icon: "/assets/images/digital-roadmap-2.png",
   },
   {
+    number: "03",
     title: "Solution Planning & Design",
-    desc: "We design scalable, customer-centric solutions and select platforms that support integration, performance, and future growth.",
+    description:
+      "We design the scalable, customer-centric solutions and select platforms that support integration, performance, and future growth.",
+    icon: "/assets/images/digital-roadmap-3.png",
+  },
+  {
+    number: "04",
+    title: "Implementation & Integration",
+    description:
+      "We execute the technical build-out, integrate systems, and ensure seamless deployment across your digital ecosystem.",
+    icon: "/assets/images/digital-roadmap-1.png",
+  },
+  {
+    number: "05",
+    title: "Testing & Optimization",
+    description:
+      "We rigorously test all components, optimize performance, and refine the user experience based on real-world feedback.",
+    icon: "/assets/images/digital-roadmap-2.png",
+  },
+  {
+    number: "06",
+    title: "Launch & Scale",
+    description:
+      "We launch your transformed digital presence and provide ongoing support to scale and evolve with your business needs.",
+    icon: "/assets/images/digital-roadmap-3.png",
   },
 ];
 
-export default function RoadMapCard() {
+export default function RoadmapCarousel() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const carousel = carouselRef.current;
+
+    if (!section || !carousel) return;
+
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      const totalCards = roadmapData.length;
+      const cardWidth = 360;
+      const gap = 32;
+      const moveDistance = (cardWidth + gap) * totalCards;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "+=4000",
+          scrub: 0.5,
+          pin: true,
+        },
+      });
+
+      tl.to(carousel, {
+        x: -moveDistance,
+        ease: "none",
+      });
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
   return (
-    <section className="relative w-full py-20 px-4 md:px-8 lg:px-16 bg-white overflow-hidden">
+    <>
+      {/* Desktop & Tablet */}
+      <section
+        ref={sectionRef}
+        className="hidden md:block relative w-full h-dvh bg-[#F5F5F5]"
+      >
+        <div className="max-w-[1400px] mx-auto px-8">
+          {/* Heading */}
+          <div className="text-center pt-5 pb-10">
+            <h2 className="text-4xl md:text-2xl lg:text-3xl text-black font-semibold leading-snug font-poppins">
+              From Strategy to Execution:{" "}
+              <span className="text-[#E1A402]">
+                Our Digital <br /> Transformation Roadmap
+              </span>
+            </h2>
+          </div>
 
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/60 to-white pointer-events-none" />
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden">
+                        {/* LEFT & RIGHT BLUR EDGE SHADOW */}
+                  {/* SOFT EDGE FADE — not wall blur */}
+        <div className="pointer-events-none absolute inset-0 hidden md:block z-20">
+          
+          {/* LEFT FADE */}
+          <div
+            className="
+              absolute left-0 top-0 h-full w-24 md:w-32 lg:w-20
+              bg-gradient-to-r 
+              from-[#F5F5F5] via-[#F5F5F5]/80 via-[#F5F5F5]/40 to-transparent
+            "
+          />
 
-      <div className="relative max-w-7xl mx-auto">
+          {/* RIGHT FADE */}
+          <div
+            className="
+              absolute right-0 top-0 h-full w-24 md:w-32 lg:w-40
+              bg-gradient-to-l 
+              from-[#F5F5F5] via-[#F5F5F5]/80 via-[#F5F5F5]/40 to-transparent
+            "
+          />
 
-        {/* Heading */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-            From Strategy to Execution:{" "}
-            <span className="text-yellow-400">
-              Our Digital Transformation Roadmap
-            </span>
-          </h2>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          {roadmap.map((item, index) => (
             <div
-              key={index}
-              className="relative p-8 rounded-[32px] 
-              bg-white/40 backdrop-blur-xl 
-              border border-white/40
-              shadow-lg
-              flex flex-col justify-between
-              min-h-[380px]
-              hover:scale-[1.02] transition duration-300"
+              ref={carouselRef}
+              className="flex md:gap-8 lg:gap-8 xl:gap-10 will-change-transform"
             >
+              {[...roadmapData, ...roadmapData, ...roadmapData].map(
+                (item, index) => (
+                  <div
+                    key={index}
+                    className="
+                      flex-shrink-0
+                      w-[410px]
+                      rounded-[28px]
+                      md:p-5
+                      lg:p-5
+                      xl:p-8
+                      relative
+                      overflow-hidden
+                      bg-[rgba(255,253,250,0.6)]
+                      backdrop-blur-[24px]
+                      border border-[rgba(255,255,255,0.65)]
+                      shadow-[0_10px_35px_rgba(140,125,100,0.10),inset_0_1px_0_rgba(255,255,255,0.75),inset_0_-1px_0_rgba(255,255,255,0.3)]
+                      hover:shadow-[0_18px_60px_rgba(140,125,100,0.16),inset_0_1px_0_rgba(255,255,255,0.85),inset_0_-1px_0_rgba(255,255,255,0.35)]
+                      transition-all duration-300
+                    "
+                  >
+                    <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/90 to-transparent" />
 
-              {/* Optional Top Icon Placeholder */}
-              <div className="w-14 h-14 rounded-xl bg-yellow-100 mb-8" />
+                    {/* Number */}
+                    <div
+                      className="md:text-[35px] lg:text-[35px] xl:text-[55px] font-bold leading-none mb-3 text-transparent"
+                      style={{ WebkitTextStroke: "1px #9E9E9E" }}
+                    >
+                      {item.number}
+                    </div>
 
-              {/* Content */}
-              <div>
-                <h3 className="text-xl font-semibold mb-4">
-                  {item.title}
-                </h3>
+                    {/* Icon */}
+                    <div className="md:h-15 lg:h-15 xl:h-28 flex items-center justify-center mb-25 mt-10 md:p-10 lg:p-10 xl:p-0">
+                      <img src={item.icon} alt={item.title} className="object-cover" />
+                    </div>
 
-                <p className="text-gray-700 leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+                    {/* Title */}
+                    <h3 className="md:text-[11px] lg:text-[14px] xl:text-lg font-semibold text-black mb-3 leading-tight font-poppins">
+                      {item.title}
+                    </h3>
 
+                    {/* Description */}
+                    <p className="md:text-[10px] lg:text-[11px] xl:text-[13px] text-gray-700 leading-relaxed font-poppins">
+                      {item.description}
+                    </p>
+                  </div>
+                )
+              )}
             </div>
-          ))}
+          </div>
+        </div>
+      </section>
 
+      {/* Mobile */}
+      <section className="md:hidden relative w-full bg-[#F5F5F5] py-12">
+        <div className="px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-xl font-semibold leading-tight text-black font-poppins">
+              From Strategy to Execution:{" "}
+              <span className="text-[#F59E0B]">
+                Our Digital Transformation Roadmap
+              </span>
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-4 px-4">
+            <div className="flex gap-4 pb-4">
+              {roadmapData.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-[82vw] bg-gradient-to-br from-[#d1d0d065] to-[#C0C0C0] rounded-[20px] snap-start min-h-[400px] flex flex-col justify-around"
+                >
+                  <div
+                    className="text-[50px] font-bold text-white/30 leading-none px-3"
+                    style={{ WebkitTextStroke: "1px #9E9E9E" }}
+                  >
+                    {item.number}
+                  </div>
+
+                  <div className="h-10 flex items-center justify-center">
+                    <img src={item.icon} alt={item.title} className="object-cover p-15" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-md font-semibold text-black leading-tight p-5 font-poppins">
+                      {item.title}
+                    </h3>
+                    <p className="text-[12px] text-black leading-relaxed px-5 font-poppins">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-      </div>
-    </section>
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
+      </section>
+    </>
   );
 }

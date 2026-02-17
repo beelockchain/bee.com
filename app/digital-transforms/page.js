@@ -1,3 +1,10 @@
+
+import React from 'react'
+import BusinessValue from './components/BusinessValue'
+import RoadMapCard from './components/RoadMapCard'
+import EndToEndServices from './components/EndToEndServices'
+import HeroSection from './components/HeroSection'
+import BenefitsSection from './components/BenefitsSection'
 import React from "react";
 import BusinessValue from "./components/BusinessValue";
 import RoadMapCard from "./components/RoadMapCard";
@@ -20,9 +27,15 @@ export default function DigitalTransforms() {
       <RoadMapCard />
       <DigitalTransformationSection />
       <Whatwedo />
+      <EndToEndServices/>
+      <BenefitsSection/>
       <WhyDigitalTransformation />
       <SubIndustriesWeServe />
       <FAQ />
     </main>
-  );
+
+
+  )
+
+
 }
