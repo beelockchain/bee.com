@@ -7,7 +7,7 @@ const WhyDigitalTransformation = () => {
       <div
         className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover opacity-50"
         style={{
-          backgroundImage: "url('assets/images/Whydigitrans.svg')",
+          backgroundImage: "url('assets/images/Whydigitrans.png')",
         }}
       />
 

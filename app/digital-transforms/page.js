@@ -5,9 +5,6 @@ import RoadMapCard from './components/RoadMapCard'
 import EndToEndServices from './components/EndToEndServices'
 import HeroSection from './components/HeroSection'
 import BenefitsSection from './components/BenefitsSection'
-import React from "react";
-import BusinessValue from "./components/BusinessValue";
-import RoadMapCard from "./components/RoadMapCard";
 import DigitalTransformationSection from "./components/DigitalTransformation";
 import Whatwedo from "./components/Whatwedo";
 import WhyDigitalTransformation from "./components/Whydigitaltrans";
@@ -22,20 +19,18 @@ export const metadata = {
 
 export default function DigitalTransforms() {
   return (
-    <main>
-      <BusinessValue />
-      <RoadMapCard />
-      <DigitalTransformationSection />
-      <Whatwedo />
-      <EndToEndServices/>
-      <BenefitsSection/>
-      <WhyDigitalTransformation />
-      <SubIndustriesWeServe />
-      <FAQ />
-    </main>
+      <main>
+        <HeroSection/>
+          <DigitalTransformationSection />
+          <Whatwedo />
+          <WhyDigitalTransformation />
+          <RoadMapCard />
+          <EndToEndServices/>
+          <BenefitsSection/>
+          <SubIndustriesWeServe />
+          <FAQ />
+      </main>
 
 
   )
-
-
 }
