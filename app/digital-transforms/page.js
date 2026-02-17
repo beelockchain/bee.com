@@ -2,7 +2,9 @@
 import React from 'react'
 import BusinessValue from './components/BusinessValue'
 import RoadMapCard from './components/RoadMapCard'
-
+import EndToEndServices from './components/EndToEndServices'
+import HeroSection from './components/HeroSection'
+import BenefitsSection from './components/BenefitsSection'
 export const metadata = {
   title: ' Digital Transforms | Innovation & Technology',
   description:
@@ -14,8 +16,11 @@ export default function DigitalTransforms() {
   
   return (
       <main>
+        <HeroSection/>
          <BusinessValue />
          <RoadMapCard />
+         <EndToEndServices/>
+         <BenefitsSection/>
       </main>
 
 
