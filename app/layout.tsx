@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Poppins, Manrope } from "next/font/google";
 import Topnav from "./components/Topnav"; // Adjust the path based on your project structure
+import Footer from "./components/footer";
 
 /* Fonts */
 const poppins = Poppins({
@@ -57,7 +58,9 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp" },
+      {
+        url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp",
+      },
     ],
     apple: "/apple-touch-icon.png",
   },
@@ -90,7 +93,9 @@ export const metadata: Metadata = {
       "Best Digital Transformation Company | Digital Transformation Solutions",
     description:
       "Beelockchain offers next-generation digital transformation through AI-powered software and advanced blockchain solutions for enterprise growth.",
-    images: ["https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/twitter.webp"],
+    images: [
+      "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/twitter.webp",
+    ],
   },
 
   verification: {
@@ -109,12 +114,12 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${manrope.variable} antialiased`}>
         {/* ================= TOP NAVIGATION ================= */}
         <Topnav />
-        
+
         {/* ================= MAIN CONTENT ================= */}
         {/* Add padding-top to account for fixed navbar height (h-20 = 5rem = 80px) */}
-        <main className="pt-20">
-          {children}
-        </main>
+        <main className="pt-20">{children}</main>
+
+        <Footer />
 
         {/* ================= Product Schema ================= */}
         <Script
@@ -125,27 +130,27 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Product",
-              "name": "Top Digital Transformation Services Company",
-              "image": "https://www.beelockchain.com/path-to-image.jpg",
-              "description":
+              name: "Top Digital Transformation Services Company",
+              image: "https://www.beelockchain.com/path-to-image.jpg",
+              description:
                 "Beelockchain.com is a prominent digital transformation company offering digital transformation services and solutions that help leading enterprises transform their businesses and modernize operations.",
-              "brand": {
+              brand: {
                 "@type": "Brand",
-                "name": "Beelockchain.com"
+                name: "Beelockchain.com",
               },
-              "offers": {
+              offers: {
                 "@type": "AggregateOffer",
-                "url": "https://www.beelockchain.com/",
-                "priceCurrency": "USD",
-                "lowPrice": "10000",
-                "highPrice": "15000",
-                "offerCount": "25"
+                url: "https://www.beelockchain.com/",
+                priceCurrency: "USD",
+                lowPrice: "10000",
+                highPrice: "15000",
+                offerCount: "25",
               },
-              "aggregateRating": {
+              aggregateRating: {
                 "@type": "AggregateRating",
-                "ratingValue": "4.3",
-                "ratingCount": "1980"
-              }
+                ratingValue: "4.3",
+                ratingCount: "1980",
+              },
             }),
           }}
         />
