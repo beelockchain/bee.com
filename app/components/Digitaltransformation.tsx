@@ -4,7 +4,7 @@ const Digitaltransformation = () => {
   return (
     <section className="w-full bg-white">
       {/* ================= MOBILE LAYOUT ================= */}
-      <div className="flex md:hidden flex-col w-full px-6 py-10 gap-10 justify-center items-center">
+      <div className="flex lg:hidden flex-col w-full px-6 py-10 gap-10 justify-center items-center">
         {/* Heading */}
         <h3 className="text-sm font-bold text-black leading-snug text-center w-full">
           Beelockchain Your Trusted Digital
@@ -100,7 +100,7 @@ const Digitaltransformation = () => {
 
       {/* ================= DESKTOP + TABLET LAYOUT ================= */}
       {/* ⚠️ UNTOUCHED DESIGN */}
-      <div className="hidden md:flex w-full h-screen justify-center items-center bg-white">
+      <div className="hidden lg:flex w-full h-screen justify-center items-center bg-white">
         <div className="w-[50%] h-full flex flex-col justify-center items-start gap-6">
           <h2 className="md:text-xl lg:text-4xl font-bold mb-6 text-black">
             Beelockchain Your Trusted

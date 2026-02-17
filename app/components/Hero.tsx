@@ -45,9 +45,9 @@ const Herosection = () => {
   return (
     <div className="w-full bg-white">
       {/* ================= MOBILE LAYOUT ================= */}
-      <div className="flex md:hidden flex-col items-center px-6">
+      <div className="flex lg:hidden flex-col items-center px-6">
         {/* Heading */}
-        <div className="w-full max-w-sm text-left mb-8">
+        <div className="w-full max-w-sm text-left md:text-center mb-8 ">
           <p className="text-xs text-black mb-2">
             Your Vision. Our Dedication.
           </p>
@@ -90,7 +90,7 @@ const Herosection = () => {
             </div>
           ))}
         </div>
-        <div className="h-60 w-full flex flex-col justify-center items-center bg-cover bg-center gap-2">
+        <div className="h-60 w-full flex flex-col justify-center items-center bg-cover bg-center gap-5 space-y-5">
           <div className="text-black text-sm text-center">
             Beelockchain is a global digital transformation company that
             integrates future-ready solutions across AI, Blockchain, Cloud
@@ -129,7 +129,7 @@ const Herosection = () => {
       {/* ================= DESKTOP + TABLET LAYOUT ================= */}
       {/* ⚠️ UNTOUCHED JSX */}
       {/* ================= DESKTOP / TABLET HERO SECTION ================= */}
-      <div className="hidden md:flex min-h-screen w-full flex-col bg-white">
+      <div className="hidden lg:flex min-h-screen w-full flex-col bg-white">
         {/* ================= MAIN CONTENT AREA ================= */}
         <div className="flex-1 w-full flex items-center justify-center px-6 lg:px-12 xl:px-20 py-8 lg:py-12">
           <div className="w-full max-w-7xl flex items-start justify-between gap-6 lg:gap-10">
