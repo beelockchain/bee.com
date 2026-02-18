@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyDigitalTransformation = () => {
   return (
-    <div className="w-full relative bg-white py-16 lg:py-72 overflow-hidden">
+    <div className="w-full relative bg-white py-16 lg:py-72 xl:pt-42 xl:pb-62 overflow-hidden">
       {/* Background SVG */}
       <div
         className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover opacity-50"
@@ -12,16 +12,16 @@ const WhyDigitalTransformation = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Heading */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 lg:mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 lg:mb-7">
           <span className="text-[#1a1a1a]">Why </span>
-          <span className="text-[#f5c518]">Digital Transformation </span>
+          <span className="text-[#F9C901]">Digital Transformation </span>
           <span className="text-[#1a1a1a]">Matters Today</span>
         </h2>
 
         {/* First Paragraph */}
-        <p className="text-sm sm:text-base md:text-md text-[#1a1a1a] text-center leading-relaxed mb-6">
+        <p className="text-sm sm:text-base md:text-md lg:text-md xl:text-[16.5px] text-[#1a1a1a] text-center leading-relaxed mb-6 font-semibold">
           Today's businesses are expected to move faster, work smarter, and
           provide better experiences in an increasingly digital world. When
           organizations depend on manual processes with outdated technology, it
@@ -34,7 +34,7 @@ const WhyDigitalTransformation = () => {
         </p>
 
         {/* Second Paragraph */}
-        <p className="text-sm sm:text-base md:text-md text-[#1a1a1a] text-center leading-relaxed">
+        <p className="text-sm sm:text-base md:text-md lg:text-md xl:text-[16.2px] text-[#1a1a1a] text-center font-semibold leading-relaxed">
           <span className="text-[#f5c518] font-medium">
             Digital transformation
           </span>{" "}

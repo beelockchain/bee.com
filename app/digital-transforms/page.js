@@ -24,6 +24,7 @@ export default function DigitalTransforms() {
           <DigitalTransformationSection />
           <Whatwedo />
           <WhyDigitalTransformation />
+          <BusinessValue/>
           <RoadMapCard />
           <EndToEndServices/>
           <BenefitsSection/>
