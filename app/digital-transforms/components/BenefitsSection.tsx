@@ -171,17 +171,17 @@ const BenefitsSection: React.FC = () => {
   const LeftPanel = () => (
     <div className="flex flex-col justify-center">
       <div className="mb-4 md:text-center lg:text-left xl:text-left">
-        <span className="inline-block md:mt-20 py-2 lg:py-0 xl:py-0 border-b-2 border-[#F9C901] text-[16px] font-bold text-black">
+        <span className="inline-block md:mt-20 py-2 lg:py-0 xl:py-0 border-b-2 border-[#F9C901] text-[16px] lg:text-[13px] xl:text-[16px] font-bold text-black">
           What make us Unique
         </span>
       </div>
 
-      <h2 className="text-3xl lg:text-[35px] xl:text-[35px] font-bold mb-6 leading-tight text-black md:text-center lg:text-left xl:text-left">
+      <h2 className="text-3xl lg:text-[25px] xl:text-[35px] font-bold mb-6 leading-tight text-black md:text-center lg:text-left xl:text-left">
         Benefits Of <span className="text-yellow-400">Beelockchain</span> Digital
         Transformation Services
       </h2>
 
-      <p className="text-black text-sm lg:text-base mb-8 leading-relaxed max-w-md font-semibold">
+      <p className="text-black text-sm lg:text-[13px] mb-8 leading-relaxed max-w-md font-semibold">
         Begin your transformation journey with Beelockchain's skilled experts.
         Build a future-ready organization using a structured digital business
         transformation service approach.

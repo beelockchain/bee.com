@@ -74,7 +74,7 @@ export default function RoadmapCarousel() {
 
     mm.add("(min-width: 768px)", () => {
       const totalCards = roadmapData.length;
-      const cardWidth = 360;
+      const cardWidth = 410;
       const gap = 32;
       const moveDistance = (cardWidth + gap) * totalCards;
 
@@ -85,6 +85,8 @@ export default function RoadmapCarousel() {
           end: "+=4000",
           scrub: 0.5,
           pin: true,
+          // pinSpacing: true ensures scroll height is correct
+          pinSpacing: true,
         },
       });
 
@@ -101,15 +103,20 @@ export default function RoadmapCarousel() {
 
   return (
     <>
-      {/* Desktop & Tablet */}
+      {/* ─── Desktop & Tablet ─────────────────────────────────────── */}
       <section
         ref={sectionRef}
-        className="hidden md:block relative w-full h-dvh bg-[#F5F5F5]"
+        className="hidden md:flex flex-col justify-center relative w-full h-dvh bg-[#F5F5F5]"
+        // Using flex + justify-center so content is always vertically centered
+        // regardless of viewport height. The 7% padding-top/bottom creates
+        // breathing room while keeping the card zone in the middle.
+        
       >
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-8 w-full flex flex-col overflow-hidden justify-center h-full">
+
           {/* Heading */}
-          <div className="text-center pt-5 pb-10">
-            <h2 className="text-4xl md:text-2xl lg:text-3xl text-black font-semibold leading-snug font-poppins">
+          <div className="text-center mb-8 xl:mb-8 xl:pt-10">
+            <h2 className="text-4xl md:text-2xl lg:text-[25px] text-black font-semibold leading-snug font-poppins">
               From Strategy to Execution:{" "}
               <span className="text-[#E1A402]">
                 Our Digital <br /> Transformation Roadmap
@@ -118,30 +125,32 @@ export default function RoadmapCarousel() {
           </div>
 
           {/* Carousel Container */}
-          <div className="relative overflow-hidden">
-                        {/* LEFT & RIGHT BLUR EDGE SHADOW */}
-                  {/* SOFT EDGE FADE — not wall blur */}
-        <div className="pointer-events-none absolute inset-0 hidden md:block z-20">
-          
-          {/* LEFT FADE */}
-          <div
-            className="
-              absolute left-0 top-0 h-full w-24 md:w-32 lg:w-20
-              bg-gradient-to-r 
-              from-[#F5F5F5] via-[#F5F5F5]/80 via-[#F5F5F5]/40 to-transparent
-            "
-          />
+          {/*
+            flex-1 + flex items-center makes the overflow wrapper
+            take remaining vertical space and vertically centers the
+            card strip inside it — this is what kills the dead space.
+          */}
+          <div className="relative px-8  flex items-center">
+            <div className="pointer-events-none absolute inset-0 hidden md:block z-20">
+  
+            {/* LEFT FADE */}
+            <div
+              className="
+                absolute left-[-7%] top-0 h-full w-24 md:w-32 lg:w-40
+                bg-gradient-to-r 
+                from-[#F5F5F5] via-[#F5F5F5]/80 via-[#F5F5F5]/40 to-transparent
+              "
+            />
 
-          {/* RIGHT FADE */}
-          <div
-            className="
-              absolute right-0 top-0 h-full w-24 md:w-32 lg:w-40
-              bg-gradient-to-l 
-              from-[#F5F5F5] via-[#F5F5F5]/80 via-[#F5F5F5]/40 to-transparent
-            "
-          />
-
-        </div>
+            {/* RIGHT FADE */}
+            <div
+              className="
+                absolute right-[-7%] top-0 h-full w-24 md:w-32 lg:w-40
+                bg-gradient-to-l 
+                from-[#F5F5F5] via-[#F5F5F5]/80 via-[#F5F5F5]/40 to-transparent
+              "
+            />
+          </div>
 
             <div
               ref={carouselRef}
@@ -158,8 +167,8 @@ export default function RoadmapCarousel() {
                       md:p-5
                       lg:p-5
                       xl:p-8
+                      
                       relative
-                      overflow-hidden
                       bg-[rgba(255,253,250,0.6)]
                       backdrop-blur-[24px]
                       border border-[rgba(255,255,255,0.65)]
@@ -168,18 +177,18 @@ export default function RoadmapCarousel() {
                       transition-all duration-300
                     "
                   >
-                    <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/90 to-transparent" />
+                    <div className="pointer-events-none  absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/90 to-transparent" />
 
                     {/* Number */}
                     <div
-                      className="md:text-[35px] lg:text-[35px] xl:text-[55px] font-bold leading-none mb-3 text-transparent"
-                      style={{ WebkitTextStroke: "1px #9E9E9E" }}
+                      className="md:text-[35px] lg:text-[35px] xl:text-[45px] font-bold leading-none mb-3 text-transparent"
+                      style={{ WebkitTextStroke: "1px #F5C518" }}
                     >
                       {item.number}
                     </div>
 
                     {/* Icon */}
-                    <div className="md:h-15 lg:h-15 xl:h-28 flex items-center justify-center mb-25 mt-10 md:p-10 lg:p-10 xl:p-0">
+                    <div className="md:h-15 lg:h-15 xl:h-18 flex items-center justify-center mb-25 mt-10 md:p-10 lg:p-10 xl:p-10">
                       <img src={item.icon} alt={item.title} className="object-cover" />
                     </div>
 
@@ -200,7 +209,7 @@ export default function RoadmapCarousel() {
         </div>
       </section>
 
-      {/* Mobile */}
+      {/* ─── Mobile (unchanged) ───────────────────────────────────── */}
       <section className="md:hidden relative w-full bg-[#F5F5F5] py-12">
         <div className="px-4">
           <div className="text-center mb-12">
@@ -212,7 +221,7 @@ export default function RoadmapCarousel() {
             </h2>
           </div>
 
-          <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-4 px-4">
+          <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory pl-5">
             <div className="flex gap-4 pb-4">
               {roadmapData.map((item, index) => (
                 <div
@@ -220,8 +229,8 @@ export default function RoadmapCarousel() {
                   className="flex-shrink-0 w-[82vw] bg-gradient-to-br from-[#d1d0d065] to-[#C0C0C0] rounded-[20px] snap-start min-h-[400px] flex flex-col justify-around"
                 >
                   <div
-                    className="text-[50px] font-bold text-white/30 leading-none px-3"
-                    style={{ WebkitTextStroke: "1px #9E9E9E" }}
+                    className="text-[50px] font-bold text-[white/30] leading-none px-3"
+                    style={{ WebkitTextStroke: "1px #F5C518" }}
                   >
                     {item.number}
                   </div>

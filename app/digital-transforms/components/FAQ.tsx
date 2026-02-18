@@ -33,7 +33,7 @@ const faqs = [
 
         {/* LEFT SIDE — Desktop only */}
         <div className="hidden md:flex md:w-[40%] flex-col gap-10">
-          <h2 className="text-[20px] sm:text-[40px] md:text-[44px]  xl:text-[64px] lg:text-[64px] font-bold leading-tight font-manrope   text-black">
+          <h2 className="text-[20px] sm:text-[40px] md:text-[44px]   lg:text-[64px] xl:text-[58px] font-bold leading-tight font-manrope   text-black">
             Frequently <br /> Asked <br />
             <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent"  >
               Questions
@@ -44,7 +44,7 @@ const faqs = [
       <div className="md:hidden text-center mt-4 mb-6">
         <h2 className="text-3xl font-bold font-manrope text-black">
           Frequently Asked <br />
-          <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r text-black from-black via-black to-black/50 bg-clip-text text-transparent">
             Questions
           </span>
         </h2>
@@ -57,7 +57,7 @@ const faqs = [
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="relative rounded-[14px] p-[0.9px] bg-[#646464] cursor-pointer">
+              <div key={index} className="relative rounded-[14px] p-[1px] bg-[#646464] cursor-pointer">
                 <div className="bg-[#fafafa] rounded-[13px] px-5 py-4"
                  onClick={() => setOpenIndex(isOpen ? null : index)}>
                   <button

@@ -34,7 +34,7 @@ export default function HeroSection({
                 block
                 text-[25px]
                 md:text-[25px]
-                lg:text-[30px]
+                lg:text-[35px]
                 xl:text-[40px]
                 2xl:text-[42px]   /* Lenovo laptop */
                 3xl:text-[52px]   /* desktop monitor */
@@ -44,14 +44,14 @@ export default function HeroSection({
                 DIGITAL TRANSFORMATION
             </span>
 
-              <span className="block text-[25px] md:text-[25px] lg:text-[30px] xl:text-[45px] font-bold">
+              <span className="block text-[25px] md:text-[25px] lg:text-[35px] xl:text-[45px] font-bold">
                 <span className="text-[#F5B800]">SERVICES</span>
                 <span className="text-black"> & SOLUTIONS</span>
               </span>
             </h1>
 
             {/* Description Paragraph */}
-            <p className="text-black text-[15px] md:text-[12px] lg:text-[13px] xl:text-[16px] font-semibold leading-[1.65] xl:mt-10 mb-10 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] ">
+            <p className="text-black text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold leading-[1.65] xl:mt-10 mb-10 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] ">
               As a digital transformation consulting company and service provider,
               we help startups, mid-sized companies, and enterprises achieve
               sustainable business growth.

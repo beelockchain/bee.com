@@ -112,7 +112,7 @@ Area We Occupied
           {card.title}
         </h4>
 
-        <p className="text-[11px] sm:text-[13px] lg:text-[14px] leading-relaxed text-black/80 font-poppins mb-4 sm:mb-6">
+        <p className="text-[11px] sm:text-[13px] lg:text-[14px] leading-relaxed text-black font-poppins mb-4 sm:mb-6">
           {card.desc}
         </p>
       </div>
