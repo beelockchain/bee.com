@@ -21,7 +21,7 @@ const TAB_CONTENT: Record<
   Blockchain: {
     title: "Digital Transformation Services",
     desc: "We provide comprehensive full-cycle digital transformation services that integrate cloud computing, automation, data analytics, and the latest technologies to future-proof your business.",
-    routes: [{ label: "Digital Transformation", href: "#" }],
+    routes: [{ label: "Digital Transformation", href: "/digital-transformation-services" }],
   },
   AI: {
     title: "Software Development",
@@ -70,11 +70,21 @@ const TAB_CONTENT: Record<
 };
 
 /* ---------------- ROUTE TAG COMPONENT ---------------- */
-function RouteTag({ label, href }: { label: string; href: string }) {
+function RouteTag({
+  label,
+  href,
+  target,
+}: {
+  label: string;
+  href: string;
+  target?: string;
+}) {
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1 text-sm md:text-lg text-gray-700  transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-yellow-500 "
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      className="inline-flex items-center gap-1 text-sm md:text-lg text-gray-700 transition-colors group underline underline-offset-2 decoration-gray-300 hover:decoration-yellow-500"
     >
       {label}
       <span className="w-4 h-4 rounded-full bg-yellow-400 flex items-center justify-center text-xs group-hover:bg-yellow-500 transition-colors">
@@ -98,6 +108,7 @@ function RouteTag({ label, href }: { label: string; href: string }) {
     </a>
   );
 }
+
 
 export default function Transformes() {
   const [activeTab, setActiveTab] = useState(0);
@@ -272,13 +283,14 @@ export default function Transformes() {
                       {/* Route Tags */}
                       {TAB_CONTENT[tab].routes.length > 0 && (
                         <div className="flex flex-wrap gap-x-4 gap-y-3 mt-8 ">
-                          {TAB_CONTENT[tab].routes.map((route, i) => (
-                            <RouteTag
-                              key={i}
-                              label={route.label}
-                              href={route.href}
-                            />
-                          ))}
+                        {TAB_CONTENT[tab].routes.map((route, i) => (
+                          <RouteTag
+                            key={i}
+                            label={route.label}
+                            href={route.href}
+                            target="_blank"
+                          />
+                        ))}
                         </div>
                       )}
                     </div>
@@ -341,13 +353,14 @@ export default function Transformes() {
                     {/* Route Tags - Mobile */}
                     {TAB_CONTENT[tab].routes.length > 0 && (
                       <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 mt-4">
-                        {TAB_CONTENT[tab].routes.map((route, i) => (
-                          <RouteTag
-                            key={i}
-                            label={route.label}
-                            href={route.href}
-                          />
-                        ))}
+                       {TAB_CONTENT[tab].routes.map((route, i) => (
+                        <RouteTag
+                          key={i}
+                          label={route.label}
+                          href={route.href}
+                          target="_blank"
+                        />
+                      ))}
                       </div>
                     )}
                   </div>

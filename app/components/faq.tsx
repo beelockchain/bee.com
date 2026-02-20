@@ -33,7 +33,7 @@ const faqs = [
 
   return (
     <section className="w-full bg-[#fff]  py-0">
-      <div className="w-[90%] md:w-[80%] mx-auto flex flex-col md:flex-row  gap-2 md:gap-[30px] lg:gap-[100px] text-white">
+      <div className="w-[70%] md:w-[90%] lg:w-[70%] xl:w-[70%] mx-auto flex flex-col md:flex-row  gap-2 md:gap-[30px] lg:gap-[100px] text-white">
 
         {/* LEFT SIDE — Desktop only */}
         <div className="hidden md:flex md:w-[40%] flex-col gap-10">
@@ -61,7 +61,7 @@ const faqs = [
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="relative rounded-[14px] p-[0.9px] bg-[#646464] cursor-pointer">
+              <div key={index} className="relative rounded-[14px] p-[1px] bg-[#646464] cursor-pointer">
                 <div className="bg-[#fafafa] rounded-[13px] px-5 py-4"
                  onClick={() => setOpenIndex(isOpen ? null : index)}>
                   <button

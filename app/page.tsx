@@ -18,7 +18,6 @@ import IndustryWeServe from "./components/IndustryWeServe";
 import Technologies from "./components/Technologies";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import Testi from "./components/Testi";
-import RoadMapCard from "./digital-transforms/components/RoadMapCard";
 export default function Home() {
   return (
     <div className="bg-white">
@@ -36,8 +35,6 @@ export default function Home() {
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
-      <Footer/>
-      
     </div>
   );
 }

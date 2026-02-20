@@ -70,7 +70,7 @@ const Footer = () => {
 ];
 
   return (
-   <footer className="w-full bg-white py-20">
+   <footer className="w-full bg-white py-20 lg:py-6">
       <div className="max-w-[1400px] mx-auto px-6">
  {/* TITLE */}
         <h2 className="text-[28px] sm:text-[26px] md:text-[32px] lg:text-[42px] text-center font-semibold text-black font-poppins mb-12">
