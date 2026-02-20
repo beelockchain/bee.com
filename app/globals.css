@@ -37,21 +37,13 @@
 
 /* Marquee Animations */
 @keyframes marquee-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes marquee-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 .animate-marquee-left {
@@ -60,12 +52,6 @@
 
 .animate-marquee-right {
   animation: marquee-right 25s linear infinite;
-}
-
-/* Pause on hover */
-.animate-marquee-left:hover,
-.animate-marquee-right:hover {
-  animation-play-state: paused;
 }
 
 body {

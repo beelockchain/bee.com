@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const testimonials = [
   {
     id: 1,
-    text: "We appreciated the Beelockchain team's strong understanding of healthcare operations. The mobile app they built improved internal coordination and patient communication. Most importantly, the team managed the project efficiently and helped us launch the app at the right time without compromising quality. They were professional, realistic, and consistent throughout the process.",
+    text: "We appreciated the Beelockchain team's strong understanding of healthcare operations. The mobile app they built improved internal coordination and patient communication. Most importantly, the team managed the project efficiently and helped us launch the app at the right time without compromising quality.",
     client: "James Anderson – Chief Technology Officer (CTO)",
     image: `${ASSET_URL}/images/testimonialcurosal2.webp`,
   },
@@ -74,10 +74,10 @@ const TestimonialCarousel = () => {
 
                     {/* CONTENT */}
                     <div className="flex-1">
-                      <p className="text-lg leading-snug text-black font-medium max-w-[600px]">
+                      <p className="text-[16px] font-poppins font-regular  text-black max-w-[600px]">
                         {item.text}
                       </p>
-                      <p className="mt-6 text-[18px] font-semibold text-black">
+                      <p className="mt-6 text-[16px] font-poppins font-semibold text-black">
                         {item.client}
                       </p>
                     </div>
@@ -124,7 +124,7 @@ const TestimonialCarousel = () => {
                   <div className="flex items-start gap-4">
 
                     {/* IMAGE */}
-                    <div className="w-[110px] h-[180px] relative rounded-xl overflow-hidden border-2 border-blue-500">
+                    <div className="w-[90px] h-[140px] relative rounded-xl overflow-hidden">
                       <Image
                         src={item.image}
                         alt={item.client}
@@ -135,10 +135,10 @@ const TestimonialCarousel = () => {
 
                     {/* TEXT */}
                     <div className="flex-1">
-                      <p className="text-xs text-black leading-snug">
+                      <p className="text-[10px]  text-black font-poppins ">
                         {item.text}
                       </p>
-                      <p className="mt-3 text-xs font-semibold text-black">
+                      <p className="mt-3 text-[10px] font-semibold text-black">
                         {item.client}
                       </p>
                     </div>

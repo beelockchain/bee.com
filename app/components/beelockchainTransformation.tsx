@@ -57,7 +57,7 @@ const steps = [
 ];
   return (
     <section className="w-full bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-12">
         {/* Heading */}
         <div className="text-center mx-auto mb-10">
           <h2 className="text-2xl md:text-4xl font-bold font-[Poppins] text-zinc-800 mb-4">
@@ -69,14 +69,14 @@ const steps = [
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {steps.map((item, index) => (
             <div
               key={index}
               className={`bg-neutral-100 rounded-xl shadow-lg flex flex-col transition transform ${item.rotate}`}
             >
               {/* Text content (with padding) */}
-              <div className="p-8">
+              <div className="p-6 md:p-4 lg:p-8">
                 <span className="text-zinc-500 font-semibold mb-3 block">
                   {item.step}
                 </span>
