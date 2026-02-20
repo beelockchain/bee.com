@@ -66,11 +66,10 @@ const Topnav = () => {
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
   const [mobileServiceOpen, setMobileServiceOpen] = useState(false);
 
-  // Ref on the Service nav button to measure its position
   const serviceButtonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on outside click
+  /* Close dropdown on outside click */
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
@@ -87,11 +86,13 @@ const Topnav = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Prevent body scroll when side menu open
+  /* Prevent horizontal scroll issue */
   useEffect(() => {
     document.body.style.overflow = sideMenuOpen ? "hidden" : "";
+    document.body.style.overflowX = "hidden";
     return () => {
       document.body.style.overflow = "";
+      document.body.style.overflowX = "";
     };
   }, [sideMenuOpen]);
 
@@ -115,35 +116,35 @@ const Topnav = () => {
   return (
     <>
       {/* ===== TOP NAV ===== */}
-      <div className="fixed z-50 w-full bg-white">
-        <div className="h-20 flex items-center justify-between px-4 lg:px-10">
+      <div className="fixed z-50 w-full bg-[#FFFCF8]">
+        <div className="h-20 flex items-center justify-between px-4 lg:px-10 cursor-pointer">
 
-          {/* 1. LOGO */}
+          {/* LOGO */}
           <div className="flex-shrink-0 w-[20%]">
             <Link href="/" onClick={() => setServiceDropdownOpen(false)}>
               <img
                 src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
                 alt="logo"
-                className="h-8 sm:h-9 md:h-10 lg:h-14"
+                className=" sm:h-9 md:h-10 lg:h-14"
               />
             </Link>
           </div>
 
-          {/* 2. CENTER NAV — hidden on mobile */}
-          <nav className="hidden sm:flex flex-1 justify-center items-center gap-6 md:gap-8 lg:gap-10">
+          {/* CENTER NAV */}
+          <nav className="hidden sm:flex flex-1 justify-center items-center gap-6 md:gap-8 lg:gap-10 cursor-pointer">
             {primaryNav.map((item) => {
               const active = isActive(item.href, item.hasDropdown);
               return (
-                <div key={item.label} className="relative">
+                <div key={item.label} className="relative cursor-pointer">
                   {item.hasDropdown ? (
-                    // FIX 1: No chevron icon on Service
                     <button
                       ref={serviceButtonRef}
                       onClick={() => setServiceDropdownOpen((prev) => !prev)}
-                      className={`text-xs md:text-sm lg:text-base transition-colors
-                        ${active || serviceDropdownOpen
-                          ? "font-bold text-black"        // FIX 6: bold + black when active
-                          : "font-medium text-gray-700 hover:text-black"
+                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+                        ${
+                          active || serviceDropdownOpen
+                            ? "font-bold text-black"
+                            : "font-medium text-[#807E7C] hover:text-black"
                         }`}
                     >
                       {item.label}
@@ -151,11 +152,13 @@ const Topnav = () => {
                   ) : (
                     <Link
                       href={item.href}
+                      target="_blank"
                       onClick={() => setServiceDropdownOpen(false)}
-                      className={`text-xs md:text-sm lg:text-base transition-colors
-                        ${active
-                          ? "font-bold text-black"        // FIX 6: bold + black when active
-                          : "font-medium text-gray-700 hover:text-black"
+                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+                        ${
+                          active
+                            ? "font-bold text-black"
+                            : "font-medium text-[#807E7C] hover:text-black"
                         }`}
                     >
                       {item.label}
@@ -166,8 +169,8 @@ const Topnav = () => {
             })}
           </nav>
 
-          {/* 3. RIGHT ACTIONS */}
-          <div className="flex items-center justify-end gap-3 w-auto sm:w-[30%] lg:w-[22%]">
+          {/* RIGHT ACTIONS */}
+          <div className="flex items-center md:justify-end md:gap-3  sm:w-[30%] lg:w-[22%]">
             <Link
               href="/contact"
               className="hidden sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
@@ -196,36 +199,22 @@ const Topnav = () => {
           </div>
         </div>
 
-        {/* ===== SERVICE DROPDOWN =====
-            FIX 2: White + blur shadow, no grey gradient
-            FIX 3: Submenu aligned directly under "Service" label
-        */}
+        {/* ===== SERVICE DROPDOWN (DESKTOP) ===== */}
         <div
           ref={dropdownRef}
-          className={`absolute left-0 right-0 top-full w-full transition-all duration-300 overflow-hidden ${
+          className={`absolute left-0 right-0 top-full w-full cursor-pointer  transition-all duration-300 overflow-hidden ${
             serviceDropdownOpen
               ? "max-h-96 opacity-100"
-              : "max-h-0 opacity-0 pointer-events-none"
+              : "max-h-0 opacity-0" 
           }`}
-          style={{
-            background: "rgba(255,255,255,0.96)",
-            backdropFilter: "blur(24px)",
-            WebkitBackdropFilter: "blur(24px)",
-            boxShadow:
-              "0 24px 64px 0 rgba(200,200,200,0.5), 0 2px 12px 0 rgba(180,180,180,0.15)",
-          }}
         >
-          {/*
-            Mirror the exact flex layout of the top nav row so the submenu
-            naturally sits below the "Service" button:
-              [logo 20%] [flex-1 center: Home | Service | Blog | Contact] [right w-[30%]]
-          */}
+          {/* Mirror the exact flex layout of the top nav row so the submenu naturally sits below the "Service" button */}
           <div className="flex items-start px-4 lg:px-10 py-6">
             {/* Mirror logo spacer */}
             <div className="flex-shrink-0 w-[20%]" />
 
             {/* Mirror center nav container */}
-            <div className="flex flex-1 justify-center items-start gap-6 md:gap-8 lg:gap-10">
+            <div className="flex flex-1 justify-center items-start gap-6 md:gap-8 lg:gap-0">
               {/* Invisible "Home" placeholder keeps Service column aligned */}
               <div
                 aria-hidden
@@ -237,14 +226,17 @@ const Topnav = () => {
               {/* The actual submenu — directly under Service */}
               <div className="flex flex-col gap-3">
                 {serviceSubMenu.map((sub) => (
-                  <button
-                    key={sub.label}
-                    onClick={() => handleSubMenuClick(sub.href)}
-                    className="flex items-center gap-3 text-sm md:text-[15px] font-medium text-gray-700 hover:text-black transition group text-left"
-                  >
-                    <span className="w-2 h-2 flex-shrink-0 rounded-full bg-yellow-400 group-hover:scale-125 transition-transform" />
-                    {sub.label}
-                  </button>
+                 <Link
+                  key={sub.label}
+                  href={sub.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setServiceDropdownOpen(false)}
+                  className="flex items-center gap-3 text-sm md:text-[15px] font-medium text-black hover:text-black transition group text-left cursor-pointer"
+                >
+                  <span className="w-2 h-2 flex-shrink-0 rounded-full bg-yellow-400 group-hover:scale-125 transition-transform" />
+                  {sub.label}
+                </Link>
                 ))}
               </div>
             </div>
@@ -258,63 +250,67 @@ const Topnav = () => {
       {/* Click-away overlay to close service dropdown */}
       {serviceDropdownOpen && (
         <div
-          className="fixed inset-0 z-30"
-          style={{ top: "80px" }}
+          className="fixed inset-0 z-30 transition-opacity duration-300 cursor-pointer"
+          style={{
+            top: "80px",
+            background:
+              "linear-gradient(to bottom, rgba(245,245,245,0.92) 0%, rgba(248,248,248,0.75) 40%, rgba(255,255,255,0.4) 100%)",
+            backdropFilter: "blur(2px)",
+            WebkitBackdropFilter: "blur(2px)",
+          }}
           onClick={() => setServiceDropdownOpen(false)}
         />
       )}
 
-      {/* ===== SIDE MENU ===== */}
+      {/* ===== SIDE MENU OVERLAY ===== */}
       {sideMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/10 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-white/40 backdrop-blur-sm"
           style={{ top: "80px" }}
           onClick={() => setSideMenuOpen(false)}
         />
       )}
 
-      {/*
-        FIX 5 — Mobile: slides top-to-bottom, full width, all items centered
-                 Desktop (sm+): slides from right, items right-aligned
-      */}
+      {/* ===== SIDE MENU ===== */}
       <div
         className={`
-          fixed z-50 bg-white shadow-2xl flex flex-col pb-8
+          fixed z-50  flex flex-col pb-8
           transition-all duration-300 ease-in-out
           top-20
-          /* Mobile */
-          left-0 w-full pt-10
+          w-full pt-5
           ${sideMenuOpen
             ? "translate-y-0 opacity-100"
-            : "-translate-y-4 opacity-0 pointer-events-none"
-          }
-          /* sm+: override to right-side drawer */
-          sm:left-auto sm:right-0 sm:w-[min(380px,90vw)] sm:h-[calc(100vh-80px)]
+            : "-translate-y-4 opacity-0 pointer-events-none"}
+          sm:w-[380px]
+          sm:left-auto sm:right-0 sm:h-[calc(100vh-80px)]
           sm:translate-y-0
-          ${sideMenuOpen ? "sm:translate-x-0 sm:opacity-100" : "sm:translate-x-full sm:opacity-0 sm:pointer-events-none"}
+          ${
+            sideMenuOpen
+              ? "sm:translate-x-0 sm:opacity-100"
+              : "sm:translate-x-full sm:opacity-0 sm:pointer-events-none"
+          }
         `}
       >
-        <div className="flex flex-col items-center sm:items-end gap-8 flex-1 overflow-y-auto sm:pr-8 px-6 sm:px-0 pt-10">
+        <div className="flex flex-col items-start sm:items-end gap-8 flex-1 overflow-y-auto  sm:pr-10 px-6 sm:px-0 pt-5">
 
-          {/* PRIMARY MOBILE LINKS — only on mobile, centered */}
-          <div className="flex flex-col items-center gap-4 sm:hidden w-full">
+          {/* PRIMARY MOBILE LINKS */}
+          <div className="flex flex-col items-start gap-4 sm:hidden w-full">
             {primaryNav.map((item) =>
               item.hasDropdown ? (
-                <div key={item.label} className="w-full flex flex-col items-center">
-                  {/* FIX 5: No chevron on mobile Service button */}
+                <div key={item.label} className="w-full">
                   <button
                     onClick={() => setMobileServiceOpen((p) => !p)}
-                    className="text-2xl font-semibold text-black hover:text-yellow-500 transition text-center"
+                    className="text-md font-semibold text-black hover:text-yellow-500 transition"
                   >
                     {item.label}
                   </button>
                   {mobileServiceOpen && (
-                    <div className="flex flex-col items-center mt-3 gap-3">
+                    <div className="flex flex-col items-start mt-3 gap-3 w-full pl-4">
                       {serviceSubMenu.map((sub) => (
                         <button
                           key={sub.label}
                           onClick={() => handleSideSubMenuClick(sub.href)}
-                          className="flex items-center gap-2 text-base font-medium text-gray-600 hover:text-yellow-500 transition text-center"
+                          className="flex items-center gap-2 text-base font-medium text-black hover:text-yellow-500 transition"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />
                           {sub.label}
@@ -327,7 +323,8 @@ const Topnav = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-2xl font-semibold text-black hover:text-yellow-500 transition text-center"
+                  target="_blank"
+                  className="text-md font-semibold text-black hover:text-yellow-500 transition"
                   onClick={() => setSideMenuOpen(false)}
                 >
                   {item.label}
@@ -336,16 +333,14 @@ const Topnav = () => {
             )}
           </div>
 
-          {/* Divider */}
-          <div className="w-20 h-px bg-gray-300" />
-
-          {/* SECONDARY LINKS — centered mobile, right-aligned sm+ */}
-          <div className="flex flex-col items-center sm:items-end gap-3">
+          {/* SECONDARY LINKS */}
+          <div className="flex flex-col items-start sm:items-end gap-5 w-full">
             {secondaryNav.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-lg font-medium text-gray-700 hover:text-yellow-500 transition text-center sm:text-right"
+                target="_blank"
+                className="text-md font-medium text-black hover:text-yellow-500 transition"
                 onClick={() => setSideMenuOpen(false)}
               >
                 {item.label}
@@ -354,12 +349,12 @@ const Topnav = () => {
           </div>
         </div>
 
-        {/* SOCIAL ICONS — centered mobile, right-aligned sm+ */}
-        <div className="px-6 sm:px-0 sm:pr-8 pt-6 border-t border-gray-100 mt-4">
-          <h4 className="text-center sm:text-right text-sm font-medium text-black mb-3">
+        {/* SOCIAL ICONS */}
+        <div className="px-6 sm:px-0  pt-6  sm:pr-8  mt-20 flex flex-col  sm:items-end">
+          <h4 className="text-lg md:text-md font-medium text-black mb-3 px-13">
             Connect With Us:
           </h4>
-          <div className="flex gap-3 justify-center sm:justify-end">
+          <div className="flex gap-3 px-1">
             {socialIcons.map((icon, i) => (
               <Link
                 key={i}

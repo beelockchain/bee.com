@@ -39,21 +39,21 @@ const benefitCards: BenefitCard[] = [
   },
   {
     id: 5,
-    icon: '/assets/images/digital-tranform-card5.png',
+    icon: '/assets/images/benefits-compliance.png',
     title: 'Compliance & Risk Readiness',
     description:
       'Supports data protection, governance, and regulatory needs. It helps businesses manage operational and compliance risks.',
   },
   {
     id: 6,
-    icon: '/assets/images/digital-tranform-card6.png',
+    icon: '/assets/images/benefits-risks.png',
     title: 'Faster Innovation Cycles',
     description:
       'Allows quicker development, testing, and deployment of digital solutions to respond to the market and business changes.',
   },
     {
     id: 7,
-    icon: '/assets/images/digital-tranform-card6.png',
+    icon: '/assets/images/benefits-sustainable.png',
     title: 'Sustainable Technology Foundation',
     description:
       'Develops future-ready digital foundations that can adapt to evolving needs while reducing long-term technical debt.',

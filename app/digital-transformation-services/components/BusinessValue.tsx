@@ -68,7 +68,6 @@ const NumberSvg = ({ number }: { number: string }) => {
         fontSize="30"
         fontWeight="900"
         fontFamily="Poppins, sans-serif"
-  
       >
         {number}
       </text>
@@ -76,212 +75,178 @@ const NumberSvg = ({ number }: { number: string }) => {
   );
 };
 
-// ─── MOBILE CARD STACK ───────────────────────────────────────────────────────
-// Cards stacked exactly like the reference image:
-// - Card 01 on TOP layer (visible front)
-// - Card 08 on BOTTOM layer (visible at back edge)
-// - Stacked vertically with peek effect
-// - Dismissal order: 01 → 02 → 03 → ... → 08
+// ─── MOBILE CARD STACK — CSS sticky + scroll listener, zero GSAP ─────────────
+const CARD_H = 300;
+const CARD_PEEK = 15;
+const SCROLL_PER_CARD = 290;
+const TOTAL_CARDS = services.length; // 8
+const DISMISSIBLE = TOTAL_CARDS - 1; // 7 cards animate, card 08 stays
+
 const MobileCardStack = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const stackContainerRef = useRef<HTMLDivElement>(null);
+  const outerRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+    const outer = outerRef.current;
+    if (!outer) return;
 
-    const totalCards = services.length; // 8
-    const CARD_PEEK = 10;        // Visible gap between stacked cards
-    const SCALE_STEP = 0.015;    // Scale reduction per card depth
-    const SCROLL_PER_CARD = 200; // Slower, smoother scroll per card
+    // Set initial stack positions
+    cardRefs.current.forEach((card, i) => {
+      if (!card) return;
+      card.style.transform = `translateY(${i * CARD_PEEK}px) scale(${1 - i * 0.015})`;
+      card.style.opacity = "1";
+      card.style.zIndex = String(TOTAL_CARDS - i);
+    });
 
-    /**
-     * Visual stacking order:
-     * services[0] = Card 01 → TOP (frontmost, highest z-index, dismissed first)
-     * services[1] = Card 02 → Behind 01
-     * ...
-     * services[7] = Card 08 → BOTTOM (backmost, lowest visible z-index, dismissed last)
-     */
+    const handleScroll = () => {
+      const rect = outer.getBoundingClientRect();
+      const scrolled = Math.max(0, -rect.top);
+      const totalScroll = DISMISSIBLE * SCROLL_PER_CARD;
+      const clampedScroll = Math.min(scrolled, totalScroll);
+      const cardsDismissed = clampedScroll / SCROLL_PER_CARD;
 
-    const applyInitialState = () => {
       cardRefs.current.forEach((card, i) => {
         if (!card) return;
-        // i=0 is Card 01 (top), i=7 is Card 08 (bottom)
-        gsap.set(card, {
-          y: i * CARD_PEEK,              // Stack downward
-          scale: 1 - i * SCALE_STEP,     // Smaller as depth increases
-          zIndex: totalCards - i,        // Card 01 has highest z-index
-          opacity: 1,
-          rotateX: 0,
-          force3D: true,
-        });
+
+        // Card 08 (i=7): never moves, stays as permanent base
+        if (i === TOTAL_CARDS - 1) return;
+
+        const dismissProgress = Math.max(0, Math.min(1, cardsDismissed - i));
+
+        if (dismissProgress === 0) {
+          const remainingAbove = Math.max(0, i - cardsDismissed);
+          card.style.transform = `translateY(${remainingAbove * CARD_PEEK}px) scale(${1 - remainingAbove * 0.015})`;
+          card.style.opacity = "1";
+        } else if (dismissProgress < 1) {
+          const easeProgress = Math.pow(dismissProgress, 0.8);
+          const yOffset = -300 * easeProgress;
+          const scale = 1 - dismissProgress * 0.1;
+          const opacity = Math.pow(1 - dismissProgress, 2);
+          card.style.transform = `translateY(${yOffset}px) scale(${scale}) rotateX(${dismissProgress * 10}deg)`;
+          card.style.opacity = String(opacity);
+        } else {
+          card.style.transform = `translateY(-320px) scale(0.9)`;
+          card.style.opacity = "0";
+        }
       });
     };
 
-    applyInitialState();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
-    const totalScroll = totalCards * SCROLL_PER_CARD;
-
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: `+=${totalScroll}`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 1.5, // Slower = smoother
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const cardsDismissed = progress * totalCards;
-
-          cardRefs.current.forEach((card, i) => {
-            if (!card) return;
-
-            // ✅ ADD THIS — card 08 (i=7) never moves, stays as permanent base
-            if (i === totalCards - 1) return;
-
-            // Everything below is exactly the same as your original code
-            const dismissProgress = Math.max(0, Math.min(1, cardsDismissed - i));
-
-            if (dismissProgress === 0) {
-              const remainingAbove = Math.max(0, i - cardsDismissed);
-              gsap.to(card, {
-                y: remainingAbove * CARD_PEEK,
-                scale: 1 - remainingAbove * SCALE_STEP,
-                opacity: 1,
-                rotateX: 0,
-                duration: 0.4,
-                ease: "power2.out",
-                overwrite: true,
-              });
-            } else if (dismissProgress < 1) {
-              const easeProgress = Math.pow(dismissProgress, 0.8);
-              gsap.to(card, {
-                y: -300 * easeProgress,
-                opacity: Math.pow(1 - dismissProgress, 2),
-                rotateX: dismissProgress * 10,
-                scale: 1 - dismissProgress * 0.1,
-                duration: 0.4,
-                ease: "power2.out",
-                overwrite: true,
-              });
-            } else {
-              gsap.to(card, {
-                y: -320,
-                opacity: 0,
-                duration: 0.1,
-                overwrite: true,
-              });
-            }
-          });
-        },
-      });
-    }, section);
-
-    return () => ctx.revert();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const CARD_H = 230;
-  const PEEK = 10;
-  const stackHeight = CARD_H + (services.length - 1) * PEEK;
+  const stackHeight = CARD_H + (TOTAL_CARDS - 1) * CARD_PEEK;
+  // Outer height = one viewport (for the sticky view) + scroll room for 7 dismissals
+  const outerHeight = `calc(100vh + ${DISMISSIBLE * SCROLL_PER_CARD}px)`;
 
   return (
-    <div ref={sectionRef} className="block md:hidden w-full min-h-screen bg-white pt-8 pb-16 px-5">
-      <div className="max-w-[400px] mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-[20px] text-black font-bold leading-tight font-poppins">
-            How Beelockchain Delivers{" "}
-            <span className="text-yellow-400">Digital Transformation</span> for
-            Business Value Creation
-          </h2>
-          <p className="mt-4 text-black text-[12px] font-poppins font-medium leading-relaxed">
-            Beelockchain supports organizations through their digital
-            transformation journey by combining consulting expertise with practical
-            execution.
-          </p>
-        </div>
+    <div
+      ref={outerRef}
+      className="block md:hidden w-full bg-white"
+      style={{ height: outerHeight }}
+    >
+      {/* Sticky inner — locked in viewport while outer scrolls through */}
+      <div
+        className="sticky top-0 w-full bg-white pt-8 pb-16 px-5"
+        style={{ height: "100vh", overflow: "hidden" }}
+      >
+        <div className="max-w-[400px] mx-auto h-full flex flex-col">
 
-        {/* Card Stack Container - Centered */}
-        <div
-          ref={stackContainerRef}
-          className="relative mx-auto"
-          style={{
-            height: `${stackHeight}px`,
-            width: '100%',
-            maxWidth: '300px',
-          }}
-        >
-          {services.map((item, i) => (
+          {/* Heading */}
+          <div className="text-center mb-10 flex-shrink-0">
+            <h2 className="text-[20px] text-black font-bold leading-tight font-poppins">
+              How Beelockchain Delivers{" "}
+              <span className="text-yellow-400">Digital Transformation</span>{" "}
+              for Business Value Creation
+            </h2>
+            <p className="mt-4 text-black text-[12px] font-poppins font-medium leading-relaxed">
+              Beelockchain supports organizations through their digital
+              transformation journey by combining consulting expertise with
+              practical execution.
+            </p>
+          </div>
+
+          {/* Card Stack — centered */}
+          <div className="flex-1 flex items-center justify-center">
             <div
-              key={i}
-              ref={(el) => {
-                cardRefs.current[i] = el;
-              }}
-              className="absolute left-0 right-0 top-0 rounded-2xl bg-[#E2E2E2] shadow-xl p-5"
+              className="relative"
               style={{
-                height: `${CARD_H}px`,
-                transformOrigin: "center center",
-                willChange: "transform, opacity",
+                width: "350px",
+                height: `${stackHeight}px`,
               }}
             >
-              <div className="relative h-full">
-                <h3 className="text-[13px] font-semibold mb-2 text-black font-poppins leading-tight">
-                  {item.title}
-                </h3>
-                <p className="text-black text-[10px] leading-relaxed font-poppins pr-12">
-                  {item.description}
-                </p>
-                <div className="absolute bottom-0 right-0 opacity-25">
-                  <NumberSvg number={(i + 1).toString().padStart(2, "0")} />
+              {services.map((item, i) => (
+                <div
+                  key={i}
+                  ref={(el) => { cardRefs.current[i] = el; }}
+                  className="absolute left-0 right-0 top-0 rounded-2xl bg-[#E2E2E2] shadow-xl p-5"
+                  style={{
+                    height: `${CARD_H}px`,
+                    transformOrigin: "center center",
+                    willChange: "transform, opacity",
+                    transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
+                  }}
+                >
+                  <div className="relative  h-full">
+                    <h3 className="text-[16px] font-semibold mb-2 text-black font-poppins leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-black text-[14px] leading-relaxed font-poppins pr-12">
+                      {item.description}
+                    </p>
+                    <div className="absolute bottom-0 right-0 opacity-25">
+                      <NumberSvg number={(i + 1).toString().padStart(2, "0")} />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* CTA Button */}
-        <div className="mt-16 flex justify-center">
-        
-      <button
-        className="
-          cursor-pointer
-          inline-flex items-center
-          w-fit
-          px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
-          border border-black rounded-full
-          bg-white
-          hover:bg-gray-50
-          transition-colors
-        "
-      >
-        <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px] bg-gray">
-         Transform Your Business
-        </span>
-        <svg
-          className="w-8 h-8 lg:w-8 lg:h-8"
-          viewBox="0 0 56 55"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="28.2473"
-            cy="27.0945"
-            r="15.912"
-            fill="#F6E000"
-            stroke="#F9C901"
-            strokeWidth="1.51543"
-          />
-          <path
-            d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-            stroke="black"
-            strokeWidth="3.03086"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
+          {/* CTA Button */}
+          <div className="flex-shrink-0 flex justify-center pb-4">
+            <button
+              className="
+                cursor-pointer
+                inline-flex items-center
+                w-fit
+                px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
+                border border-black rounded-full
+                bg-white
+                hover:bg-gray-50
+                transition-colors
+              "
+            >
+              <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px] bg-gray">
+                Transform Your Business
+              </span>
+              <svg
+                className="w-8 h-8 lg:w-8 lg:h-8"
+                viewBox="0 0 56 55"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="28.2473"
+                  cy="27.0945"
+                  r="15.912"
+                  fill="#F6E000"
+                  stroke="#F9C901"
+                  strokeWidth="1.51543"
+                />
+                <path
+                  d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                  stroke="black"
+                  strokeWidth="3.03086"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
@@ -409,7 +374,7 @@ const DesktopLayout = () => {
         <div className="text-center max-w-6xl mx-auto">
           <h2 className="text-[36px] md:text-[36px] lg:text-[26px] xl:text-[30px] text-black font-bold leading-tight">
             How Beelockchain Delivers{" "}
-            <span data-text="Digital Transformation" className=" shine-text relative text-[#f5c518]">Digital Transformation</span> for{" "}
+            <span data-text="Digital Transformation" className="shine-text relative text-[#f5c518]">Digital Transformation</span> for{" "}
             <br />
             Business Value Creation
           </h2>
@@ -488,7 +453,7 @@ const DesktopLayout = () => {
 const BusinessValue = () => {
   return (
     <>
-      {/* Mobile (< md): stacked cards 01→08, smooth slow dismissal animation */}
+      {/* Mobile (< md): CSS sticky scroll, no GSAP, no extra spacing */}
       <MobileCardStack />
 
       {/* Tablet (md → lg): plain 8-card list + sticky image, no animation */}
