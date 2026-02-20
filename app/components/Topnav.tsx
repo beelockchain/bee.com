@@ -96,11 +96,18 @@ const Topnav = () => {
     };
   }, [sideMenuOpen]);
 
-  const isActive = (href: string, hasDropdown?: boolean) => {
-    if (hasDropdown) return pathname.startsWith("/service");
-    if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
-  };
+const isActive = (href: string, hasDropdown?: boolean) => {
+  if (hasDropdown) {
+    return (
+      pathname.startsWith("/service") ||
+      pathname === "/digital-transformation-services"
+    );
+  }
+
+  if (href === "/") return pathname === "/";
+
+  return pathname.startsWith(href);
+};
 
   const handleSubMenuClick = (href: string) => {
     setServiceDropdownOpen(false);
