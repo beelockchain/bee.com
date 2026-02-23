@@ -343,7 +343,7 @@ const Technologies = () => {
           </h2>
 
           {/* Subheading */}
-          <p className="text-center text-black text-[14px] sm:text-[18px] md:text-lg xl:text-lg lg:text-lg font-normal font-['Poppins'] mb-8">
+          <p className="text-center text-black text-sm sm:text-sm md:text-lg xl:text-lg lg:text-lg font-normal font-['Poppins'] mb-8">
             Unlock new opportunities with tailored digital transformation strategies
           </p>
 

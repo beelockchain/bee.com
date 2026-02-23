@@ -115,7 +115,7 @@ const Herosection = () => {
               style={{ backgroundImage: `url('${ASSET_URL}/images/Herosideimg2.webp')` }}
             />
             <div className="relative z-10 p-5">
-              <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
+              <p className="text-gray-700 text-sm  lg:text-lg leading-relaxed font-normal font-['Poppins']">
                 Beelockchain is a global digital transformation company that
                 integrates future-ready solutions across AI, Blockchain,
                 Cloud Infrastructure, Big Data, and Mobile Applications

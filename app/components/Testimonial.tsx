@@ -194,7 +194,7 @@ export default function Testi() {
 
           {/* Heading */}
           <h2 className="text-2xl font-bold mt-4 text-black">What We've Done</h2>
-          <p className="text-sm text-black text-center px-4">
+          <p className="text-sm md:text-lg text-black text-center px-4 font-normal font-['Poppins']">
             Trusted by Leading Enterprises and Innovators
           </p>
 

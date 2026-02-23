@@ -124,10 +124,10 @@ const cardsData = [
     <div className="w-full bg-white flex flex-col items-center py-20">
       {/* ================= TITLE ================= */}
       <div className="mb-10 text-center">
-        <h2 className="text-black text-[34px] font-bold">
+        <h2 className="text-black text-[34px] font-bold ">
           Why Choose <span>Beelockchain</span>
         </h2>
-        <p className="w-full md:w-[750px] max-w-full text-black text-lg">
+        <p className="w-full md:w-[820px] max-w-full text-black text-sm md:text-lg font-normal font-['Poppins']">
           As experts in digital transformation, we create customized, future-ready solutions that ensure your investment counts by focusing on your unique customer and market needs.
         </p>
       </div>
