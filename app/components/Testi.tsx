@@ -155,7 +155,7 @@ const Testi = () => {
 
           <section className="flex flex-col items-center">
             <h2 className="text-2xl font-bold mt-4 text-black">What We've Done</h2>
-            <p className="text-sm text-black">
+            <p className="text-lg text-black">
               Trusted by Leading Enterprises and Innovators
             </p>
 

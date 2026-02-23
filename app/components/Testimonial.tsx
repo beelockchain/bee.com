@@ -17,7 +17,7 @@ const Testimonial = () => {
               <h2 className="text-black text-2xl font-bold">
                 What We've Done
               </h2>
-              <p className="text-black">
+              <p className="text-black text-lg">
                 Trusted by Leading Enterprises and Innovators
               </p>
             </div>
@@ -45,7 +45,7 @@ const Testimonial = () => {
               <h2 className="text-black text-xl font-bold">
                 What We've Done
               </h2>
-              <p className="text-black text-xs">
+              <p className="text-black text-lg">
                 Trusted by Leading Enterprises and Innovators
               </p>
             </div>
