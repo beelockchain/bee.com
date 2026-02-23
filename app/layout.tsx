@@ -111,7 +111,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${manrope.variable} antialiased`}>
+      <body  className={`${poppins.variable} ${manrope.variable} antialiased`}>
+        
         {/* ================= TOP NAVIGATION ================= */}
         <Topnav />
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-const faqs = [
+  const faqs = [
     {
       q: "How does Beelockchain help businesses with digital transformation?",
       a: "Beelockchain offers end-to-end digital transformation services, combining AI-driven solutions, custom software development, cloud migration, and automation. We align technology strategies with your business goals to drive measurable outcomes and sustainable growth.",
@@ -32,68 +32,67 @@ const faqs = [
   ];
 
   return (
-    <section className="w-full bg-[#fff]  py-0">
-      <div className="w-[90%] md:w-[80%] mx-auto flex flex-col md:flex-row  gap-2 md:gap-[30px] lg:gap-[100px] text-white">
-
-        {/* LEFT SIDE — Desktop only */}
-        <div className="hidden md:flex md:w-[40%] flex-col gap-10">
-          <h2 className="text-[20px] sm:text-[40px] md:text-[44px]  xl:text-[64px] lg:text-[64px] font-bold leading-tight font-manrope   text-black">
+    <section className="w-full bg-white py-0">
+<div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-0 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 lg:gap-40 py-12">
+        {/* LEFT SIDE — desktop only, fixed width, doesn't grow */}
+        <div className="hidden md:flex flex-none flex-col gap-10">
+          <h2 className="text-[20px] sm:text-[40px] md:text-[44px] lg:text-[42px] xl:text-[64px] font-bold leading-tight font-manrope text-black">
             Frequently <br /> Asked <br />
-            <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent"  >
+            <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
         </div>
+
         {/* MOBILE HEADING */}
-      <div className="md:hidden text-center mt-4 mb-6">
-        <h2 className="text-3xl font-bold font-manrope text-black">
-          Frequently Asked <br />
-          <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent">
-            Questions
-          </span>
-        </h2>
-      </div>
+        <div className="md:hidden text-center mt-4 mb-6">
+          <h2 className="text-3xl font-bold font-manrope text-black">
+            Frequently Asked <br />
+            <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent">
+              Questions
+            </span>
+          </h2>
+        </div>
 
-
-        {/* RIGHT SIDE — FAQ */}
-        <div className="w-full md:w-[60%] flex flex-col gap-4">
+        {/* RIGHT SIDE — FAQ list, takes all remaining space */}
+        <div className="flex-1 flex flex-col gap-4">
           {faqs.map((item, index) => {
             const isOpen = openIndex === index;
-
             return (
-              <div key={index} className="relative rounded-[14px] p-[0.9px] bg-[#646464] cursor-pointer">
-                <div className="bg-[#fafafa] rounded-[13px] px-5 py-4"
-                 onClick={() => setOpenIndex(isOpen ? null : index)}>
-                  <button
-                    className="w-full flex justify-between items-center gap-6 text-left cursor-pointer "
-                  >
-                    <p className="text-black text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[16px] font-manrope">{item.q}</p>
-
+              <div
+                key={index}
+                className="relative rounded-[14px] p-[1px] bg-[#646464] cursor-pointer"
+              >
+                <div
+                  className="bg-[#fafafa] rounded-[13px] px-5 py-4"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                >
+                  <button className="w-full flex justify-between items-center gap-6 text-left cursor-pointer">
+                    <p className="text-black text-[10px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] font-manrope">
+                      {item.q}
+                    </p>
                     {isOpen ? (
-                      <svg width="16" height="3" viewBox="0 0 16 3">
+                      <svg width="16" height="3" viewBox="0 0 16 3" className="flex-none">
                         <path d="M1 1H15" stroke="black" strokeOpacity="0.6" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     ) : (
-                      <svg width="16" height="16" viewBox="0 0 16 16">
-                        <path
-                          d="M8 1V15M1 8H15"
-                          stroke="black"
-                          strokeOpacity="0.6"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
+                      <svg width="16" height="16" viewBox="0 0 16 16" className="flex-none">
+                        <path d="M8 1V15M1 8H15" stroke="black" strokeOpacity="0.6" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     )}
                   </button>
 
                   <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-50 mt-6" : "max-h-0"}`}>
-                    <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[16px] text-[#646464] leading-relaxed font-poppins">{item.a}</p>
+                    <p className="text-[10px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-[#646464] leading-relaxed font-poppins">
+                      {item.a}
+                    </p>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

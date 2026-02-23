@@ -70,7 +70,7 @@ const Footer = () => {
 ];
 
   return (
-   <footer className="w-full bg-white py-20">
+   <footer className="w-full bg-white py-20 lg:py-6">
       <div className="max-w-[1400px] mx-auto px-6">
  {/* TITLE */}
         <h2 className="text-[28px] sm:text-[26px] md:text-[32px] lg:text-[42px] text-center font-semibold text-black font-poppins mb-12">
@@ -112,7 +112,7 @@ Area We Occupied
           {card.title}
         </h4>
 
-        <p className="text-[11px] sm:text-[13px] lg:text-[14px] leading-relaxed text-black/80 font-poppins mb-4 sm:mb-6">
+        <p className="text-[11px] sm:text-[13px] lg:text-[14px] leading-relaxed text-black font-poppins mb-4 sm:mb-6">
           {card.desc}
         </p>
       </div>

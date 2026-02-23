@@ -20,7 +20,7 @@ export const metadata = {
 export default function DigitalTransforms() {
   return (
       <main>
-        <HeroSection/>
+          <HeroSection/>
           <DigitalTransformationSection />
           <Whatwedo />
           <WhyDigitalTransformation />

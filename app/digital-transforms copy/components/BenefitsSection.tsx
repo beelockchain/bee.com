@@ -40,16 +40,23 @@ const benefitCards: BenefitCard[] = [
   {
     id: 5,
     icon: '/assets/images/digital-tranform-card5.png',
-    title: 'Enhanced Innovation Capabilities',
+    title: 'Compliance & Risk Readiness',
     description:
-      'Empowers teams with modern tools and methodologies to rapidly prototype, test, and deploy new digital solutions.',
+      'Supports data protection, governance, and regulatory needs. It helps businesses manage operational and compliance risks.',
   },
   {
     id: 6,
     icon: '/assets/images/digital-tranform-card6.png',
-    title: 'Scalable Infrastructure',
+    title: 'Faster Innovation Cycles',
     description:
-      'Builds flexible technology foundations that adapt to growing business needs without compromising performance or reliability.',
+      'Allows quicker development, testing, and deployment of digital solutions to respond to the market and business changes.',
+  },
+    {
+    id: 7,
+    icon: '/assets/images/digital-tranform-card6.png',
+    title: 'Sustainable Technology Foundation',
+    description:
+      'Develops future-ready digital foundations that can adapt to evolving needs while reducing long-term technical debt.',
   },
 ]
 
@@ -171,17 +178,17 @@ const BenefitsSection: React.FC = () => {
   const LeftPanel = () => (
     <div className="flex flex-col justify-center">
       <div className="mb-4 md:text-center lg:text-left xl:text-left">
-        <span className="inline-block md:mt-20 py-2 lg:py-0 xl:py-0 border-b-2 border-[#F9C901] text-[16px] font-bold text-black">
+        <span className="inline-block md:mt-20 py-2 lg:py-0 xl:py-0 border-b-2 border-[#F9C901] text-[16px] lg:text-[13px] xl:text-[16px] font-bold text-black">
           What make us Unique
         </span>
       </div>
 
-      <h2 className="text-3xl lg:text-[35px] xl:text-[35px] font-bold mb-6 leading-tight text-black md:text-center lg:text-left xl:text-left">
+      <h2 className="text-3xl lg:text-[25px] xl:text-[35px] font-bold mb-6 leading-tight text-black md:text-center lg:text-left xl:text-left">
         Benefits Of <span className="text-yellow-400">Beelockchain</span> Digital
         Transformation Services
       </h2>
 
-      <p className="text-black text-sm lg:text-base mb-8 leading-relaxed max-w-md font-semibold">
+      <p className="text-black text-sm lg:text-[13px] mb-8 leading-relaxed max-w-md font-semibold">
         Begin your transformation journey with Beelockchain's skilled experts.
         Build a future-ready organization using a structured digital business
         transformation service approach.
@@ -284,8 +291,8 @@ const BenefitsSection: React.FC = () => {
 
           {/* Clone ROW 1 for seamless loop illusion at the bottom */}
           <div className="grid grid-cols-2 gap-4" style={{ opacity: 0.5 }}>
+            <Card card={benefitCards[6]} />
             <Card card={benefitCards[0]} />
-            <Card card={benefitCards[1]} />
           </div>
         </div>
       </div>

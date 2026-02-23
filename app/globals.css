@@ -37,21 +37,13 @@
 
 /* Marquee Animations */
 @keyframes marquee-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes marquee-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 .animate-marquee-left {
@@ -60,12 +52,6 @@
 
 .animate-marquee-right {
   animation: marquee-right 25s linear infinite;
-}
-
-/* Pause on hover */
-.animate-marquee-left:hover,
-.animate-marquee-right:hover {
-  animation-play-state: paused;
 }
 
 body {
@@ -133,4 +119,34 @@ body {
 
 .animate-marquee-right {
   animation: marquee-right 25s linear infinite;
+}
+.shine-text {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shiny moving light */
+.shine-text::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255,255,255,0.8) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: shineMove 2s infinite;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes shineMove {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

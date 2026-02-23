@@ -30,13 +30,13 @@ const EndToEndServices: React.FC = () => {
 
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-10 xl:mb-15">
-          <h2 className="text-[20px] md:text-3xl lg:text-2xl xl:text-4xl font-bold mb-6 leading-tight text-[#000000] font-poppines">
-            Our <span className="text-[#F9C901]">End-to-End</span> Digital Transformation
+          <h2 className="text-[20px] md:text-2xl lg:text-2xl xl:text-[28px] font-bold mb-6 leading-tight text-[#000000] font-poppines">
+            Our <span data-text="End-to-End" className="shine-text relative text-[#F9C901]">End-to-End</span> Digital Transformation
             <br className="hidden md:block" />
             Services & Solutions
           </h2>
 
-          <p className="text-[#000000] text-[12px] md:text-[13px] lg:text-[14px] xl:text-[16px] font-semibold lg:max-w-5xl xl:max-w-4xl mx-auto md:px-4 lg:px-4 xl:px-4">
+          <p className="text-[#000000] text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold lg:max-w-5xl xl:max-w-4xl mx-auto md:px-4 lg:px-4 xl:px-4">
             Beelockchain provides full-cycle digital transformation services, supporting organizations from roadmap to
             implementation and ongoing optimization. Our solutions help businesses improve operational adaptability,
             strengthen their market presence, and remain competitive in today's fast-changing digital space.
@@ -64,7 +64,7 @@ const EndToEndServices: React.FC = () => {
                 shadow-[-3px_-6px_16px_0_rgba(253,253,253,0.69),9px_5px_14px_0_rgba(0,0,0,0.15)]
                 
                 /* HOVER */
-                hover:bg-[#E1E1E1]
+                hover:bg-[#f5c518ac]
                 hover:border-[#E1E1E1]
                 hover:shadow-[inset_-3px_-6px_16px_0_rgba(253,253,253,0.69),inset_9px_5px_14px_0_rgba(0,0,0,0.15)]
                 hover:scale-[1.02]
@@ -78,7 +78,7 @@ const EndToEndServices: React.FC = () => {
             >
 
               {/* Content */}
-              <div className="flex items-center justify-between gap-4 h-full">
+              <div className="flex items-center justify-between  h-full">
 
                 {/* Title */}
                 <h3 className="
@@ -95,7 +95,7 @@ const EndToEndServices: React.FC = () => {
 
                 {/* Icon */}
                 <div className="flex-shrink-0">
-                  <div className="relative w-11 h-11 md:w-12 md:h-12 lg:w-13 lg:h-13">
+                  <div className="relative w-5 h-5 md:w-12 md:h-12 lg:w-13 lg:h-13">
 
                     <div className="
                       w-full h-full rounded-xl flex items-center justify-center

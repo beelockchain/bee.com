@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef } from "react";
@@ -5,7 +6,6 @@ import gsap from "gsap";
 
 const Herosection = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
-
   const imgRef = useRef<HTMLImageElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -43,81 +43,98 @@ const Herosection = () => {
   };
 
   return (
-    <div className="w-full bg-white">
-      {/* ================= MOBILE LAYOUT ================= */}
-      <div className="flex lg:hidden flex-col items-center px-6">
-        {/* Heading */}
-        <div className="w-full max-w-sm text-left md:text-center mb-8 ">
-          <p className="text-xs text-black mb-2">
-            Your Vision. Our Dedication.
-          </p>
-          <h1 className="text-md font-extrabold leading-snug text-black">
+    <section className="w-full bg-white px-2 md:px-10 lg:px-20 py-2">
+      <div className="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-10">
+
+        {/* LEFT - HEADING */}
+        <div className="w-full text-center lg:text-left">
+          <h1 className="
+           text-[19px]  sm:text-[12px] md:text-[12px]  lg:text-[16px] xl:text-[24px] font-[800] mt-2 md:mt-20
+               lg:mt-[20px] text-black leading-tight
+          ">
             Digital Transformation Company
             <br />
             Modernizing The Way You Work
           </h1>
         </div>
 
-        {/* Center Image */}
-        <div className="w-full max-w-xs mb-10">
+        {/* CENTER - IMAGE */}
+        <div className="flex justify-center">
           <img
+            ref={imgRef}
             src={`${ASSET_URL}/images/Heromainimg.webp`}
-            alt="BeeLockchain"
-            className="w-full"
+            alt="Beelockchain Hero"
+            className="
+              w-full max-w-[280px]
+              md:max-w-[260px]
+              lg:max-w-[300px]
+              xl:max-w-[380px]
+              object-contain
+            "
+            style={{ transformStyle: "preserve-3d" }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
           />
         </div>
+{/* MOBILE STATS (under image) */}
+<div className="flex justify-center  text-center  lg:hidden">
+  <div className="flex w-full max-w-[320px] justify-between gap-2">
+    {[
+      { title: "50+", sub: "Team Members" },
+      { title: "380+", sub: "Completed Projects" },
+      { title: "8 years", sub: "In Business" },
+    ].map((item) => (
+      <div
+        key={item.title}
+        className="
+          flex-1
+          min-w-0
+          bg-white rounded-2xl
+          flex flex-col items-center justify-center
+          px-2 py-3 
+          shadow-[0_8px_20px_rgba(255,200,90,0.4),_0_0_0_1px_rgba(255,200,90,0.2)]
+        "
+      >
+        <h2 className="text-xl  font-semibold text-black">
+          {item.title}
+        </h2>
+        <p className="text-[11px] text-black mt-1 leading-tight">
+          {item.sub}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+        {/* RIGHT - CONTENT */}
+        <div className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left">
 
-        {/* Stats */}
-        <div className="flex gap-2">
-          {[
-            { title: "50+", sub: "team members" },
-            { title: "380+", sub: "Completed Projects" },
-            { title: "8 years", sub: "in Business" },
-          ].map((item) => (
+          {/* DESCRIPTION BOX */}
+          <div className="relative w-full rounded-2xl overflow-hidden">
             <div
-              key={item.title}
-              className="
-                w-[100px] h-[90px]
-                bg-white
-                rounded-[22px]
-                p-3
-                shadow-[0_8px_18px_rgba(255,200,90,0.45),_0_0_0_1px_rgba(255,200,90,0.25)]
-                flex flex-col justify-center
-              "
-            >
-              <h2 className="text-xl font-semibold text-black">{item.title}</h2>
-              <p className="text-[11px] text-black mt-1">{item.sub}</p>
+              className="absolute inset-0 bg-cover bg-center opacity-40"
+              style={{ backgroundImage: `url('${ASSET_URL}/images/Herosideimg2.webp')` }}
+            />
+            <div className="relative z-10 p-5">
+              <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed">
+                Beelockchain is a global digital transformation company that
+                integrates future-ready solutions across AI, Blockchain,
+                Cloud Infrastructure, Big Data, and Mobile Applications
+                with advanced, customer-centric experiences.
+              </p>
             </div>
-          ))}
-        </div>
-        <div className="h-60 w-full flex flex-col justify-center items-center bg-cover bg-center gap-5 space-y-5">
-          <div className="text-black text-sm text-center">
-            Beelockchain is a global digital transformation company that
-            integrates future-ready solutions across AI, Blockchain, Cloud
-            Infrastructure, Big Data, and Mobile Applications with an advanced,
-            customer-centric experience.
           </div>
 
-          <button className="flex items-center gap-2 text-black border border-black px-2 py-1 rounded-full font-medium shadow hover:bg-gray-100 transition">
-            Consult Our Experts
-            <svg
-              className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14"
-              viewBox="0 0 56 55"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="28.2473"
-                cy="27.0945"
-                r="15.912"
-                fill="#F6E000"
-                stroke="#F9C901"
-                strokeWidth="1.51543"
-              />
+          {/* BUTTON */}
+          <button className="inline-flex items-center gap-2 px-4 py-2 border border-black rounded-full bg-white hover:bg-gray-50 transition">
+            <span className="text-black text-sm md:text-base whitespace-nowrap">
+              Consult Our Experts
+            </span>
+            <svg className="w-8 h-8 lg:w-10 lg:h-10" viewBox="0 0 56 55" fill="none">
+              <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.5" />
               <path
                 d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
                 stroke="black"
-                strokeWidth="3.03086"
+                strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -126,136 +143,40 @@ const Herosection = () => {
         </div>
       </div>
 
-      {/* ================= DESKTOP + TABLET LAYOUT ================= */}
-      {/* ⚠️ UNTOUCHED JSX */}
-      {/* ================= DESKTOP / TABLET HERO SECTION ================= */}
-      <div className="hidden lg:flex min-h-screen w-full flex-col bg-white">
-        {/* ================= MAIN CONTENT AREA ================= */}
-        <div className="flex-1 w-full flex items-center justify-center px-6 lg:px-12 xl:px-20 py-8 lg:py-12">
-          <div className="w-full max-w-7xl flex items-start justify-between gap-6 lg:gap-10">
-            {/* -------- LEFT: Title -------- */}
-            <div className="w-[28%] flex flex-col justify-center">
-              <h1 className="md:text-[14px] lg:text-[26px] font-extrabold text-black leading-tight md:w-52 lg:w-96 mt-0 lg:mt-20">
-                BeeLockChain Your Trusted
-             
-                Digital Transformation
-              </h1>
+      {/* STATS */}
+     <div className="hidden lg:flex justify-center mt-10">
+  <div className="flex flex-wrap justify-center gap-4">
+          {[
+            { title: "50+", sub: "Team Members" },
+            { title: "380+", sub: "Completed Projects" },
+            { title: "8 years", sub: "In Business" },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="
+                w-[110px] h-[90px]
+                md:w-[140px] md:h-[100px]
+                lg:w-[170px] lg:h-[110px]
+                bg-white rounded-2xl
+                flex flex-col items-start justify-center
+                p-3
+                shadow-[0_8px_20px_rgba(255,200,90,0.4),_0_0_0_1px_rgba(255,200,90,0.2)]
+              "
+            >
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
+                {item.title}
+              </h2>
+              <p className="text-xs md:text-sm text-gray-600 mt-1">
+                {item.sub}
+              </p>
             </div>
-
-            {/* -------- CENTER: Hero Image -------- */}
-            <div className="w-[34%] flex justify-center items-center">
-              <img
-                ref={imgRef}
-                src={`${ASSET_URL}/images/Heromainimg.webp`}
-                alt="Beelockchain Hero"
-                className="w-full max-w-[280px] lg:max-w-[400px] xl:max-w-[400px] object-contain"
-                style={{ transformStyle: "preserve-3d" }}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-              />
-            </div>
-
-            {/* -------- RIGHT: Description + CTA -------- */}
-            <div className="w-[28%] flex flex-col justify-center gap-5 lg:gap-2">
-              {/* Background pattern container */}
-              <div className="relative">
-                {/* Optional: subtle background pattern */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center opacity-20 rounded-lg"
-                  style={{
-                    backgroundImage: `url('${ASSET_URL}/images/Herosideimg2.webp')`,
-                  }}
-                />
-
-                {/* Content */}
-                <div className="relative z-10 py-4 ">
-                  <p className="text-gray-700 text-sm md:text-sm lg:text-base xl:text-lg leading-relaxed">
-                    Beelockchain is a global digital transformation company that
-                    integrating future-ready solutions across AI, Blockchain,
-                    Cloud Infrastructure, Big Data, and Mobile Applications with
-                    advanced, customer-centric experiences.
-                  </p>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <button
-                className="
-            cursor-pointer
-            inline-flex items-center gap-2
-            w-fit
-            px-4 py-2 lg:px-5 lg:py-2.5
-            border border-black rounded-full
-            bg-white
-            hover:bg-gray-50
-            transition-colors
-          "
-              >
-                <span className="font-poppins text-black text-sm lg:text-base whitespace-nowrap">
-                  Consult Our Experts
-                </span>
-
-                {/* Arrow Icon */}
-                <svg
-                  className="w-8 h-8 lg:w-10 lg:h-10"
-                  viewBox="0 0 56 55"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="28.2473"
-                    cy="27.0945"
-                    r="15.912"
-                    fill="#F6E000"
-                    stroke="#F9C901"
-                    strokeWidth="1.51543"
-                  />
-                  <path
-                    d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                    stroke="black"
-                    strokeWidth="3.03086"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* ================= STATS SECTION ================= */}
-        <div className="w-full flex justify-center items-center pb-12 lg:pb-16">
-          <div className="flex justify-center items-center gap-6 lg:gap-10 xl:gap-12">
-            {[
-              { title: "50+", sub: "team members" },
-              { title: "380+", sub: "Completed Projects" },
-              { title: "8 years", sub: "in Business" },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="
-            w-[140px] h-[90px]
-            md:w-[150px] md:h-[100px]
-            lg:w-[170px] lg:h-[110px]
-            bg-white 
-            rounded-2xl lg:rounded-[28px]
-            flex flex-col items-start justify-center 
-            p-3 lg:p-4
-            shadow-[0_8px_20px_rgba(255,200,90,0.4),_0_0_0_1px_rgba(255,200,90,0.2)]
-          "
-              >
-                <h2 className="text-2xl md:text-2xl lg:text-3xl font-semibold text-black">
-                  {item.title}
-                </h2>
-                <p className="text-xs lg:text-sm text-gray-600 mt-1">
-                  {item.sub}
-                </p>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+
+      {/* MOBILE STATS */}
+
+    </section>
   );
 };
 

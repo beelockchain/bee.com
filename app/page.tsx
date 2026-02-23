@@ -8,7 +8,6 @@ import Discover from "./components/Discover";
 import Awards from "./components/Awards";
 import Solution from "./components/Solution";
 import Digitaltransformation from "./components/Digitaltransformation";
-import Testimonial from "./components/Testimonial";
 import FAQSection from "./components/faq";
 import Footer from "./components/footer";
 import OurInsights from "./components/OurInsights";
@@ -17,8 +16,7 @@ import Transformes from "./components/Transformes";
 import IndustryWeServe from "./components/IndustryWeServe";
 import Technologies from "./components/Technologies";
 import TestimonialCarousel from "./components/TestimonialCarousel";
-import Testi from "./components/Testi";
-import RoadMapCard from "./digital-transforms/components/RoadMapCard";
+import Testimonial from "./components/Testimonial";
 export default function Home() {
   return (
     <div className="bg-white">
@@ -27,8 +25,7 @@ export default function Home() {
       <Customers />
       <Digitaltransformation />
       <Transformes />
-      {/* <Testimonial /> */}
-      <Testi/>
+      <Testimonial />
       <TestimonialCarousel/>
       <OverView />
       <Technologies/>
@@ -36,8 +33,6 @@ export default function Home() {
       <BeelockchainTransformation/>
       <OurInsights/>
       <FAQSection/>
-      <Footer/>
-      
     </div>
   );
 }
