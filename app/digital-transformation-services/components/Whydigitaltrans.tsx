@@ -21,30 +21,30 @@ const WhyDigitalTransformation = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:p-8 lg:px-8 xl:px-8">
         {/* Heading */}
-        <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-[28px] xl:text-[28px] font-bold text-center mb-4 lg:mb-7">
+        <h2 className="text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold text-center mb-4 lg:mb-7">
           <span className="text-[#1a1a1a]">Why </span>
           <span data-text="Digital Transformation" className="shine-text relative text-[#F9C901]">Digital Transformation </span>
           <span className="text-[#1a1a1a]">Matters Today</span>
         </h2>
 
         {/* First Paragraph */}
-        <p className="text-[12px] sm:text-base md:text-[12px] lg:text-md xl:text-[16.5px] text-[#1a1a1a] text-center leading-relaxed mb-3 font-semibold">
+        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center leading-relaxed mb-3 font-semibold">
           Today's businesses are expected to move faster, work smarter, and
           provide better experiences in an increasingly digital world. When
           organizations depend on manual processes with outdated technology, it
           becomes difficult to adapt to changing customer expectations and
           market demands.
-          <span data-text="Beelockchain" className="shine-text relative text-[#f5c518] font-medium">Beelockchain</span>, a
+          <span data-text="Beelockchain" className=" text-[#f5c518] font-medium">Beelockchain</span>, a
           digital transformation service provider, helps businesses address
           these challenges by building structured, digitally driven business
           operations with a strong focus on customer-centric solutions.
         </p>
 
         {/* Second Paragraph */}
-        <p className="text-[12px] sm:text-base md:text-[12px] lg:text-md xl:text-[16.2px] text-[#1a1a1a] text-center font-semibold leading-relaxed">
-          <span data-text="Digital transformation" className="text-[#f5c518] font-medium shine-text relative">
+        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center font-semibold leading-relaxed">
+          <span data-text="Digital transformation" className="text-[#f5c518] font-medium  relative">
             Digital transformation
           </span>{" "}
           to you can modernise systems, automating workflows, and improving

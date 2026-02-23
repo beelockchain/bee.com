@@ -20,7 +20,7 @@ const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Service", href: "/service", hasDropdown: true },
   { label: "Blog", href: "/blog" },
-  { label: "Contact us", href: "/contact" },
+  
 ];
 
 const secondaryNav = [
@@ -29,7 +29,7 @@ const secondaryNav = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms & Condition", href: "/terms" },
   { label: "Career", href: "/career" },
-  { label: "Contact Us", href: "/contact" },
+ 
 ];
 
 const socialIcons = [
@@ -110,6 +110,8 @@ const isActive = (href: string, hasDropdown?: boolean) => {
 };
 
   const handleSubMenuClick = (href: string) => {
+
+    
     setServiceDropdownOpen(false);
     window.location.href = href;
   };
@@ -127,7 +129,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
         <div className="h-20 flex items-center justify-between px-4 lg:px-10 cursor-pointer">
 
           {/* LOGO */}
-          <div className="flex-shrink-0 w-[20%]">
+          <div className="flex-shrink-0 w-[30%]">
             <Link href="/" onClick={() => setServiceDropdownOpen(false)}>
               <img
                 src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
@@ -138,7 +140,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
           </div>
 
           {/* CENTER NAV */}
-          <nav className="hidden sm:flex flex-1 justify-center items-center gap-6 md:gap-8 lg:gap-10 cursor-pointer">
+          <nav className="hidden sm:flex flex-1 justify-center items-center gap-6 sm:gap-6 md:gap-8 lg:gap-10 cursor-pointer">
             {primaryNav.map((item) => {
               const active = isActive(item.href, item.hasDropdown);
               return (
@@ -177,7 +179,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
           </nav>
 
           {/* RIGHT ACTIONS */}
-          <div className="flex items-center md:justify-end md:gap-3  sm:w-[30%] lg:w-[22%]">
+          <div className="flex items-center md:justify-end md:gap-3  sm:w-[30%] lg:w-[22%] sm:gap-1">
             <Link
               href="/contact"
               className="hidden sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
@@ -357,7 +359,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
         </div>
 
         {/* SOCIAL ICONS */}
-        <div className="px-6 sm:px-0  pt-6  sm:pr-8  mt-20 flex flex-col  sm:items-end">
+        <div className="px-6 sm:px-0  pt-0  sm:pr-8 mt-7 flex flex-col  sm:items-end">
           <h4 className="text-lg md:text-md font-medium text-black mb-3 px-13">
             Connect With Us:
           </h4>

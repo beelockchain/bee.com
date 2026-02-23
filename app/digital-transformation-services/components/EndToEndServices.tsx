@@ -30,13 +30,13 @@ const EndToEndServices: React.FC = () => {
 
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-10 xl:mb-15">
-          <h2 className="text-[20px] md:text-2xl lg:text-2xl xl:text-[28px] font-bold mb-6 leading-tight text-[#000000] font-poppines">
+          <h2 className="text-[20px] md:text-[22px] lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-[#000000] font-poppines">
             Our <span data-text="End-to-End" className="shine-text relative text-[#F9C901]">End-to-End</span> Digital Transformation
             <br className="hidden md:block" />
             Services & Solutions
           </h2>
 
-          <p className="text-[#000000] text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold lg:max-w-5xl xl:max-w-4xl mx-auto md:px-4 lg:px-4 xl:px-4">
+          <p className="text-[#000000] text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] font-semibold lg:max-w-5xl xl:max-w-4xl mx-auto md:px-4 lg:px-4 xl:px-4">
             Beelockchain provides full-cycle digital transformation services, supporting organizations from roadmap to
             implementation and ongoing optimization. Our solutions help businesses improve operational adaptability,
             strengthen their market presence, and remain competitive in today's fast-changing digital space.
@@ -44,7 +44,7 @@ const EndToEndServices: React.FC = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-3 xl:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-3 lg:gap-3 xl:gap-6">
           {services.map((service, index) => (
             <div
             key={index}
@@ -82,7 +82,7 @@ const EndToEndServices: React.FC = () => {
 
                 {/* Title */}
                 <h3 className="
-                  text-[9px] md:text-sm lg:text-[10px] xl:text-[13px]
+                  text-[9px] md:text-[14px] lg:text-[11px] xl:text-[14px]
                   font-medium text-[#505050] font-bold
                   leading-relaxed
                   transition-colors duration-300
@@ -95,7 +95,7 @@ const EndToEndServices: React.FC = () => {
 
                 {/* Icon */}
                 <div className="flex-shrink-0">
-                  <div className="relative w-5 h-5 md:w-12 md:h-12 lg:w-13 lg:h-13">
+                  <div className="relative w-5 h-5 md:w-12 md:h-12 lg:w-10 lg:h-10">
 
                     <div className="
                       w-full h-full rounded-xl flex items-center justify-center
@@ -113,7 +113,7 @@ const EndToEndServices: React.FC = () => {
                           src="/assets/images/digital-t-icon.png"
                           alt={service.title}
                           className="
-                            w-6 h-6 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10
+                            w-6 h-6 sm:w-5 sm:h-5 md:w-10 md:h-10 lg:w-8 lg:h-8 xl:w-10 xl:h-10
                             object-cover
                             transition-transform duration-300
                             group-hover:scale-110

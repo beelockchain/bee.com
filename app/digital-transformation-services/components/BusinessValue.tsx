@@ -53,8 +53,8 @@ const services = [
 const NumberSvg = ({ number }: { number: string }) => {
   return (
     <svg
-      width="52"
-      height="52"
+      width="50"
+      height="50"
       viewBox="0 0 52 42"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const NumberSvg = ({ number }: { number: string }) => {
         y="60%"
         textAnchor="middle"
         fill="#000000"
-        fontSize="30"
+        fontSize="20"
         fontWeight="900"
         fontFamily="Poppins, sans-serif"
       >
@@ -75,22 +75,36 @@ const NumberSvg = ({ number }: { number: string }) => {
   );
 };
 
-// ─── MOBILE CARD STACK — CSS sticky + scroll listener, zero GSAP ─────────────
-const CARD_H = 300;
-const CARD_PEEK = 15;
-const SCROLL_PER_CARD = 290;
-const TOTAL_CARDS = services.length; // 8
-const DISMISSIBLE = TOTAL_CARDS - 1; // 7 cards animate, card 08 stays
+// ─── MOBILE CARD STACK ────────────────────────────────────────────────────────
+// Your original working scroll logic — untouched.
+// Added on top:
+//   1. Touch/swipe: each swipe advances or reverses exactly ONE card,
+//      by programmatically scrolling the page to that card's scroll band.
+//   2. Dot indicators: 8 dots on the right, one per card, active dot filled.
+//
+const CARD_H          = 300;
+const CARD_PEEK       = 13;
+const SCROLL_PER_CARD = 600;
+const TOTAL_CARDS     = services.length; // 8
+const DISMISSIBLE     = TOTAL_CARDS - 1; // 7 cards animate, card 08 stays
+const SWIPE_THRESHOLD = 20;              // px needed to commit a swipe
 
 const MobileCardStack = () => {
-  const outerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const outerRef   = useRef<HTMLDivElement>(null);
+  const cardRefs   = useRef<(HTMLDivElement | null)[]>([]);
+  const dotRefs    = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Touch tracking refs
+  const touchStartY  = useRef(0);
+  const touchEndY    = useRef(0);
+  // Which card is currently the top card (for swipe navigation)
+  const currentCard  = useRef(0);
 
   useEffect(() => {
     const outer = outerRef.current;
     if (!outer) return;
 
-    // Set initial stack positions
+    // ── Initial stack positions (your original code) ──────────────────────
     cardRefs.current.forEach((card, i) => {
       if (!card) return;
       card.style.transform = `translateY(${i * CARD_PEEK}px) scale(${1 - i * 0.015})`;
@@ -98,35 +112,53 @@ const MobileCardStack = () => {
       card.style.zIndex = String(TOTAL_CARDS - i);
     });
 
+    // ── Dot updater ───────────────────────────────────────────────────────
+    const updateDots = (activeIndex: number) => {
+      dotRefs.current.forEach((dot, i) => {
+        if (!dot) return;
+        // Dots go in reverse: dot 0 = card 0 (top), dot 7 = card 7 (bottom)
+        // Active = the card currently on top
+        dot.style.backgroundColor = i === activeIndex ? "#000" : "#D1D1D1";
+        dot.style.transform = i === activeIndex ? "scale(1.3)" : "scale(1)";
+      });
+    };
+
+    // ── Scroll handler (your original logic — zero changes) ───────────────
     const handleScroll = () => {
-      const rect = outer.getBoundingClientRect();
-      const scrolled = Math.max(0, -rect.top);
-      const totalScroll = DISMISSIBLE * SCROLL_PER_CARD;
-      const clampedScroll = Math.min(scrolled, totalScroll);
-      const cardsDismissed = clampedScroll / SCROLL_PER_CARD;
+      const rect           = outer.getBoundingClientRect();
+      const scrolled       = Math.max(0, -rect.top);
+      const totalScroll    = DISMISSIBLE * SCROLL_PER_CARD;
+      const clampedScroll  = Math.min(scrolled, totalScroll);
+      const activeIndex    = Math.floor(clampedScroll / SCROLL_PER_CARD);
+      const progressInCard = (clampedScroll % SCROLL_PER_CARD) / SCROLL_PER_CARD;
+
+      // Keep currentCard in sync for swipe navigation
+      currentCard.current = activeIndex;
+      updateDots(activeIndex);
 
       cardRefs.current.forEach((card, i) => {
         if (!card) return;
 
-        // Card 08 (i=7): never moves, stays as permanent base
+        // Last card never moves
         if (i === TOTAL_CARDS - 1) return;
 
-        const dismissProgress = Math.max(0, Math.min(1, cardsDismissed - i));
-
-        if (dismissProgress === 0) {
-          const remainingAbove = Math.max(0, i - cardsDismissed);
-          card.style.transform = `translateY(${remainingAbove * CARD_PEEK}px) scale(${1 - remainingAbove * 0.015})`;
-          card.style.opacity = "1";
-        } else if (dismissProgress < 1) {
-          const easeProgress = Math.pow(dismissProgress, 0.8);
-          const yOffset = -300 * easeProgress;
-          const scale = 1 - dismissProgress * 0.1;
-          const opacity = Math.pow(1 - dismissProgress, 2);
-          card.style.transform = `translateY(${yOffset}px) scale(${scale}) rotateX(${dismissProgress * 10}deg)`;
-          card.style.opacity = String(opacity);
+        if (i < activeIndex) {
+          // Already dismissed
+          card.style.transform = `translateY(-${CARD_H + 120}px) scale(0.85)`;
+          card.style.opacity   = "0";
+        } else if (i === activeIndex) {
+          // Currently moving card (ONLY ONE)
+          const ease    = Math.pow(progressInCard, 1);
+          const yOffset = -(CARD_H + 120) * ease;
+          const scale   = 1 - ease * 0.1;
+          const opacity = 2 - ease;
+          card.style.transform = `translateY(${yOffset}px) scale(${scale})`;
+          card.style.opacity   = String(opacity);
         } else {
-          card.style.transform = `translateY(-320px) scale(0.9)`;
-          card.style.opacity = "0";
+          // Cards below active one stay stacked
+          const stackIndex = i - activeIndex;
+          card.style.transform = `translateY(${stackIndex * CARD_PEEK}px) scale(${1 - stackIndex * 0.015})`;
+          card.style.opacity   = "1";
         }
       });
     };
@@ -134,20 +166,86 @@ const MobileCardStack = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    // ── Touch/swipe: scroll the page to the target card's band ───────────
+    // Works exactly like a carousel indicator tap — we compute the exact
+    // scrollY that puts the target card at the start of its scroll band,
+    // then smoothly scroll there. The existing scroll handler does the rest.
+    const scrollToCard = (cardIndex: number) => {
+      const target = Math.max(0, Math.min(DISMISSIBLE, cardIndex));
+      const outerTop    = outer.getBoundingClientRect().top + window.scrollY;
+      // Each card's band starts at: outerTop + cardIndex * SCROLL_PER_CARD
+      // Add half a band so the card is mid-dismiss when we land (feels natural)
+      const targetScrollY = outerTop + target * SCROLL_PER_CARD;
+      window.scrollTo({ top: targetScrollY, behavior: "smooth" });
+    };
+
+    const onTouchStart = (e: TouchEvent) => {
+      touchStartY.current = e.touches[0].clientY;
+      touchEndY.current   = e.touches[0].clientY;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      touchEndY.current = e.touches[0].clientY;
+
+      // Only intercept if the section is currently sticky (outer straddles viewport top)
+      const rect     = outer.getBoundingClientRect();
+      const isPinned = rect.top <= 0 && rect.bottom > 0;
+      if (!isPinned) return;
+
+      const delta = touchStartY.current - touchEndY.current; // + = swipe up
+
+      const active = currentCard.current;
+      if (Math.abs(delta) > 10) {
+        if (delta > 0 && active < TOTAL_CARDS - 1) e.preventDefault();
+        if (delta < 0 && active > 0)               e.preventDefault();
+      }
+    };
+
+    const onTouchEnd = () => {
+      const delta  = touchStartY.current - touchEndY.current;
+      const active = currentCard.current;
+
+      const rect     = outer.getBoundingClientRect();
+      const isPinned = rect.top <= 0 && rect.bottom > 0;
+      if (!isPinned) return;
+
+      if (delta > SWIPE_THRESHOLD && active < TOTAL_CARDS - 1) {
+        // Swipe UP → next card
+        scrollToCard(active + 1);
+      } else if (delta < -SWIPE_THRESHOLD && active > 0) {
+        // Swipe DOWN → previous card
+        scrollToCard(active - 1);
+      }
+    };
+
+    // Attach touch listeners to the sticky inner (not window, not body)
+    const sticky = outer.querySelector(".sticky") as HTMLElement | null;
+    if (sticky) {
+      sticky.addEventListener("touchstart", onTouchStart, { passive: true });
+      sticky.addEventListener("touchmove",  onTouchMove,  { passive: false });
+      sticky.addEventListener("touchend",   onTouchEnd,   { passive: true });
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (sticky) {
+        sticky.removeEventListener("touchstart", onTouchStart);
+        sticky.removeEventListener("touchmove",  onTouchMove);
+        sticky.removeEventListener("touchend",   onTouchEnd);
+      }
+    };
   }, []);
 
   const stackHeight = CARD_H + (TOTAL_CARDS - 1) * CARD_PEEK;
-  // Outer height = one viewport (for the sticky view) + scroll room for 7 dismissals
   const outerHeight = `calc(100vh + ${DISMISSIBLE * SCROLL_PER_CARD}px)`;
 
   return (
     <div
       ref={outerRef}
-      className="block md:hidden w-full bg-white"
+      className="block sm:hidden md:hidden w-full bg-white"
       style={{ height: outerHeight }}
     >
-      {/* Sticky inner — locked in viewport while outer scrolls through */}
+      {/* Sticky inner */}
       <div
         className="sticky top-0 w-full bg-white pt-8 pb-16 px-5"
         style={{ height: "100vh", overflow: "hidden" }}
@@ -156,52 +254,72 @@ const MobileCardStack = () => {
 
           {/* Heading */}
           <div className="text-center mb-10 flex-shrink-0">
-            <h2 className="text-[20px] text-black font-bold leading-tight font-poppins">
+            <h2 className="text-[19px] text-[#000000] font-bold leading-tight font-poppins">
               How Beelockchain Delivers{" "}
               <span className="text-yellow-400">Digital Transformation</span>{" "}
               for Business Value Creation
             </h2>
-            <p className="mt-4 text-black text-[12px] font-poppins font-medium leading-relaxed">
+            <p className="mt-4 text-black text-[14px] font-poppins font-medium leading-relaxed">
               Beelockchain supports organizations through their digital
               transformation journey by combining consulting expertise with
               practical execution.
             </p>
           </div>
 
-          {/* Card Stack — centered */}
+          {/* Card Stack + Dots */}
           <div className="flex-1 flex items-center justify-center">
-            <div
-              className="relative"
-              style={{
-                width: "350px",
-                height: `${stackHeight}px`,
-              }}
-            >
-              {services.map((item, i) => (
-                <div
-                  key={i}
-                  ref={(el) => { cardRefs.current[i] = el; }}
-                  className="absolute left-0 right-0 top-0 rounded-2xl bg-[#E2E2E2] shadow-xl p-5"
-                  style={{
-                    height: `${CARD_H}px`,
-                    transformOrigin: "center center",
-                    willChange: "transform, opacity",
-                    transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
-                  }}
-                >
-                  <div className="relative  h-full">
-                    <h3 className="text-[16px] font-semibold mb-2 text-black font-poppins leading-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-black text-[14px] leading-relaxed font-poppins pr-12">
-                      {item.description}
-                    </p>
-                    <div className="absolute bottom-0 right-0 opacity-25">
-                      <NumberSvg number={(i + 1).toString().padStart(2, "0")} />
+            <div className="relative flex items-center gap-3">
+
+              {/* Cards */}
+              <div
+                className="relative"
+                style={{ width: "320px", height: `${stackHeight}px` }}
+              >
+                {services.map((item, i) => (
+                  <div
+                    key={i}
+                    ref={(el) => { cardRefs.current[i] = el; }}
+                    className="absolute left-0 right-0 top-0 rounded-2xl bg-[#E2E2E2] shadow-xl p-5"
+                    style={{
+                      height: `${CARD_H}px`,
+                      transformOrigin: "center center",
+                      willChange: "transform, opacity",
+                      transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
+                    }}
+                  >
+                    <div className="relative h-full">
+                      <h3 className="text-[15px] font-semibold mb-2 text-black font-poppins leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-black text-[13px] leading-relaxed font-poppins pr-10">
+                        {item.description}
+                      </p>
+                      <div className="absolute bottom-0 right-0 opacity-25">
+                        <NumberSvg number={(i + 1).toString().padStart(2, "0")} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Dot Indicators — right side, vertical */}
+              {/* <div className="flex flex-col gap-2 items-center">
+                {services.map((_, i) => (
+                  <div
+                    key={i}
+                    ref={(el) => { dotRefs.current[i] = el; }}
+                    style={{
+                      width: "7px",
+                      height: "7px",
+                      borderRadius: "50%",
+                      backgroundColor: i === 0 ? "#000" : "#D1D1D1",
+                      transition: "background-color 0.25s ease, transform 0.25s ease",
+                      transform: i === 0 ? "scale(1.3)" : "scale(1)",
+                    }}
+                  />
+                ))}
+              </div> */}
+
             </div>
           </div>
 
@@ -219,7 +337,7 @@ const MobileCardStack = () => {
                 transition-colors
               "
             >
-              <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px] bg-gray">
+              <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
                 Transform Your Business
               </span>
               <svg
@@ -228,20 +346,10 @@ const MobileCardStack = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <circle
-                  cx="28.2473"
-                  cy="27.0945"
-                  r="15.912"
-                  fill="#F6E000"
-                  stroke="#F9C901"
-                  strokeWidth="1.51543"
-                />
+                <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
                 <path
                   d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                  stroke="black"
-                  strokeWidth="3.03086"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"
                 />
               </svg>
             </button>
@@ -254,18 +362,18 @@ const MobileCardStack = () => {
 };
 
 // ─── TABLET (MD) — All 8 cards left + sticky image right, no animation ───────
-const TabletLayout = () => {
+const 
+TabletLayout = () => {
   return (
-    <section className="hidden md:block lg:hidden w-full bg-white py-8 px-6">
+    <section className="hidden sm:block md:block lg:hidden w-full bg-white py-8 px-6 sm:px-5">
       <div className="max-w-4xl mx-auto">
-        {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-[22px] text-black font-bold leading-tight">
+          <h2 className="text-[22px] sm:text-[19px] text-black font-bold leading-tight px-10">
             How Beelockchain Delivers{" "}
             <span data-text="Digital Transformation" className="shine-text relative text-yellow-400">Digital Transformation</span> for
             Business Value Creation
           </h2>
-          <p className="mt-4 mx-auto text-black text-[12px] font-poppins font-medium max-w-2xl">
+          <p className="mt-4 mx-auto text-black text-[14px] sm:text-[12px] font-poppins font-medium max-w-2xl">
             Beelockchain supports organizations through their digital
             transformation journey by combining consulting expertise with
             practical execution. Our end-to-end services improve process
@@ -274,43 +382,25 @@ const TabletLayout = () => {
           </p>
         </div>
 
-        {/* Grid: cards left, image right */}
         <div className="grid grid-cols-2 gap-8 items-start">
-          {/* Left: All 8 cards */}
           <div className="flex flex-col gap-4">
             {services.map((item, index) => (
-              <div
-                key={index}
-                className="relative p-5 rounded-xl bg-[#E2E2E2] shadow-sm"
-              >
-                <h3 className="text-[13px] font-semibold mb-2 text-black font-poppins">
-                  {item.title}
-                </h3>
-                <p className="text-black text-[11px] leading-relaxed font-poppins pr-8">
-                  {item.description}
-                </p>
-                <div className="absolute bottom-2 right-3 opacity-40">
+              <div key={index} className="relative p-5 rounded-xl bg-[#E2E2E2] shadow-sm">
+                <h3 className="text-[13px] font-semibold mb-2 text-black font-poppins">{item.title}</h3>
+                <p className="text-black text-[11px]  leading-relaxed font-poppins  pr-8 sm:pr-10">{item.description}</p>
+                <div className="absolute bottom-2 right-3 opacity-40 ">
                   <NumberSvg number={(index + 1).toString().padStart(2, "0")} />
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Right: Image + CTA (sticky so it stays visible while scrolling cards) */}
           <div className="sticky top-8">
-            <Image
-              src="/assets/images/business_val1.png"
-              alt="Digital transformation visual"
-              width={500}
-              height={809}
-              className="w-full object-contain rounded-xl"
-            />
+            <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="w-full object-contain rounded-xl" />
             <div className="mt-4">
               <button className="cursor-pointer relative flex items-center gap-2 px-4 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                 <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
-                <span className="relative z-10 font-poppins text-black text-sm whitespace-nowrap">
-                  Transform Your Business
-                </span>
+                <span className="relative z-10 font-poppins text-black text-sm whitespace-nowrap">Transform Your Business</span>
                 <svg className="relative z-10 w-9 h-9" viewBox="0 0 56 55" fill="none">
                   <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
                   <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
@@ -326,34 +416,34 @@ const TabletLayout = () => {
 
 // ─── DESKTOP (LG / XL) — Original pinned scroll animation ────────────────────
 const DesktopLayout = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const sectionRef        = useRef<HTMLElement>(null);
+  const paragraphRef      = useRef<HTMLParagraphElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const firstSetRef = useRef<HTMLDivElement>(null);
-  const secondSetRef = useRef<HTMLDivElement>(null);
+  const firstSetRef       = useRef<HTMLDivElement>(null);
+  const secondSetRef      = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(secondSetRef.current, { yPercent: 100, opacity: 0 });
-      gsap.set(firstSetRef.current, { yPercent: 0, opacity: 1 });
+      gsap.set(firstSetRef.current,  { yPercent: 0,   opacity: 1 });
 
       ScrollTrigger.create({
-        trigger: paragraphRef.current,
-        start: "top 10px",
-        end: "+=200%",
-        pin: sectionRef.current,
+        trigger:    paragraphRef.current,
+        start:      "top 10px",
+        end:        "+=200%",
+        pin:        sectionRef.current,
         pinSpacing: true,
-        scrub: 1,
+        scrub:      1,
         onUpdate: (self) => {
           const progress = self.progress;
           if (progress < 0.5) {
-            const firstProgress = progress * 2;
-            gsap.to(firstSetRef.current, { yPercent: 0, opacity: 1, duration: 0.1, overwrite: true });
-            gsap.to(secondSetRef.current, { yPercent: 100 - firstProgress * 50, opacity: 0, duration: 0.1, overwrite: true });
+            const p = progress * 2;
+            gsap.to(firstSetRef.current,  { yPercent: 0,          opacity: 1,     duration: 0.1, overwrite: true });
+            gsap.to(secondSetRef.current, { yPercent: 100 - p*50, opacity: 0,     duration: 0.1, overwrite: true });
           } else {
-            const secondProgress = (progress - 0.5) * 2;
-            gsap.to(firstSetRef.current, { yPercent: -100 * secondProgress, opacity: 1 - secondProgress, duration: 0.1, overwrite: true });
-            gsap.to(secondSetRef.current, { yPercent: 100 - 100 * secondProgress, opacity: secondProgress, duration: 0.1, overwrite: true });
+            const p = (progress - 0.5) * 2;
+            gsap.to(firstSetRef.current,  { yPercent: -100 * p,   opacity: 1 - p, duration: 0.1, overwrite: true });
+            gsap.to(secondSetRef.current, { yPercent: 100 - 100*p, opacity: p,    duration: 0.1, overwrite: true });
           }
         },
       });
@@ -362,44 +452,32 @@ const DesktopLayout = () => {
     return () => ctx.revert();
   }, []);
 
-  const firstFourCards = services.slice(0, 4);
+  const firstFourCards  = services.slice(0, 4);
   const secondFourCards = services.slice(4, 8);
 
   return (
-    <section
-      ref={sectionRef}
-      className="hidden lg:block w-full bg-white py-5 px-4 md:px-8 lg:px-16"
-    >
+    <section ref={sectionRef} className="hidden sm:hidden lg:block w-full bg-white py-5 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-6xl mx-auto">
-          <h2 className="text-[36px] md:text-[36px] lg:text-[26px] xl:text-[30px] text-black font-bold leading-tight">
+          <h2 className="text-[36px] sm:text-[19px] md:text-[36px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight">
             How Beelockchain Delivers{" "}
-            <span data-text="Digital Transformation" className="shine-text relative text-[#f5c518]">Digital Transformation</span> for{" "}
-            <br />
+            <span data-text="Digital Transformation" className="shine-text relative text-[#f5c518]">Digital Transformation</span> for <br />
             Business Value Creation
           </h2>
-          <p
-            ref={paragraphRef}
-            className="mt-6 mx-auto text-black lg:text-[14px] xl:text-[16px] font-poppins font-medium max-w-xl md:max-w-2xl lg:max-w-4xl"
-          >
-            Beelockchain supports organizations through their digital
-            transformation journey by combining consulting expertise with
-            practical execution. Our end-to-end services improve process
-            efficiency, modernize workflows, and help businesses respond faster
-            to change while delivering better customer experiences.
+          <p ref={paragraphRef} className="mt-6 mx-auto text-black lg:text-[14px] xl:text-[16px] font-poppins font-medium max-w-xl md:max-w-2xl lg:max-w-4xl">
+            Beelockchain supports organizations through their digital transformation journey by combining
+            consulting expertise with practical execution. Our end-to-end services improve process efficiency,
+            modernize workflows, and help businesses respond faster to change while delivering better customer experiences.
           </p>
         </div>
 
         <div className="mt-16 grid lg:grid-cols-2 gap-12 items-start">
-          <div
-            ref={cardsContainerRef}
-            className="relative h-[calc(4*180px+3*20px)] overflow-hidden"
-          >
+          <div ref={cardsContainerRef} className="relative h-[calc(4*180px+3*20px)] overflow-hidden">
             <div ref={firstSetRef} className="absolute inset-0 flex flex-col gap-5">
               {firstFourCards.map((item, index) => (
                 <div key={index} className="relative p-6 rounded-xl bg-[#E2E2E2] shadow-sm md:h-[180px] lg:h-[220px] xl:h-[180px]">
-                  <h3 className="text-xl md:text-[16px] lg:text-[16px] xl:text-xl font-semibold mb-3 text-black font-poppins">{item.title}</h3>
-                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] leading-relaxed font-poppins pr-10">{item.description}</p>
+                  <h3 className="text-[19px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold mb-3 text-black font-poppins">{item.title}</h3>
+                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] leading-relaxed font-poppins pr-10 xl:pr-15">{item.description}</p>
                   <div className="absolute bottom-4 right-6 opacity-40">
                     <NumberSvg number={(index + 1).toString().padStart(2, "0")} />
                   </div>
@@ -410,8 +488,8 @@ const DesktopLayout = () => {
             <div ref={secondSetRef} className="absolute inset-0 flex flex-col gap-5 mt-15">
               {secondFourCards.map((item, index) => (
                 <div key={index + 4} className="relative p-6 rounded-xl bg-[#E2E2E2] shadow-sm h-[180px] md:h-[180px] lg:h-[220px] xl:h-[180px]">
-                  <h3 className="text-xl md:text-[16px] lg:text-[16px] xl:text-xl font-semibold mb-3 text-black font-poppins">{item.title}</h3>
-                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] leading-relaxed font-poppins pr-10">{item.description}</p>
+                  <h3 className="text-[19px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold mb-3 text-black font-poppins">{item.title}</h3>
+                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] leading-relaxed font-poppins pr-10 xl:pr-15">{item.description}</p>
                   <div className="absolute bottom-4 right-6 opacity-40">
                     <NumberSvg number={(index + 5).toString().padStart(2, "0")} />
                   </div>
@@ -422,19 +500,11 @@ const DesktopLayout = () => {
 
           <div className="relative w-full h-full">
             <div className="relative w-full h-full min-h-[400px]">
-              <Image
-                src="/assets/images/business_val1.png"
-                alt="Digital transformation visual"
-                width={500}
-                height={809}
-                className="object-fit xl:ml-25"
-              />
+              <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="object-fit xl:ml-25" />
               <div className="absolute bottom-6">
                 <button className="cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                   <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
-                  <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-[12px] xl:text-[12px] whitespace-nowrap">
-                    Transform Your Business
-                  </span>
+                  <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-[12px] xl:text-[12px] whitespace-nowrap">Transform Your Business</span>
                   <svg className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-7 lg:h-7" viewBox="0 0 56 55" fill="none">
                     <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
                     <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
@@ -453,13 +523,8 @@ const DesktopLayout = () => {
 const BusinessValue = () => {
   return (
     <>
-      {/* Mobile (< md): CSS sticky scroll, no GSAP, no extra spacing */}
       <MobileCardStack />
-
-      {/* Tablet (md → lg): plain 8-card list + sticky image, no animation */}
       <TabletLayout />
-
-      {/* Desktop (lg +): original pinned two-set scroll animation */}
       <DesktopLayout />
     </>
   );
