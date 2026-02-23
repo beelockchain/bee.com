@@ -419,7 +419,7 @@ const Technologies = () => {
                 key={category.key || "all"}
                 onClick={() => setActiveCategory(category.key)}
                 className={`cursor-pointer filter-btn 
-                  h-8 px-3 py-1.5
+                  h-7 px-3 py-1.5
                   rounded-[20px] outline outline-1
                   text-[11px] font-normal text-black font-['Poppins']
                   transition-all duration-300

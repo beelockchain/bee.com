@@ -34,7 +34,7 @@ const IndustryWeServe = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 
   return (
-    <section className="w-full bg-white py-12 sm:py-10 lg:py-20 overflow-hidden">
+    <section className="w-full bg-white py-16 sm:py-10 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
       <h2 className="block md:hidden text-3xl font-medium font-[Poppins] text-center text-black mb-8">
         Industries We Serve
@@ -66,7 +66,7 @@ const IndustryWeServe = () => {
         </div>
 
         {/* RIGHT – CONTENT */}
-        <div className="md:pt-2 lg:pt-0 lg:mt-10">
+        <div className="md:pt-2 lg:pt-0 lg:mt-10 text-center xl:text-left">
           {/* TABLET + DESKTOP TITLE */}
           <h2 className="hidden md:block text-3xl lg:text-5xl font-medium text-black font-[Poppins] mb-6 ">
             Industries We Serve
@@ -91,14 +91,15 @@ const IndustryWeServe = () => {
           </div>
 
           {/* CTA BUTTON */}
+          <div className="flex justify-center md:justify-start">
+
           <button
             className=" cursor-pointer
-    relative flex items-center
-    gap-2 md:gap-2 lg:gap-3
-    px-4 py-1.5 md:px-3  md:py-1.5 lg:px-6 lg:py-2
-    border border-black rounded-full
-    overflow-hidden
-  "
+            relative flex items-center
+            gap-2 md:gap-2 lg:gap-3
+            px-4 py-1.5 md:px-3  md:py-1.5 lg:px-6 lg:py-2
+            border border-black rounded-full
+            overflow-hidden"
           >
             {/* Soft center glow */}
             <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
@@ -132,6 +133,8 @@ const IndustryWeServe = () => {
               />
             </svg>
           </button>
+        </div>
+
         </div>
       </div>
     </section>

@@ -57,7 +57,7 @@ const steps = [
 ];
   return (
     <section className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-10">
         {/* Heading */}
         <div className="text-center mx-auto mb-10">
           <h2 className="text-2xl md:text-4xl font-bold font-[Poppins] text-zinc-800 mb-4">
