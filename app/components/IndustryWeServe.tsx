@@ -72,7 +72,7 @@ const IndustryWeServe = () => {
             Industries We Serve
           </h2>
 
-          <p className="text-black max-w-xl mb-10 md:mb-6  lg:mb-20  sm:mb-4 text-[12px] sm:text-[12px] md:text-[14px] lg:text-[20px] leading-relaxed">
+          <p className="text-black max-w-xl mb-10 md:mb-6  lg:mb-20  sm:mb-4 text-sm sm:text-sm md:text-lg lg:text-lg leading-relaxed font-normal font-['Poppins']">
             Beelockchain tackles the world’s biggest challenges by building
             great digital products and delivering customized services that help
             businesses overcome challenges and reach their goals.

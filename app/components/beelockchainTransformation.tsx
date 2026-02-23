@@ -63,7 +63,7 @@ const steps = [
           <h2 className="text-2xl md:text-4xl font-bold font-[Poppins] text-zinc-800 mb-4">
             How BeelockChain Transforms Your Business
           </h2>
-          <p className="text-zinc-600 text-base md:text-lg">
+          <p className="text-black text-sm md:text-lg font-normal font-['Poppins']">
             Innovative Solutions for Your Business Challenges
           </p>
         </div>
