@@ -188,7 +188,7 @@ export default function Testi() {
           {/* Testimonials image */}
           <img
             src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/TESTIMONIALS.webp"
-            className="w-[80%] md:w-[60%]"
+            className="w-[80%] md:w-[80%]"
             alt="Testimonials"
           />
 
