@@ -164,7 +164,6 @@ function MobileModal({ user, onClose }: { user: User; onClose: () => void }) {
 /* ================= MAIN ================= */
 export default function Testi() {
   const [tip, setTip]           = useState<TipState>(null);
-  const [modal, setModal]       = useState<User | null>(null);
 
   const handleEnter = useCallback((u: User, rect: DOMRect, dir: "top" | "bottom") => {
     const cx   = rect.left + rect.width / 2;
@@ -174,13 +173,12 @@ export default function Testi() {
   }, []);
 
   const handleLeave = useCallback(() => setTip(null), []);
-  const handleTap   = useCallback((u: User) => setModal(u), []);
+const handleTap = useCallback((_u: User) => {}, []);
 
   return (
     <>
       <style>{ANIM_CSS}</style>
       <TooltipPortal tip={tip} />
-      {modal && <MobileModal user={modal} onClose={() => setModal(null)} />}
 
       <div className="w-full bg-white mt-10">
         <div className="flex flex-col items-center w-full">

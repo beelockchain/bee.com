@@ -66,20 +66,20 @@ const IndustryWeServe = () => {
         </div>
 
         {/* RIGHT – CONTENT */}
-        <div className="md:pt-2 lg:pt-0 lg:mt-10 text-center xl:text-left">
+        <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
           {/* TABLET + DESKTOP TITLE */}
-          <h2 className="hidden md:block text-3xl lg:text-5xl font-medium text-black font-[Poppins] mb-6 ">
+          <h2 className="hidden md:block text-3xl lg:text-4xl font-medium text-black font-[Poppins] mb-6 ">
             Industries We Serve
           </h2>
 
-          <p className="text-black max-w-xl mb-10 md:mb-6  lg:mb-20  sm:mb-4 text-sm sm:text-sm md:text-lg lg:text-lg leading-relaxed font-normal font-['Poppins']">
+          <p className="text-black max-w-xl mb-10 lg:mb-20 md:mb-10  sm:mb-4 text-sm sm:text-sm md:text-[14px] lg:text-lg leading-relaxed font-normal font-['Poppins']">
             Beelockchain tackles the world’s biggest challenges by building
             great digital products and delivering customized services that help
             businesses overcome challenges and reach their goals.
           </p>
 
           {/* INDUSTRY LIST */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 md:gap-y-2 lg:gap-y-6 sm:gap-y-6 gap-x-6 sm:gap-x-2 mb-12 sm:mb-10 lg:mb-20">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 md:gap-y-2 lg:gap-y-6 sm:gap-y-6 gap-x-6 sm:gap-x-2 mb-12 sm:mb-10 md:mb-10 lg:mb-20">
             {industries.map((item, i) => (
               <div
                 key={i}

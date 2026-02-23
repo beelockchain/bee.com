@@ -33,7 +33,7 @@ const FAQSection = () => {
 
   return (
     <section className="w-full bg-white py-0">
-  <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-0 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 lg:gap-40 py-12">
+  <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-0 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 lg:gap-60 py-6">
 
     {/* SINGLE HEADING */}
     <div className="w-full md:w-auto flex justify-center md:justify-start">
@@ -60,7 +60,7 @@ const FAQSection = () => {
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
               <button className="w-full flex justify-between items-center gap-6 text-left cursor-pointer">
-                <p className="text-black text-[10px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] font-manrope">
+                <p className="text-black text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] font-manrope">
                   {item.q}
                 </p>
 
@@ -76,7 +76,7 @@ const FAQSection = () => {
               </button>
 
               <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-50 mt-6" : "max-h-0"}`}>
-                <p className="text-[10px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-[#646464] leading-relaxed font-poppins">
+                <p className="text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-[#646464] leading-relaxed font-poppins">
                   {item.a}
                 </p>
               </div>
