@@ -164,7 +164,6 @@ function MobileModal({ user, onClose }: { user: User; onClose: () => void }) {
 /* ================= MAIN ================= */
 export default function Testi() {
   const [tip, setTip]           = useState<TipState>(null);
-  const [modal, setModal]       = useState<User | null>(null);
 
   const handleEnter = useCallback((u: User, rect: DOMRect, dir: "top" | "bottom") => {
     const cx   = rect.left + rect.width / 2;
@@ -174,13 +173,12 @@ export default function Testi() {
   }, []);
 
   const handleLeave = useCallback(() => setTip(null), []);
-  const handleTap   = useCallback((u: User) => setModal(u), []);
+const handleTap = useCallback((_u: User) => {}, []);
 
   return (
     <>
       <style>{ANIM_CSS}</style>
       <TooltipPortal tip={tip} />
-      {modal && <MobileModal user={modal} onClose={() => setModal(null)} />}
 
       <div className="w-full bg-white mt-10">
         <div className="flex flex-col items-center w-full">
@@ -188,13 +186,13 @@ export default function Testi() {
           {/* Testimonials image */}
           <img
             src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/TESTIMONIALS.webp"
-            className="w-[80%] md:w-[60%]"
+            className="w-[80%] md:w-[80%]"
             alt="Testimonials"
           />
 
           {/* Heading */}
           <h2 className="text-2xl font-bold mt-4 text-black">What We've Done</h2>
-          <p className="text-sm text-black text-center px-4">
+          <p className="text-sm md:text-lg text-black text-center px-4 font-normal font-['Poppins']">
             Trusted by Leading Enterprises and Innovators
           </p>
 

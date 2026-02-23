@@ -57,13 +57,13 @@ const steps = [
 ];
   return (
     <section className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-10">
         {/* Heading */}
         <div className="text-center mx-auto mb-10">
           <h2 className="text-2xl md:text-4xl font-bold font-[Poppins] text-zinc-800 mb-4">
             How BeelockChain Transforms Your Business
           </h2>
-          <p className="text-zinc-600 text-base md:text-lg">
+          <p className="text-black text-sm md:text-lg font-normal font-['Poppins']">
             Innovative Solutions for Your Business Challenges
           </p>
         </div>

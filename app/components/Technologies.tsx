@@ -343,7 +343,7 @@ const Technologies = () => {
           </h2>
 
           {/* Subheading */}
-          <p className="text-center text-black text-[14px] sm:text-[18px] md:text-[20px] xl:text-[20px] lg:text-[20px] font-normal font-['Poppins'] mb-8">
+          <p className="text-center text-black text-sm sm:text-sm md:text-lg xl:text-lg lg:text-lg font-normal font-['Poppins'] mb-8">
             Unlock new opportunities with tailored digital transformation strategies
           </p>
 
@@ -419,7 +419,7 @@ const Technologies = () => {
                 key={category.key || "all"}
                 onClick={() => setActiveCategory(category.key)}
                 className={`cursor-pointer filter-btn 
-                  h-8 px-3 py-1.5
+                  h-7 px-3 py-1.5
                   rounded-[20px] outline outline-1
                   text-[11px] font-normal text-black font-['Poppins']
                   transition-all duration-300

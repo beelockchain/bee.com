@@ -24,7 +24,7 @@ export default function Home() {
       <Herosection />
       <Customers />
       <Digitaltransformation />
-      <Transformes />
+      {/* <Transformes /> */}
       <Testimonial />
       <TestimonialCarousel/>
       <OverView />
