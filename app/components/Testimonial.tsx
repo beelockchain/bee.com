@@ -191,7 +191,7 @@ const handleTap = useCallback((_u: User) => {}, []);
           />
 
           {/* Heading */}
-          <h2 className="text-2xl font-bold mt-4 text-black">What We've Done</h2>
+          <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] mt-4 text-black font-bold ">What We've Done</h2>
           <p className="text-sm md:text-lg text-black text-center px-4 font-normal font-['Poppins']">
             Trusted by Leading Enterprises and Innovators
           </p>

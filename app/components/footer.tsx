@@ -73,7 +73,7 @@ const Footer = () => {
    <footer className="w-full bg-white py-10 lg:py-6">
       <div className="max-w-[1400px] mx-auto px-6">
  {/* TITLE */}
-        <h2 className="text-[28px] sm:text-[26px] md:text-[32px] lg:text-[42px] text-center font-semibold text-black font-poppins mb-12">
+        <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-center  text-black mb-12 font-bold ">
 Area We Occupied
         </h2>
         {/* ================= CARD GRID ================= */}

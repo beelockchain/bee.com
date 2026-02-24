@@ -82,7 +82,7 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
         {/* LEFT - HEADING */}
         <div className="w-full text-center lg:text-left">
           <h1 className="
-          text-[19px] sm:text-[20px]  md:text-[20px] lg:text-[18px] xl:text-[26px] font-bold text-black leading-snug
+          text-[19px] sm:text-[20px]  md:text-[20px] lg:text-[18px] xl:text-[26px] font-bold text-black leading-snug 
           ">
             Digital Transformation Company
             <br />
