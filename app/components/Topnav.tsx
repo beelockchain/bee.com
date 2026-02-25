@@ -137,87 +137,87 @@ const isActive = (href: string, hasDropdown?: boolean) => {
     <>
       {/* ===== TOP NAV ===== */}
       <div className="fixed z-50 w-full bg-[#FFFCF8]">
-        <div className="h-20 flex items-center justify-between px-4 lg:px-10 cursor-pointer">
+      <div className="h-20 grid grid-cols-2 md:grid md:grid-cols-3 items-center px-4 lg:px-10">
 
-          {/* LOGO */}
-          <div className="flex-shrink-0 w-[30%]">
-            <Link href="/" onClick={() => setServiceDropdownOpen(false)}>
-              <img
-                src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
-                alt="logo"
-                className=" sm:h-9 md:h-10 lg:h-14"
-              />
-            </Link>
-          </div>
+        {/* LEFT - LOGO */}
+        <div className="flex items-center">
+          <Link href="/" onClick={() => setServiceDropdownOpen(false)}>
+            <img
+              src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
+              alt="logo"
+              className="h-10 sm:h-5  md:h-10 lg:h-14"
+            />
+          </Link>
+        </div>
 
-          {/* CENTER NAV */}
-          <nav className="hidden sm:flex flex-1 justify-center items-center gap-6 sm:gap-6 md:gap-8 lg:gap-10 cursor-pointer">
-            {primaryNav.map((item) => {
-              const active = isActive(item.href, item.hasDropdown);
-              return (
-                <div key={item.label} className="relative cursor-pointer">
-                  {item.hasDropdown ? (
-                    <button
-                      ref={serviceButtonRef}
-                      onClick={() => setServiceDropdownOpen((prev) => !prev)}
-                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
-                        ${
-                          active || serviceDropdownOpen
-                            ? "font-bold text-black"
-                            : "font-medium text-[#807E7C] hover:text-black"
-                        }`}
-                    >
-                      {item.label}
-                    </button>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      target="_blank"
-                      onClick={() => setServiceDropdownOpen(false)}
-                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
-                        ${
-                          active
-                            ? "font-bold text-black"
-                            : "font-medium text-[#807E7C] hover:text-black"
-                        }`}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-                </div>
-              );
-            })}
-          </nav>
+        {/* CENTER NAV */}
+        <nav className="hidden sm:flex justify-center items-center gap-6 md:gap-8 lg:gap-10">
+          {primaryNav.map((item) => {
+            const active = isActive(item.href, item.hasDropdown);
 
-          {/* RIGHT ACTIONS */}
-          <div className="flex items-center md:justify-end md:gap-3  sm:w-[30%] lg:w-[22%] sm:gap-1">
-            <Link
-              href="/contact"
-              className="hidden sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
-            >
-              Get started
-              <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5 text-yellow-500 ml-1" />
-            </Link>
-
-            <button
-              onClick={() => setSideMenuOpen(!sideMenuOpen)}
-              className="flex items-center gap-1.5 border border-black px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm hover:bg-gray-100 transition text-black cursor-pointer"
-            >
-              {sideMenuOpen ? "Close" : "Menu"}
-              <div className="w-6 h-6 rounded-full flex items-center justify-center">
-                {sideMenuOpen ? (
-                  <X className="h-4 w-4 md:h-5 md:w-5" />
+            return (
+              <div key={item.label} className="relative ">
+                {item.hasDropdown ? (
+                  <button
+                    ref={serviceButtonRef}
+                    onClick={() => setServiceDropdownOpen((prev) => !prev)}
+                    className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+                      ${
+                        active || serviceDropdownOpen
+                          ? "font-bold text-black"
+                          : "font-medium text-[#807E7C] hover:text-black"
+                      }`}
+                  >
+                    {item.label}
+                  </button>
                 ) : (
-                  <img
-                    src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/Hamburger.webp"
-                    alt="menu"
-                    className="h-4 w-4 md:h-5 md:w-5"
-                  />
+                  <Link
+                    href={item.href}
+                    onClick={() => setServiceDropdownOpen(false)}
+                    className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+                      ${
+                        active
+                          ? "font-bold text-black"
+                          : "font-medium text-[#807E7C] hover:text-black"
+                      }`}
+                  >
+                    {item.label}
+                  </Link>
                 )}
               </div>
-            </button>
-          </div>
+            );
+          })}
+        </nav>
+
+        {/* RIGHT ACTIONS */}
+        <div className="flex justify-end items-center gap-3">
+          <Link
+            href="/contact"
+            className="hidden sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
+          >
+            Get started
+            <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5 text-yellow-500 ml-1" />
+          </Link>
+
+          <button
+            onClick={() => setSideMenuOpen(!sideMenuOpen)}
+            className="flex items-center cursor-pointer gap-1.5 border border-black px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm hover:bg-gray-100 transition text-black"
+          >
+            {sideMenuOpen ? "Close" : "Menu"}
+            <div className="w-6 h-6 flex items-center justify-center">
+              {sideMenuOpen ? (
+                <X className="h-4 w-4 md:h-5 md:w-5" />
+              ) : (
+                <img
+                  src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/Hamburger.webp"
+                  alt="menu"
+                  className="h-4 w-4 md:h-5 md:w-5"
+                />
+              )}
+            </div>
+          </button>
         </div>
+      </div>
 
         {/* ===== SERVICE DROPDOWN (DESKTOP) ===== */}
         <div
