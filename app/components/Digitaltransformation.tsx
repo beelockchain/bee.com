@@ -13,7 +13,7 @@ const Digitaltransformation = () => {
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-4">
 
           {/* HEADING */}
-          <h2 className="order-1 sm:order-none font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold ">
+          <h2 className="order-1 sm:order-none font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[24px] xl:text-[32px] text-black leading-snug font-semibold ">
             Beelockchain Your Trusted
             <span
               className="block text-transparent bg-clip-text"
