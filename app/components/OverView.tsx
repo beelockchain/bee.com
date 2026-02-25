@@ -38,7 +38,7 @@ const cardsData = [
   {
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "People-centric Digital Transformation",
-    hoverLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
+    hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Enterprise-Grade Security 100",
     hoverSubtitle: "For Your Business",
     image: `${ASSET_URL}/images/whychooseusimg1.webp`,
@@ -48,7 +48,7 @@ const cardsData = [
   {
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Vendor-neutral & strategy-first approach",
-    hoverLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
+    hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Automation Excellence 7",
     hoverSubtitle: "Process Reliability",
     image: `${ASSET_URL}/images/why-choose-img1.webp`,
@@ -58,7 +58,7 @@ const cardsData = [
   {
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Market Responsiveness",
-    hoverLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
+    hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Safe & Scalable 24x7",
     hoverSubtitle: "Data Infrastructure",
     image: `${ASSET_URL}/images/whychooseusimg3.webp`,
@@ -68,7 +68,7 @@ const cardsData = [
   {
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Proactive Risk Mitigation",
-    hoverLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
+    hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Real-Time Insights 24",
     hoverSubtitle: "Modern Intelligence",
     image: `${ASSET_URL}/images/whychooseusimg4.webp`,
@@ -78,7 +78,7 @@ const cardsData = [
   {
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Agile Methodologies",
-    hoverLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
+    hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Always-On Support 24x7",
     hoverSubtitle: "Dedicated Experts",
     image: `${ASSET_URL}/images/whychooseusimg.webp`,
@@ -124,7 +124,7 @@ const cardsData = [
     <div className="w-full bg-white flex flex-col items-center py-20">
       {/* ================= TITLE ================= */}
       <div className="mb-10 text-center">
-        <h2 className="text-black text-[34px] font-bold ">
+        <h2 className="text-black text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold">
           Why Choose <span>Beelockchain</span>
         </h2>
         <p className="w-full md:w-[820px] max-w-full text-black text-sm md:text-lg font-normal font-['Poppins']">
@@ -173,7 +173,7 @@ const cardsData = [
                     alt="logo"
                     width={45}
                     height={45}
-                    className="opacity-60"
+                    className="opacity-60  rotate-320"
                   />
                 </div>
 

@@ -72,10 +72,10 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => (
         />
       </div>
     </div>
-    <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug">
+    <h3 className="text-base xl:text-[18px] font-bold text-gray-900 mb-2 leading-snug">
       {card.title}
     </h3>
-    <p className="text-xs text-gray-600 leading-relaxed font-bold">
+    <p className="text-xs xl:text-[14px] text-gray-600 leading-relaxed font-bold">
       {card.description}
     </p>
   </div>
@@ -183,12 +183,12 @@ const BenefitsSection: React.FC = () => {
         </span>
       </div>
 
-      <h2 className="text-3xl lg:text-[25px] xl:text-[35px] font-bold mb-6 leading-tight text-black md:text-center lg:text-left xl:text-left">
+      <h2 className="text-3xl lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-black md:text-center lg:text-left xl:text-left">
         Benefits Of <span data-text="Beelockchain" className="shine-text relative text-[#F9C901]">Beelockchain</span> Digital
         Transformation Services
       </h2>
 
-      <p className="text-black text-sm lg:text-[13px] mb-8 leading-relaxed max-w-md font-semibold">
+      <p className="text-black text-sm lg:text-[14px] xl:text-[16px] mb-8 leading-relaxed max-w-md font-semibold">
         Begin your transformation journey with Beelockchain's skilled experts.
         Build a future-ready organization using a structured digital business
         transformation service approach.
@@ -354,7 +354,7 @@ const BenefitsSection: React.FC = () => {
               What make us Unique
             </span>
 
-            <h2 className="text-2xl font-bold leading-tight text-black">
+            <h2 className="text-[20px] font-bold leading-tight text-black">
               Benefits Of{' '}
               <span data-text="Beelockchain" className="shine-text relative text-yellow-400">Beelockchain</span> Digital
               Transformation Services

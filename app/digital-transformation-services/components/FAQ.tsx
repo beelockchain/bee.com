@@ -29,12 +29,12 @@ const faqs = [
 
 
   return (
-    <section className="w-full bg-[#fff]  py-0 h-[60vh] flex items-center">
-      <div className="w-[70%] md:w-[90%] lg:w-[70%] xl:w-[70%] mx-auto flex flex-col md:flex-row  gap-2 md:gap-[30px] lg:gap-[100px] text-white">
+   <section className="w-full bg-[#fff]">
+      <div className="w-[70%] md:w-[90%]  xl:w-[70%] mx-auto flex flex-col md:flex-row  gap-2 md:gap-[30px] lg:gap-[100px] text-white">
 
         {/* LEFT SIDE — Desktop only */}
         <div className="hidden md:flex md:w-[40%] flex-col gap-10">
-          <h2 className="text-[20px] sm:text-[40px] md:text-[44px]   lg:text-[64px] xl:text-[58px] font-bold leading-tight font-manrope   text-black">
+          <h2 className="text-[20px] sm:text-[40px] md:text-[44px] lg:text-[50px] xl:text-[58px] font-bold leading-tight font-manrope   text-black">
             Frequently <br /> Asked <br />
             <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent"  >
               Questions
@@ -64,7 +64,7 @@ const faqs = [
                   <button
                     className="w-full flex justify-between items-center gap-6 text-left cursor-pointer "
                   >
-                    <p className="text-black text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[16px] font-manrope">{item.q}</p>
+                    <p className="text-black text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[14px] font-manrope">{item.q}</p>
 
                     {isOpen ? (
                       <svg width="16" height="3" viewBox="0 0 16 3">
@@ -84,7 +84,7 @@ const faqs = [
                   </button>
 
                   <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-50 mt-6" : "max-h-0"}`}>
-                    <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[16px] text-[#646464] leading-relaxed font-poppins">{item.a}</p>
+                    <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[14px] text-[#646464] leading-relaxed font-poppins">{item.a}</p>
                   </div>
                 </div>
               </div>

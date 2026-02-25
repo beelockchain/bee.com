@@ -18,27 +18,24 @@ export default function HeroSection({
           src={backgroundImage}
           alt="Digital Transformation Background"
           fill
-          className="object-cover object-center rounded-2xl hidden sm:block md:block lg:block xl:block"
+          className="object-cover object-center rounded-2xl hidden sm:hidden md:block lg:block xl:block"
           priority
           quality={100}
         />
       </div>
 
       {/* Content Container - Aligned to left with proper spacing */}
-      <div className="relative z-10 h-full  md:min-h-[370px] lg:min-h-[450px] xl:min-h-[650px] flex items-center">
-        <div className="container mx-auto px-3 md:px-10 lg:px-5 xl:px-10">
-          <div className="max-w-[600px] md:pt-8 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-8 xl:pb-8">
+      <div className="relative  z-10 h-full  md:min-h-[370px] lg:min-h-[450px] xl:min-h-[650px] flex items-center">
+        <div className=" container mx-auto px-3 md:px-10 lg:px-5 xl:px-5">
+          <div className="md:pt-8 md:pb-8 lg:pt-8 lg:pb-8 xl:pt-8 xl:pb-8">
             {/* Main Heading */}
             <h1 className="mb-5 leading-[1.15] mt-3">
             <span className="
                 block
-                text-[25px]
+                text-[20px]
                 md:text-[25px]
                 lg:text-[35px]
-                xl:text-[40px]
-                2xl:text-[42px]   /* Lenovo laptop */
-                3xl:text-[52px]   /* desktop monitor */
-                4xl:text-[64px]   /* 4K screen */
+                xl:text-[48px]
                 font-bold text-black
                 text-center
                 md:text-left
@@ -47,7 +44,7 @@ export default function HeroSection({
                 Digital Transformation
             </span>
 
-              <span className="block text-[25px] md:text-[25px] lg:text-[35px] xl:text-[45px] font-bold text-center md:text-left">
+              <span className="block text-[20px] md:text-[25px] lg:text-[35px] xl:text-[48px] font-bold text-center md:text-left">
                 <span data-text="Services" className="shine-text text-[#F5B800] relative">
                 Services
                 </span>
@@ -57,7 +54,7 @@ export default function HeroSection({
             </h1>
 
             {/* Description Paragraph */}
-            <p className="text-black text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold leading-[1.65] xl:mt-10 mb-5 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] text-center md:text-left">
+            <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold leading-[1.65] xl:mt-10 mb-5 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] text-center md:text-left">
               As a digital transformation consulting company and service provider,
               we help startups, mid-sized companies, and enterprises achieve
               sustainable business growth.

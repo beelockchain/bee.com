@@ -98,7 +98,7 @@ const insights = [
     <section className="w-full bg-white py-14 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
         {/* TITLE */}
-        <h2 className="text-[36px] text-center font-semibold text-black font-poppins mb-12">
+        <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-center font-bold text-black  mb-12">
           Our Insights
         </h2>
 

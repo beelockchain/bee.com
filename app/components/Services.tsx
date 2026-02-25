@@ -107,7 +107,7 @@
   }
 
   /* ---------------- MAIN COMPONENT ---------------- */
-  export default function Transformes() {
+  export default function Services() {
     const [activeTab, setActiveTab] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
 
@@ -209,7 +209,7 @@
 
   </div> */}
 
-  <div className="relative w-full max-w-5xl mx-auto lg:py-5">
+  <div className="relative w-full max-w-6xl mx-auto lg:py-5">
 
     <img
       src={`${ASSET_URL}/images/Services.webp`}
@@ -228,11 +228,8 @@
         w-[95%] sm:w-[85%] md:w-[70%]
       "
     >
-      <h2 className="
-        text-[20px] sm:text-[16px] md:text-[20px] lg:text-[26px] xl:text-[34px]
-        font-bold text-black leading-snug
-        lg:whitespace-nowrap overflow-hidden text-ellipsis
-        lg:text-nowrap
+      <h2 className=" overflow-hidden 
+        font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold
       ">
         Areas Of Expertise - Digital Transformation
       </h2>
