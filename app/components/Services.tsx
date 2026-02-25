@@ -236,10 +236,8 @@
 
       <p className="
         mt-1 sm:mt-2
-      text-[10px]   xs:text-[12px] sm:text-[12px] md:text-[14px]
-        text-black text-center
+     text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']
         px-0 sm:px-4
-        font-normal font-['Poppins']
       
       ">
         A full spectrum of digital transformation services to elevate<br/> your business

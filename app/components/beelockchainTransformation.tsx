@@ -60,10 +60,10 @@ const steps = [
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-10">
         {/* Heading */}
         <div className="text-center mx-auto mb-10">
-          <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold  text-zinc-800 mb-4">
+          <h2 className="font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold  mb-4">
             How BeelockChain Transforms Your Business
           </h2>
-          <p className="text-black text-sm md:text-lg font-normal font-['Poppins']">
+          <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
             Innovative Solutions for Your Business Challenges
           </p>
         </div>

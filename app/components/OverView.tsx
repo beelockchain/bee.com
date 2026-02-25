@@ -121,7 +121,7 @@ const cardsData = [
   };
 
   return (
-    <div className="w-full bg-white flex flex-col items-center py-20">
+    <div className="w-full bg-white flex flex-col items-center py-10">
       {/* ================= TITLE ================= */}
       <div className="mb-10 text-center">
         <h2 className="text-black text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold">

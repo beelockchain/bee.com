@@ -36,7 +36,7 @@ const IndustryWeServe = () => {
   return (
     <section className="w-full bg-white py-16 sm:py-10 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
-      <h2 className="block md:hidden text-3xl font-medium  text-center text-black mb-8 ">
+      <h2 className="block md:hidden font-['Poppins'] text-[20px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold   text-center text-black mb-8 ">
         Industries We Serve
       </h2>
 
