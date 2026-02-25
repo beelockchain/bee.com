@@ -37,7 +37,7 @@ const Digitaltransformation = () => {
 
           {/* PARAGRAPHS */}
           <div className="order-3 sm:order-none flex flex-col gap-4">
-            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px] font-medium text-black font-normal font-['Poppins']">
+            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
               As a forward-thinking{" "}
               <span className="text-[#F9C901] font-semibold">
                 Digital Transformation Company
@@ -46,7 +46,7 @@ const Digitaltransformation = () => {
               outcomes through automation, innovation, and scalable technologies.
             </p>
 
-            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px] font-medium text-black font-normal font-['Poppins']">
+            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
               With over 8 years of experience in delivering enterprise grade
               <span className="text-[#F9C901] mx-1 font-semibold">
                 <Link href="digital-transformation-services">
@@ -57,7 +57,7 @@ const Digitaltransformation = () => {
               unlock new digital capabilities.
             </p>
 
-            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px] font-medium text-black font-normal font-['Poppins']">
+            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
               Our future-ready experts mitigate risks, streamline workflows, and
               solve complex digital challenges using front-line strategies.
             </p>

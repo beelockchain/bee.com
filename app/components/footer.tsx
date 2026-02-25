@@ -47,14 +47,19 @@ const Footer = () => {
     href: "https://x.com/beelockchain",
     src: `${ASSET_URL}/images/x-icon.webp`,
   },
+  // {
+  //   name: "Whatsapp",
+  //   href: "https://wa.me/+919025217523",
+  //   src: `${ASSET_URL}/images/whatsapp-icon.webp`,
+  // },
   {
-    name: "Whatsapp",
-    href: "https://wa.me/+919025217523",
-    src: `${ASSET_URL}/images/whatsapp-icon.webp`,
+    name: "Pinterest",
+    href: "https://www.pinterest.com/beelockchain",
+    src: `${ASSET_URL}/images/pin-icon.webp`,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/beelockchain",
+    href: "https://www.linkedin.com/company/beelockchain-com",
     src: `${ASSET_URL}/images/linkedin-icon.webp`,
   },
   // {

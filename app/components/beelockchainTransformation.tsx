@@ -60,7 +60,8 @@ const steps = [
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-10">
         {/* Heading */}
         <div className="text-center mx-auto mb-10">
-          <h2 className="text-2xl md:text-4xl font-bold font-[Poppins] text-zinc-800 mb-4">
+          <h2 className="text-center text-black text-[26px] sm:text-[18px] md:text-[26px] xl:text-[40px] lg:text-[40px] font-semibold font-['Poppins'] leading-snug mb-4">
+            
             How BeelockChain Transforms Your Business
           </h2>
           <p className="text-black text-sm md:text-lg font-normal font-['Poppins']">
