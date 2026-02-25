@@ -29,7 +29,7 @@ const faqs = [
 
 
   return (
-   <section className="w-full bg-[#fff] py-20">
+   <section className="w-full bg-[#fff]">
       <div className="w-[70%] md:w-[90%]  xl:w-[70%] mx-auto flex flex-col md:flex-row  gap-2 md:gap-[30px] lg:gap-[100px] text-white">
 
         {/* LEFT SIDE — Desktop only */}

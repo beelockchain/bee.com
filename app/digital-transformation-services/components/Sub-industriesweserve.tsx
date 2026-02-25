@@ -34,9 +34,9 @@ const SubIndustriesWeServe = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 
   return (
-    <section className="w-full bg-white py-12 sm:py-10 lg:py-20 overflow-hidden">
+    <section className="w-full bg-white pt-16 sm:py-10 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
-      <h2 className="block md:hidden text-[20px] font-bold font-Poppins text-center text-black mb-8">
+      <h2 className="block md:hidden text-3xl font-medium font-[Poppins] text-center text-black mb-8">
         Industries We Serve
       </h2>
 
@@ -66,24 +66,22 @@ const SubIndustriesWeServe = () => {
         </div>
 
         {/* RIGHT – CONTENT */}
-        <div className="md:pt-2 px-6 sm:pt-5 lg:mt-10">
+        <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
           {/* TABLET + DESKTOP TITLE */}
-          <h2 className="hidden md:block text-3xl lg:text-[28px] xl:text-[36px] font-bold text-black font-Poppins mb-6 xl:px-10">
+          <h2 className="hidden md:block text-3xl lg:text-4xl font-medium text-black font-[Poppins] mb-6 ">
             Industries We Serve
           </h2>
 
-          <p className="text-black max-w-xl mb-10 md:mb-6  lg:mb-20  sm:mb-4 text-[12px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] leading-relaxed xl:px-10">
-            We support digital transformation initiatives across industries with
-            diverse operational, regulatory, and customer experience
-            requirements.
+          <p className="text-black max-w-xl mb-10 lg:mb-20 md:mb-10  sm:mb-4 text-sm sm:text-sm md:text-[14px] lg:text-lg leading-relaxed font-normal font-['Poppins']">
+            We support digital transformation initiatives across industries with diverse operational, regulatory, and customer experience requirements. 
           </p>
 
           {/* INDUSTRY LIST */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 gap-y-4 md:gap-y-2 lg:gap-y-6 sm:gap-y-6 gap-x-6 sm:gap-x-2 mb-12 sm:mb-10 lg:mb-20 xl:px-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 md:gap-y-2 lg:gap-y-6 sm:gap-y-6 gap-x-6 sm:gap-x-2 mb-12 sm:mb-10 md:mb-10 lg:mb-20">
             {industries.map((item, i) => (
               <div
                 key={i}
-                className="text-[12px] sm:text-[12px] md:text-[12px]  lg:text-[14px] xl:text-[18px] font-medium font-Poppins text-black underline cursor-pointer hover:text-yellow-500 transition"
+                className="text-[12px] sm:text-[12px] md:text-[12px]  lg:text-[18px]  font-[Poppins] text-black underline cursor-pointer hover:text-yellow-500 transition"
               >
                 {item}
               </div>
@@ -91,16 +89,16 @@ const SubIndustriesWeServe = () => {
           </div>
 
           {/* CTA BUTTON */}
-          <div className="px-15 xl:px-10">
-                      <button
-                  className=" cursor-pointer
-          relative flex items-center
-          gap-2 md:gap-2 lg:gap-3
-          px-4 py-1.5 md:px-3  md:py-1.5 lg:px-4 lg:py-1
-          border border-black rounded-full
-          overflow-hidden
-        "
-                >
+          <div className="flex justify-center md:justify-start">
+
+          <button
+            className=" cursor-pointer
+            relative flex items-center
+            gap-2 md:gap-2 lg:gap-3
+            px-4 py-1.5 md:px-3  md:py-1.5 lg:px-6 lg:py-2
+            border border-black rounded-full
+            overflow-hidden"
+          >
             {/* Soft center glow */}
             <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
 
@@ -133,7 +131,7 @@ const SubIndustriesWeServe = () => {
               />
             </svg>
           </button>
-          </div>
+        </div>
 
         </div>
       </div>
