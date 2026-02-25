@@ -36,7 +36,7 @@ const IndustryWeServe = () => {
   return (
     <section className="w-full bg-white py-16 sm:py-10 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
-      <h2 className="block md:hidden text-3xl font-medium font-[Poppins] text-center text-black mb-8">
+      <h2 className="block md:hidden text-3xl font-medium  text-center text-black mb-8 ">
         Industries We Serve
       </h2>
 
@@ -68,7 +68,7 @@ const IndustryWeServe = () => {
         {/* RIGHT – CONTENT */}
         <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
           {/* TABLET + DESKTOP TITLE */}
-          <h2 className="hidden md:block text-3xl lg:text-4xl font-medium text-black font-[Poppins] mb-6 ">
+          <h2 className="hidden md:block text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold text-black  mb-6 ">
             Industries We Serve
           </h2>
 
