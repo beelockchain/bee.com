@@ -13,7 +13,7 @@ const Digitaltransformation = () => {
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-4">
 
           {/* HEADING */}
-          <h2 className="order-1 sm:order-none text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-bold ">
+          <h2 className="order-1 sm:order-none font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold ">
             Beelockchain Your Trusted
             <span
               className="block text-transparent bg-clip-text"
@@ -37,20 +37,16 @@ const Digitaltransformation = () => {
 
           {/* PARAGRAPHS */}
           <div className="order-3 sm:order-none flex flex-col gap-4">
-            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px] font-medium text-black font-normal font-['Poppins']">
-              As a forward-thinking
-              <span  className="mx-2 text-transparent bg-clip-text"
-              style={{
-                backgroundImage:
-                  "linear-gradient(90deg, #AF7211 33%, #F6E000 49%, #D7B007 63%)",
-              }}>
+            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
+              As a forward-thinking{" "}
+              <span className="text-[#F9C901] font-semibold">
                 Digital Transformation Company
               </span>
               , Beelockchain empowers organizations to achieve measurable business
               outcomes through automation, innovation, and scalable technologies.
             </p>
 
-            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px] font-medium text-black font-normal font-['Poppins']">
+            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
               With over 8 years of experience in delivering enterprise grade
               <span  className="mx-2 text-transparent bg-clip-text"
               style={{
@@ -65,7 +61,7 @@ const Digitaltransformation = () => {
               unlock new digital capabilities.
             </p>
 
-            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px] font-medium text-black font-normal font-['Poppins']">
+            <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
               Our future-ready experts mitigate risks, streamline workflows, and
               solve complex digital challenges using front-line strategies.
             </p>

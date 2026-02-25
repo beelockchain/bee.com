@@ -12,7 +12,7 @@ import FAQSection from "./components/faq";
 import Footer from "./components/footer";
 import OurInsights from "./components/OurInsights";
 import BeelockchainTransformation from "./components/beelockchainTransformation";
-import Transformes from "./components/Transformes";
+import Services from "./components/Services";
 import IndustryWeServe from "./components/IndustryWeServe";
 import Technologies from "./components/Technologies";
 import TestimonialCarousel from "./components/TestimonialCarousel";
@@ -24,7 +24,7 @@ export default function Home() {
       <Herosection />
       <Customers />
       <Digitaltransformation />
-      {/* <Transformes /> */}
+      <Services />
       <Testimonial />
       <TestimonialCarousel/>
       <OverView />
