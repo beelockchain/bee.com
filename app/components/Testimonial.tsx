@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 
 /* ================= DATA ================= */
@@ -23,7 +23,7 @@ const users = [
   { name: "Jordan Reed",      email: "jordan@example.com",       role: "Cybersecurity",         image: `${ASSET_URL}/images/testimonial14.webp` },
 ];
 
-/* ================= ANIMATION KEYFRAMES ONLY ================= */
+/* ================= ANIMATION KEYFRAMES ================= */
 const ANIM_CSS = `
   @keyframes marquee-left  { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
   @keyframes marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
@@ -46,7 +46,7 @@ const TOOLTIP_W = 210;
 const TOOLTIP_H = 80;
 const GAP = 12;
 
-/* ================= PORTAL TOOLTIP — your white card style ================= */
+/* ================= PORTAL TOOLTIP ================= */
 function TooltipPortal({ tip }: { tip: TipState }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
@@ -57,12 +57,10 @@ function TooltipPortal({ tip }: { tip: TipState }) {
       className="fixed z-[9999] pointer-events-none"
       style={{ left: tip.left, top: tip.top, width: TOOLTIP_W }}
     >
-      {/* Arrow — top tooltip: arrow points down; bottom tooltip: arrow points up */}
       <div
         className={`absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 border border-gray-200
           ${tip.dir === "top" ? "-bottom-1.5 border-r border-b border-t-0 border-l-0" : "-top-1.5 border-l border-t border-b-0 border-r-0"}`}
       />
-      {/* Card — your style */}
       <div className="bg-white rounded-xl shadow-xl border border-gray-200 px-4 py-3">
         <p className="text-sm font-semibold text-black">{tip.user.name}</p>
         <p className="text-xs text-gray-500 mt-0.5">{tip.user.email}</p>
@@ -74,22 +72,23 @@ function TooltipPortal({ tip }: { tip: TipState }) {
 }
 
 /* ================= AVATAR ================= */
-function Avatar({ user, tooltipDir, onEnter, onLeave, onTap }: {
+function Avatar({ user, tooltipDir, onShow, onHide }: {
   user: User;
   tooltipDir: "top" | "bottom";
-  onEnter: (u: User, rect: DOMRect, dir: "top" | "bottom") => void;
-  onLeave: () => void;
-  onTap: (u: User) => void;
+  onShow: (u: User, rect: DOMRect, dir: "top" | "bottom") => void;
+  onHide: () => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+
+  const show = () => ref.current && onShow(user, ref.current.getBoundingClientRect(), tooltipDir);
 
   return (
     <div
       ref={ref}
       className="flex-shrink-0 px-1 cursor-pointer group"
-      onMouseEnter={() => ref.current && onEnter(user, ref.current.getBoundingClientRect(), tooltipDir)}
-      onMouseLeave={onLeave}
-      onClick={() => onTap(user)}
+      onMouseEnter={show}
+      onMouseLeave={onHide}
+      onTouchStart={(e) => { e.stopPropagation(); show(); }}
     >
       <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full overflow-hidden opacity-90 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110 group-hover:-translate-y-0.5">
         <img src={user.image} alt={user.name} className="w-full h-full object-cover" />
@@ -99,11 +98,10 @@ function Avatar({ user, tooltipDir, onEnter, onLeave, onTap }: {
 }
 
 /* ================= MARQUEE ROW ================= */
-function MarqueeRow({ direction, onEnter, onLeave, onTap }: {
+function MarqueeRow({ direction, onShow, onHide }: {
   direction: "left" | "right";
-  onEnter: (u: User, rect: DOMRect, dir: "top" | "bottom") => void;
-  onLeave: () => void;
-  onTap: (u: User) => void;
+  onShow: (u: User, rect: DOMRect, dir: "top" | "bottom") => void;
+  onHide: () => void;
 }) {
   const tooltipDir = direction === "left" ? "top" : "bottom";
   const list = direction === "left" ? users : [...users].reverse();
@@ -111,7 +109,6 @@ function MarqueeRow({ direction, onEnter, onLeave, onTap }: {
 
   return (
     <div className="mq-row relative w-full pt-2" style={{ overflowX: "clip", overflowY: "visible" }}>
-      {/* fade edges — match white bg */}
       <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-20 bg-gradient-to-r from-white to-transparent" />
       <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-20 bg-gradient-to-l from-white to-transparent" />
 
@@ -121,9 +118,8 @@ function MarqueeRow({ direction, onEnter, onLeave, onTap }: {
             key={i}
             user={user}
             tooltipDir={tooltipDir}
-            onEnter={onEnter}
-            onLeave={onLeave}
-            onTap={onTap}
+            onShow={onShow}
+            onHide={onHide}
           />
         ))}
       </div>
@@ -131,49 +127,25 @@ function MarqueeRow({ direction, onEnter, onLeave, onTap }: {
   );
 }
 
-/* ================= MOBILE MODAL — your style ================= */
-function MobileModal({ user, onClose }: { user: User; onClose: () => void }) {
-  return (
-    <div
-      className="md:hidden fixed inset-0 z-[200] flex items-center justify-center bg-black/40"
-      onClick={onClose}
-    >
-      <div
-        className="bg-white rounded-2xl shadow-xl p-4 w-[70%] max-w-xs"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex items-center gap-3">
-          <img src={user.image} alt={user.name} className="w-10 h-10 rounded-full object-cover" />
-          <div>
-            <p className="text-sm font-semibold text-black">{user.name}</p>
-            <p className="text-xs text-gray-500">{user.email}</p>
-            <p className="text-xs text-gray-500">{user.role}</p>
-          </div>
-        </div>
-        <button
-          onClick={onClose}
-          className="w-full mt-3 text-xs font-medium text-gray-600 hover:text-black"
-        >
-          Close
-        </button>
-      </div>
-    </div>
-  );
-}
-
 /* ================= MAIN ================= */
 export default function Testi() {
-  const [tip, setTip]           = useState<TipState>(null);
+  const [tip, setTip] = useState<TipState>(null);
 
-  const handleEnter = useCallback((u: User, rect: DOMRect, dir: "top" | "bottom") => {
+  // Dismiss tooltip on any touch outside an avatar
+  useEffect(() => {
+    const dismiss = () => setTip(null);
+    document.addEventListener("touchstart", dismiss, { passive: true });
+    return () => document.removeEventListener("touchstart", dismiss);
+  }, []);
+
+  const handleShow = useCallback((u: User, rect: DOMRect, dir: "top" | "bottom") => {
     const cx   = rect.left + rect.width / 2;
     const left = Math.max(8, Math.min(window.innerWidth - TOOLTIP_W - 8, cx - TOOLTIP_W / 2));
     const top  = dir === "top" ? rect.top - TOOLTIP_H - GAP : rect.bottom + GAP;
     setTip({ user: u, left, top, dir });
   }, []);
 
-  const handleLeave = useCallback(() => setTip(null), []);
-const handleTap = useCallback((_u: User) => {}, []);
+  const handleHide = useCallback(() => setTip(null), []);
 
   return (
     <>
@@ -183,23 +155,20 @@ const handleTap = useCallback((_u: User) => {}, []);
       <div className="w-full bg-white mt-10">
         <div className="flex flex-col items-center w-full">
 
-          {/* Testimonials image */}
           <img
             src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/TESTIMONIALS.webp"
             className="w-[80%] md:w-[80%]"
             alt="Testimonials"
           />
 
-          {/* Heading */}
-          <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] mt-4 text-black font-bold ">What We've Done</h2>
+          <h2 className="mt-4 font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold">What We've Done</h2>
           <p className="text-sm md:text-lg text-black text-center px-4 font-normal font-['Poppins']">
             Trusted by Leading Enterprises and Innovators
           </p>
 
-          {/* Marquee rows — 500px centered */}
           <div className="mt-6 pb-6" style={{ width: "500px", maxWidth: "100%" }}>
-            <MarqueeRow direction="left"  onEnter={handleEnter} onLeave={handleLeave} onTap={handleTap} />
-            <MarqueeRow direction="right" onEnter={handleEnter} onLeave={handleLeave} onTap={handleTap} />
+            <MarqueeRow direction="left"  onShow={handleShow} onHide={handleHide} />
+            <MarqueeRow direction="right" onShow={handleShow} onHide={handleHide} />
           </div>
 
         </div>
