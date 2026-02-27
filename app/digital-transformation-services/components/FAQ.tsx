@@ -21,10 +21,7 @@ const faqs = [
     q: "What are digital transformation services, and how do they help my business/organization?",
     a: "Digital transformation services companies aim to modernize the business processes and data usage to improve efficiency and customer engagement. Beelockchain assists organizations in upgrading operations while minimizing disruption and maximizing long-term value.",
   },
-  {
-    q: "Is digital transformation fit for small- and medium-sized businesses?",
-    a: "Yes, digital transformation benefits businesses of all sizes. Beelockchain supports startups, growing companies, and enterprises by tailoring solutions to fit their scale, budget, and operational needs.",
-  },
+
 ];
 
 
@@ -36,7 +33,7 @@ const faqs = [
         <div className="hidden md:flex md:w-[40%] flex-col gap-10">
           <h2 className="text-[20px] sm:text-[40px] md:text-[44px] lg:text-[50px] xl:text-[58px] font-bold leading-tight font-manrope   text-black">
             Frequently <br /> Asked <br />
-            <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent"  >
+            <span className="bg-linear-to-r from-black via-black to-black/50 bg-clip-text text-transparent"  >
               Questions
             </span>
           </h2>
@@ -45,7 +42,7 @@ const faqs = [
       <div className="md:hidden text-center mt-15 mb-6">
         <h2 className="text-3xl font-bold font-manrope text-black">
           Frequently Asked <br />
-          <span className="bg-gradient-to-r text-black from-black via-black to-black/50 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r text-black from-black via-black to-black/50 bg-clip-text ">
             Questions
           </span>
         </h2>
@@ -58,7 +55,7 @@ const faqs = [
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="relative rounded-[14px] p-[1px] bg-[#646464] cursor-pointer">
+              <div key={index} className="relative rounded-[14px] p-2px bg-[#646464] cursor-pointer">
                 <div className="bg-[#fafafa] rounded-[13px] px-3 py-4"
                  onClick={() => setOpenIndex(isOpen ? null : index)}>
                   <button
