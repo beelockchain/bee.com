@@ -150,3 +150,22 @@ body {
     background-position: 200% 0;
   }
 }
+@keyframes beeFly {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-250%);
+  }
+}
+/* 
+.bee-fly {
+  animation: beeFly 4s linear infinite;
+  will-change: transform;
+} */
+
+.bee {
+  will-change: transform;
+  transform-origin: center;
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.25));
+}

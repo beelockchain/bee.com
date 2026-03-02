@@ -19,7 +19,7 @@ const serviceSubMenu = [
 const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Service", href: "/service", hasDropdown: true },
-  { label: "Blog", href: "/blog" },
+  { label: "Insights", href: "/blog" },
   
 ];
 
