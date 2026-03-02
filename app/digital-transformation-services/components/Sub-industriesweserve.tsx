@@ -1,18 +1,19 @@
 "use client";
 
 const industries = [
-  "Fintech",
+  "FinTech and financial services",
   "Healthcare",
-  "Education",
-  "Insurance",
-  "Hotel",
+  "Retail and eCommerce",
+  "Education and eLearning",
+  "Logistics and supply chain",
   "Manufacturing",
-  "Logistics",
-  "Entertainment",
-  "Real Estate",
-  "Social Networking",
-  "Ecommerce",
-  "Supply Chain",
+  "Travel and hospitality",
+  "Real estate",
+  "Automotive",
+  "Energy & utilities",
+  "Insurance",
+  "Food & beverage",
+  "Sports & fitness",
 ];
 
 const industryImages = [

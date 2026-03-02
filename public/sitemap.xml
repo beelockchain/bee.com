@@ -7,4 +7,12 @@
 <loc>https://beelockchain.com/digital-transformation-services</loc>
 <priority>0.90</priority>
 </url>
+<url>
+<loc>https://beelockchain.com/</loc>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://beelockchain.com/digital-transformation-services</loc>
+<priority>0.90</priority>
+</url>
 </urlset>

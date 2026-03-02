@@ -79,29 +79,30 @@ export default function RoadmapCarousel() {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 768px)", () => {
-      const totalCards = roadmapData.length;
-      const cardWidth = 410;
-      const gap = 32;
-      const moveDistance = (cardWidth + gap) * totalCards;
+mm.add("(min-width: 768px)", () => {
+  const totalCards = roadmapData.length;
+  const cardWidth = 270;
+  const gap = 32;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: "+=4000",
-          scrub: 0.5,
-          pin: true,
-          pinSpacing: true,
-        },
-      });
+  const moveDistance =
+    (cardWidth + gap) * (totalCards - 1);
 
-      tl.to(carousel, {
-        x: -moveDistance,
-        ease: "none",
-      });
-    });
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "+=4000",
+      scrub: 0.5,
+      pin: true,
+      pinSpacing: true,
+    },
+  });
 
+  tl.to(carousel, {
+    x: -moveDistance,
+    ease: "none",
+  });
+});
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
@@ -146,7 +147,7 @@ export default function RoadmapCarousel() {
               ref={carouselRef}
               className="flex md:gap-8 lg:gap-8 xl:gap-10 will-change-transform"
             >
-              {[...roadmapData, ...roadmapData, ...roadmapData].map(
+              {roadmapData.map(
                 (item, index) => (
                   <div
                     key={index}

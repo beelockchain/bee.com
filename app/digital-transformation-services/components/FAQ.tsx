@@ -21,6 +21,10 @@ const faqs = [
     q: "What are digital transformation services, and how do they help my business/organization?",
     a: "Digital transformation services companies aim to modernize the business processes and data usage to improve efficiency and customer engagement. Beelockchain assists organizations in upgrading operations while minimizing disruption and maximizing long-term value.",
   },
+    {
+    q: "Is digital transformation fit for small- and medium-sized businesses?",
+    a: "Yes, digital transformation benefits businesses of all sizes. Beelockchain supports startups, growing companies, and enterprises by tailoring solutions to fit their scale, budget, and operational needs.",
+  },
 
 ];
 
@@ -55,7 +59,7 @@ const faqs = [
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="relative rounded-[14px] p-2px bg-[#646464] cursor-pointer">
+              <div key={index} className="relative rounded-[14px]  bg-[#646464] cursor-pointer p-px">
                 <div className="bg-[#fafafa] rounded-[13px] px-3 py-4"
                  onClick={() => setOpenIndex(isOpen ? null : index)}>
                   <button

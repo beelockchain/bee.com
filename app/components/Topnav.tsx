@@ -137,7 +137,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
     <>
       {/* ===== TOP NAV ===== */}
       <div className="fixed z-50 w-full bg-[#FFFCF8]">
-      <div className="h-20 grid grid-cols-2 md:grid md:grid-cols-3 items-center px-4 lg:px-10">
+      <div className="h-20 grid grid-cols-2   sm:grid-cols-3 md:grid md:grid-cols-3 items-center px-4 lg:px-10">
 
         {/* LEFT - LOGO */}
         <div className="flex items-center">
@@ -145,13 +145,14 @@ const isActive = (href: string, hasDropdown?: boolean) => {
             <img
               src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
               alt="logo"
-              className="h-10 sm:h-5  md:h-10 lg:h-14"
+              className="h-10 sm:h-100605
+                md:h-10 lg:h-14"
             />
           </Link>
         </div>
 
         {/* CENTER NAV */}
-        <nav className="hidden sm:flex justify-center items-center gap-6 md:gap-8 lg:gap-10">
+        <nav className="hidden sm:flex justify-center items-center gap-6 sm:gap-6 md:gap-8 lg:gap-10">
           {primaryNav.map((item) => {
             const active = isActive(item.href, item.hasDropdown);
 

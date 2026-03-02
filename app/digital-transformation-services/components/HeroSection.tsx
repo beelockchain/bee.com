@@ -55,9 +55,8 @@ export default function HeroSection({
 
             {/* Description Paragraph */}
             <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold leading-[1.65] xl:mt-10 mb-5 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] text-center md:text-left">
-              As a digital transformation consulting company and service provider,
-              we help startups, mid-sized companies, and enterprises achieve
-              sustainable business growth.
+              Beelockchain is a trusted Digital Transformation Services Provider, enabling organizations to modernize business operations, streamline processes, and align technology with their business goals. As a digital transformation consulting company and service provider, we help startups, mid-sized companies, and enterprises achieve sustainable business growth.
+
             </p>
 
             {/* CTA Button */}

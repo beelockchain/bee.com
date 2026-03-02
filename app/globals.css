@@ -55,7 +55,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #ffffff;
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
 }
@@ -149,4 +149,7 @@ body {
   100% {
     background-position: 200% 0;
   }
+}
+.pin-spacer{
+  background-color: #fff;
 }
