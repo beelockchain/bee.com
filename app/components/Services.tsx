@@ -179,35 +179,7 @@
             height: `calc(100vh - ${NAV_HEIGHT}px)`,
           }}
         >
-      {/* <div className="relative w-full max-w-5xl mx-auto lg:py-5">
-
-    <img
-      src={`${ASSET_URL}/images/Services.webp`}
-      alt="Services"
-      className="w-full h-auto object-cover"
-    />
-
-    <div
-      className="
-        absolute
-        left-1/2 -translate-x-1/2
-        -bottom-10 md:-bottom-10
-      
-        px-6 py-4
-        text-center
-        w-[90%] md:w-[70%]
-      "
-    >
-      <h2 className="text-nowrap text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold text-black leading-snug">
-        Areas Of Expertise - Digital Transformation
-      </h2>
-
-      <p className="mt-2 text-sm md:text-lg text-black text-center px-4 font-normal font-['Poppins']">
-        A full spectrum of digital transformation services to elevate<br/> your business
-      </p>
-    </div>
-
-  </div> */}
+   
 
   <div className="relative w-full max-w-6xl mx-auto lg:py-5">
 

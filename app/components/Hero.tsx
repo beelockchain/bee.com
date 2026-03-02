@@ -1,13 +1,17 @@
-
 "use client";
 
-import { useRef , useState, useEffect} from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 const Herosection = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
   const imgRef = useRef<HTMLImageElement>(null);
+  const beeRef = useRef<HTMLImageElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+    const [active, setActive] = useState(false);
 
+  gsap.registerPlugin(MotionPathPlugin);
   const handleMouseMove = (e: React.MouseEvent) => {
     const img = imgRef.current;
     if (!img) return;
@@ -41,49 +45,91 @@ const Herosection = () => {
       duration: 0.3,
     });
   };
-const statsData = [
-  { title: 50, suffix: "+", sub: "Team Members" },
-  { title: 380, suffix: "+", sub: "Completed Projects" },
-  { title: 8, suffix: " years", sub: "In Business" },
-];
+  const statsData = [
+    { title: 50, suffix: "+", sub: "Team Members" },
+    { title: 380, suffix: "+", sub: "Completed Projects" },
+    { title: 8, suffix: " years", sub: "In Business" },
+  ];
   const [count, setCount] = useState(0);
-const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
-  const [count, setCount] = useState(0);
+  const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
+    const [count, setCount] = useState(0);
 
+    useEffect(() => {
+      let start = 0;
+      const duration = 1500;
+      const increment = end / (duration / 16);
+
+      const animate = () => {
+        start += increment;
+        if (start < end) {
+          setCount(Math.ceil(start));
+          requestAnimationFrame(animate);
+        } else {
+          setCount(end);
+        }
+      };
+
+      animate();
+    }, [end]);
+
+    return (
+      <span>
+        {count}
+        {suffix}
+      </span>
+    );
+  };
   useEffect(() => {
-    let start = 0;
-    const duration = 1500;
-    const increment = end / (duration / 16);
+    const bee = beeRef.current;
+    const btn = btnRef.current;
 
-    const animate = () => {
-      start += increment;
-      if (start < end) {
-        setCount(Math.ceil(start));
-        requestAnimationFrame(animate);
-      } else {
-        setCount(end);
+    if (!bee || !btn) return;
+
+    requestAnimationFrame(() => {
+      const beeRect = bee.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+
+      // 🎯 TARGET = top-right corner of button
+      const targetX = btnRect.right - (beeRect.left + beeRect.width / 2);
+
+      const targetY = btnRect.top - (beeRect.top + beeRect.height / 2);
+
+      const steps = 40;
+      const path = [];
+
+      for (let i = 0; i <= steps; i++) {
+        const progress = i / steps;
+
+        // 🟡 smooth easing
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+
+        path.push({
+          x: targetX * easeProgress,
+          y: targetY * easeProgress,
+        });
       }
-    };
 
-    animate();
-  }, [end]);
-
-  return (
-    <span>
-      {count}
-      {suffix}
-    </span>
-  );
-};
+      gsap.to(bee, {
+        duration: 2.5,
+        ease: "power2.out",
+        motionPath: {
+          path,
+          curviness: 1,
+          autoRotate: false, // ❌ disable rotation
+        },
+      });
+    });
+  }, []);
   return (
     <section className="w-full bg-white px-2  md:px-10 lg:px-20 py-2">
       <div className="max-w-8xl lg:max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-10">
-
         {/* LEFT - HEADING */}
         <div className="w-full text-center lg:text-left">
-          <h1 className="
+          <h1
+            className="
           text-[19px] sm:text-[20px]  md:text-[20px] lg:text-[18px] xl:text-[26px] font-bold text-black leading-snug 
-          ">
+          "
+          >
             Digital Transformation Company
             <br />
             Modernizing The Way You Work
@@ -110,15 +156,16 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
         </div>
 
         {/* RIGHT - CONTENT */}
-        <div className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left">
-
+        <div className="relative  flex flex-col items-center lg:items-start gap-4 text-center lg:text-left">
           {/* DESCRIPTION BOX */}
           <div className="relative w-full rounded-2xl overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-40"
-              style={{ backgroundImage: `url('${ASSET_URL}/images/Herosideimg2.webp')` }}
+              style={{
+                backgroundImage: `url('${ASSET_URL}/images/Herosideimg2.webp')`,
+              }}
             />
-           <div className="relative z-10 px-4 py-5">
+            <div className="relative z-10 px-4 py-5">
               <p
                 className="
                   text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[17px]
@@ -134,66 +181,62 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
                 "
               >
                 Beelockchain is a global digital transformation company that
-                integrates future-ready solutions across AI, Blockchain,
-                Cloud Infrastructure, Big Data, and Mobile Applications
-                with advanced, customer-centric experiences.
+                integrates future-ready solutions across AI, Blockchain, Cloud
+                Infrastructure, Big Data, and Mobile Applications with advanced,
+                customer-centric experiences.
               </p>
             </div>
-                      <div className="flex justify-center lg:justify-start">
-
-                    <button
-            className="cursor-pointer lg:ml-4
-            relative flex items-center
-            gap-2 md:gap-2 lg:gap-1
-            px-4 py-2 md:px-3  md:py-1 lg:px-2 lg:py-0
-            border border-black rounded-full
-            overflow-hidden"
-          >
-            {/* Soft center glow */}
-            <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
-
-            {/* Text */}
-            <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-sm whitespace-nowrap">
-              Consult Our Experts
-            </span>
-
-            {/* Icon */}
-            <svg
-              className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14"
-              viewBox="0 0 56 55"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <div className="flex justify-center lg:justify-start">
+              <img
+                ref={beeRef}
+                src="/assets/images/bee.gif"
+                alt="bee"
+                className="absolute top-0 right-0 w-20 pointer-events-none z-20"
+              />
+            <button
+              ref={btnRef}
+                onTouchStart={() => setActive(true)}
+                onTouchEnd={() => setActive(false)}
+                onMouseLeave={() => setActive(false)}
+              className="group relative flex items-center gap-2 px-4 py-2 lg:px-2 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer lg:ml-4"
             >
-              <circle
-                cx="28.2473"
-                cy="27.0945"
-                r="15.912"
-                fill="#F6E000"
-                stroke="#F9C901"
-                strokeWidth="1.51543"
-              />
-              <path
-                d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                stroke="black"
-                strokeWidth="3.03086"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-          </div>
+              {/* Expand Circle */}
+              <span className="absolute inset-0 flex items-center justify-center z-0">
+                <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+              </span>
 
-          </div>
+              {/* Glow */}
+              <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
 
-        
-      
+              {/* Text */}
+              <span className="relative z-10 text-black text-sm whitespace-nowrap transition-colors">
+                Consult Our Experts
+              </span>
+
+              {/* Icon */}
+              <svg
+                viewBox="0 0 56 55"
+                className="relative z-10 w-10 h-10 lg:w-14 lg:h-14 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+              >
+                <circle cx="28.2" cy="27.1" r="15.9" fill="#F6E000" stroke="#F9C901" strokeWidth="1.5" />
+                <path
+                  d="M31.3 22.1L33.2 29.4M31.3 22.1L24.1 24.1M31.3 22.1L25.1 32.8"
+                  stroke="black"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* STATS */}
-<div className="w-full flex justify-center mt-6 lg:mt-10  px-0 lg:px-4">
-  <div
-    className="
+      <div className="w-full flex justify-center mt-6 lg:mt-10  px-0 lg:px-4">
+        <div
+          className="
       grid gap-4
       justify-center
 
@@ -207,11 +250,11 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
       md:max-w-xl
       lg:max-w-2xl
     "
-  >
-    {statsData.map((item) => (
-      <div
-        key={item.sub}
-        className="
+        >
+          {statsData.map((item) => (
+            <div
+              key={item.sub}
+              className="
           w-[100px]
           sm:w-[110px]
           md:w-[120px]
@@ -236,23 +279,21 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
 
           transition-all duration-300 hover:-translate-y-1 hover:scale-105
         "
-      >
-        {/* TOP FADE */}
-        <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white to-transparent pointer-events-none" />
+            >
+              {/* TOP FADE */}
+              <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white to-transparent pointer-events-none" />
 
-        <h2 className="relative z-10 text-[20px] sm:text-lg md:text-xl lg:text-2xl font-semibold text-black">
-          <Counter end={item.title} suffix={item.suffix} />
-        </h2>
+              <h2 className="relative z-10 text-[20px] sm:text-lg md:text-xl lg:text-2xl font-semibold text-black">
+                <Counter end={item.title} suffix={item.suffix} />
+              </h2>
 
-        <p className="relative z-10 text-[10px] sm:text-xs xl:text-[14px] font-medium text-black mt-1 leading-tight">
-          {item.sub}
-        </p>
+              <p className="relative z-10 text-[10px] sm:text-xs xl:text-[14px] font-medium text-black mt-1 leading-tight">
+                {item.sub}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
-
-
     </section>
   );
 };
