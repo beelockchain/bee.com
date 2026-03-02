@@ -132,7 +132,7 @@ const OverView = () => {
         <h2 className="text-black text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold">
           Why Choose <span>Beelockchain</span>
         </h2>
-        <p className="w-full md:w-[820px] max-w-full text-black text-sm md:text-lg font-normal font-['Poppins']">
+        <p className="w-full  md:w-[720px] lg:w-[820px] max-w-full text-black text-sm md:text-lg font-normal font-['Poppins']">
           As experts in digital transformation, we create customized, future-ready
           solutions that ensure your investment counts by focusing on your unique
           customer and market needs.
