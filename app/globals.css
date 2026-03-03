@@ -153,3 +153,12 @@ body {
 .pin-spacer{
   background-color: #fff;
 }
+@keyframes beeFly {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-250%);
+  }
+}
+
