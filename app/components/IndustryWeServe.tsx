@@ -93,12 +93,11 @@ const IndustryWeServe = () => {
 
           {/* CTA BUTTON */}
           <div className="flex justify-center md:justify-start">
-
       <button
       onTouchStart={() => setActive(true)}
       onTouchEnd={() => setActive(false)}
       onMouseLeave={() => setActive(false)}
-      className="group relative flex items-center gap-3 px-4 py-2 lg:px-2 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
+      className="group relative flex items-center gap-3 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
     >
       {/* Expand Background */}
       <span

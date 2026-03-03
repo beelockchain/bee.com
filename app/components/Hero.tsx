@@ -131,7 +131,7 @@ const Herosection = () => {
           "
           >
             Digital Transformation Company
-            <br />
+           
             Modernizing The Way You Work
           </h1>
         </div>
@@ -198,7 +198,7 @@ const Herosection = () => {
                 onTouchStart={() => setActive(true)}
                 onTouchEnd={() => setActive(false)}
                 onMouseLeave={() => setActive(false)}
-              className="group relative flex items-center gap-2 px-4 py-2 lg:px-2 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer lg:ml-4"
+              className="group relative flex items-center gap-2 px-4 py-2 lg:px-4  lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer lg:ml-4"
             >
               {/* Expand Circle */}
               <span className="absolute inset-0 flex items-center justify-center z-0">
