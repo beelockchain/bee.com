@@ -10,10 +10,10 @@ const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 
 const serviceSubMenu = [
   { label: "Digital Transformation", href: "/digital-transformation-services" },
-  { label: "Software Development", href: "/service/software-development" },
-  { label: "Blockchain Solutions", href: "/service/blockchain-solutions" },
-  { label: "AI Development", href: "/service/ai-development" },
-  { label: "DevOps", href: "/service/devops" },
+  { label: "Software Development", href: "/" },
+  { label: "Blockchain Solutions", href: "https://beelockchain.io/" },
+  { label: "AI Development", href: "/" },
+  { label: "DevOps", href: "/" },
 ];
 
 const primaryNav = [

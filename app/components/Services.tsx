@@ -125,7 +125,7 @@ export default function Services() {
           <h2 className="font-['Poppins'] text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black leading-tight">
             Digital Transformation
           </h2>
-          <p className="mt-1 text-[12px] md:text-[14px] lg:text-[15px] text-gray-500 font-['Poppins'] leading-snug  mx-auto">
+          <p className="mt-1 text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-['Poppins'] leading-snug  mx-auto">
             A full spectrum of digital transformation services to elevate your business
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function Services() {
               <h3 className="font-semibold text-black text-[13px] leading-tight font-['Poppins'] mb-2">
                 {TAB_CONTENT[tab].title}
               </h3>
-              <p className="text-[11px] text-gray-600 font-['Poppins'] leading-relaxed mb-4">
+              <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-['Poppins'] leading-relaxed mb-4">
                 {TAB_CONTENT[tab].desc}
               </p>
               <div className="flex flex-col gap-3">
@@ -241,7 +241,7 @@ export default function Services() {
               {TAB_CONTENT[tab].title}
             </h3>
           </div>
-          <p className="text-[16px] text-gray-600 font-['Poppins'] leading-relaxed mb-4">
+          <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins'] mb-4">
             {TAB_CONTENT[tab].desc}
           </p>
           <div className="flex flex-col gap-1.5">
@@ -251,7 +251,7 @@ export default function Services() {
                 href={route.href}
                 target={route.href.startsWith("http") ? "_blank" : undefined}
                 rel={route.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 text-[13px] font-['Poppins'] text-black underline underline-offset-2 decoration-gray-300 hover:text-yellow-600 transition group"
+                className="inline-flex items-center gap-2 text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  font-['Poppins'] text-black underline underline-offset-2 decoration-gray-300 hover:text-yellow-600 transition group"
               >
                 {route.label}
                 <ArrowCircle className="w-5 h-5" />
@@ -273,7 +273,7 @@ export default function Services() {
             <button
               key={t}
               onClick={() => setActiveTab(index)}
-              className={`w-full flex items-start gap-2 px-3 py-2.5 lg:px-4 lg:py-3 rounded-full border text-left transition-all duration-200 ${
+              className={`w-full flex items-center gap-2 px-3 py-2.5 lg:px-4 lg:py-4 rounded-full border text-left transition-all duration-200 cursor-pointer ${
                 activeTab === index
                   ? "bg-white border-yellow-400 shadow-md"
                   : "bg-gray-50 border-gray-200 hover:bg-white hover:border-gray-300"
@@ -316,7 +316,7 @@ export default function Services() {
               {TAB_CONTENT[tab].title}
             </h3>
           </div>
-          <p className="text-[16px] text-gray-700 font-['Poppins'] leading-relaxed mb-5">
+          <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins'] mb-5">
             {TAB_CONTENT[tab].desc}
           </p>
           <div className="flex flex-col gap-3">
@@ -326,7 +326,7 @@ export default function Services() {
                 href={route.href}
                 target={route.href.startsWith("http") ? "_blank" : undefined}
                 rel={route.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 text-[12px] lg:text-[13px] font-['Poppins'] text-black underline underline-offset-2 decoration-gray-300 hover:text-yellow-600 transition group"
+                className="inline-flex items-center gap-2 lg:text-[13px] font-['Poppins'] text-black underline underline-offset-2 decoration-gray-300 hover:text-yellow-600 transition group cursor-pointer"
               >
                 {route.label}
                 <ArrowCircle className="w-5 h-5" />
