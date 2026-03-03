@@ -30,7 +30,7 @@ const WhyDigitalTransformation = () => {
         </h2>
 
         {/* First Paragraph */}
-        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center leading-relaxed mb-3 font-semibold">
+        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center leading-relaxed mb-3 font-semibold lg:px-10 xl:px-50">
           Today's businesses are expected to move faster, work smarter, and
           provide better experiences in an increasingly digital world. When
           organizations depend on manual processes with outdated technology, it
@@ -40,10 +40,11 @@ const WhyDigitalTransformation = () => {
           digital transformation service provider, helps businesses address
           these challenges by building structured, digitally driven business
           operations with a strong focus on customer-centric solutions.
+          
         </p>
 
         {/* Second Paragraph */}
-        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center font-semibold leading-relaxed">
+        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center font-semibold leading-relaxed lg:px-25 xl:px-60">
           <span data-text="Digital transformation" className="text-[#f5c518] font-medium  relative">
             Digital transformation
           </span>{" "}

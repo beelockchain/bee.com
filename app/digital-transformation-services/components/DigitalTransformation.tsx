@@ -30,7 +30,7 @@ const DigitalTransformationSection = () => {
               Many organisations are struggling with fragmented infrastructure, 
               manual processes, limited data visibility, and unconnected customer 
               relationships. These challenges slow down operations, increase spending, 
-              and make it difficult to scale. Digital transformation eliminates these 
+              and make it difficult to scale.The Digital transformation eliminates these 
               problems and creates an organised, technology-enabled operational strategy.
             </p>
           </div>

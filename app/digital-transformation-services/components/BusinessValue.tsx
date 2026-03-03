@@ -377,7 +377,7 @@ TabletLayout = () => {
             Beelockchain supports organizations through their digital
             transformation journey by combining consulting expertise with
             practical execution. Our end-to-end services improve process
-            efficiency, modernize workflows, and help businesses respond faster
+            efficiency, modernize the workflows, and help businesses respond faster
             to change while delivering better customer experiences.
           </p>
         </div>
@@ -424,28 +424,36 @@ const DesktopLayout = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.set(secondSetRef.current, { yPercent: 100, opacity: 0 });
-      gsap.set(firstSetRef.current,  { yPercent: 0,   opacity: 1 });
+      gsap.set(secondSetRef.current, { yPercent: 100 });
+      gsap.set(firstSetRef.current, { yPercent: 0 });
 
       ScrollTrigger.create({
         trigger:    paragraphRef.current,
         start:      "top 10px",
         end:        "+=200%",
         pin:        sectionRef.current,
+
         pinSpacing: true,
         scrub:      1,
         onUpdate: (self) => {
           const progress = self.progress;
-          if (progress < 0.5) {
-            const p = progress * 2;
-            gsap.to(firstSetRef.current,  { yPercent: 0,          opacity: 1,     duration: 0.1, overwrite: true });
-            gsap.to(secondSetRef.current, { yPercent: 100 - p*50, opacity: 0,     duration: 0.1, overwrite: true });
-          } else {
-            const p = (progress - 0.5) * 2;
-            gsap.to(firstSetRef.current,  { yPercent: -100 * p,   opacity: 1 - p, duration: 0.1, overwrite: true });
-            gsap.to(secondSetRef.current, { yPercent: 100 - 100*p, opacity: p,    duration: 0.1, overwrite: true });
-          }
-        },
+
+          // first set moves out
+          gsap.to(firstSetRef.current, {
+            yPercent: -100 * progress,
+            // opacity: 1 - progress,
+            duration: 0.1,
+            overwrite: true,
+          });
+
+          // second set moves in
+          gsap.to(secondSetRef.current, {
+            yPercent: 100 - 100 * progress,
+            opacity: progress,
+            duration: 0.1,
+            overwrite: true,
+          });
+        }
       });
     }, sectionRef);
 
@@ -467,7 +475,7 @@ const DesktopLayout = () => {
           <p ref={paragraphRef} className="mt-6 mx-auto text-black lg:text-[14px] xl:text-[16px] font-poppins font-medium max-w-xl md:max-w-2xl lg:max-w-4xl">
             Beelockchain supports organizations through their digital transformation journey by combining
             consulting expertise with practical execution. Our end-to-end services improve process efficiency,
-            modernize workflows, and help businesses respond faster to change while delivering better customer experiences.
+            modernize the workflows, and help businesses respond faster to change while delivering better customer experiences.
           </p>
         </div>
 
@@ -485,7 +493,7 @@ const DesktopLayout = () => {
               ))}
             </div>
 
-            <div ref={secondSetRef} className="absolute inset-0 flex flex-col gap-5 mt-15">
+            <div ref={secondSetRef} className="absolute inset-0 flex flex-col gap-5 mt-5">
               {secondFourCards.map((item, index) => (
                 <div key={index + 4} className="relative p-6 rounded-xl bg-[#E2E2E2] shadow-sm h-[180px] md:h-[180px] lg:h-[220px] xl:h-[180px]">
                   <h3 className="text-[19px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold mb-3 text-black font-poppins">{item.title}</h3>
@@ -504,7 +512,7 @@ const DesktopLayout = () => {
               <div className="absolute bottom-6">
                 <button className="cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                   <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
-                  <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-[12px] xl:text-[12px] whitespace-nowrap">Transform Your Business</span>
+                  <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-[12px] xl:text-[16px] whitespace-nowrap">Transform Your Business</span>
                   <svg className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-7 lg:h-7" viewBox="0 0 56 55" fill="none">
                     <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
                     <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
