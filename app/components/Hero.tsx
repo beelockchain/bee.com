@@ -122,19 +122,28 @@ const Herosection = () => {
   }, []);
   return (
     <section className="w-full bg-white px-2  md:px-10 lg:px-20 py-2">
-      <div className="max-w-8xl lg:max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-10">
+      <div className="max-w-9xl lg:max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-10">
         {/* LEFT - HEADING */}
-        <div className="w-full text-center lg:text-left">
-          <h1
-            className="
-          text-[19px] sm:text-[20px]  md:text-[20px] lg:text-[18px] xl:text-[26px] font-bold text-black leading-snug 
+       <div className="w-full text-center lg:text-left">
+        <div className="w-full flex justify-center lg:justify-start">
+        <h1
+          className="
+            max-w-[320px] 
+            sm:max-w-[420px] 
+            md:max-w-[400px] 
+            lg:max-w-[480px] 
+            xl:max-w-[600px]
+            
+            text-center lg:text-left
+            text-[19px] sm:text-[20px] md:text-[20px] lg:text-[22px] xl:text-[26px]
+            font-bold text-black leading-tight
           "
-          >
-            Digital Transformation Company
-            <br />
-            Modernizing The Way You Work
-          </h1>
-        </div>
+        >
+          Digital Transformation Company
+          Modernizing The Way You Work
+        </h1>
+      </div>
+      </div>
 
         {/* CENTER - IMAGE */}
         <div className="flex justify-center">
@@ -198,7 +207,7 @@ const Herosection = () => {
                 onTouchStart={() => setActive(true)}
                 onTouchEnd={() => setActive(false)}
                 onMouseLeave={() => setActive(false)}
-              className="group relative flex items-center gap-2 px-4 py-2 lg:px-2 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer lg:ml-4"
+              className="group relative flex items-center gap-2 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer lg:ml-4"
             >
               {/* Expand Circle */}
               <span className="absolute inset-0 flex items-center justify-center z-0">

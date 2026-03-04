@@ -19,7 +19,7 @@ const serviceSubMenu = [
 const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Service", href: "/service", hasDropdown: true },
-  { label: "Insights", href: "/blog" },
+  { label: "Insights", href: "/#insights" },
   
 ];
 
@@ -376,23 +376,33 @@ const isActive = (href: string, hasDropdown?: boolean) => {
             Connect With Us:
           </h4>
           <div className="flex gap-3 px-1">
-            {socialIcons.map((icon, i) => (
-              <Link
-                key={i}
-                href={icon.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setSideMenuOpen(false)}
-              >
-                <Image
-                  src={icon.src}
-                  alt={icon.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-              </Link>
-            ))}
+           {socialIcons.map((icon, i) => (
+    <Link
+      key={i}
+      href={icon.href}
+      aria-label={icon.name}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group"
+    >
+      <div
+        className="
+          transition-all duration-300 ease-out
+          group-hover:-translate-y-2
+          group-hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)]
+          rounded-full
+        "
+      >
+        <Image
+          src={icon.src}
+          alt={icon.name}
+          width={42}
+          height={42}
+          className="object-contain transition-opacity duration-300 group-hover:opacity-90"
+        />
+      </div>
+    </Link>
+  ))}
           </div>
         </div>
       </div>

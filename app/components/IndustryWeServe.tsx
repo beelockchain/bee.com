@@ -45,24 +45,65 @@ const IndustryWeServe = () => {
         {/* LEFT – IMAGE STACK GRID */}
         <div className="industry-grid grid grid-cols-3 gap-2 cursor-pointer">
           {industryImages.map((img, i) => (
-            <div
-              key={i}
-              className={`
-        industry-item
-        w-full h-full flex items-center justify-center
-        transition-all duration-300 ease-in-out
-        ${i % 2 === 0 ? "-rotate-2" : "rotate-2"}
-      `}
-            >
-              <img
-                src={`${ASSET_URL}/images/${img}`}
-                alt="Industry"
-                className="
-          w-full h-full object-contain
-          transition-all duration-300 ease-in-out
-        "
-              />
-            </div>
+      //       <div
+      //         key={i}
+      //         className={`
+      //   industry-item
+      //   w-full h-full flex items-center justify-center
+      //   transition-all duration-300 ease-in-out
+      //   ${i % 2 === 0 ? "-rotate-2" : "rotate-2"}
+      // `}
+      //       >
+      //         <img
+      //           src={`${ASSET_URL}/images/${img}`}
+      //           alt="Industry"
+      //           className="
+      //     w-full h-full object-contain
+      //     transition-all duration-300 ease-in-out
+      //   "
+      //         />
+      //       </div>
+
+
+     <div
+  key={i}
+  className={`
+    relative
+    w-full h-full flex items-center justify-center
+    transition-all duration-500 ease-out
+    transform
+    ${i % 2 === 0 ? "-rotate-2" : "rotate-2"}
+
+    group-hover:opacity-50
+    hover:!opacity-100
+    hover:rotate-0
+    hover:scale-110
+    hover:z-20
+  `}
+>
+  {/* Glow Layer */}
+  <span
+    className="
+      absolute inset-0 rounded-xl
+      bg-yellow-400/20
+      blur-xl
+      opacity-0
+      transition-all duration-500
+      hover:opacity-100
+    "
+  />
+
+  <img
+    src={`${ASSET_URL}/images/${img}`}
+    alt="Industry"
+    className="
+      relative
+      w-full h-full object-contain
+      transition-all duration-500
+      hover:drop-shadow-[0_15px_25px_rgba(0,0,0,0.3)]
+    "
+  />
+</div>
           ))}
         </div>
 
@@ -93,12 +134,11 @@ const IndustryWeServe = () => {
 
           {/* CTA BUTTON */}
           <div className="flex justify-center md:justify-start">
-
       <button
       onTouchStart={() => setActive(true)}
       onTouchEnd={() => setActive(false)}
       onMouseLeave={() => setActive(false)}
-      className="group relative flex items-center gap-3 px-4 py-2 lg:px-2 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
+      className="group relative flex items-center gap-3 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
     >
       {/* Expand Background */}
       <span

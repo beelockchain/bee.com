@@ -76,7 +76,7 @@ const FAQSection = () => {
               </button>
 
               <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-50 mt-6" : "max-h-0"}`}>
-                <p className="text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-[#646464] leading-relaxed font-poppins">
+                <p className="text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-black/80 leading-relaxed font-poppins">
                   {item.a}
                 </p>
               </div>

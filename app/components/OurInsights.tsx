@@ -75,8 +75,9 @@ const handleScroll = () => {
 
 
   return (
-    <section className="w-full bg-white py-14 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section id="insights" className="w-full bg-white py-4 xl:py-10 overflow-hidden">
+    <div   className="w-full bg-white py-4 xl:py-10 overflow-hidden">
+      <div  className="max-w-[1400px] mx-auto px-6">
         {/* TITLE */}
         <h2 className=" text-center font-['Poppins'] text-[22px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold   mb-12">
           Our Insights
@@ -182,6 +183,7 @@ const handleScroll = () => {
     </div>
 
       </div>
+    </div>
     </section>
   );
 };
