@@ -11,25 +11,25 @@ const Footer = () => {
       title: "CANADA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+02 3486 4631",
-      src: `${ASSET_URL}/images/location1.webp`,
+      src: `${ASSET_URL}/images/location4.webp`,
     },
     {
       title: "USA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+01 9876 5432",
-      src: `${ASSET_URL}/images/location2.webp`,
+      src: `${ASSET_URL}/images/location1.webp`,
     },
     {
       title: "UK",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+44 7654 3210",
-      src: `${ASSET_URL}/images/location3.webp`,
+      src: `${ASSET_URL}/images/location2.webp`,
     },
     {
       title: "INDIA",
       desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
       contact: "+91 98765 43210",
-      src: `${ASSET_URL}/images/location4.webp`,
+      src: `${ASSET_URL}/images/location3.webp`,
     },
   ];
   
@@ -214,7 +214,7 @@ Area We Occupied
               Connect With Us
             </h4>
 
-<div className="flex gap-2 md:gap-2 lg:gap-1 xl:gap-4">
+{/* <div className="flex gap-2 md:gap-2 lg:gap-1 xl:gap-4">
   {socialIcons.map((icon, i) => (
     <Link key={i} href={icon.href} aria-label={icon.name} target="_blank" rel="noopener noreferrer">
     
@@ -226,6 +226,36 @@ Area We Occupied
           className="object-contain hover:opacity-80"
         />
      
+    </Link>
+  ))}
+</div> */}
+
+<div className="flex gap-2 md:gap-2 lg:gap-1 xl:gap-4">
+  {socialIcons.map((icon, i) => (
+    <Link
+      key={i}
+      href={icon.href}
+      aria-label={icon.name}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group"
+    >
+      <div
+        className="
+          transition-all duration-300 ease-out
+          group-hover:-translate-y-2
+          group-hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)]
+          rounded-full
+        "
+      >
+        <Image
+          src={icon.src}
+          alt={icon.name}
+          width={42}
+          height={42}
+          className="object-contain transition-opacity duration-300 group-hover:opacity-90"
+        />
+      </div>
     </Link>
   ))}
 </div>

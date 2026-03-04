@@ -15,8 +15,8 @@ const Digitaltransformation = () => {
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left gap-4">
 
           {/* HEADING */}
-          <h2 className="order-1 sm:order-none font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[24px] xl:text-[32px] text-black leading-snug font-semibold ">
-            Beelockchain Your Trusted
+          <h2 className="order-1 sm:order-none font-['Poppins'] text-[17px] sm:text-[18px] md:text-[20px] lg:text-[24px] xl:text-[28px] text-black leading-snug font-semibold ">
+           Beelockchain – Trusted
             <span
               className="block text-transparent bg-clip-text"
               style={{
@@ -24,9 +24,11 @@ const Digitaltransformation = () => {
                   "linear-gradient(90deg, #AF7211 33%, #F6E000 49%, #D7B007 63%)",
               }}
             >
-              Digital Transformation Company
+              Digital Transformation Services 
             </span>
+            For Next-Gen Businesses
           </h2>
+ 
 
           {/* IMAGE (MOBILE ONLY) */}
           <div className="order-2 sm:hidden w-full flex justify-center">
@@ -41,7 +43,7 @@ const Digitaltransformation = () => {
           <div className="order-3 sm:order-none flex flex-col gap-4">
             <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
               As a forward-thinking{" "}
-              <span className="text-[#F9C901] font-semibold">
+              <span className="text-[#D7B007]">
                 Digital Transformation Company
               </span>
               , Beelockchain empowers organizations to achieve measurable business
@@ -50,13 +52,16 @@ const Digitaltransformation = () => {
 
             <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
               With over 8 years of experience in delivering enterprise grade
-              <span  className="mx-2 text-transparent bg-clip-text"
+              <span  className="text-[#D7B007] mx-2 text-transparent bg-clip-text"
               style={{
                 backgroundImage:
                   "linear-gradient(90deg, #AF7211 33%, #F6E000 49%, #D7B007 63%)",
               }}>
                 <Link href="digital-transformation-services">
-                  Digital transformation services and solutions
+                 
+               Digital transformation services and solutions
+            
+                  
                 </Link>
               </span>
               we help businesses modernize applications, optimize operations, and
