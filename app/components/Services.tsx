@@ -111,7 +111,7 @@ export default function Services() {
   const tab = TABS[activeTab];
 
   return (
-    <section className="w-full bg-white py-8">
+    <section className="w-full bg-white flex flex-col justify-center items-center gap-10">
 
       {/* ── Header (all breakpoints) ── */}
       <div className="flex flex-col justify-center items-center text-center  overflow-hidden">
@@ -125,7 +125,7 @@ export default function Services() {
           <h2 className="font-['Poppins'] text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black leading-tight">
             Digital Transformation
           </h2>
-          <p className="mt-1 text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-['Poppins'] leading-snug  mx-auto">
+          <p className="mt-1 text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-['Poppins'] leading-snug  mx-auto w-80 md:w-full">
             A full spectrum of digital transformation services to elevate your business
           </p>
         </div>
@@ -221,9 +221,6 @@ export default function Services() {
                   : "bg-gray-50 border-gray-200 hover:bg-white hover:border-gray-300"
               }`}
             >
-              <span className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                activeTab === index ? "bg-yellow-400" : "border border-gray-300"
-              }`} />
               <span className={`text-[13px] font-['Poppins'] font-medium ${
                 activeTab === index ? "text-black" : "text-gray-500"
               }`}>
@@ -279,9 +276,7 @@ export default function Services() {
                   : "bg-gray-50 border-gray-200 hover:bg-white hover:border-gray-300"
               }`}
             >
-              <span className={`w-2 h-2 rounded-full flex-shrink-0 ${
-                activeTab === index ? "bg-yellow-400" : "border border-gray-300"
-              }`} />
+              
               <span className={`text-[12px] lg:text-[13px] xl:text-[14px] font-['Poppins'] font-medium ${
                 activeTab === index ? "text-black" : "text-gray-500"
               }`}>
