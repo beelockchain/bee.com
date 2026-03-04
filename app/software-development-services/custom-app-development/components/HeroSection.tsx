@@ -96,7 +96,7 @@ export const HeroSection = () => {
             src="/assets/images/software-dev/custom-app-dev/hero-right-img.png"
             alt="Mobile App"
             width={600}
-            height={650}
+            height={600}
             className="w-full h-auto object-contain"
             priority
           />
