@@ -371,8 +371,8 @@ const isActive = (href: string, hasDropdown?: boolean) => {
         </div>
 
         {/* SOCIAL ICONS */}
-        <div className="px-6 sm:px-0  pt-0  sm:pr-8 mt-7 flex flex-col  sm:items-end">
-          <h4 className="text-lg md:text-md font-medium text-black mb-3 px-13">
+        <div className="px-3 sm:px-0  pt-0  sm:pr-8 mt-7 flex flex-col  sm:items-end">
+          <h4 className="text-lg md:text-md font-medium text-black mb-3 px-3">
             Connect With Us:
           </h4>
           <div className="flex gap-3 px-1">
