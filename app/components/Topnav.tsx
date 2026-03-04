@@ -145,7 +145,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
             <img
               src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
               alt="logo"
-              className="h-10 sm:h-100605
+              className="h-10 sm:h-10
                 md:h-10 lg:h-14"
             />
           </Link>
@@ -371,28 +371,38 @@ const isActive = (href: string, hasDropdown?: boolean) => {
         </div>
 
         {/* SOCIAL ICONS */}
-        <div className="px-6 sm:px-0  pt-0  sm:pr-8 mt-7 flex flex-col  sm:items-end">
-          <h4 className="text-lg md:text-md font-medium text-black mb-3 px-13">
+        <div className="px-3 sm:px-0  pt-0  sm:pr-8 mt-7 flex flex-col  sm:items-end">
+          <h4 className="text-lg md:text-md font-medium text-black mb-3 px-3">
             Connect With Us:
           </h4>
           <div className="flex gap-3 px-1">
-            {socialIcons.map((icon, i) => (
-              <Link
-                key={i}
-                href={icon.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setSideMenuOpen(false)}
-              >
-                <Image
-                  src={icon.src}
-                  alt={icon.name}
-                  width={40}
-                  height={40}
-                  className="rounded-full"
-                />
-              </Link>
-            ))}
+           {socialIcons.map((icon, i) => (
+    <Link
+      key={i}
+      href={icon.href}
+      aria-label={icon.name}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group"
+    >
+      <div
+        className="
+          transition-all duration-300 ease-out
+          group-hover:-translate-y-2
+          group-hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)]
+          rounded-full
+        "
+      >
+        <Image
+          src={icon.src}
+          alt={icon.name}
+          width={42}
+          height={42}
+          className="object-contain transition-opacity duration-300 group-hover:opacity-90"
+        />
+      </div>
+    </Link>
+  ))}
           </div>
         </div>
       </div>
