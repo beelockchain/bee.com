@@ -43,7 +43,11 @@ const PillButton = ({ label }: { label: string }) => (
   >
     {/* Expand circle */}
     <span className="absolute inset-0 flex items-center justify-center z-0">
-      <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+      {/* <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" /> */}
+   <span className="absolute inset-0 
+bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] 
+group-hover:opacity-0 group-active:opacity-0 
+transition-opacity duration-300 z-0" />
     </span>
 
     {/* Radial glow */}
@@ -96,7 +100,7 @@ const ContactHeroSection = () => (
     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-yellow-400/30 rounded-full blur-3xl -z-10" />
 
     {/* Mobile-only heading */}
-    <div className="block md:hidden text-center mb-8">
+    <div className="block sm:hidden text-center mb-8">
       <h2 className="text-[25px] text-black font-semibold leading-tight font-[poppins]">
         Let's Build Your Next
         <span className="block text-[25px] font-semibold">
@@ -105,15 +109,15 @@ const ContactHeroSection = () => (
       </h2>
     </div>
 
-    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-2 md:gap-2 md:items-stretch">
+    <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-2 md:gap-2 sm:items-stretch md:items-stretch">
 
       {/* ── LEFT COLUMN ── */}
-      <div className="order-2 md:order-1 flex flex-col gap-8 items-center md:items-start text-center md:text-start md:justify-between">
+      <div className="order-2 sm:order-1 md:order-1 flex flex-col gap-8 items-center sm:items-start md:items-start text-center sm:text-start md:text-start md:justify-between">
     <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-yellow-400/30 rounded-full blur-3xl -z-10" />
 
         {/* Desktop heading */}
         <div>
-          <h2 className="hidden md:block text-[25px] lg:text-[35px] xl:text-[38px] text-black font-semibold leading-tight font-[poppins]">
+          <h2 className="hidden sm:block text-[25px] lg:text-[35px] xl:text-[38px] text-black font-semibold leading-tight font-[poppins]">
             Let's Build Your Next{" "}
             <span className="block text-[23px] md:text-[25px] lg:text-[35px] xl:text-[38px] font-semibold">
               <span data-text="Services" className="shine-text text-[#F5B800] relative">
@@ -127,12 +131,12 @@ const ContactHeroSection = () => (
               Book A Free IT Consultation
             </h2>
 
-            <p className="max-w-[280px] sm:max-w-[300px] md:max-w-[300px] lg:max-w-[400px] xl:max-w-[500px] text-[12px] sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[16px] text-black font-normal font-['Poppins'] text-center md:text-left mx-auto md:mx-0">
+            <p className="max-w-[280px] sm:max-w-[300px] md:max-w-[300px] lg:max-w-[400px] xl:max-w-[500px] text-[12px] sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[16px] text-black font-normal font-['Poppins'] text-center sm:text-start md:text-left mx-auto md:mx-0">
               Discuss your project with us. We are ready to assist you with tailored development solutions.
             </p>
 
             {/* Contact links */}
-            <div className="flex flex-col md:flex-col gap-4 mt-6 items-center md:items-start justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-col md:flex-col gap-4 mt-6 items-center sm:items-start md:items-start justify-center md:justify-start ">
               {CONTACT_LINKS.map(({ href, icon, label }) => (
                 <Link
                   key={href}
@@ -148,7 +152,7 @@ const ContactHeroSection = () => (
             </div>
 
             {/* Address */}
-            <div className="flex items-start gap-3 mt-6 text-black items-center justify-center md:justify-start">
+            <div className="flex  gap-3 mt-6 text-black items-center justify-center sm:justify-start md:justify-start">
               <FiMapPin className="text-lg mt-1 ml-4" />
               <address className="not-italic text-[13px] sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[16px] text-black font-normal font-['Poppins']">
                 6/219, R5, Ganapathy Nagar, <br />
@@ -175,7 +179,7 @@ const ContactHeroSection = () => (
       </div>
 
       {/* ── RIGHT COLUMN ── */}
-      <div className="order-1 md:order-2 flex flex-col">
+      <div className="order-1  sm:order-2 md:order-2 flex flex-col">
         <ContactForm />
       </div>
 
