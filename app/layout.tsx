@@ -112,8 +112,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+
       <body  className={`${poppins.variable} ${manrope.variable} antialiased`}>
-        
+
         {/* ================= TOP NAVIGATION ================= */}
         <Topnav />
 
@@ -121,7 +122,6 @@ export default function RootLayout({
         {/* Add padding-top to account for fixed navbar height (h-20 = 5rem = 80px) */}
         <main className="pt-20">
           {children}
-          <ToastContainer/>
           </main>
 
         <Footer />

@@ -8,7 +8,7 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import PhoneInput from "react-phone-input-2";
 import { getData } from "country-list";
-import { toast } from "react-toastify";
+import { toast ,ToastContainer} from "react-toastify";
 import { useContactStore } from "@/app/zustand/store/contactStore";
 import "react-phone-input-2/lib/style.css";
 
@@ -224,6 +224,7 @@ export const ContactForm = () => {
   return (
     <>
   
+                        <ToastContainer/>
 
       <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-10 shadow-xl w-full max-w-3xl mx-auto h-full flex flex-col overflow-hidden">
         <h2 className="text-black text-[25px] lg:text-[35px] xl:text-[38px] font-semibold leading-tight font-[Poppins] mb-6 sm:mb-8 text-center md:text-left">
