@@ -34,13 +34,13 @@ const Makeusdifferent = () => {
   return (
     <div className="w-full bg-white py-16 px-6 md:px-12">
       {/* Top Section */}
-      <div className="max-w-3xl mx-auto text-center mb-10">
-        <h2 className="text-[20px] md:text-[25px] lg:text-[35px] xl:text-[48px] font-extrabold text-gray-900 mb-4 leading-snug">
+      <div className="max-w-5xl mx-auto text-center mb-10">
+        <h2 className="text-[20px] md:text-[25px] lg:text-[35px] xl:text-[48px] font-bold text-gray-900 mb-4 leading-snug">
           <span data-text="Beelockchain:" className="shine-text text-[#F5B800] relative mx-4">Beelockchain:</span> What Makes Us
           Different
           <br /> From The Rest
         </h2>
-        <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-6">
+        <p className="text-black text-sm md:text-base leading-relaxed mb-6">
           As a leading mobile app development company, we focus on diagnosing
           business pain points and launching the best-in-class app solutions
           through strategic problem-solving and technical precision.
@@ -65,7 +65,7 @@ const Makeusdifferent = () => {
 
               {/* Text */}
               <span className="relative z-10 text-black text-sm whitespace-nowrap transition-colors">
-                Talk To Our Experts
+                Build Your Mobile Apps
               </span>
 
               {/* Icon */}
@@ -108,7 +108,7 @@ const Makeusdifferent = () => {
 
               {/* Text */}
               <span className="relative z-10 text-black text-sm whitespace-nowrap transition-colors">
-                Talk To Our Experts
+                Explore Our  Portfolio
               </span>
 
               {/* Icon */}
