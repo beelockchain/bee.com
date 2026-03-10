@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Poppins, Manrope } from "next/font/google";
 import Topnav from "./components/Topnav"; // Adjust the path based on your project structure
 import Footer from "./components/footer";
+import { ToastContainer } from "react-toastify";
 
 /* Fonts */
 const poppins = Poppins({
@@ -118,7 +119,10 @@ export default function RootLayout({
 
         {/* ================= MAIN CONTENT ================= */}
         {/* Add padding-top to account for fixed navbar height (h-20 = 5rem = 80px) */}
-        <main className="pt-20">{children}</main>
+        <main className="pt-20">
+          {children}
+          <ToastContainer/>
+          </main>
 
         <Footer />
 
