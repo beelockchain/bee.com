@@ -27,7 +27,7 @@ const Footer = () => {
     },
     {
       title: "INDIA",
-      desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
+      desc: "6/219, R5, Ganapathy Nagar,Theni Rd, Achampattu, Madurai,Tamil Nadu 625019",
       contact: "+91 98765 43210",
       src: `${ASSET_URL}/images/location3.webp`,
     },
