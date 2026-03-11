@@ -10,6 +10,8 @@ import Whatwedo from "./components/Whatwedo";
 import WhyDigitalTransformation from "./components/Whydigitaltrans";
 import FAQ from "./components/FAQ";
 import SubIndustriesWeServe from "./components/Sub-industriesweserve";
+import AwardsSection from "./components/AwardsSection"
+import ContactSection from "./components/ContactSection"
 import Script from "next/script";
 export const metadata = {
   title: " Digital Transforms | Innovation & Technology",
@@ -137,7 +139,9 @@ export default function DigitalTransforms() {
           <RoadMapCard />
           <EndToEndServices/>
            <SubIndustriesWeServe />
+           <AwardsSection/>
           <BenefitsSection/>
+          <ContactSection/>
           <FAQ />
       </main>
     </>

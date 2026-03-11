@@ -14,7 +14,7 @@ const Whatwedo = () => {
     },
     {
       id: 3,
-      image: "assets/images/Digi-trans-sub-img2.svg",
+      image: "/assets/images/legacy-system.png",
       title: "Legacy system limitations",
     },
   ];

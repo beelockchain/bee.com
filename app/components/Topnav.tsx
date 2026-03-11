@@ -321,7 +321,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
                 <div key={item.label} className="w-full">
                   <button
                     onClick={() => setMobileServiceOpen((p) => !p)}
-                    className="text-md font-semibold text-black hover:text-yellow-500 transition"
+                    className="text-md font-medium text-black hover:text-yellow-500 transition"
                   >
                     {item.label}
                   </button>
@@ -345,7 +345,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
                   key={item.label}
                   href={item.href}
                   target="_blank"
-                  className="text-md font-semibold text-black hover:text-yellow-500 transition"
+                  className="text-md font-medium text-black hover:text-yellow-500 transition"
                   onClick={() => setSideMenuOpen(false)}
                 >
                   {item.label}

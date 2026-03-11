@@ -58,7 +58,7 @@ const cardsData = [
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Safe & Scalable 24x7",
     hoverSubtitle: "Data Infrastructure",
-    image: `${ASSET_URL}/images/whychooseusimg3.webp`,
+    image: `assets/images/whychooseusimg3.webp`,
     description:
       "Beelockchain helps organizations stay ahead of change. We respond quickly to market shifts, emerging technologies, and customer demands—enabling confident decisions and sustained competitiveness in dynamic environments.",
   },
