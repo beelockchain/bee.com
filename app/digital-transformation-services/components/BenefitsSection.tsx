@@ -15,8 +15,8 @@ const benefitCards: BenefitCard[] = [
   { id: 4, icon: '/assets/images/digital-tranform-cus.png', title: 'Better Customer Engagement', description: 'Enables consistent, connected digital experiences that improve responsiveness, satisfaction, and customer retention.' },
   { id: 5, icon: '/assets/images/benefits-compliance.png', title: 'Compliance & Risk Readiness', description: 'Supports data protection, governance, and regulatory needs. It helps businesses manage operational and compliance risks.' },
   { id: 6, icon: '/assets/images/benefits-risks.png', title: 'Faster Innovation Cycles', description: 'Allows quicker development, testing, and deployment of digital solutions to respond to the market and business changes.' },
-  { id: 7, icon: '/assets/images/benefits-sustainable.png', title: 'Data-Driven Decision Making', description: 'It provides real-time insights through integrated digital systems to support faster business decisions & performance tracking.' },
-  { id: 8, icon: '/assets/images/benefits-sustainable.png', title: 'Operational Agility', description: 'It helps businesses adapt quickly to changing market demands through flexible digital systems & integrated workflows.' },
+  { id: 7, icon: '/assets/images/benefits-Data.png', title: 'Data-Driven Decision Making', description: 'It provides real-time insights through integrated digital systems to support faster business decisions & performance tracking.' },
+  { id: 8, icon: '/assets/images/benefits-Operational.png', title: 'Operational Agility', description: 'It helps businesses adapt quickly to changing market demands through flexible digital systems & integrated workflows.' },
 ]
 
 // ✅ Fixed: row 3 now correctly has both card 7 and card 8
@@ -45,7 +45,7 @@ const LeftPanel: React.FC = () => (
   <div className="flex flex-col justify-center">
     <div className="mb-4">
       <span className="inline-block py-2 border-b-2 border-[#F9C901] text-[16px] lg:text-[13px] xl:text-[16px] font-bold text-black">
-        What make us Unique
+        What Make Us Unique
       </span>
     </div>
     <h2 className="text-3xl lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-black">

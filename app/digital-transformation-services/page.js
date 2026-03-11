@@ -13,8 +13,10 @@ import SubIndustriesWeServe from "./components/Sub-industriesweserve";
 import AwardsSection from "./components/AwardsSection"
 import ContactSection from "./components/ContactSection"
 import Script from "next/script";
+import Head from "next/head";
+
 export const metadata = {
-  title: " Digital Transforms | Innovation & Technology",
+  title: "Digital Transformation Services & Solutions | Beelockchain",
   description:"Beelockchain is a digital transformation services company helping businesses with consulting, strategy, automation, cloud migration, & application modernization",
   keywords: [
     "digital transformation companies in usa",
@@ -32,7 +34,7 @@ export const metadata = {
   authors: [{ name: "Beelockchain" }],
 
   alternates: {
-    canonical: "https://beelockchain.com/",
+    canonical: "https://beelockchain.com/digital-transformation-services",
   },
 
   robots: {
@@ -102,13 +104,13 @@ export default function DigitalTransforms() {
   const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://beelockchain.io/#organization",
-  url: "https://beelockchain.io/",
+  "@id": "https://beelockchain.com/#organization",
+  url: "https://beelockchain.com/",
   legalName: "Beelockchain - Digital Transformation Company",
   name: "Beelockchain",
   description:
     "Beelockchain is a digital transformation services company helping businesses with consulting, strategy, automation, cloud migration, and application modernization.",
-  logo: "https://beelockchain.io/logo.png",
+  logo: "https://beelockchain.com/logo.png",
   image: "https://beelockchain.io/logo.png",
   telephone: "+919025217523",
   email: "contact@beelockchain.io",
@@ -120,6 +122,48 @@ export default function DigitalTransforms() {
     "https://in.pinterest.com/beelockchain/",
   ],
 };
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://beelockchain.com/"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Digital Transformation Services",
+        item: "https://beelockchain.com/digital-transformation-services/"
+      }
+    ]
+  };
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://beelockchain.com/digital-transformation-services/#service",
+    "name": "Digital Transformation Services",
+    "description":
+      "Beelockchain is a digital transformation services company helping businesses with consulting, strategy, automation, cloud migration, & application modernization",
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://beelockchain.com/#organization"
+    },
+    "serviceType": [
+      "Digital Transformation Consulting",
+      "Digital Transformation Service",
+      "Application Modernization",
+      "Cloud Migration",
+      "Business transformation solutions",
+      "Digital Transformation and AI"
+    ],
+    "areaServed": {
+      "@type": "Place",
+      "name": "Global"
+    }
+  };
   return (
     <>
         <Script
@@ -129,7 +173,17 @@ export default function DigitalTransforms() {
           dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
            }}      
-        />      
+        />
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />    
+          <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceSchema)
+          }}
+        />  
           <main>
           <HeroSection/>
           <DigitalTransformationSection />

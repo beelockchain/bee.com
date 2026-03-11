@@ -8,7 +8,7 @@ const Herosection = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
   const imgRef = useRef<HTMLImageElement>(null);
   const beeRef = useRef<HTMLImageElement>(null);
-  const btnRef = useRef<HTMLButtonElement>(null);
+  const btnRef = useRef<HTMLAnchorElement >(null);
     const [active, setActive] = useState(false);
 
   gsap.registerPlugin(MotionPathPlugin);
@@ -202,41 +202,50 @@ const Herosection = () => {
                 alt="bee"
                 className="absolute top-0 right-0 w-20 pointer-events-none z-20"
               />
-            <button
-              ref={btnRef}
+              <a
+                href="/contact-us"
+                ref={btnRef}
                 onTouchStart={() => setActive(true)}
                 onTouchEnd={() => setActive(false)}
                 onMouseLeave={() => setActive(false)}
-              className="group relative flex items-center gap-2 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer lg:ml-4"
-            >
-              {/* Expand Circle */}
-              <span className="absolute inset-0 flex items-center justify-center z-0">
-                <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
-              </span>
-
-              {/* Glow */}
-              <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
-
-              {/* Text */}
-              <span className="relative z-10 text-black text-sm whitespace-nowrap transition-colors">
-                Consult Our Experts
-              </span>
-
-              {/* Icon */}
-              <svg
-                viewBox="0 0 56 55"
-                className="relative z-10 w-10 h-10 lg:w-14 lg:h-14 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+                className="group relative flex items-center gap-2 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer lg:ml-4"
               >
-                <circle cx="28.2" cy="27.1" r="15.9" fill="#F6E000" stroke="#F9C901" strokeWidth="1.5" />
-                <path
-                  d="M31.3 22.1L33.2 29.4M31.3 22.1L24.1 24.1M31.3 22.1L25.1 32.8"
-                  stroke="black"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+                {/* Expand Circle */}
+                <span className="absolute inset-0 flex items-center justify-center z-0">
+                  <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+                </span>
+
+                {/* Glow */}
+                <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
+
+                {/* Text */}
+                <span className="relative z-10 text-black text-sm whitespace-nowrap transition-colors">
+                  Consult Our Experts
+                </span>
+
+                {/* Icon */}
+                <svg
+                  viewBox="0 0 56 55"
+                  className="relative z-10 w-10 h-10 lg:w-14 lg:h-14 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+                >
+                  <circle
+                    cx="28.2"
+                    cy="27.1"
+                    r="15.9"
+                    fill="#F6E000"
+                    stroke="#F9C901"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M31.3 22.1L33.2 29.4M31.3 22.1L24.1 24.1M31.3 22.1L25.1 32.8"
+                    stroke="black"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+
             </div>
           </div>
         </div>

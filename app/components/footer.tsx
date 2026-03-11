@@ -9,19 +9,19 @@ const Footer = () => {
   const cards = [
     {
       title: "CANADA",
-      desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
+      desc: "4331 Galts Ave, Red Deer, Alberta, Canada - T4N 5Z9",
       contact: "+02 3486 4631",
       src: `${ASSET_URL}/images/location4.webp`,
     },
     {
       title: "USA",
-      desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
+      desc: "812, 6th Ave, New York, NY 10019, USA",
       contact: "+01 9876 5432",
       src: `${ASSET_URL}/images/location1.webp`,
     },
     {
-      title: "UK",
-      desc: "At morbi arcu feugiat est tristique risus ipsum maecenas morbi. Elementum.",
+      title: "UAE",
+      desc: "17, Nabir Street, Al Zahiyah, Abu Dhabi, UAE.",
       contact: "+44 7654 3210",
       src: `${ASSET_URL}/images/location2.webp`,
     },
@@ -198,13 +198,13 @@ Area We Occupied
 
             <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 max-w-[600px]
             text-[14px] sm:text-[14px] md:text-[12px]  xl:text-[14px]  text-black/70 font-poppins">
-              <Link href="#" className="underline underline-offset-4 hover:text-black">Digital Transformation</Link>
-              <Link href="#" className="underline underline-offset-4 hover:text-black">Generative AI Development</Link>
-              <Link href="#" className="underline underline-offset-4 hover:text-black">Software Development</Link>
-              <Link href="#" className="underline underline-offset-4 hover:text-black">Blockchain Development</Link>
-              <Link href="#" className="underline underline-offset-4 hover:text-black">LLM Development</Link>
-              <Link href="#" className="underline underline-offset-4 hover:text-black">DevOps</Link>
-              <Link href="#" className="underline underline-offset-4 hover:text-black">Digital Marketing</Link>
+              <Link href="/digital-transformation-services" className="underline underline-offset-4 hover:text-black">Digital Transformation</Link>
+              <Link href="/" className="underline underline-offset-4 hover:text-black">Generative AI Development</Link>
+              <Link href="/" className="underline underline-offset-4 hover:text-black">Software Development</Link>
+              <Link href="/" className="underline underline-offset-4 hover:text-black">Blockchain Development</Link>
+              <Link href="/" className="underline underline-offset-4 hover:text-black">LLM Development</Link>
+              <Link href="/" className="underline underline-offset-4 hover:text-black">DevOps</Link>
+              <Link href="/" className="underline underline-offset-4 hover:text-black">Digital Marketing</Link>
             </div>
           </div>
 
@@ -283,9 +283,9 @@ Area We Occupied
     <p>Beelockchain © 2026 All Rights Reserved.</p>
 
     <div className="flex gap-2">
-      <Link href="#" className="hover:text-black">Terms & Conditions</Link>
-      <Link href="#" className="hover:text-black">Privacy Policy</Link>
-      <Link href="#" className="hover:text-black">About us</Link>
+      <Link href="/" className="hover:text-black">Terms & Conditions</Link>
+      <Link href="/" className="hover:text-black">Privacy Policy</Link>
+      <Link href="/" className="hover:text-black">About us</Link>
     </div>
 
   </div>

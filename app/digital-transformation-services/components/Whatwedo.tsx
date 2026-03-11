@@ -23,13 +23,13 @@ const Whatwedo = () => {
     <div className="w-full bg-white flex flex-col py-12 lg:pb-0 lg:pt-16 xl:pt-16 xl:pb-0">
       {/* Header Section */}
       <div className="flex items-center justify-center px-4 sm:px-6 md:px-8 xl:px-0 mb-10 lg:mb-14">
-        <h2 className="text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold text-center max-w-4xl leading-tight">
+        <h3 className="text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold text-center max-w-4xl leading-tight">
           <span data-text='Beelockchains ' className="shine-text relative text-[#f5c518]">Beelockchain's </span>
           <span className="text-[#1a1a1a] capitalize">
             transformation experts begin with a structured assessment across
             these key areas,
           </span>
-        </h2>
+        </h3>
       </div>
 
       {/* Cards Section */}

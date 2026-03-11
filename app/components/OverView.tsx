@@ -36,7 +36,7 @@ const cardsData = [
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "People-centric Digital Transformation",
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
-    hoverTitle: "Enterprise-Grade Security 100",
+    hoverTitle: "Enterprise-Grade Security",
     hoverSubtitle: "For Your Business",
     image: `${ASSET_URL}/images/whychooseusimg1.webp`,
     description:
@@ -46,7 +46,7 @@ const cardsData = [
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Vendor-neutral & strategy-first approach",
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
-    hoverTitle: "Automation Excellence 7",
+    hoverTitle: "Automation Excellence",
     hoverSubtitle: "Process Reliability",
     image: `${ASSET_URL}/images/why-choose-img1.webp`,
     description:
@@ -56,7 +56,7 @@ const cardsData = [
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Market Responsiveness",
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
-    hoverTitle: "Safe & Scalable 24x7",
+    hoverTitle: "Safe & Scalable",
     hoverSubtitle: "Data Infrastructure",
     image: `assets/images/whychooseusimg3.webp`,
     description:
@@ -66,7 +66,7 @@ const cardsData = [
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Proactive Risk Mitigation",
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
-    hoverTitle: "Real-Time Insights 24",
+    hoverTitle: "Real-Time Insights",
     hoverSubtitle: "Modern Intelligence",
     image: `${ASSET_URL}/images/whychooseusimg4.webp`,
     description:
@@ -76,7 +76,7 @@ const cardsData = [
     initialLogo: `${ASSET_URL}/images/Overviewlogo.webp`,
     initialText: "Agile Methodologies",
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
-    hoverTitle: "Always-On Support 24x7",
+    hoverTitle: "Always-On Support",
     hoverSubtitle: "Dedicated Experts",
     image: `${ASSET_URL}/images/whychooseusimg.webp`,
     description:

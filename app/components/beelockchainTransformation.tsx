@@ -61,7 +61,7 @@ const steps = [
         {/* Heading */}
         <div className="text-center mx-auto mb-10">
           <h2 className="font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold  mb-4">
-            How Beelockchain Transforms Your Business
+            How <span>Beelockchain</span> Transforms Your Business
           </h2>
           <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
             Innovative Solutions for Your Business Challenges

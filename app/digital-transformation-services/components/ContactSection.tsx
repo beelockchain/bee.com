@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#F9FAFB] sm:px-5 md:px-5 md:py-16 lg:pb-10">
+    <section className="w-full bg-[#F9FAFB] sm:px-5 md:px-5 md:py-16 lg:pt-0 lg:pb-20">
       <div className="max-w-7xl mx-auto">
 
         {/* Desktop */}
@@ -45,9 +45,11 @@ const ContactSection: React.FC = () => {
             </div>
 
             <div className="ml-8">
-              <button className="bg-[#0a0e1a] text-white px-8 py-3 rounded-full font-medium text-base hover:bg-[#151b2b] transition-colors duration-300 whitespace-nowrap sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
+            <a href="/contact-us" className="cursor-pointer">
+              <button className="bg-[#0a0e1a] cursor-pointer text-white px-8 py-3 rounded-full font-medium text-base hover:bg-[#151b2b] transition-colors duration-300 whitespace-nowrap sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
                 Get Free Consultation
               </button>
+            </a>
             </div>
           </div>
         </div>
@@ -84,9 +86,11 @@ const ContactSection: React.FC = () => {
             transformation service approach.
           </p>
 
-          <button className="bg-[#0a0e1a] text-white px-8 py-3 rounded-full font-medium text-[13px] hover:bg-[#151b2b] transition-colors duration-300 w-full max-w-xs mx-auto block">
+       <a href="/contact-us" className="cursor-pointer">
+          <button className="bg-[#0a0e1a] text-white px-8 py-3 cursor-pointer rounded-full font-medium text-[13px] hover:bg-[#151b2b] transition-colors duration-300 w-full max-w-xs mx-auto block">
             Get Free Consultation
           </button>
+       </a>
         </div>
 
       </div>

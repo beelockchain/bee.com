@@ -31,7 +31,7 @@ const EndToEndServices: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-10 xl:mb-15">
           <h2 className="text-[20px] md:text-[22px] lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-[#000000] font-poppines">
-            Our <span data-text="End-to-End" className="shine-text relative text-[#F9C901]">End-to-End</span> Digital Transformation
+            Our <span data-text="End-to-End" className="shine-text relative text-[#F9C901]">End-To-End</span> Digital Transformation
             <br className="hidden md:block" />
             Services & Solutions
           </h2>

@@ -123,7 +123,7 @@ export default function Services() {
         />
         <div className="relative z-10">
           <h2 className="font-['Poppins'] text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black leading-tight">
-            Digital Transformation
+            Areas Of Expertise - Digital Transformation
           </h2>
           <p className="mt-1 text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-['Poppins'] leading-snug  mx-auto w-80 md:w-full">
             A full spectrum of digital transformation services to elevate your business

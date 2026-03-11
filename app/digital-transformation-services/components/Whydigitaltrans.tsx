@@ -36,7 +36,7 @@ const WhyDigitalTransformation = () => {
           organizations depend on manual processes with outdated technology, it
           becomes difficult to adapt to changing customer expectations and
           market demands.
-          <span data-text="Beelockchain" className=" text-[#f5c518] font-medium">Beelockchain</span>, a
+          <span data-text="Beelockchain" className=" text-[#f5c518] font-medium"> Beelockchain</span>, a
           digital transformation service provider, helps businesses address
           these challenges by building structured, digitally driven business
           operations with a strong focus on customer-centric solutions.

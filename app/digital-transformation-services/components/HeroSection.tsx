@@ -62,47 +62,49 @@ export default function HeroSection({
             {/* CTA Button */}
               {/* CTA Button */}
               <div className='text-center md:text-left mb-5'>
-                <button
-                  className="
-                    cursor-pointer
-                    inline-flex items-center justify-center gap-2
-                    w-fit
-                    px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
-                    border border-black rounded-full
-                    bg-[#f2f2f2]        /* greyish center */
-                    hover:bg-[#e9e9e9]
-                    transition-colors
-                    shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]
-                  "
-                >
-                  <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
-                    Consult Our Experts
-                  </span>
+              <a
+                href="/contact-us"
+                className="
+                  cursor-pointer
+                  inline-flex items-center justify-center gap-2
+                  w-fit
+                  px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
+                  border border-black rounded-full
+                  bg-[#f2f2f2]
+                  hover:bg-[#e9e9e9]
+                  transition-colors
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]
+                "
+              >
+                <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
+                  Consult Our Experts
+                </span>
 
-                  {/* Arrow Icon */}
-                  <svg
-                    className="w-8 h-8 lg:w-8 lg:h-8"
-                    viewBox="0 0 56 55"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="28.2473"
-                      cy="27.0945"
-                      r="15.912"
-                      fill="#F6E000"
-                      stroke="#F9C901"
-                      strokeWidth="1.51543"
-                    />
-                    <path
-                      d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                      stroke="black"
-                      strokeWidth="3.03086"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
+                {/* Arrow Icon */}
+                <svg
+                  className="w-8 h-8 lg:w-8 lg:h-8"
+                  viewBox="0 0 56 55"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="28.2473"
+                    cy="27.0945"
+                    r="15.912"
+                    fill="#F6E000"
+                    stroke="#F9C901"
+                    strokeWidth="1.51543"
+                  />
+                  <path
+                    d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                    stroke="black"
+                    strokeWidth="3.03086"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+
               </div>
 
           </div>

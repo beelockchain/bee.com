@@ -135,7 +135,7 @@ mm.add("(min-width: 768px)", () => {
         <div className="max-w-[1400px] mx-auto px-8 w-full flex flex-col overflow-hidden justify-center h-full">
           <div className="text-center mb-8 xl:mb-8 xl:pt-10">
             <h2 className="text-4xl sm:text-[19px] md:text-[22px] lg:text-[28px] xl:text-[36px] text-black font-semibold leading-snug font-poppins">
-              From Strategy to Execution:{" "}
+              From Strategy To Execution:{" "}
               <span className="shine-text relative text-[#f5c518]">
                 Our Digital <br /> Transformation Roadmap
               </span>

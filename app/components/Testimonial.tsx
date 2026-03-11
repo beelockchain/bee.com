@@ -7,20 +7,20 @@ import { createPortal } from "react-dom";
 const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 
 const users = [
-  { name: "James Anderson",   email: "debra.holt@example.com",  role: "Mobile App",            image: `${ASSET_URL}/images/testimoniAL1.webp`  },
-  { name: "Sophia Martinez",  email: "wade@example.com",         role: "Pay-Per-Click",         image: `${ASSET_URL}/images/testimonial2.webp`  },
-  { name: "Savannah Nguyen",  email: "savannah@example.com",     role: "ERP solution",          image: `${ASSET_URL}/images/testimonial3.webp`  },
-  { name: "Brooklyn Simmons", email: "brooklyn@example.com",     role: "Digital marketing",     image: `${ASSET_URL}/images/testimonial4.webp`  },
-  { name: "Leslie Alexander", email: "leslie@example.com",       role: "Web App",               image: `${ASSET_URL}/images/testimonial5.webp`  },
-  { name: "Courtney Henry",   email: "debra.holt@example.com",   role: "DevOps Services",       image: `${ASSET_URL}/images/testimonial6.webp`  },
-  { name: "Wade Warren",      email: "wade@example.com",         role: "Android App",           image: `${ASSET_URL}/images/testimonial7.webp`  },
-  { name: "Savannah Nguyen",  email: "savannah@example.com",     role: "UI/UX Design",          image: `${ASSET_URL}/images/testimonial8.webp`  },
-  { name: "Brooklyn Simmons", email: "brooklyn@example.com",     role: "Digital Transformation",image: `${ASSET_URL}/images/testimonial9.webp`  },
-  { name: "Leslie Alexander", email: "leslie@example.com",       role: "AI chatbot",            image: `${ASSET_URL}/images/testimonial10.webp` },
-  { name: "Riley Thompson",   email: "riley@example.com",        role: "Cloud Services",        image: `${ASSET_URL}/images/testimonial11.webp` },
-  { name: "Morgan Davis",     email: "morgan@example.com",       role: "SEO",                   image: `${ASSET_URL}/images/testimonial12.webp` },
-  { name: "Taylor Brooks",    email: "taylor@example.com",       role: "Data Analytics",        image: `${ASSET_URL}/images/testimonial13.webp` },
-  { name: "Jordan Reed",      email: "jordan@example.com",       role: "Cybersecurity",         image: `${ASSET_URL}/images/testimonial14.webp` },
+  { name: "James Anderson",   email: "debra.holt@gmail.com",  role: "Mobile App",            image: `${ASSET_URL}/images/testimoniAL1.webp`  },
+  { name: "Sophia Martinez",  email: "wade@gmail.com",         role: "Pay-Per-Click",         image: `${ASSET_URL}/images/testimonial2.webp`  },
+  { name: "Savannah Nguyen",  email: "savannah@gmail.com",     role: "ERP solution",          image: `${ASSET_URL}/images/testimonial3.webp`  },
+  { name: "Brooklyn Simmons", email: "brooklyn@gmail.com",     role: "Digital marketing",     image: `${ASSET_URL}/images/testimonial4.webp`  },
+  { name: "Leslie Alexander", email: "leslie@gmail.com",       role: "Web App",               image: `${ASSET_URL}/images/testimonial5.webp`  },
+  { name: "Courtney Henry",   email: "debra.holt@gmail.com",   role: "DevOps Services",       image: `${ASSET_URL}/images/testimonial6.webp`  },
+  { name: "Wade Warren",      email: "wade@gmail.com",         role: "Android App",           image: `${ASSET_URL}/images/testimonial7.webp`  },
+  { name: "Savannah Nguyen",  email: "savannah@gmail.com",     role: "UI/UX Design",          image: `${ASSET_URL}/images/testimonial8.webp`  },
+  { name: "Brooklyn Simmons", email: "brooklyn@gmail.com",     role: "Digital Transformation",image: `${ASSET_URL}/images/testimonial9.webp`  },
+  { name: "Leslie Alexander", email: "leslie@gmail.com",       role: "AI chatbot",            image: `${ASSET_URL}/images/testimonial10.webp` },
+  { name: "Riley Thompson",   email: "riley@gmail.com",        role: "Cloud Services",        image: `${ASSET_URL}/images/testimonial11.webp` },
+  { name: "Morgan Davis",     email: "morgan@gmail.com",       role: "SEO",                   image: `${ASSET_URL}/images/testimonial12.webp` },
+  { name: "Taylor Brooks",    email: "taylor@gmail.com",       role: "Data Analytics",        image: `${ASSET_URL}/images/testimonial13.webp` },
+  { name: "Jordan Reed",      email: "jordan@gmail.com",       role: "Cybersecurity",         image: `${ASSET_URL}/images/testimonial14.webp` },
 ];
 
 /* ================= ANIMATION KEYFRAMES ================= */

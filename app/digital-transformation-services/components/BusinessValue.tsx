@@ -325,34 +325,46 @@ const MobileCardStack = () => {
 
           {/* CTA Button */}
           <div className="flex-shrink-0 flex justify-center pb-4">
-            <button
-              className="
-                cursor-pointer
-                inline-flex items-center
-                w-fit
-                px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
-                border border-black rounded-full
-                bg-white
-                hover:bg-gray-50
-                transition-colors
-              "
+          <a
+            href="/contact-us"
+            className="
+              cursor-pointer
+              inline-flex items-center gap-2
+              w-fit
+              px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
+              border border-black rounded-full
+              bg-white
+              hover:bg-gray-50
+              transition-colors
+            "
+          >
+            <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
+              Transform Your Business
+            </span>
+
+            <svg
+              className="w-8 h-8 lg:w-8 lg:h-8"
+              viewBox="0 0 56 55"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
-                Transform Your Business
-              </span>
-              <svg
-                className="w-8 h-8 lg:w-8 lg:h-8"
-                viewBox="0 0 56 55"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
-                <path
-                  d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                  stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+              <circle
+                cx="28.2473"
+                cy="27.0945"
+                r="15.912"
+                fill="#F6E000"
+                stroke="#F9C901"
+                strokeWidth="1.51543"
+              />
+              <path
+                d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                stroke="black"
+                strokeWidth="3.03086"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
           </div>
 
         </div>
@@ -398,6 +410,7 @@ TabletLayout = () => {
           <div className="sticky top-8">
             <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="w-full object-contain rounded-xl" />
             <div className="mt-4">
+              <a href="/contact-us">
               <button className="cursor-pointer relative flex items-center gap-2 px-4 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                 <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
                 <span className="relative z-10 font-poppins text-black text-sm whitespace-nowrap">Transform Your Business</span>
@@ -406,6 +419,8 @@ TabletLayout = () => {
                   <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
+              </a>
+
             </div>
           </div>
         </div>
@@ -510,7 +525,8 @@ const DesktopLayout = () => {
             <div className="relative w-full h-full min-h-[400px]">
               <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="object-fit xl:ml-25" />
               <div className="absolute bottom-6">
-                <button className="cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
+              <a href="/contact-us">
+              <button className="cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                   <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
                   <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-[12px] xl:text-[16px] whitespace-nowrap">Transform Your Business</span>
                   <svg className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-7 lg:h-7" viewBox="0 0 56 55" fill="none">
@@ -518,6 +534,7 @@ const DesktopLayout = () => {
                     <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
+              </a>
               </div>
             </div>
           </div>

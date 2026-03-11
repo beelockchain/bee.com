@@ -24,11 +24,11 @@ const primaryNav = [
 ];
 
 const secondaryNav = [
-  { label: "About us", href: "/about" },
-  { label: "Pitch Deck", href: "/pitch-deck" },
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms & Condition", href: "/terms" },
-  { label: "Career", href: "/career" },
+  { label: "About us", href: "#" },
+  { label: "Pitch Deck", href: "#" },
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms & Condition", href: "#" },
+  { label: "Career", href: "#" },
  
 ];
 
@@ -250,7 +250,6 @@ const isActive = (href: string, hasDropdown?: boolean) => {
                  <Link
                   key={sub.label}
                   href={sub.href}
-                  target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setServiceDropdownOpen(false)}
                   className="flex items-center gap-3 text-sm md:text-[15px] font-medium text-black hover:text-black transition group text-left cursor-pointer"
@@ -344,7 +343,6 @@ const isActive = (href: string, hasDropdown?: boolean) => {
                 <a
                   key={item.label}
                   href={item.href}
-                  target="_blank"
                   className="text-md font-medium text-black hover:text-yellow-500 transition"
                   onClick={() => setSideMenuOpen(false)}
                 >
@@ -360,7 +358,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
               <a
                 key={item.label}
                 href={item.href}
-                target="_blank"
+
                 className="text-md font-medium text-black hover:text-yellow-500 transition"
                 onClick={() => setSideMenuOpen(false)}
               >
@@ -381,7 +379,6 @@ const isActive = (href: string, hasDropdown?: boolean) => {
       key={i}
       href={icon.href}
       aria-label={icon.name}
-      target="_blank"
       rel="noopener noreferrer"
       className="group"
     >
