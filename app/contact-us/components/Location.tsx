@@ -3,7 +3,7 @@ import React from "react";
 const Location = () => {
   return (
     <section className="w-full py-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Heading */}
         <div className="text-center mb-10">

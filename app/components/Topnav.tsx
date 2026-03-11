@@ -193,7 +193,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
         {/* RIGHT ACTIONS */}
         <div className="flex justify-end items-center gap-3">
           <Link
-            href="/contact"
+            href="/contact-us"
             className="hidden sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
           >
             Get started

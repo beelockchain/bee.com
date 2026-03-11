@@ -2,67 +2,64 @@
 import React from "react";
 
 const items = [
-  { title: "Projects Delivered" },
+  { title: "300+ Projects Delivered" },
   { title: "NDA-Protected Consultations" },
   { title: "Agile Development Process" },
   { title: "Enterprise-Grade Security" },
   { title: "Dedicated Project Managers" },
-  { title: "98% Client Retention Rate" },
   { title: "24/7 Technical Support" },
+  { title: "98% Client Retention Rate" },
 ];
 
 const ContactMarquee = () => {
   return (
-    <section className="w-full flex flex-col items-center py-5">
+    <section className="w-full flex flex-col items-center py-6 md:py-10">
+
       {/* Heading */}
-      <h2 className="text-[23px] md:text-[25px] lg:text-[35px] xl:text-[38px] text-black mb-10 text-center font-bold">
+      <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[34px] xl:text-[38px] text-black mb-8 md:mb-10 text-center font-bold px-4">
         Why Businesses Trust
-        <span data-text="Services" className="shine-text text-[#F5B800] relative">
-          {" "}
-          Beelockchain
-        </span>
+        <span className="shine-text text-[#F5B800]"> Beelockchain</span>
       </h2>
 
       {/* Marquee Container */}
-      <div className="w-full max-w-[1440px] h-30 md:h-40 relative overflow-hidden rounded-md">
+      <div className="w-full max-w-[1400px] relative overflow-hidden rounded-md">
+
         {/* Background Gradient */}
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,_#AF7211_33%,_#F6E000_54%,_#D7B007_63%)]" />{" "}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,_#AF7211_33%,_#F6E000_54%,_#D7B007_63%)]" />
+
         {/* Marquee Track */}
-        <div className="absolute flex gap-6 items-center h-full animate-marquee px-6">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-8 py-6 animate-marquee w-max px-4">
+
           {[...items, ...items].map((item, i) => (
             <div
               key={i}
-              className="w-40 h-20 md:w-60 md:h-28 p-3.5 bg-white rounded-2xl md:rounded-3xl shadow-[0px_39px_40px_0px_rgba(14,7,41,0.07)] flex flex-col justify-center items-center"
+              className="
+              flex-shrink-0
+              w-[140px]
+              sm:w-[180px]
+              md:w-[220px]
+              lg:w-[260px]
+              h-[70px]
+              sm:h-[80px]
+              md:h-[95px]
+              lg:h-[110px]
+              bg-white
+              rounded-xl
+              md:rounded-2xl
+              lg:rounded-3xl
+              shadow-[0px_20px_30px_rgba(14,7,41,0.07)]
+              flex items-center justify-center
+              px-3 text-center
+              "
             >
-              <div className="text-center font-poppins">
-                {item.title && (
-                  <div className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-medium font-['Poppins']">
-                    {item.title}
-                  </div>
-                )}
-              </div>
+              <p className="text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px] text-black font-semibold">
+                {item.title}
+              </p>
             </div>
           ))}
+
         </div>
       </div>
-
-      {/* Animation */}
-      <style jsx>{`
-        .animate-marquee {
-          display: flex;
-          width: max-content;
-          animation: marquee 25s linear infinite;
-        }
-
-        @keyframes marquee {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 };

@@ -6,7 +6,7 @@ import { FiMail, FiMapPin } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
 import { ContactForm } from "./ContactForm";
-
+import { FaHandshake } from "react-icons/fa";
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL ?? "";
@@ -109,7 +109,7 @@ const ContactHeroSection = () => (
       </h2>
     </div>
 
-    <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-2 md:gap-2 sm:items-stretch md:items-stretch">
+    <div className="max-w-[1400px] mx-auto grid sm:grid-cols-2 md:grid-cols-2 gap-2 md:gap-2 sm:items-stretch md:items-stretch">
 
       {/* ── LEFT COLUMN ── */}
       <div className="order-2 sm:order-1 md:order-1 flex flex-col gap-8 items-center sm:items-start md:items-start text-center sm:text-start md:text-start md:justify-between">
@@ -136,7 +136,7 @@ const ContactHeroSection = () => (
             </p>
 
             {/* Contact links */}
-            <div className="flex flex-col sm:flex-col md:flex-col gap-4 mt-6 items-center sm:items-start md:items-start justify-center md:justify-start ">
+            <div className="flex flex-col sm:flex-col md:flex-col  lg:flex-col xl:flex-row gap-4 mt-6 items-center sm:items-start md:items-start justify-center md:justify-start ">
               {CONTACT_LINKS.map(({ href, icon, label }) => (
                 <Link
                   key={href}
@@ -152,24 +152,29 @@ const ContactHeroSection = () => (
             </div>
 
             {/* Address */}
-            <div className="flex  gap-3 mt-6 text-black items-center justify-center sm:justify-start md:justify-start">
-              <FiMapPin className="text-lg mt-1 ml-4" />
-              <address className="not-italic text-[13px] sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[16px] text-black font-normal font-['Poppins']">
-                6/219, R5, Ganapathy Nagar, <br />
-                Theni Rd, Achampattu, Madurai, <br />
-                Tamil Nadu 625019
-              </address>
-            </div>
+         <div className="flex justify-center sm:justify-start mt-6 text-black">
+  <div className="flex items-start gap-3 text-center sm:text-left">
+    
+    <FiMapPin className="text-lg mt-1 flex-shrink-0" />
 
+    <address className="not-italic text-[13px] sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[16px] text-black font-normal font-['Poppins']">
+      6/219, R5, Ganapathy Nagar, <br />
+      Theni Rd, Achampattu, Madurai, <br />
+      Tamil Nadu 625019
+    </address>
+
+  </div>
+</div>
             <SocialLinks />
           </div>
         </div>
 
         {/* Instant CTA card */}
         <div className="bg-white p-4 lg:p-8 rounded-2xl shadow-md space-y-4">
-          <h2 className="text-[22px] md:text-[22px] font-semibold text-black">
-            Get In Touch Instantly
-          </h2>
+        <h2 className="flex items-center justify-center sm:justify-start gap-2 text-[22px] md:text-[22px] font-semibold text-black text-center sm:text-left">
+  <FaHandshake className="text-[22px]" />
+  Get In Touch Instantly
+</h2>
     <p className="max-w-[550px] mx-auto text-[13px] sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[16px] text-black font-normal font-['Poppins']">
     Skip the wait and schedule your free 30-minute consultation now. Web conferencing details will be shared upon confirmation.</p>
           <div className="flex items-center justify-center md:justify-start">
