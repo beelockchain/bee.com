@@ -75,14 +75,14 @@ const Digitaltransformation = () => {
           </div>
 
           {/* BUTTON */}
-<div className="order-4 sm:order-none flex flex-row gap-3 flex-nowrap">
+<div className="order-4 sm:order-none flex flex-col md:flex-row gap-3 flex-nowrap px-5">
   
   <a
     href="/contact-us"
     onTouchStart={() => setActive(true)}
     onTouchEnd={() => setActive(false)}
     onMouseLeave={() => setActive(false)}
-    className="group relative inline-flex w-fit items-center gap-3 px-3 py-2 md:px-2 md:py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
+    className="group relative inline-flex w-fit items-center gap-3 px-4 py-1 md:px-2 md:py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
   >
     <span
       className={`
@@ -127,7 +127,7 @@ const Digitaltransformation = () => {
     onTouchStart={() => setActive(true)}
     onTouchEnd={() => setActive(false)}
     onMouseLeave={() => setActive(false)}
-    className="group relative inline-flex w-fit items-center gap-3 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
+    className="group relative inline-flex w-fit items-center gap-3 px-4 py-1 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
   >
     <span
       className={`

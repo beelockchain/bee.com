@@ -122,7 +122,7 @@ export default function Services() {
           className="pointer-events-none select-none h-16 sm:h-20 lg:h-40 w-[80%] md:w-full"
         />
         <div className="relative z-10">
-        <h2 className="font-['Poppins'] text-[19px] mb-4 sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold">
+        <h2 className="font-['Poppins'] text-[17px] mb-4 sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold">
           Areas Of Expertise - 
           <span
             className="text-transparent bg-clip-text"

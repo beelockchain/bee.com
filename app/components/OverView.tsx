@@ -140,7 +140,7 @@ const OverView = () => {
     Beelockchain
   </span>
         </h2>
-        <p className="w-full  md:w-[720px] lg:w-[820px] max-w-full text-black text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] font-normal font-['Poppins']">
+        <p className="w-full px-5 md:px-0 md:w-[720px] lg:w-[820px] max-w-full text-black text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] font-normal font-['Poppins']">
           As experts in digital transformation, we create customized, future-ready
           solutions that ensure your investment counts by focusing on your unique
           customer and market needs.
