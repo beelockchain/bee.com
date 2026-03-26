@@ -161,8 +161,8 @@ export default function Testi() {
             alt="Testimonials"
           />
 
-          <h2 className="mt-4 font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold">What We've Done</h2>
-          <p className="text-sm md:text-lg text-black text-center px-4 font-normal font-['Poppins']">
+          <h2 className="mt-4 font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold mb-4">What We've Done</h2>
+          <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] text-black text-center px-4 font-normal font-['Poppins']">
             Trusted by Leading Enterprises and Innovators
           </p>
 

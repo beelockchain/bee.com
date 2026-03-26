@@ -38,7 +38,7 @@ const cardsData = [
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Enterprise-Grade Security",
     hoverSubtitle: "For Your Business",
-    image: `${ASSET_URL}/images/whychooseusimg1.webp`,
+    image: `assets/images/whychooseussecimg1.png`,
     description:
       "We believe digital transformation succeeds when people come first. At Beelockchain, we design solutions around real user needs, empower teams, and drive adoption that creates meaningful, lasting impact beyond technology alone.",
   },
@@ -48,7 +48,7 @@ const cardsData = [
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Automation Excellence",
     hoverSubtitle: "Process Reliability",
-    image: `${ASSET_URL}/images/why-choose-img1.webp`,
+    image: `assets/images/whychooseussecimg2.png`,
     description:
       "Our vendor-neutral, strategy-first approach is why organizations choose Beelockchain. We focus on business outcomes, not tools, delivering unbiased guidance and flexible solutions aligned with long-term goals.",
   },
@@ -58,7 +58,7 @@ const cardsData = [
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Safe & Scalable",
     hoverSubtitle: "Data Infrastructure",
-    image: `assets/images/whychooseusimg3.webp`,
+    image: `assets/images/whychooseussecimg3.png`,
     description:
       "Beelockchain helps organizations stay ahead of change. We respond quickly to market shifts, emerging technologies, and customer demands—enabling confident decisions and sustained competitiveness in dynamic environments.",
   },
@@ -68,7 +68,7 @@ const cardsData = [
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Real-Time Insights",
     hoverSubtitle: "Modern Intelligence",
-    image: `${ASSET_URL}/images/whychooseusimg4.webp`,
+    image: `assets/images/whychooseussecimg4.png`,
     description:
       "We proactively identify and reduce risks before they become barriers. Beelockchain embeds security, compliance, and resilience into every solution, protecting operations, reputation, and future growth.",
   },
@@ -78,7 +78,7 @@ const cardsData = [
     hoverLogo: `${ASSET_URL}/images/Heromainimg.webp`,
     hoverTitle: "Always-On Support",
     hoverSubtitle: "Dedicated Experts",
-    image: `${ASSET_URL}/images/whychooseusimg.webp`,
+    image: `assets/images/whychooseussecimg5.png`,
     description:
       "Our agile methodologies enable faster delivery and continuous improvement. Beelockchain works collaboratively with teams to adapt quickly, deliver value early, and evolve solutions as business needs change.",
   },
@@ -129,10 +129,18 @@ const OverView = () => {
     <div className="w-full bg-white flex flex-col items-center py-10">
       {/* ================= TITLE ================= */}
       <div className="mb-6 lg:mb-10 text-center">
-        <h2 className="text-black text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold">
-          Why Choose <span>Beelockchain</span>
+        <h2 className="text-black text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold mb-4">
+          Why Choose <span
+    className="text-transparent bg-clip-text"
+    style={{
+      backgroundImage:
+        "linear-gradient(90deg, #AF7211 33%, #F6E000 49%, #D7B007 63%)",
+    }}
+  >
+    Beelockchain
+  </span>
         </h2>
-        <p className="w-full  md:w-[720px] lg:w-[820px] max-w-full text-black text-sm md:text-lg font-normal font-['Poppins']">
+        <p className="w-full  md:w-[720px] lg:w-[820px] max-w-full text-black text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] font-normal font-['Poppins']">
           As experts in digital transformation, we create customized, future-ready
           solutions that ensure your investment counts by focusing on your unique
           customer and market needs.
@@ -241,7 +249,7 @@ const OverView = () => {
                 onClick={() => handleMobileClick(i)}
                 className="w-full p-4 flex justify-between items-center text-left"
               >
-                <h3 className="text-md font-semibold text-black flex-1 pr-3">
+                <h3 className="text-md font-semibold text-black flex-1 pr-3 capitalize">
                   {card.initialText}
                 </h3>
 

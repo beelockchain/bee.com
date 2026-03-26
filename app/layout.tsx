@@ -136,7 +136,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Product",
               name: "Top Digital Transformation Services Company",
-              image: "https://www.beelockchain.com/path-to-image.jpg",
+              image: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/og-img.webp",
               description:
                 "Beelockchain.com is a prominent digital transformation company offering digital transformation services and solutions that help leading enterprises transform their businesses and modernize operations.",
               brand: {

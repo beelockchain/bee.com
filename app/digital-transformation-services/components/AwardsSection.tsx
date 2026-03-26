@@ -11,17 +11,17 @@ const awards = [
 
 export default function AwardsSection() {
   return (
-    <section className="w-full bg-white py-16 px-4">
+    <section className="w-full bg-white pb-5 px-4">
       {/* Heading */}
-      <div className="max-w-4xl mx-auto text-center mb-12">
-        <h2 className="text-[22px] md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
+      <div className="max-w-4xl mx-auto text-center mt-10 mb-12">
+        <h2 className="text-[18px] md:text-2xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
           Awards &{" "}
           <span data-text="Recognition Milestones" className="shine-text relative text-[#f5c518]">Recognition Milestones</span>{" "}
           That
           <br />
           Reflect Our Commitment to Quality
         </h2>
-        <p className="text-[#525252] text-[12px] md:text-[13px] xl:text-[15px] font-poppins">
+        <p className="text-[#000000] text-[14px] md:text-[13px] xl:text-[16px] font-semibold">
           Our recognitions reflect our dedication to excellence and innovation in software and mobile app development services.
           We create solutions that provide long-term value for their business. This approach enables us to consistently exceed
           client expectations while maintaining high-quality standards.
@@ -37,7 +37,7 @@ export default function AwardsSection() {
           {awards.map((award, index) => (
             <div
               key={index}
-              className="flex items-center justify-center bg-[#F5F7F9]  border border-gray-100 rounded-xl p-5 w-40 h-40 md:w-30 md:h-30 xl:w-40 xl:h-40 hover:shadow-md transition-shadow duration-300"
+              className="flex items-center justify-center bg-[#F5F7F9]  border border-gray-100 rounded-xl p-5 w-40 h-40 md:w-30 md:h-30 xl:w-40 xl:h-40 hover:shadow-xl transition-shadow duration-300"
             >
               <img
                 src={award.src}

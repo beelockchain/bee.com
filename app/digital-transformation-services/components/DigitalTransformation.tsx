@@ -26,7 +26,7 @@ const DigitalTransformationSection = () => {
               </span>
             </h2>
 
-            <p className="text-[#4a4a4a] text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] leading-relaxed sm:max-w-xl md:max-w-xl lg:max-w-lg font-semibold text-center sm:text-left lg:text-left px-2 md:px-0">
+            <p className="text-[#000000] text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] leading-relaxed sm:max-w-xl md:max-w-xl lg:max-w-lg font-semibold text-center sm:text-left lg:text-left px-2 md:px-0">
               Many organisations are struggling with fragmented infrastructure, 
               manual processes, limited data visibility, and unconnected customer 
               relationships. These challenges slow down operations, increase spending, 

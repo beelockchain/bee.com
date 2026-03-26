@@ -2,19 +2,21 @@
 import Link from "next/link";
 
 const industries = [
-  "FinTech and financial services",
+  "FinTech",
   "Healthcare",
-  "Retail and eCommerce",
-  "Education and eLearning",
-  "Logistics and supply chain",
+  "Retail & eCommerce",
+  "eLearning",
+  "Logistics",
   "Manufacturing",
-  "Travel and hospitality",
   "Real estate",
   "Automotive",
   "Energy & utilities",
   "Insurance",
   "Food & beverage",
   "Sports & fitness",
+  "Travel",
+  "Hospitality",
+  "Supply chain"
 ];
 
 const industryImages = [
@@ -38,7 +40,7 @@ const SubIndustriesWeServe = () => {
   return (
     <section className="w-full bg-white pt-16 sm:py-10 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
-      <h2 className="block md:hidden text-3xl font-medium font-[Poppins] text-center text-black mb-8">
+      <h2 className="block md:hidden text-3xl font-medium  text-center text-black mb-8">
         Industries We Serve
       </h2>
 
@@ -70,11 +72,11 @@ const SubIndustriesWeServe = () => {
         {/* RIGHT – CONTENT */}
         <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
           {/* TABLET + DESKTOP TITLE */}
-          <h2 className="hidden md:block text-3xl lg:text-4xl font-medium text-black font-[Poppins] mb-6 ">
+          <h2 className="hidden md:block text-3xl lg:text-4xl font-medium text-black  mb-6 ">
             Industries We Serve
           </h2>
 
-          <p className="text-black max-w-xl mb-10 lg:mb-20 md:mb-10  sm:mb-4 text-sm sm:text-sm md:text-[14px] lg:text-lg leading-relaxed font-normal font-['Poppins']">
+          <p className="text-black max-w-xl mb-10 lg:mb-10 md:mb-10 font-semibold  sm:mb-4 text-[14px] sm:text-sm md:text-[14px] lg:text-[14px] xl:text-[16px] leading-relaxed ">
             We support digital transformation initiatives across industries with diverse operational, regulatory, and customer experience requirements. 
           </p>
 
@@ -83,7 +85,7 @@ const SubIndustriesWeServe = () => {
             {industries.map((item, i) => (
               <div
                 key={i}
-                className="text-[12px] sm:text-[12px] md:text-[12px]  lg:text-[18px]  font-[Poppins] text-black underline cursor-pointer hover:text-yellow-500 transition"
+                className="text-[12px] sm:text-[12px] md:text-[12px] lg:text-[14px]  xl:text-[18px]  text-black underline cursor-pointer hover:text-yellow-500 transition"
               >
                 {item}
               </div>
@@ -91,47 +93,50 @@ const SubIndustriesWeServe = () => {
           </div>
 
           {/* CTA BUTTON */}
-          <div className="flex justify-center md:justify-start">
-            <Link
-              href="/contact-us"
-              className="cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3
-              px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2
-              border border-black rounded-full overflow-hidden"
-            >
-              {/* Soft center glow */}
-              <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
+        <div className="flex justify-center md:justify-start">
+        <Link
+          href="/contact-us"
+          className="group cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3
+          px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2
+          border border-black rounded-full overflow-hidden"
+        >
+          {/* ripple */}
+          <span className="absolute inset-0 flex items-center justify-center z-0">
+            <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+          </span>
 
-              {/* Text */}
-              <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-base whitespace-nowrap">
-                Consult Our Experts
-              </span>
+          {/* glow */}
+          <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
 
-              {/* Icon */}
-              <svg
-                className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14"
-                viewBox="0 0 56 55"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  cx="28.2473"
-                  cy="27.0945"
-                  r="15.912"
-                  fill="#F6E000"
-                  stroke="#F9C901"
-                  strokeWidth="1.51543"
-                />
-                <path
-                  d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                  stroke="black"
-                  strokeWidth="3.03086"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
+          {/* text */}
+          <span className="relative z-10  text-black text-sm md:text-xs lg:text-base whitespace-nowrap">
+            Consult Our Experts
+          </span>
 
-        </div>
+          {/* icon */}
+          <svg
+            className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-14 lg:h-14 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+            viewBox="0 0 56 55"
+            fill="none"
+          >
+            <circle
+              cx="28.2473"
+              cy="27.0945"
+              r="15.912"
+              fill="#F6E000"
+              stroke="#F9C901"
+              strokeWidth="1.51543"
+            />
+            <path
+              d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+              stroke="black"
+              strokeWidth="3.03086"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+      </div>
 
         </div>
       </div>

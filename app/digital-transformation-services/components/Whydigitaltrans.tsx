@@ -24,13 +24,13 @@ const WhyDigitalTransformation = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:p-8 lg:px-8 xl:px-8">
         {/* Heading */}
         <h2 className="text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold text-center mb-4 lg:mb-7">
-          <span className="text-[#1a1a1a]">Why </span>
+          <span className="text-[#000000]">Why </span>
           <span data-text="Digital Transformation" className="shine-text relative text-[#F9C901]">Digital Transformation </span>
-          <span className="text-[#1a1a1a]">Matters Today</span>
+          <span className="text-[#000000]">Matters Today</span>
         </h2>
 
         {/* First Paragraph */}
-        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center leading-relaxed mb-3 font-semibold lg:px-10 xl:px-50">
+        <p className="text-[14px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#000000] text-center leading-relaxed mb-3 font-semibold lg:px-10 xl:px-50">
           Today's businesses are expected to move faster, work smarter, and
           provide better experiences in an increasingly digital world. When
           organizations depend on manual processes with outdated technology, it
@@ -44,7 +44,7 @@ const WhyDigitalTransformation = () => {
         </p>
 
         {/* Second Paragraph */}
-        <p className="text-[13px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#1a1a1a] text-center font-semibold leading-relaxed lg:px-25 xl:px-60">
+        <p className="text-[14px] p-1 sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[#000000] text-center font-semibold leading-relaxed lg:px-25 xl:px-60">
           <span data-text="Digital transformation" className="text-[#f5c518] font-medium  relative">
             Digital transformation
           </span>{" "}

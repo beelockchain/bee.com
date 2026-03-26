@@ -177,7 +177,7 @@ const Herosection = () => {
             <div className="relative z-10 px-4 py-5">
               <p
                 className="
-                  text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[17px]
+                  text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]
                   font-normal text-black font-['Poppins']
                   w-full
                   max-w-[280px]
@@ -220,7 +220,8 @@ const Herosection = () => {
 
                 {/* Text */}
                 <span className="relative z-10 text-black text-sm whitespace-nowrap transition-colors">
-                  Consult Our Experts
+                    Get A Free Strategy Session               
+
                 </span>
 
                 {/* Icon */}

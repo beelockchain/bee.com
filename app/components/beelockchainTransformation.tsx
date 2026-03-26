@@ -57,13 +57,23 @@ const steps = [
 ];
   return (
     <section className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-4 py-8">
         {/* Heading */}
-        <div className="text-center mx-auto mb-10">
-          <h2 className="font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold  mb-4">
-            How <span>Beelockchain</span> Transforms Your Business
-          </h2>
-          <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins']">
+        <div className="text-center mx-auto mb-7">
+         <h2 className="font-['Poppins'] text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold mb-4">
+          How{" "}
+          <span
+            className="text-transparent bg-clip-text"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #AF7211 33%, #F6E000 49%, #D7B007 63%)",
+            }}
+          >
+            Beelockchain
+          </span>{" "}
+          Transforms Your Business
+        </h2>
+          <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]  text-black font-normal font-['Poppins']">
             Innovative Solutions for Your Business Challenges
           </p>
         </div>

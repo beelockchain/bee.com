@@ -11,25 +11,25 @@ const Footer = () => {
       title: "CANADA",
       desc: "4331 Galts Ave, Red Deer, Alberta, Canada - T4N 5Z9",
       contact: "+02 3486 4631",
-      src: `${ASSET_URL}/images/location4.webp`,
+      src: `/assets/images/canada-loc.png`,
     },
     {
       title: "USA",
       desc: "812, 6th Ave, New York, NY 10019, USA",
       contact: "+01 9876 5432",
-      src: `${ASSET_URL}/images/location1.webp`,
+      src: `/assets/images/usa-loc.png`,
     },
     {
       title: "UAE",
       desc: "17, Nabir Street, Al Zahiyah, Abu Dhabi, UAE.",
       contact: "+44 7654 3210",
-      src: `${ASSET_URL}/images/location2.webp`,
+      src: `/assets/images/UAE-loc.png`,
     },
     {
       title: "INDIA",
-      desc: "6/219, R5, Ganapathy Nagar,Theni Rd, Achampattu, Madurai,Tamil Nadu 625019",
+      desc: "6/219, R5, Ganapathy Nagar, Achampattu, Madurai,TN 625019",
       contact: "+91 90252 17523",
-      src: `${ASSET_URL}/images/location3.webp`,
+      src: `/assets/images/india-loc.png`,
     },
   ];
   
@@ -79,19 +79,13 @@ const Footer = () => {
       <div className="max-w-[1400px] mx-auto px-6">
  {/* TITLE */}
         <h2 className="text-[22px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-center  text-black mb-12 font-bold ">
-Area We Occupied
+          Area We Occupied
         </h2>
         {/* ================= CARD GRID ================= */}
         
   <div className="relative w-full mt-10">
   {/* Background image */}
-  <div
-    className="absolute inset-0 bg-cover bg-center rounded-xl opacity-20 pointer-events-none"
-    style={{
-      backgroundImage: `url('${ASSET_URL}/images/line-wave.webp')`,
-      minHeight: "100%", 
-    }}
-  ></div>
+
 
   {/* Card Grid */}
 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 relative z-10">
@@ -112,7 +106,7 @@ Area We Occupied
       }}
     >
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 xl:top-[10%]">
         <h4 className="text-[16px] sm:text-[18px] lg:text-[22px] font-bold font-poppins text-black mb-2 sm:mb-3">
           {card.title}
         </h4>
@@ -134,7 +128,7 @@ Area We Occupied
   gap-2 sm:gap-0
 ">
   {/* Phone */}
-  <div className="flex items-center gap-1 sm:gap-2">
+  <div className="flex items-center gap-1 sm:gap-2 ">
     <Image
       src={`${ASSET_URL}/images/location-icon.webp`}
       alt="Location"
@@ -151,15 +145,16 @@ Area We Occupied
   <Image
     src={card.src}
     alt={`${card.title} icon`}
-    width={56}
-    height={56}
+    width={46}
+    height={46}
     className="
-      object-contain
+      object-cover
       self-center sm:self-auto
       sm:w-[60px] sm:h-[60px]
       md:w-[70px] md:h-[70px]
-      xl:w-[80px] xl:h-[80px]
-      lg:w-[90px] lg:h-[90px]
+       lg:w-[70px] lg:h-[70px]
+      xl:w-[70px] xl:h-[70px]
+     
     "
   />
 </div>

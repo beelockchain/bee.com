@@ -61,28 +61,36 @@ export default function HeroSection({
 
             {/* CTA Button */}
               {/* CTA Button */}
-              <div className='text-center md:text-left mb-5'>
+             <div className="text-center md:text-left mb-5">
               <a
                 href="/contact-us"
                 className="
+                  group relative overflow-hidden
                   cursor-pointer
                   inline-flex items-center justify-center gap-2
                   w-fit
                   px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
                   border border-black rounded-full
                   bg-[#f2f2f2]
-                  hover:bg-[#e9e9e9]
-                  transition-colors
                   shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]
                 "
               >
-                <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
+                {/* Expanding circle */}
+                <span className="absolute inset-0 flex items-center justify-center z-0">
+                  <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+                </span>
+
+                {/* Glow */}
+                <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
+
+                {/* Text */}
+                <span className="relative z-10 font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
                   Consult Our Experts
                 </span>
 
                 {/* Arrow Icon */}
                 <svg
-                  className="w-8 h-8 lg:w-8 lg:h-8"
+                  className="relative z-10 w-8 h-8 lg:w-8 lg:h-8 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
                   viewBox="0 0 56 55"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -104,8 +112,7 @@ export default function HeroSection({
                   />
                 </svg>
               </a>
-
-              </div>
+            </div>
 
           </div>
         </div>

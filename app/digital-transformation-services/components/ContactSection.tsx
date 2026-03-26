@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#F9FAFB] sm:px-5 md:px-5 md:py-16 lg:pt-0 lg:pb-20">
+    <section className="w-full bg-[#F9FAFB] sm:px-5 md:px-5 md:py-16 lg:pt-10 lg:pb-20">
       <div className="max-w-7xl mx-auto">
 
         {/* Desktop */}
@@ -36,7 +36,7 @@ const ContactSection: React.FC = () => {
                 Begin Your Transformation Journey
               </h4>
 
-              <p className="text-[#0a0e1a] xl:max-w-5xl text-base sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[15px] opacity-90 leading-relaxed">
+              <p className="text-[#0a0e1a] xl:max-w-5xl font-semibold text-base sm:text-[12px] md:text-[11px] lg:text-[14px] xl:text-[15px] opacity-90 leading-relaxed">
                 Begin your transformation journey with Beelockchain’s skilled experts. 
                 Build a future-ready organization using a structured digital business 
                 transformation service approach.
@@ -80,7 +80,7 @@ const ContactSection: React.FC = () => {
             Begin Your Transformation Journey
           </h2>
 
-          <p className="text-[#0a0e1a] text-[12px] opacity-90 leading-relaxed mb-8">
+          <p className="text-[#0a0e1a] text-[14px] opacity-90 leading-relaxed mb-8 font-semibold">
             Begin your transformation journey with Beelockchain’s skilled experts. 
             Build a future-ready organization using a structured digital business 
             transformation service approach.
