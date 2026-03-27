@@ -26,9 +26,10 @@ const primaryNav = [
 const secondaryNav = [
   { label: "About us", href: "#" },
   { label: "Pitch Deck", href: "#" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms & Condition", href: "#" },
+  { label: "Portfolio", href: "#" },
   { label: "Career", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+  { label: "Terms & Condition", href: "#" },
  
 ];
 

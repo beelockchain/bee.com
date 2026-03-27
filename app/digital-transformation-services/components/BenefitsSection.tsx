@@ -29,14 +29,14 @@ const rows = [
 
 // ─── CARD ────────────────────────────────────────────────────────────────────
 const Card: React.FC<{ card: BenefitCard }> = ({ card }) => (
-  <div className="bg-[#F8F8F8] rounded-2xl p-5 shadow-md hover:shadow-lg transition-shadow h-full">
+  <div className="bg-[#F8F8F8] rounded-2xl p-5 shadow-lg hover:shadow-lg transition-shadow h-full">
     <div className="mb-3">
       <div className="w-10 h-10 xl:w-20 xl:h-20 bg-[#F8F8F8] rounded-lg flex items-center justify-center">
         <img src={card.icon} alt={card.title} className="w-full h-full object-contain" />
       </div>
     </div>
     <h3 className="text-base xl:text-[18px] font-bold text-gray-900 mb-2 leading-snug">{card.title}</h3>
-    <p className="text-xs xl:text-[14px] text-gray-600 leading-relaxed font-bold">{card.description}</p>
+    <p className="text-xs xl:text-[14px] text-[#000000] leading-relaxed font-bold">{card.description}</p>
   </div>
 )
 
@@ -53,16 +53,56 @@ const LeftPanel: React.FC = () => (
       <span className="shine-text relative text-[#F9C901]">Beelockchain's</span>{' '}
       Digital Transformation Services
     </h2>
-    <p className="text-black text-sm lg:text-[14px] xl:text-[16px] mb-8 leading-relaxed max-w-md font-semibold">
+    <p className="text-black text-[14px] lg:text-[14px] xl:text-[16px] mb-8 leading-relaxed max-w-md font-semibold">
       Begin your transformation journey with Beelockchain's skilled experts. Build a future-ready organization using a structured digital business transformation service approach.
     </p>
-    <button className="cursor-pointer inline-flex items-center w-fit px-4 py-2 lg:px-3 lg:py-2 border border-black rounded-full bg-white hover:bg-gray-50 transition-colors">
-      <span className="font-poppins text-black text-sm lg:text-[12px] xl:text-[15px]">Digitalize Your Business Now</span>
-      <svg className="w-8 h-8" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <div className="flex flex-row gap-3">
+    <a href="/contact-us">
+      <button className="group cursor-pointer relative inline-flex items-center w-fit px-4 py-2 lg:px-3 lg:py-2 border border-black rounded-full bg-white overflow-hidden">
+        
+        {/* ripple */}
+        <span className="absolute inset-0 flex items-center justify-center z-0">
+          <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+        </span>
+
+        {/* glow */}
+        <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+        <span className="relative z-10 text-black text-sm lg:text-[12px] xl:text-[15px]">
+          Digitalize Your Business Now
+        </span>
+
+        <svg className="relative z-10 w-8 h-8 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95" viewBox="0 0 56 55" fill="none">
+          <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
+          <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+            stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+
+      </button>
+    </a>
+
+    <button className="group cursor-pointer relative inline-flex items-center w-fit px-4 py-2 lg:px-3 lg:py-2 border border-black rounded-full bg-white overflow-hidden">
+      
+      {/* ripple */}
+      <span className="absolute inset-0 flex items-center justify-center z-0">
+        <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+      </span>
+
+      {/* glow */}
+      <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+      <span className="relative z-10  text-black text-sm lg:text-[12px] xl:text-[15px]">
+        Explore Our Portfolio
+      </span>
+
+      <svg className="relative z-10 w-8 h-8 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95" viewBox="0 0 56 55" fill="none">
         <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
-        <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+          stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
+
     </button>
+  </div>
   </div>
 )
 
@@ -73,11 +113,11 @@ const BenefitsSection: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const ROW_H = 300
+  const ROW_H = 310
   const GAP = 20           // gap between columns inside a row AND between rows
   const STEP = ROW_H + GAP // 230px — distance to travel per scroll step
   const PEEK = 0          // px of next row visible at bottom as hint
-  const WINDOW_H = ROW_H * 2 + GAP + PEEK // clipping window height
+  const WINDOW_H = ROW_H * 2.1 + GAP + PEEK // clipping window height
 
   // Now 4 rows, 2 steps to show all (rows 0+1 visible → scroll → rows 1+2 → scroll → rows 2+3)
   const TOTAL_STEPS = rows.length - 2 // = 2
@@ -160,20 +200,62 @@ const BenefitsSection: React.FC = () => {
       <section className="relative bg-gray-50 py-12">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col items-center text-center mb-2">
-            <span className="inline-block py-1 border-b-2 border-[#F9C901] text-[13px] font-bold text-black mb-4">What make us Unique</span>
+            <span className="inline-block py-1 border-b-2 border-[#F9C901] text-[13px] font-bold text-black mb-4">What Make Us Unique</span>
             <h2 className="text-[20px] font-bold leading-tight text-black">
               Benefits Of <span className="shine-text relative text-yellow-400">Beelockchain's</span> Digital Transformation Services
             </h2>
-            <p className="text-black text-[13px] mt-4 leading-relaxed max-w-sm md:max-w-xl">
+            <p className="text-black text-[14px] mt-4 leading-relaxed max-w-sm md:max-w-xl font-semibold">
               Begin your transformation journey with Beelockchain's skilled experts. Build a future-ready organization using a structured digital business transformation service approach.
             </p>
-            <button className="mt-6 cursor-pointer inline-flex items-center px-3 py-2 border border-black rounded-full bg-white hover:bg-gray-50 transition-colors">
-              <span className="font-poppins text-black text-[12px]">Digitalize Your Business Now</span>
-              <svg className="w-8 h-8 ml-1" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
-                <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+          <div className="mt-6 flex flex-col gap-3">
+            <a href="/contact-us">
+              <button className="group cursor-pointer relative inline-flex items-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">
+                
+                {/* ripple */}
+                <span className="absolute inset-0 flex items-center justify-center z-0">
+                  <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+                </span>
+
+                {/* glow */}
+                <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+                <span className="relative z-10  text-black text-[12px]">
+                  Digitalize Your Business Now
+                </span>
+
+                <svg className="relative z-10 w-8 h-8 ml-1 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95" viewBox="0 0 56 55" fill="none">
+                  <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
+                  <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                    stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+
+              </button>
+            </a>
+
+
+              <button className="group cursor-pointer relative inline-flex items-center justify-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">
+                
+                {/* ripple */}
+                <span className="absolute inset-0 flex items-center justify-center z-0">
+                  <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+                </span>
+
+                {/* glow */}
+                <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+                <span className="relative z-10  text-black text-[12px]">
+                  Explore Our Portfolio
+                </span>
+
+                <svg className="relative z-10 w-8 h-8 ml-1 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95" viewBox="0 0 56 55" fill="none">
+                  <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
+                  <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                    stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+
+              </button>
+
+            </div>
           </div>
           <MobileCards />
         </div>

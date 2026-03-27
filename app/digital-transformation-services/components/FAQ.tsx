@@ -65,7 +65,7 @@ const faqs = [
                   <button
                     className="w-full flex justify-between items-center gap-6 text-left cursor-pointer "
                   >
-                    <p className="text-black text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[14px] font-manrope">{item.q}</p>
+                    <p className="text-black text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[14px] font-semibold font-manrope">{item.q}</p>
 
                     {isOpen ? (
                       <svg width="16" height="3" viewBox="0 0 16 3">
@@ -85,7 +85,7 @@ const faqs = [
                   </button>
 
                   <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-50 mt-6" : "max-h-0"}`}>
-                    <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[14px] text-[#646464] leading-relaxed font-poppins">{item.a}</p>
+                    <p className="text-[10px] sm:text-[14px] md:text-[12px]  xl:text-[15px] lg:text-[14px] text-[#646464] leading-relaxed ">{item.a}</p>
                   </div>
                 </div>
               </div>

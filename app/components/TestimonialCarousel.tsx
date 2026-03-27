@@ -70,7 +70,7 @@ const TestimonialCarousel = () => {
 
                   {/* CONTENT */}
                   <div className="flex-1 text-center sm:text-left">
-                    <p className="text-[11px] sm:text-[14px] md:text-[15px] font-poppins font-regular text-black">
+                    <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] font-poppins font-regular text-black">
                       {item.text}
                     </p>
                     <p className="mt-3 sm:mt-6 text-[11px] sm:text-[14px] md:text-[15px] font-poppins font-semibold text-black">

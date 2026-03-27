@@ -134,7 +134,7 @@ mm.add("(min-width: 768px)", () => {
 
         <div className="max-w-[1400px] mx-auto px-8 w-full flex flex-col overflow-hidden justify-center h-full">
           <div className="text-center mb-8 xl:mb-8 xl:pt-10">
-            <h2 className="text-4xl sm:text-[19px] md:text-[22px] lg:text-[28px] xl:text-[36px] text-black font-semibold leading-snug font-poppins">
+            <h2 className="text-4xl sm:text-[19px] md:text-[22px] lg:text-[28px] xl:text-[36px] text-black font-semibold leading-snug ">
               From Strategy To Execution:{" "}
               <span className="shine-text relative text-[#f5c518]">
                 Our Digital <br /> Transformation Roadmap
@@ -168,11 +168,11 @@ mm.add("(min-width: 768px)", () => {
                       />
                     </div>
 
-                    <h3 className="text-lg md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold text-black mb-3 font-poppins">
+                    <h3 className="text-lg md:text-[16px] lg:text-[16px] xl:text-[20px] font-bold text-black mb-3 ">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm md:text-[14px] lg:text-[14px] xl:text-[14px] text-gray-700 leading-relaxed font-poppins">
+                    <p className="text-sm md:text-[14px] lg:text-[14px] xl:text-[14px] text-gray-700 font-semibold leading-relaxed ">
                       {item.description}
                     </p>
                   </div>
@@ -187,7 +187,7 @@ mm.add("(min-width: 768px)", () => {
       <section className="sm:block md:hidden relative w-full bg-[#F5F5F5] py-12 overflow-x-hidden">
         <div className="px-4 max-w-full overflow-x-hidden">
           <div className="text-center mb-12">
-            <h2 className="text-xl  font-semibold leading-tight text-black font-poppins">
+            <h2 className="text-xl  font-semibold leading-tight text-black ">
               From Strategy to Execution:{" "}
               <span className="shine-text relative text-[#f5c518]">
                 Our Digital Transformation Roadmap
@@ -218,10 +218,10 @@ mm.add("(min-width: 768px)", () => {
                   </div>
 
                   <div className="px-5 pb-6">
-                    <h3 className="text-md sm:text-[16px] font-semibold text-black leading-tight mb-2 font-poppins">
+                    <h3 className="text-md sm:text-[16px] font-bold text-black leading-tight mb-2 ">
                       {item.title}
                     </h3>
-                    <p className="text-[14px] sm:text-[12px] text-black leading-relaxed font-poppins">
+                    <p className="text-[14px] sm:text-[12px] text-black leading-relaxed font-semibold">
                       {item.description}
                     </p>
                   </div>

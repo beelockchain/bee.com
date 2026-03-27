@@ -111,7 +111,7 @@ export default function Services() {
   const tab = TABS[activeTab];
 
   return (
-    <section className="w-full bg-white flex flex-col justify-center items-center gap-10">
+    <section className="w-full bg-white flex flex-col justify-center items-center gap-5">
 
       {/* ── Header (all breakpoints) ── */}
       <div className="flex flex-col justify-center items-center text-center  overflow-hidden">
@@ -122,10 +122,19 @@ export default function Services() {
           className="pointer-events-none select-none h-16 sm:h-20 lg:h-40 w-[80%] md:w-full"
         />
         <div className="relative z-10">
-          <h2 className="font-['Poppins'] text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black leading-tight">
-            Areas Of Expertise - Digital Transformation
-          </h2>
-          <p className="mt-1 text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-['Poppins'] leading-snug  mx-auto w-80 md:w-full">
+        <h2 className="font-['Poppins'] text-[17px] mb-4 sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug font-semibold">
+          Areas Of Expertise - 
+          <span
+            className="text-transparent bg-clip-text"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #AF7211 33%, #F6E000 49%, #D7B007 63%)",
+            }}
+          >
+            Digital Transformation
+          </span>
+        </h2>
+          <p className="mt-1 text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] mb-4 text-black font-['Poppins'] leading-snug  mx-auto w-80 md:w-full">
             A full spectrum of digital transformation services to elevate your business
           </p>
         </div>
@@ -168,7 +177,7 @@ export default function Services() {
               <h3 className="font-semibold text-black text-[13px] leading-tight font-['Poppins'] mb-2">
                 {TAB_CONTENT[tab].title}
               </h3>
-              <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-['Poppins'] leading-relaxed mb-4">
+              <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]  text-black font-['Poppins'] leading-relaxed mb-4">
                 {TAB_CONTENT[tab].desc}
               </p>
               <div className="flex flex-col gap-3">
@@ -238,7 +247,7 @@ export default function Services() {
               {TAB_CONTENT[tab].title}
             </h3>
           </div>
-          <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins'] mb-4">
+          <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]  text-black font-normal font-['Poppins'] mb-4">
             {TAB_CONTENT[tab].desc}
           </p>
           <div className="flex flex-col gap-1.5">
@@ -311,7 +320,7 @@ export default function Services() {
               {TAB_CONTENT[tab].title}
             </h3>
           </div>
-          <p className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[16px] xl:text-[18px]  text-black font-normal font-['Poppins'] mb-5">
+          <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]  text-black font-normal font-['Poppins'] mb-5">
             {TAB_CONTENT[tab].desc}
           </p>
           <div className="flex flex-col gap-3">

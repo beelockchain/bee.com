@@ -67,7 +67,6 @@ const NumberSvg = ({ number }: { number: string }) => {
         fill="#000000"
         fontSize="20"
         fontWeight="900"
-        fontFamily="Poppins, sans-serif"
       >
         {number}
       </text>
@@ -254,12 +253,12 @@ const MobileCardStack = () => {
 
           {/* Heading */}
           <div className="text-center mb-10 flex-shrink-0">
-            <h2 className="text-[19px] text-[#000000] font-bold leading-tight font-poppins">
+            <h2 className="text-[19px] text-[#000000] font-bold leading-tight ">
               How Beelockchain Delivers{" "}
               <span className="text-yellow-400">Digital Transformation</span>{" "}
-              for Business Value Creation
+              For Business Value Creation
             </h2>
-            <p className="mt-4 text-black text-[14px] font-poppins font-medium leading-relaxed">
+            <p className="mt-4 text-black text-[14px]  font-semibold leading-relaxed">
               Beelockchain supports organizations through their digital
               transformation journey by combining consulting expertise with
               practical execution.
@@ -288,10 +287,10 @@ const MobileCardStack = () => {
                     }}
                   >
                     <div className="relative h-full">
-                      <h3 className="text-[15px] font-semibold mb-2 text-black font-poppins leading-tight">
+                      <h3 className="text-[15px] font-bold mb-2 text-black  leading-tight">
                         {item.title}
                       </h3>
-                      <p className="text-black text-[13px] leading-relaxed font-poppins pr-10">
+                      <p className="text-black text-[14px] leading-relaxed font-semibold pr-10">
                         {item.description}
                       </p>
                       <div className="absolute bottom-0 right-0 opacity-25">
@@ -324,47 +323,80 @@ const MobileCardStack = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="flex-shrink-0 flex justify-center pb-4">
-          <a
-            href="/contact-us"
-            className="
-              cursor-pointer
-              inline-flex items-center gap-2
-              w-fit
-              px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
-              border border-black rounded-full
-              bg-white
-              hover:bg-gray-50
-              transition-colors
-            "
-          >
-            <span className="font-poppins text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
-              Transform Your Business
-            </span>
-
-            <svg
-              className="w-8 h-8 lg:w-8 lg:h-8"
-              viewBox="0 0 56 55"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className="w-full flex justify-center items-center gap-3 pb-4 flex-wrap">
+            
+            {/* BUTTON 1 */}
+            <a
+              href="/contact-us"
+              className="
+                group relative overflow-hidden
+                cursor-pointer
+                inline-flex items-center gap-2
+                w-fit
+                px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
+                border border-black rounded-full
+                bg-white
+              "
             >
-              <circle
-                cx="28.2473"
-                cy="27.0945"
-                r="15.912"
-                fill="#F6E000"
-                stroke="#F9C901"
-                strokeWidth="1.51543"
-              />
-              <path
-                d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                stroke="black"
-                strokeWidth="3.03086"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
+              {/* ripple */}
+              <span className="absolute inset-0 flex items-center justify-center z-0">
+                <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+              </span>
+
+              {/* glow */}
+              <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
+
+              <span className="relative z-10  text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
+                Transform Your Business
+              </span>
+
+              <svg
+                className="relative z-10 w-8 h-8 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+                viewBox="0 0 56 55"
+                fill="none"
+              >
+                <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543"/>
+                <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                  stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+
+            {/* BUTTON 2 */}
+            <a
+              href="#"
+              className="
+                group relative overflow-hidden
+                cursor-pointer
+                inline-flex items-center gap-2
+                w-fit
+                px-7 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
+                border border-black rounded-full
+                bg-white
+              "
+            >
+              {/* ripple */}
+              <span className="absolute inset-0 flex items-center justify-center z-0">
+                <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+              </span>
+
+              {/* glow */}
+              <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
+
+              <span className="relative z-10  text-black text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
+                Explore Our Portfolio
+              </span>
+
+              <svg
+                className="relative z-10 w-8 h-8 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+                viewBox="0 0 56 55"
+                fill="none"
+              >
+                <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543"/>
+                <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                  stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+
           </div>
 
         </div>
@@ -382,10 +414,10 @@ TabletLayout = () => {
         <div className="text-center mb-10">
           <h2 className="text-[22px] sm:text-[19px] text-black font-bold leading-tight px-10">
             How Beelockchain Delivers{" "}
-            <span data-text="Digital Transformation" className="shine-text relative text-yellow-400">Digital Transformation</span> for
+            <span data-text="Digital Transformation" className="shine-text relative text-yellow-400">Digital Transformation</span> For
             Business Value Creation
           </h2>
-          <p className="mt-4 mx-auto text-black text-[14px] sm:text-[12px] font-poppins font-medium max-w-2xl">
+          <p className="mt-4 mx-auto text-black text-[14px] sm:text-[12px]  font-semibold max-w-2xl">
             Beelockchain supports organizations through their digital
             transformation journey by combining consulting expertise with
             practical execution. Our end-to-end services improve process
@@ -398,8 +430,8 @@ TabletLayout = () => {
           <div className="flex flex-col gap-4">
             {services.map((item, index) => (
               <div key={index} className="relative p-5 rounded-xl bg-[#E2E2E2] shadow-sm">
-                <h3 className="text-[13px] font-semibold mb-2 text-black font-poppins">{item.title}</h3>
-                <p className="text-black text-[11px]  leading-relaxed font-poppins  pr-8 sm:pr-10">{item.description}</p>
+                <h3 className="text-[13px] font-semibold mb-2 text-black ">{item.title}</h3>
+                <p className="text-black text-[11px]  leading-relaxed font-semibold  pr-8 sm:pr-10">{item.description}</p>
                 <div className="absolute bottom-2 right-3 opacity-40 ">
                   <NumberSvg number={(index + 1).toString().padStart(2, "0")} />
                 </div>
@@ -409,19 +441,63 @@ TabletLayout = () => {
 
           <div className="sticky top-8">
             <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="w-full object-contain rounded-xl" />
-            <div className="mt-4">
-              <a href="/contact-us">
-              <button className="cursor-pointer relative flex items-center gap-2 px-4 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
-                <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
-                <span className="relative z-10 font-poppins text-black text-sm whitespace-nowrap">Transform Your Business</span>
-                <svg className="relative z-10 w-9 h-9" viewBox="0 0 56 55" fill="none">
-                  <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
-                  <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              </a>
+          <div className="mt-4 flex gap-3 flex-wrap">
+            
+            <a href="/contact-us">
+              <button className="group cursor-pointer relative flex items-center gap-2 px-4 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
+                
+                {/* ripple */}
+                <span className="absolute inset-0 flex items-center justify-center z-0">
+                  <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+                </span>
 
-            </div>
+                {/* glow */}
+                <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+                <span className="relative z-10  text-black text-sm whitespace-nowrap">
+                  Transform Your Business
+                </span>
+
+                <svg
+                  className="relative z-10 w-9 h-9 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+                  viewBox="0 0 56 55"
+                  fill="none"
+                >
+                  <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543"/>
+                  <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                    stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+
+              </button>
+            </a>
+
+            <button className="group cursor-pointer relative flex items-center gap-2 px-4 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
+              
+              {/* ripple */}
+              <span className="absolute inset-0 flex items-center justify-center z-0">
+                <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+              </span>
+
+              {/* glow */}
+              <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+              <span className="relative z-10  text-black text-sm whitespace-nowrap">
+                Explore Our Portfolio
+              </span>
+
+              <svg
+                className="relative z-10 w-9 h-9 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
+                viewBox="0 0 56 55"
+                fill="none"
+              >
+                <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543"/>
+                <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
+                  stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+
+            </button>
+
+          </div>
           </div>
         </div>
       </div>
@@ -484,10 +560,10 @@ const DesktopLayout = () => {
         <div className="text-center max-w-6xl mx-auto">
           <h2 className="text-[36px] sm:text-[19px] md:text-[36px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight">
             How Beelockchain Delivers{" "}
-            <span data-text="Digital Transformation" className="shine-text relative text-[#f5c518]">Digital Transformation</span> for <br />
+            <span data-text="Digital Transformation" className="shine-text relative text-[#f5c518]">Digital Transformation</span> For <br />
             Business Value Creation
           </h2>
-          <p ref={paragraphRef} className="mt-6 mx-auto text-black lg:text-[14px] xl:text-[16px] font-poppins font-medium max-w-xl md:max-w-2xl lg:max-w-4xl">
+          <p ref={paragraphRef} className="mt-6 mx-auto text-black lg:text-[14px] xl:text-[16px]  font-semibold max-w-xl md:max-w-2xl lg:max-w-4xl">
             Beelockchain supports organizations through their digital transformation journey by combining
             consulting expertise with practical execution. Our end-to-end services improve process efficiency,
             modernize the workflows, and help businesses respond faster to change while delivering better customer experiences.
@@ -499,8 +575,8 @@ const DesktopLayout = () => {
             <div ref={firstSetRef} className="absolute inset-0 flex flex-col gap-5">
               {firstFourCards.map((item, index) => (
                 <div key={index} className="relative p-6 rounded-xl bg-[#E2E2E2] shadow-sm md:h-[180px] lg:h-[220px] xl:h-[180px]">
-                  <h3 className="text-[19px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold mb-3 text-black font-poppins">{item.title}</h3>
-                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] leading-relaxed font-poppins pr-10 xl:pr-15">{item.description}</p>
+                  <h3 className="text-[19px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold mb-3 text-black ">{item.title}</h3>
+                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] leading-relaxed font-semibold pr-10 xl:pr-15">{item.description}</p>
                   <div className="absolute bottom-4 right-6 opacity-40">
                     <NumberSvg number={(index + 1).toString().padStart(2, "0")} />
                   </div>
@@ -511,8 +587,8 @@ const DesktopLayout = () => {
             <div ref={secondSetRef} className="absolute inset-0 flex flex-col gap-5 mt-5">
               {secondFourCards.map((item, index) => (
                 <div key={index + 4} className="relative p-6 rounded-xl bg-[#E2E2E2] shadow-sm h-[180px] md:h-[180px] lg:h-[220px] xl:h-[180px]">
-                  <h3 className="text-[19px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold mb-3 text-black font-poppins">{item.title}</h3>
-                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] leading-relaxed font-poppins pr-10 xl:pr-15">{item.description}</p>
+                  <h3 className="text-[19px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-semibold mb-3 text-black ">{item.title}</h3>
+                  <p className="text-black text-[14px] lg:text-[12px] xl:text-[14px] font-semibold leading-relaxed  pr-10 xl:pr-15">{item.description}</p>
                   <div className="absolute bottom-4 right-6 opacity-40">
                     <NumberSvg number={(index + 5).toString().padStart(2, "0")} />
                   </div>
@@ -524,18 +600,55 @@ const DesktopLayout = () => {
           <div className="relative w-full h-full">
             <div className="relative w-full h-full min-h-[400px]">
               <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="object-fit xl:ml-25" />
-              <div className="absolute bottom-6">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex justify-center items-center gap-3">
+
               <a href="/contact-us">
-              <button className="cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
-                  <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]" />
-                  <span className="relative z-10 font-poppins text-black text-sm md:text-xs lg:text-[12px] xl:text-[16px] whitespace-nowrap">Transform Your Business</span>
-                  <svg className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-7 lg:h-7" viewBox="0 0 56 55" fill="none">
+                <button className="group cursor-pointer relative inline-flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
+                  
+                  {/* ripple */}
+                  <span className="absolute inset-0 flex items-center justify-center z-0">
+                    <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+                  </span>
+
+                  {/* glow */}
+                  <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+                  <span className="relative z-10  text-black text-sm md:text-xs lg:text-[12px] xl:text-[16px] whitespace-nowrap">
+                    Transform Your Business
+                  </span>
+
+                  <svg className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-7 lg:h-7 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95" viewBox="0 0 56 55" fill="none">
                     <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
                     <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
+
                 </button>
               </a>
-              </div>
+
+              <a href="#">
+                <button className="group cursor-pointer relative inline-flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
+                  
+                  {/* ripple */}
+                  <span className="absolute inset-0 flex items-center justify-center z-0">
+                    <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
+                  </span>
+
+                  {/* glow */}
+                  <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
+
+                  <span className="relative z-10  text-black text-sm md:text-xs lg:text-[12px] xl:text-[16px] whitespace-nowrap">
+                    Explore Our Portfolio
+                  </span>
+
+                  <svg className="relative z-10 w-10 h-10 md:w-8 md:h-8 lg:w-7 lg:h-7 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95" viewBox="0 0 56 55" fill="none">
+                    <circle cx="28.2473" cy="27.0945" r="15.912" fill="#F6E000" stroke="#F9C901" strokeWidth="1.51543" />
+                    <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865" stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+
+                </button>
+              </a>
+
+            </div>
             </div>
           </div>
         </div>

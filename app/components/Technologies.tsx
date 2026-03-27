@@ -339,11 +339,21 @@ const Technologies = () => {
         <div className="max-w-[1400px] mx-auto px-6">
           {/* Heading */}
           <h2 className="text-center text-black text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold leading-snug mb-4">
-            Core Technologies We Implemented
-          </h2>
+  Core 
+  <span
+    className="text-transparent bg-clip-text"
+    style={{
+      backgroundImage:
+        "linear-gradient(90deg, #AF7211 33%, #F6E000 49%, #D7B007 63%)",
+    }}
+  >
+    {" "}Technologies{" "}
+  </span>
+  We Implemented
+</h2>
 
           {/* Subheading */}
-          <p className="text-center text-black text-sm sm:text-sm md:text-lg xl:text-lg lg:text-lg font-normal font-['Poppins'] mb-8">
+          <p className="text-center text-black text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] mb-4 font-normal font-['Poppins'] mb-3">
             Unlock new opportunities with tailored digital transformation strategies
           </p>
 

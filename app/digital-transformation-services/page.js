@@ -70,7 +70,7 @@ export const metadata = {
 
       images: [
         {
-          url: "https://beelockchain.io/og-images/digital-transformation.webp", // replace
+          url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/og.webp", // replace
           width: 1200,
           height: 630,
           alt: "Digital Transformation Services & Solutions | Beelockchain",
@@ -111,7 +111,7 @@ export default function DigitalTransforms() {
   description:
     "Beelockchain is a digital transformation services company helping businesses with consulting, strategy, automation, cloud migration, and application modernization.",
   logo: "https://beelockchain.com/logo.png",
-  image: "https://beelockchain.io/logo.png",
+  image: "https://beelockchain.io/og-images/digital-transformation.webp",
   telephone: "+919025217523",
   email: "contact@beelockchain.io",
   sameAs: [
