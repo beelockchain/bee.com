@@ -1,10 +1,14 @@
 const Mobileapplication = () => {
   return (
-    <div className="w-full  py-16 px-6 md:px-16">
+    <div className="w-full py-5 px-6 md:px-16">
 
-      <h2 className="text-center text-[20px] md:text-[25px] lg:text-[35px] xl:text-[48px] font-extrabold text-gray-900 mb-12 leading-snug">
+      {/* 
+         TITLE ALIGNMENT: 
+         Centered on all devices (Mobile, Tablet, Desktop)
+      */}
+      <h2 className="text-center text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px]  text-black font-bold mb-12 leading-tight">
         Custom
-        <span data-text="Mobile Applications" className="shine-text text-[#F5B800] relative mx-4">Mobile Applications</span>
+        <span data-text="Mobile Applications" className="shine-text text-[#F5B800] relative mx-1">Mobile Applications</span>
         That Address <br className="hidden md:block" />
         Enterprise Growth Bottlenecks
       </h2>
@@ -17,13 +21,19 @@ const Mobileapplication = () => {
           <img
             src="/assets/images/software-dev/custom-app-dev/Mobileapplication.png"
             alt="Enterprise mobile application illustration"
-            className="w-full max-w-md object-contain rounded-xl"
+            className="w-full max-w-sm md:max-w-md object-contain rounded-xl"
           />
         </div>
 
         {/* RIGHT — Content */}
         <div className="w-full md:w-1/2 flex flex-col gap-6">
-          <p className="text-black text-base leading-relaxed font-normal font-['Poppins']">
+          
+          {/* 
+             PARAGRAPH ALIGNMENT: 
+             Mobile: text-center
+             Tablet/Desktop: md:text-left (Maintains existing layout)
+          */}
+          <p className="text-center md:text-left  text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]  text-black leading-relaxed font-normal ">
             Enterprise mobility initiatives frequently fail due to legacy systems,
             siloed data, scalability limits, and security gaps that erode ROI.
             Research indicates that nearly 70% of digital transformation projects
@@ -33,7 +43,7 @@ const Mobileapplication = () => {
             ecosystems aligned with compliance and enterprise architecture standards.
           </p>
 
-          <p className="text-black text-base leading-relaxed font-normal font-['Poppins']">
+          <p className="text-center md:text-left  text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]  text-black leading-relaxed font-normal ">
             As a Custom Mobile App Development Company, Beelockchain builds
             high-performance mobile platforms integrated with AI, cloud, ERP, and
             API-driven systems. Our solutions rewrite your business operational

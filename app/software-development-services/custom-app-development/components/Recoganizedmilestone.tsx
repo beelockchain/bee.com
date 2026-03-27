@@ -9,7 +9,7 @@ const awards = [
   { src: "/assets/images/beelock-reward5.png", alt: "GoodFirms Top Mobile Development Company" },
 ];
 
-export default function AwardsSection() {
+export default function Recoganizedmilestone() {
   return (
     <section className="w-full bg-white py-8 px-4">
       {/* Heading */}
