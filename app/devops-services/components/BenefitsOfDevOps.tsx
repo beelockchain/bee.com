@@ -7,7 +7,7 @@ const BenefitsOfDevOps = () => {
         Consulting<br />
         Services For Software Delivery
       </h2>
-        <p className="text-black/80 text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins  font-medium  mb-6 max-w-4xl mx-auto">
+        <p className="text-black text-[13px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins  font-medium  mb-6 max-w-4xl mx-auto">
          Implementing DevOps consulting practices enables businesses to automate infrastructure provisioning and deployment workflows, helping teams deliver stable software updates faster while minimizing operational overhead across modern application environments.
         </p>
         <div className="w-full flex justify-center items-center mt-6">

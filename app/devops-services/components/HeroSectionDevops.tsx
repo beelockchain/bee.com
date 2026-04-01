@@ -1,91 +1,121 @@
 "use client";
 
-import React, { useState } from "react";
+import Image from "next/image";
 
-const PillButton = ({ label }: { label: string }) => (
-  <button
-    type="button"
-    className="group relative flex items-center gap-2 px-2 mt-2 py-1 md:py-1 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
-  >
-    {/* Expand circle */}
-    <span className="absolute inset-0 flex items-center justify-center z-0">
-      {/* <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" /> */}
-   <span className="absolute inset-0 
-bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] 
-group-hover:opacity-0 group-active:opacity-0 
-transition-opacity duration-300 z-0" />
-    </span>
+interface HeroSectionProps {
+  backgroundImage?: string;
+  onConsultClick?: () => void;
+}
 
-    {/* Radial glow */}
-    <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
-
-    <span className="relative z-10 text-black text-sm font-poppins  whitespace-nowrap transition-colors">
-      {label}
-    </span>
-
-    <svg
-      viewBox="0 0 56 55"
-      aria-hidden="true"
-      className="relative z-10 w-10 h-10 lg:w-14 lg:h-14 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
-    >
-      <circle cx="28.2" cy="27.1" r="15.9" fill="#F6E000" stroke="#F9C901" strokeWidth="1.5" />
-      <path
-        d="M31.3 22.1L33.2 29.4M31.3 22.1L24.1 24.1M31.3 22.1L25.1 32.8"
-        stroke="black"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </button>
-);
-export const HeroSectionDevops = () => {
-  const [active, setActive] = useState(false);
-
+export default function HeroSectionDevops({
+  backgroundImage = "/assets/images/devops/devops-hero-bg.png",
+  onConsultClick,
+}: HeroSectionProps) {
   return (
-<section
-  className="
-    w-full py-6 md:py-16 relative
-    bg-no-repeat bg-center bg-cover
-    bg-none md:bg-[url('/assets/images/devops/devops-hero-bg.png')]
-  "
->
-<div className="w-full px-4 md:px-10 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 lg:gap-4">
-        {/* LEFT SIDE CONTENT */}
-        <div className="w-full max-w-2xl flex flex-col items-start text-left space-y-4  z-10">
+    <div className="bg-white px-3 md:px-4 lg:px-6">
+      <section className="relative w-full overflow-hidden rounded-2xl">
+        
+        {/* Background (hidden on mobile) */}
+        <div className="absolute inset-0 z-0 hidden md:block">
+          <Image
+            src={backgroundImage}
+            alt="DevOps Background"
+            fill
+            priority
+            className="object-cover object-center"
+            quality={100}
+          />
+        </div>
 
-          {/* PNG TEXT IMAGE */}
-          <div className="flex justify-start w-full">
-            <img
-              src="/assets/images/devops/devops-text.png"
-              alt="Hero Text"
-              className="object-contain max-w-full"
-            />
-          </div>
+   <div className="relative z-10 flex items-center justify-center md:justify-start text-center md:text-left 
+  min-h-[480px] md:min-h-[200px] lg:min-h-[470px] xl:min-h-[620px]">
+          <div className="mx-auto w-full max-w-8xl px-4 md:px-8 lg:px-12">
+            
+            <div className="max-w-xl md:max-w-[400px] lg:max-w-2xl mx-auto md:mx-0">
+              
+              {/* Image Text */}
+              <div className="mb-2 md:mb-6 flex justify-center md:justify-start">
+                <Image
+                  src="/assets/images/devops/devops-text.png"
+                  alt="DevOps Text"
+                  width={500}
+                  height={120}
+                  className="w-full max-w-[260px] md:max-w-[160px] lg:max-w-[420px]"
+                  priority
+                />
+              </div>
 
-          {/* TITLE */}
-          <h1 className="leading-[1.15] w-full">
-            <span className="block text-[24px] md:text-[30px] lg:text-[35px] xl:text-[48px] font-bold">
-              <span className="text-[#F5B800]">DevOps Development</span>
-            </span>
+              {/* Heading */}
+              <h2 className="mb-5 leading-[1.15] mt-3">
 
-            <span className="block text-[24px] md:text-[30px] lg:text-[35px] xl:text-[48px] font-semibold text-black">
-              Company
-            </span>
-          </h1>
+                <span data-text="DevOps Development" className="block text-[23px] shine-text text-[#F5B800] relative  md:text-[25px] lg:text-[35px] xl:text-[48px] font-bold  text-center md:text-left ">
+                  DevOps Development
+                </span>
 
-          {/* DESCRIPTION */}
-          <p className="text-[14px] md:text-[13px] lg:text-[14px] xl:text-[16px] text-black/80 font-medium leading-tight  font-poppins">
-            Beelockchain is a leading AI-powered DevOps development company that helps organizations automate software delivery and enhance deployment reliability with robust CI/CD pipelines. Our cloud-native DevOps expertise strengthens infrastructure security across modern application environments.
-          </p>
+                <span className="block text-[23px] md:text-[25px] lg:text-[35px] xl:text-[48px] font-bold text-center md:text-left">
+                  <span className="text-black relative">Services</span>
+                </span>
+              </h2>
 
-          {/* BUTTON */}
-          <div className="flex justify-start w-full">
-                       <PillButton label="Talk To Our Experts" />
+              {/* Description */}
+              <p className="
+               text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold  xl:mt-10 mb-5 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] text-center md:text-left
+              ">
+                Beelockchain is a leading AI-powered DevOps development company that helps organizations automate software delivery and enhance deployment reliability with robust CI/CD pipelines. Our cloud-native DevOps expertise strengthens infrastructure security across modern application environments.
+              </p>
 
+              {/* CTA */}
+              <div className="flex justify-center md:justify-start">
+                <button
+                  onClick={onConsultClick}
+                  className="
+                   group relative overflow-hidden
+                  cursor-pointer
+                  inline-flex items-center justify-center gap-2
+                  w-fit
+                  px-4 py-2 md:px-2 md:py-1 lg:px-3 lg:py-2 xl:px-3 xl:py-2.5
+                  border border-black rounded-full
+                  bg-[#f2f2f2]
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.7)]
+                  "
+                >
+                  {/* Hover Effect */}
+                  <span className="absolute inset-0 flex items-center justify-center z-0">
+                    <span className="w-10 h-10 bg-gray-200 rounded-full scale-0 group-hover:scale-[5] transition-transform duration-500 ease-out" />
+                  </span>
+
+                  {/* Text */}
+                  <span className="relative z-10 text-black font-poppins text-sm md:text-[12px] lg:text-[12px] xl:text-[15px]">
+                    Consult Our Experts
+                  </span>
+
+                  {/* Icon */}
+                  <svg
+                    className="relative z-10 w-8 h-8 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1"
+                    viewBox="0 0 56 55"
+                  >
+                    <circle
+                      cx="28"
+                      cy="27"
+                      r="16"
+                      fill="#F6E000"
+                      stroke="#F9C901"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M31 22L33 29M31 22L24 24M31 22L25 33"
+                      stroke="black"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
-};
+}

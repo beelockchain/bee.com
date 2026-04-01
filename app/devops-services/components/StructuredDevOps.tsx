@@ -79,8 +79,8 @@ const FeatureCard = ({
       align === "right" ? "text-left" : "text-left"
     }`}
   >
-    <h3 className="text-gray-900 font-bold text-[18px] leading-snug">{title}</h3>
-    <p className="text-black text-xs leading-relaxed">{description}</p>
+    <h3 className="text-gray-900 font-bold text-[18px] leading-snug font-poppins">{title}</h3>
+    <p className="text-black text-[12px] leading-relaxed font-poppins">{description}</p>
   </div>
 );
  const CARD_H          = 220;

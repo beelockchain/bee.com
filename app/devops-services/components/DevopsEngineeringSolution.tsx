@@ -41,7 +41,7 @@ const DevopsEngineeringSolution = () => {
         <h2 className=" text-[19px] sm:text-[19px] md:text-[21px] leading-tight lg:text-[28px] xl:text-[36px] text-black font-bold  mb-4 ">
           <span data-text="Beelockchain:" className="shine-text text-[#F5B800] relative mx-0">DevOps Consulting & Engineering</span> Services
         </h2>
-        <p className="text-black/80 text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium  mb-6 max-w-2xl mx-auto">
+        <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium  mb-6 max-w-2xl mx-auto">
          Beelockchain provides end-to-end DevOps consulting and engineering services designed to automate development workflows and maintain scalable infrastructure across cloud environments.
         </p>
 
@@ -75,7 +75,7 @@ const DevopsEngineeringSolution = () => {
               <h3 className="text-left text-[14px] sm:text-[15px] md:text-[13px] lg:text-lg font-semibold font-poppins text-black relative z-10 pr-2 lg:pr-0">
                 {card.title}
               </h3>
-              <p className="text-left text-black/80 text-[11.5px] sm:text-[13px] md:text-[10px] lg:text-sm xl:text-sm font-medium font-poppins leading-relaxed relative z-10 pb-4 lg:pb-0 pr-8 lg:pr-0">
+              <p className="text-left text-black text-[11.5px] sm:text-[13px] md:text-[10px] lg:text-sm xl:text-sm font-medium font-poppins leading-relaxed relative z-10 pb-4 lg:pb-0 lg:pr-0">
                 {card.description}
               </p>
               <span className="absolute bottom-1 right-2 lg:static lg:self-end text-[28px] md:text-[20px] lg:text-4xl font-extrabold text-[#969696] leading-none pointer-events-none lg:pointer-events-auto z-0 lg:mt-2">
