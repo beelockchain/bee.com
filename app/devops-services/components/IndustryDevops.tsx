@@ -36,9 +36,9 @@ const IndustryDevops = () => {
   const isMobile = useIsMobile(768);
 
   return (
-    <section className="w-full bg-white py-6  overflow-hidden">
+    <section className="w-full bg-white mt-10  overflow-hidden">
       {isMobile ? (
-        <h2 className="text-[20px] font-bold sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug text-center mb-8">
+        <h2 className="text-[19px] font-bold sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black leading-tight text-center mb-8">
           Industries <span className="shine-text text-[#F5B800]">We Serve with Our <br /> DevOps </span> Services
         </h2>
       ) : null}

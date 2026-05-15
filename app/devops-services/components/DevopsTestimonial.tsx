@@ -262,7 +262,7 @@ export default function Testi() {
                Know<span className="text-[#F5B800] mx-2">What Our Customers Say</span>About Beelockchain’s DevOps Consulting Services
             </h2>
           </div>
-          <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] text-black text-center px-4 font-normal font-['Poppins']">
+          <p className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] text-black text-center px-4 font-medium font-poppins">
             Bringing the Best DevOps Solutions to Our Customers & Delivering
             Measurable Results
           </p>

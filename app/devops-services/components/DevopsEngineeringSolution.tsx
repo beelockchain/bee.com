@@ -145,73 +145,73 @@ const DevopsEngineeringSolution = () => {
       </div>
 
       {isMobile ? (
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 h-auto mt-6">
-        {/* Image Section - First on mobile/tablet, right on desktop */}
-        <div className="w-full flex justify-center items-center h-full">
-          <img
-            src="/assets/images/devops/devops-solution.png"
-            alt="Beelockchain mobile app"
-            className="max-w-[280px] w-auto h-auto object-contain mx-auto"
-          />
-        </div>
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-8 h-auto mt-6">
+          {/* Image Section - First on mobile/tablet, right on desktop */}
+          <div className="w-full flex justify-center items-center h-full">
+            <img
+              src="/assets/images/devops/devops-solution.png"
+              alt="Beelockchain mobile app"
+              className="max-w-[280px] w-auto h-auto object-contain mx-auto"
+            />
+          </div>
 
-        {/* Cards Section - Below image on mobile/tablet, left on desktop */}
-        <div className="w-full flex flex-col gap-4">
-          {cards.map((card) => (
-            <div
-              key={card.number}
-              className="relative bg-[#ebebeb] border border-gray-200 rounded-xl p-4 flex flex-col gap-1 hover:shadow-md transition-shadow duration-200 overflow-hidden"
-            >
-              <h3 className="text-left text-[14px] sm:text-[15px] font-semibold font-poppins text-black relative z-10 pr-2">
-                {card.title}
-              </h3>
-              <p className="text-left text-black text-[11.5px] sm:text-[13px] font-medium font-poppins leading-relaxed relative z-10 pb-4">
-                {card.description}
-              </p>
-              <span className="absolute bottom-1 right-2 text-[28px] font-extrabold text-[#969696] leading-none pointer-events-none z-0">
-                {card.number}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-      ) : (
-      <div className="max-w-6xl mx-auto grid grid-cols-2 gap-8 lg:gap-10 items-center mt-10">
-        <div
-          ref={cardsViewportRef}
-          className="relative h-[calc(4*180px+3*20px)] lg:h-[calc(4*190px+3*20px)] xl:h-[calc(4*180px+3*20px)] overflow-hidden"
-        >
-          <div
-            ref={cardsTrackRef}
-            className="flex flex-col gap-5 will-change-transform"
-          >
+          {/* Cards Section - Below image on mobile/tablet, left on desktop */}
+          <div className="w-full flex flex-col gap-4">
             {cards.map((card) => (
               <div
                 key={card.number}
-                className="relative min-h-[180px] lg:min-h-[190px] xl:min-h-[180px] bg-[#E2E2E2] border border-gray-200 rounded-2xl p-5 xl:p-6 flex flex-col gap-2 overflow-hidden"
+                className="relative bg-[#ebebeb] border border-gray-200 rounded-xl p-4 flex flex-col gap-1 hover:shadow-md transition-shadow duration-200 overflow-hidden"
               >
-                <h3 className="text-left text-[18px] md:text-[14px] lg:text-lg xl:text-[20px] font-semibold font-poppins text-black pr-10">
+                <h3 className="text-left text-[14px] sm:text-[15px] font-semibold font-poppins text-black relative z-10 pr-2">
                   {card.title}
                 </h3>
-                <p className="text-left text-black text-[13px] md:text-[12px] lg:text-sm xl:text-[14px] font-medium font-poppins leading-relaxed pr-12">
+                <p className="text-left text-black text-[11.5px] sm:text-[13px] font-medium font-poppins leading-relaxed relative z-10 pb-4">
                   {card.description}
                 </p>
-                <span className="absolute bottom-3 right-5 text-[34px] lg:text-4xl font-extrabold text-[#969696] leading-none pointer-events-none opacity-70">
+                <span className="absolute bottom-1 right-2 text-[28px] font-extrabold text-[#969696] leading-none pointer-events-none z-0">
                   {card.number}
                 </span>
               </div>
             ))}
           </div>
         </div>
+      ) : (
+        <div className="max-w-6xl mx-auto grid grid-cols-2 gap-8 lg:gap-10 items-center mt-10">
+          <div
+            ref={cardsViewportRef}
+            className="relative h-[calc(4*180px+3*20px)] lg:h-[calc(4*190px+3*20px)] xl:h-[calc(4*180px+3*20px)] overflow-hidden"
+          >
+            <div
+              ref={cardsTrackRef}
+              className="flex flex-col gap-5 will-change-transform"
+            >
+              {cards.map((card) => (
+                <div
+                  key={card.number}
+                  className="relative min-h-[180px] lg:min-h-[190px] xl:min-h-[180px] bg-[#E2E2E2] border border-gray-200 rounded-2xl p-5 xl:p-6 flex flex-col gap-2 overflow-hidden"
+                >
+                  <h3 className="text-left text-[18px] md:text-[14px] lg:text-lg xl:text-[20px] font-semibold font-poppins text-black pr-10">
+                    {card.title}
+                  </h3>
+                  <p className="text-left text-black text-[13px] md:text-[12px] lg:text-sm xl:text-[14px] font-medium font-poppins leading-relaxed pr-12">
+                    {card.description}
+                  </p>
+                  <span className="absolute bottom-3 right-5 text-[34px] lg:text-4xl font-extrabold text-[#969696] leading-none pointer-events-none opacity-70">
+                    {card.number}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div className="relative w-full min-h-[360px] lg:min-h-[400px] flex items-center justify-center">
-          <img
-            src="/assets/images/devops/devops-solution.png"
-            alt="Beelockchain mobile app"
-            className="max-w-full w-auto h-auto object-contain mx-auto"
-          />
+          <div className="relative w-full min-h-[360px] lg:min-h-[400px] flex items-center justify-center">
+            <img
+              src="/assets/images/devops/devops-solution.png"
+              alt="Beelockchain mobile app"
+              className="max-w-full w-auto h-auto object-contain mx-auto"
+            />
+          </div>
         </div>
-      </div>
       )}
     </section>
   );

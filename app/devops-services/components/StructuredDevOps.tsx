@@ -113,9 +113,8 @@ const FeatureCard = ({
   align?: "left" | "right";
 }) => (
   <div
-    className={`flex h-[170px] w-full max-w-[220px] min-w-0 flex-col justify-between rounded-[20px] bg-[#E2E2E2] p-4 text-left shadow-sm 
-      sm:h-[140px] sm:max-w-full sm:rounded-[18px] sm:p-3 md:h-[170px] md:max-w-[220px] md:p-4 lg:h-[182px] lg:max-w-[290px] l
-      g:p-6 xl:h-[220px] xl:max-w-[320px] xl:p-7 ${
+    className={`flex min-h-[170px] w-full max-w-[220px] min-w-0 flex-col justify-between rounded-[20px] bg-[#E2E2E2] p-4 text-left shadow-sm 
+      sm:min-h-[140px] sm:max-w-full sm:rounded-[18px] sm:p-3 md:min-h-[150px] md:max-w-[250px] md:p-4 lg:min-h-[182px] lg:max-w-[290px] lg:p-6 xl:min-h-[220px] xl:max-w-[320px] xl:p-7 ${
         align === "right" ? "self-start" : "self-end"
       }`}
   >
@@ -307,12 +306,12 @@ const StructuredDevOps = () => {
               alt="Structured DevOps consulting process illustration"
               width={860}
               height={860}
-              className="h-[300px] w-auto max-w-none object-contain sm:h-[300px] md:h-[460px] lg:h-[420px] xl:h-[730px]"
+              className="h-[300px] w-auto max-w-none object-contain sm:h-[300px] md:h-[460px] lg:h-[360px] xl:h-[730px]"
               priority
             />
           </div>
 
-          <div className="relative z-10 grid items-center gap-4 sm:grid-cols-[minmax(150px,1fr)_minmax(180px,220px)_minmax(150px,1fr)] md:grid-cols-[minmax(210px,1fr)_minmax(220px,280px)_minmax(210px,1fr)] lg:grid-cols-[minmax(290px,1fr)_minmax(380px,500px)_minmax(290px,1fr)] lg:gap-8 xl:grid-cols-[minmax(320px,1fr)_minmax(420px,560px)_minmax(320px,1fr)] xl:gap-10">
+          <div className="relative z-10 grid items-center gap-4 sm:grid-cols-[minmax(150px,1fr)_minmax(180px,220px)_minmax(150px,1fr)] md:grid-cols-[minmax(210px,1fr)_minmax(220px,280px)_minmax(210px,1fr)] lg:grid-cols-[minmax(240px,1fr)_minmax(280px,360px)_minmax(240px,1fr)] lg:gap-5 xl:grid-cols-[minmax(320px,1fr)_minmax(420px,560px)_minmax(320px,1fr)] xl:gap-10">
             <div className="flex min-h-[420px] flex-col justify-start gap-3 pr-1 sm:min-h-[360px] sm:gap-2 sm:pr-0 md:min-h-[420px] md:gap-3 lg:min-h-[520px] lg:gap-4 lg:pr-2 xl:min-h-[560px] xl:pr-5">
               {leftFeatures.map((feature) => (
                 <FeatureCard

@@ -203,11 +203,11 @@ const SectionHeader = ({ isMobile = false }: { isMobile?: boolean }) => {
       <h2
         className={`font-bold text-gray-900 ${
           isMobile
-            ? "text-[16px] leading-tight mb-3"
+            ? "text-[19px] leading-tight mb-3"
             : "text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight"
         }`}
       >
-        Why Choose Beelockchain As Your <br />
+        Why Choose Beelockchain As Your<br />
        <span
           data-text="Beelockchain A Leader"
           className="shine-text text-[#F5B800] relative mx-1"
@@ -275,7 +275,7 @@ const MobileCarousel = () => {
 const YourConsulting = () => {
   const isMobile = useIsMobile();
   return (
-    <section className="relative pt-10 pb-2 sm:py-10 px-6 h-fit lg:min-h-screen">
+    <section className="relative pt-10 pb-2 sm:py-10 px-6 h-fit ">
       <div className="max-w-7xl mx-auto">
         {isMobile ? (
         <div className="pb-10">

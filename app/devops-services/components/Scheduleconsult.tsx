@@ -19,7 +19,7 @@ const Scheduleconsult = () => {
 
         <div className="relative z-10 grid items-center gap-5 lg:min-h-[170px] lg:grid-cols-[minmax(0,1.5fr)_auto_minmax(140px,0.6fr)] lg:gap-8 lg:pl-14">
           <div className="max-w-2xl">
-            <p className="text-center font-poppins text-[14px] font-medium  leading-5 text-white sm:text-[16px] md:text-[18px] sm:leading-7 lg:text-left lg:text-[20px] lg:leading-7">
+            <p className="text-center font-poppins text-[14px] font-medium  leading-5 text-white sm:text-[16px] md:text-[16px] sm:leading-7 lg:text-left lg:text-[18px] lg:leading-7">
               Improve your software delivery lifecycle with Beelockchain’s
               client-first DevOps consulting services designed to support
               scalable infrastructure & continuous deployment.
@@ -33,7 +33,7 @@ const Scheduleconsult = () => {
               onTouchStart={() => setActive(true)}
               onTouchEnd={() => setActive(false)}
               onMouseLeave={() => setActive(false)}
-              className="group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-full border border-black bg-gradient-to-b from-yellow-400 to-yellow-700 px-4 py-2 text-black outline outline-1 outline-offset-[-1px] outline-black sm:min-h-14 sm:gap-3 sm:px-5 sm:py-3"
+              className="group relative inline-flex min-h-9 items-center justify-center gap-1.5 overflow-hidden rounded-full border border-black bg-gradient-to-b from-yellow-400 to-yellow-700 px-3 py-1.5 text-black outline outline-1 outline-offset-[-1px] outline-black sm:min-h-11 sm:gap-2 sm:px-4 sm:py-2.5"
             >
               <span
                 className={`absolute inset-0 bg-white/20 transition-all duration-300 ease-out ${
@@ -42,11 +42,11 @@ const Scheduleconsult = () => {
                     : "[clip-path:circle(0%_at_50%_50%)]"
                 } group-hover:[clip-path:circle(150%_at_50%_50%)]`}
               />
-              <span className="relative z-10 text-center font-poppins text-[12px] font-medium leading-5 sm:text-base sm:leading-6">
+              <span className="relative z-10 text-center font-poppins text-[11px] font-medium leading-4 sm:text-[14px] sm:leading-5">
                 Schedule a DevOps Consultation
               </span>
               <svg
-                className="relative z-10 h-6 w-6 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 sm:h-8 sm:w-8"
+                className="relative z-10 h-5 w-5 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 sm:h-7 sm:w-7"
                 viewBox="0 0 56 55"
               >
                 <circle

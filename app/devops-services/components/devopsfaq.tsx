@@ -41,7 +41,7 @@ const DevopsFAQSection = () => {
 
     {/* SINGLE HEADING */}
     <div className="w-full md:w-auto flex justify-center md:justify-start">
-      <h2 className="text-center md:text-left text-[24px] sm:text-[32px] md:text-[44px] lg:text-[42px] xl:text-[64px] font-bold leading-tight font-manrope text-black">
+      <h2 className="text-center md:text-left text-[24px] sm:text-[32px] md:text-[44px] lg:text-[42px] xl:text-[54px] font-bold leading-tight font-manrope text-black">
         Frequently <br className="hidden md:block" />
         Asked <br className="hidden md:block" />
         <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent">
