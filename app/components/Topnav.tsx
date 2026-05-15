@@ -13,7 +13,7 @@ const serviceSubMenu = [
   { label: "Software Development", href: "/" },
   { label: "Blockchain Solutions", href: "https://beelockchain.io/" },
   { label: "AI Development", href: "/" },
-  { label: "DevOps", href: "/" },
+  { label: "DevOps", href: "/devops-services" },
 ];
 
 const primaryNav = [

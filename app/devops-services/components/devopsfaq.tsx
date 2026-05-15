@@ -23,11 +23,11 @@ const DevopsFAQSection = () => {
     },
     {
       q: "How can Beelockchain help implement DevOps in my organization?",
-      a: "Beelockchain leverages tools such as Jenkins, Docker, Kubernetes, Terraform, GitLab, Ansible, Prometheus, and cloud platforms like AWS and Azure to deliver scalable DevOps solutions.",
+      a: "Beelockchain offers tailored DevOps consulting services, including CI/CD pipeline setup, infrastructure automation, and continuous monitoring, to support seamless DevOps adoption aligned with your development goals.",
     },
     {
       q: "What DevOps tools and technologies does Beelockchain use?",
-      a: "Yes. Beelockchain provides enterprise-grade blockchain development services as part of our digital transformation services. We help businesses enrich the security, transparency, and automation through decentralized technologies where applicable.",
+      a: "Beelockchain leverages tools such as Jenkins, Docker, Kubernetes, Terraform, GitLab, Ansible, Prometheus, and cloud platforms like AWS and Azure to deliver scalable DevOps solutions.",
     },
      {
       q: "How do Beelockchain’s DevOps practices reduce downtime and system failures?",
@@ -64,7 +64,7 @@ const DevopsFAQSection = () => {
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
               <button className="w-full flex justify-between items-center gap-6 text-left cursor-pointer">
-                <p className="text-black text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] font-manrope font-semibold">
+                <p className="text-black text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] font-poppins font-medium">
                   {item.q}
                 </p>
 

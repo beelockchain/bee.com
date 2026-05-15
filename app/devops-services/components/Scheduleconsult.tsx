@@ -1,81 +1,84 @@
 "use client";
-import { useState, useCallback } from "react";
-
-
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 const Scheduleconsult = () => {
-    const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
   return (
-<section className="w-full bg-gradient-to-t from-[#dfdfdf] via-[#EDEDED] to-[#FFFFFF] pb-5 px-4">
-          {/* Heading */}
-      <div className="max-w-4xl mx-auto text-center mt-10 mb-12">
-        <p className="text-[#000000] text-[14px] md:text-[13px] xl:text-[16px] font-semibold">
-         Improve your software delivery lifecycle with Beelockchain’s client-first DevOps consulting services designed to support scalable infrastructure & continuous deployment.
-        </p>
-          <div className="flex justify-center my-3">
-          <a
-            href="/contact-us"
-            onTouchStart={() => setActive(true)}
-            onTouchEnd={() => setActive(false)}
-            onMouseLeave={() => setActive(false)}
-            className="group relative flex items-center gap-3 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
-          >
-            {/* Expand Background */}
-            <span
-              className={`
-                absolute inset-0 bg-gray-100 z-0
-                transition-all duration-300 md:duration-500 ease-out
-                ${active ? "[clip-path:circle(150%_at_50%_50%)]" : "[clip-path:circle(0%_at_50%_50%)]"}
-                group-hover:[clip-path:circle(150%_at_50%_50%)]
-              `}
-            />
+    <section className="w-full pb-6 pt-10">
+      <div className="relative w-full overflow-hidden bg-black px-6 py-5 sm:px-8 sm:py-5 lg:px-14 lg:py-4">
+        <div className="absolute left-0 top-0 z-20 hidden lg:block m-[-10px]">
+          <Image
+            src="/assets/images/devops/left-icon.png"
+            alt="Decorative DevOps icon"
+            width={82}
+            height={82}
+            className="h-12 w-12 object-contain sm:h-14 sm:w-14 lg:h-[82px] lg:w-[82px]"
+          />
+        </div>
 
-            {/* Glow */}
-            <span
-              className="
-                absolute inset-0 z-0
-                bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]
-                transition-opacity duration-300
-                group-hover:opacity-0
-                group-active:opacity-0
-              "
-            />
+        <div className="relative z-10 grid items-center gap-5 lg:min-h-[170px] lg:grid-cols-[minmax(0,1.5fr)_auto_minmax(140px,0.6fr)] lg:gap-8 lg:pl-14">
+          <div className="max-w-2xl">
+            <p className="text-center font-poppins text-[14px] font-medium  leading-5 text-white sm:text-[16px] md:text-[18px] sm:leading-7 lg:text-left lg:text-[20px] lg:leading-7">
+              Improve your software delivery lifecycle with Beelockchain’s
+              client-first DevOps consulting services designed to support
+              scalable infrastructure & continuous deployment.
+            </p>
+          </div>
 
-            {/* Text */}
-            <span className="relative z-10 text-black text-[13px] md:text-[14px] lg:text-[16px] font-medium whitespace-nowrap">
-              Schedule a DevOps Consultation
-            </span>
-
-            {/* Icon */}
-            <svg
-              viewBox="0 0 56 55"
-              className="
-                relative z-10 w-10 h-10 lg:w-14 lg:h-14
-                transition-all duration-300 ease-out
-                group-hover:rotate-[60deg] group-hover:translate-x-1
-                group-active:rotate-[60deg] group-active:translate-x-1 group-active:scale-95
-              "
+          <div className="flex justify-center lg:justify-center">
+            <Link
+              href="/contact-us"
+              target="_blank"
+              onTouchStart={() => setActive(true)}
+              onTouchEnd={() => setActive(false)}
+              onMouseLeave={() => setActive(false)}
+              className="group relative inline-flex min-h-11 items-center justify-center gap-2 overflow-hidden rounded-full border border-black bg-gradient-to-b from-yellow-400 to-yellow-700 px-4 py-2 text-black outline outline-1 outline-offset-[-1px] outline-black sm:min-h-14 sm:gap-3 sm:px-5 sm:py-3"
             >
-              <circle
-                cx="28.2"
-                cy="27.1"
-                r="15.9"
-                fill="#F6E000"
-                stroke="#F9C901"
-                strokeWidth="1.5"
+              <span
+                className={`absolute inset-0 bg-white/20 transition-all duration-300 ease-out ${
+                  active
+                    ? "[clip-path:circle(150%_at_50%_50%)]"
+                    : "[clip-path:circle(0%_at_50%_50%)]"
+                } group-hover:[clip-path:circle(150%_at_50%_50%)]`}
               />
-              <path
-                d="M31.3 22.1L33.2 29.4M31.3 22.1L24.1 24.1M31.3 22.1L25.1 32.8"
-                stroke="black"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
+              <span className="relative z-10 text-center font-poppins text-[12px] font-medium leading-5 sm:text-base sm:leading-6">
+                Schedule a DevOps Consultation
+              </span>
+              <svg
+                className="relative z-10 h-6 w-6 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 sm:h-8 sm:w-8"
+                viewBox="0 0 56 55"
+              >
+                <circle
+                  cx="28"
+                  cy="27"
+                  r="16"
+                  fill="#F6E000"
+                  stroke="#F9C901"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M31 22L33 29M31 22L24 24M31 22L25 33"
+                  stroke="black"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </Link>
+          </div>
 
+          <div className="hidden justify-center pr-2 lg:flex lg:justify-end lg:pr-6 xl:pr-10">
+            <div className="relative h-20 w-20 sm:h-24 sm:w-24 lg:h-44 lg:w-44">
+              <Image
+                src="/assets/images/devops/cta-box-img.png"
+                alt="Consultation Logo"
+                fill
+                className="object-contain object-right"
+              />
+            </div>
+          </div>
         </div>
       </div>
-
     </section>
   );
 };

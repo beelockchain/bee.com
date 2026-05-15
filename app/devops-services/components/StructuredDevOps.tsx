@@ -1,47 +1,85 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import Image from "next/image";
+import Link from "next/link";
+import { useRef, useState, type ReactNode } from "react";
+import { useIsMobile } from "./useIsMobile";
+
+type Feature = {
+  id: string;
+  title: ReactNode;
+  description: string;
+};
+
 const leftFeatures = [
   {
-    title: "Assessment & Workflow Analysis",
+    id: "assessment-workflow-analysis",
+    title: (
+      <>
+        Assessment & <br /> Analysis
+      </>
+    ),
     description:
       "We analyze your development lifecycle, infrastructure setup, and deployment challenges to identify automation opportunities across development environments.",
   },
   {
-    title: "DevOps Strategy Planning",
+    id: "devops-strategy-planning",
+    title: (
+      <>
+        DevOps Strategy <br /> Planning
+      </>
+    ),
     description:
       "Based on assessment insights, our DevOps expert designs a customized DevOps consulting roadmap aligned with your application architecture and business requirements.",
   },
   {
-    title: "Tool Selection & Implementation",
+    id: "tool-selection-implementation",
+    title: (
+      <>
+        Tool Selection & <br /> Implementation
+      </>
+    ),
     description:
       "We recommend suitable DevOps tools based on your infrastructure and CI/CD pipeline requirements, while guiding implementation across your software development lifecycle.",
   },
-];
+] satisfies Feature[];
 
 const rightFeatures = [
   {
-    title: "CI/CD Pipeline Setup",
+    id: "ci-cd-pipeline-setup",
+    title: (
+      <>
+        CI/CD Pipeline <br /> Setup
+      </>
+    ),
     description:
       "Automated CI/CD pipelines are configured to streamline code integration, testing, and deployment across development and production environments.",
   },
   {
-    title: "Monitoring & Optimization",
+    id: "monitoring-optimization",
+    title: (
+      <>
+        Monitoring & <br /> Optimization
+      </>
+    ),
     description:
       "Our tech experts provide DevOps infrastructure consulting along with real-time monitoring tools to track application performance & overall software infrastructure health.",
   },
   {
-    title: "Continuous Support",
+    id: "continuous-support",
+    title: (
+      <>
+        Continuous <br /> Support
+      </>
+    ),
     description:
       "We offer continuous support and training after DevOps transformation services to help your team adapt effectively to the DevOps environment.",
   },
-];
+] satisfies Feature[];
 
-// All features combined for mobile carousel
+// All features combined for mobile layout
 const allFeatures = [...leftFeatures, ...rightFeatures];
+
 const NumberSvg = ({ number }: { number: string }) => {
   return (
     <svg
@@ -70,343 +108,237 @@ const FeatureCard = ({
   description,
   align = "left",
 }: {
-  title: string;
+  title: ReactNode;
   description: string;
   align?: "left" | "right";
 }) => (
   <div
-    className={`bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 flex-1 min-h-[140px] justify-center ${
-      align === "right" ? "text-left" : "text-left"
-    }`}
+    className={`flex h-[170px] w-full max-w-[220px] min-w-0 flex-col justify-between rounded-[20px] bg-[#E2E2E2] p-4 text-left shadow-sm 
+      sm:h-[140px] sm:max-w-full sm:rounded-[18px] sm:p-3 md:h-[170px] md:max-w-[220px] md:p-4 lg:h-[182px] lg:max-w-[290px] l
+      g:p-6 xl:h-[220px] xl:max-w-[320px] xl:p-7 ${
+        align === "right" ? "self-start" : "self-end"
+      }`}
   >
-    <h3 className="text-gray-900 font-bold text-[18px] leading-snug font-poppins">{title}</h3>
-    <p className="text-black text-[12px] leading-relaxed font-poppins">{description}</p>
+    <h3
+      className="mb-2 text-[14px] font-semibold leading-tight text-black sm:text-[12px] 
+     md:text-[14px] lg:mb-3 lg:text-[16px] xl:text-[18px]"
+    >
+      {title}
+    </h3>
+    <p className="text-[11px] font-semibold leading-relaxed text-black sm:text-[10px] sm:leading-[1.45] md:text-[11px] lg:text-[13px] xl:text-[14px]">
+      {description}
+    </p>
   </div>
 );
- const CARD_H          = 220;
-const CARD_PEEK       = 10;
-const SCROLL_PER_CARD = 260;
-const TOTAL_CARDS     = allFeatures.length; // 8
-const DISMISSIBLE     = TOTAL_CARDS - 1; // 7 cards animate, card 08 stays
-const SWIPE_THRESHOLD = 20; 
-// Mobile Carousel Component
-const MobileCarousel = () => {
 
- const outerRef   = useRef<HTMLDivElement>(null);
-  const cardRefs   = useRef<(HTMLDivElement | null)[]>([]);
-  const dotRefs    = useRef<(HTMLDivElement | null)[]>([]);
+const MobileFeatureReel = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<(HTMLElement | null)[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  // Touch tracking refs
-  const touchStartY  = useRef(0);
-  const touchEndY    = useRef(0);
-  // Which card is currently the top card (for swipe navigation)
-  const currentCard  = useRef(0);
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
 
-  useEffect(() => {
-    const outer = outerRef.current;
-    if (!outer) return;
+    const nextIndex = itemRefs.current.reduce((closestIndex, item, index) => {
+      if (!item) return closestIndex;
 
-    // ── Initial stack positions (your original code) ──────────────────────
-    cardRefs.current.forEach((card, i) => {
-      if (!card) return;
-      card.style.transform = `translateY(${i * CARD_PEEK}px) scale(${1 - i * 0.015})`;
-      card.style.opacity = "1";
-      card.style.zIndex = String(TOTAL_CARDS - i);
+      const currentDistance = Math.abs(item.offsetLeft - container.scrollLeft);
+      const closestItem = itemRefs.current[closestIndex];
+      const closestDistance = closestItem
+        ? Math.abs(closestItem.offsetLeft - container.scrollLeft)
+        : Number.POSITIVE_INFINITY;
+
+      return currentDistance < closestDistance ? index : closestIndex;
+    }, 0);
+
+    setActiveIndex(nextIndex);
+  };
+
+  const scrollToCard = (index: number) => {
+    const item = itemRefs.current[index];
+    if (!item) return;
+
+    item.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
     });
-
-    // ── Dot updater ───────────────────────────────────────────────────────
-    const updateDots = (activeIndex: number) => {
-      dotRefs.current.forEach((dot, i) => {
-        if (!dot) return;
-        // Dots go in reverse: dot 0 = card 0 (top), dot 7 = card 7 (bottom)
-        // Active = the card currently on top
-        dot.style.backgroundColor = i === activeIndex ? "#000" : "#D1D1D1";
-        dot.style.transform = i === activeIndex ? "scale(1.3)" : "scale(1)";
-      });
-    };
-
-    // ── Scroll handler (your original logic — zero changes) ───────────────
-    const handleScroll = () => {
-      const rect           = outer.getBoundingClientRect();
-      const scrolled       = Math.max(0, -rect.top);
-      const totalScroll    = DISMISSIBLE * SCROLL_PER_CARD;
-      const clampedScroll  = Math.min(scrolled, totalScroll);
-      const activeIndex    = Math.floor(clampedScroll / SCROLL_PER_CARD);
-      const progressInCard = (clampedScroll % SCROLL_PER_CARD) / SCROLL_PER_CARD;
-
-      // Keep currentCard in sync for swipe navigation
-      currentCard.current = activeIndex;
-      updateDots(activeIndex);
-
-      cardRefs.current.forEach((card, i) => {
-        if (!card) return;
-
-        // Last card never moves
-        if (i === TOTAL_CARDS - 1) return;
-
-        if (i < activeIndex) {
-          // Already dismissed
-          card.style.transform = `translateY(-${CARD_H + 60}px) scale(0.85)`;
-          card.style.opacity   = "0";
-        } else if (i === activeIndex) {
-          // Currently moving card (ONLY ONE)
-          const ease    = Math.pow(progressInCard, 1);
-          const yOffset = -(CARD_H + 60) * ease;
-          const scale   = 1 - ease * 0.1;
-          const opacity = 2 - ease;
-          card.style.transform = `translateY(${yOffset}px) scale(${scale})`;
-          card.style.opacity   = String(opacity);
-        } else {
-          // Cards below active one stay stacked
-          const stackIndex = i - activeIndex;
-          card.style.transform = `translateY(${stackIndex * CARD_PEEK}px) scale(${1 - stackIndex * 0.015})`;
-          card.style.opacity   = "1";
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    // ── Touch/swipe: scroll the page to the target card's band ───────────
-    // Works exactly like a carousel indicator tap — we compute the exact
-    // scrollY that puts the target card at the start of its scroll band,
-    // then smoothly scroll there. The existing scroll handler does the rest.
-    const scrollToCard = (cardIndex: number) => {
-      const target = Math.max(0, Math.min(DISMISSIBLE, cardIndex));
-      const outerTop    = outer.getBoundingClientRect().top + window.scrollY;
-      // Each card's band starts at: outerTop + cardIndex * SCROLL_PER_CARD
-      // Add half a band so the card is mid-dismiss when we land (feels natural)
-      const targetScrollY = outerTop + target * SCROLL_PER_CARD;
-      window.scrollTo({ top: targetScrollY, behavior: "smooth" });
-    };
-
-    const onTouchStart = (e: TouchEvent) => {
-      touchStartY.current = e.touches[0].clientY;
-      touchEndY.current   = e.touches[0].clientY;
-    };
-
-    const onTouchMove = (e: TouchEvent) => {
-      touchEndY.current = e.touches[0].clientY;
-
-      // Only intercept if the section is currently sticky (outer straddles viewport top)
-      const rect     = outer.getBoundingClientRect();
-      const isPinned = rect.top <= 0 && rect.bottom > 0;
-      if (!isPinned) return;
-
-      const delta = touchStartY.current - touchEndY.current; // + = swipe up
-
-      const active = currentCard.current;
-      if (Math.abs(delta) > 10) {
-        if (delta > 0 && active < TOTAL_CARDS - 1) e.preventDefault();
-        if (delta < 0 && active > 0)               e.preventDefault();
-      }
-    };
-
-    const onTouchEnd = () => {
-      const delta  = touchStartY.current - touchEndY.current;
-      const active = currentCard.current;
-
-      const rect     = outer.getBoundingClientRect();
-      const isPinned = rect.top <= 0 && rect.bottom > 0;
-      if (!isPinned) return;
-
-      if (delta > SWIPE_THRESHOLD && active < TOTAL_CARDS - 1) {
-        // Swipe UP → next card
-        scrollToCard(active + 1);
-      } else if (delta < -SWIPE_THRESHOLD && active > 0) {
-        // Swipe DOWN → previous card
-        scrollToCard(active - 1);
-      }
-    };
-
-    // Attach touch listeners to the sticky inner (not window, not body)
-    const sticky = outer.querySelector(".sticky") as HTMLElement | null;
-    if (sticky) {
-      sticky.addEventListener("touchstart", onTouchStart, { passive: true });
-      sticky.addEventListener("touchmove",  onTouchMove,  { passive: false });
-      sticky.addEventListener("touchend",   onTouchEnd,   { passive: true });
-    }
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (sticky) {
-        sticky.removeEventListener("touchstart", onTouchStart);
-        sticky.removeEventListener("touchmove",  onTouchMove);
-        sticky.removeEventListener("touchend",   onTouchEnd);
-      }
-    };
-  }, []);
-
-  const stackHeight = CARD_H + (TOTAL_CARDS - 1) * CARD_PEEK;
-  // const outerHeight = `calc(100vh + ${DISMISSIBLE * SCROLL_PER_CARD}px)`;
-  const outerHeight = `calc(100svh + ${DISMISSIBLE * SCROLL_PER_CARD}px)`;
+    setActiveIndex(index);
+  };
 
   return (
-    <div
-      ref={outerRef}
-      className="block sm:hidden md:hidden w-full bg-white"
-      style={{ height: outerHeight }}
-    >
-      {/* Sticky inner */}
-      <div
-        className="sticky top-0 w-full bg-white pt-6 pb-10 px-5 h-[100svh] overflow-hidden"
-      >
-        <div className="max-w-[400px] mx-auto h-full flex flex-col">
-
-          {/* Heading */}
-          <div className="text-center mb-10 flex-shrink-0">
-            <h2 className="text-[19px] text-[#000000] font-bold leading-tight ">
-              How Beelockchain Delivers{" "}
-              <span className="text-yellow-400">Digital Transformation</span>{" "}
-              For Business Value Creation
-            </h2>
-            <p className="mt-4 text-black text-[14px]  font-semibold leading-relaxed">
-              Beelockchain supports organizations through their digital
-              transformation journey by combining consulting expertise with
-              practical execution.
-            </p>
-          </div>
-
-          {/* Card Stack + Dots */}
-          <div className="flex-1 flex items-center justify-center">
-            <div className="relative flex items-center gap-3">
-
-              {/* Cards */}
-              <div
-                className="relative"
-                style={{ width: "320px", height: `${stackHeight}px` }}
-              >
-                {allFeatures.map((item, i) => (
-                  <div
-                    key={i}
-                    ref={(el) => { cardRefs.current[i] = el; }}
-                    className="absolute left-0 right-0 top-0 rounded-2xl bg-[#E2E2E2] shadow-xl p-5"
-                    style={{
-                      height: `${CARD_H}px`,
-                      transformOrigin: "center center",
-                      willChange: "transform, opacity",
-                      transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
-                    }}
-                  >
-                    <div className="relative h-full">
-                      <h3 className="text-[15px] font-bold mb-2 text-black  leading-tight">
-                        {item.title}
-                      </h3>
-                      <p className="text-black text-[14px] leading-relaxed font-semibold pr-10">
-                        {item.description}
-                      </p>
-                      <div className="absolute bottom-0 right-0 opacity-25">
-                        <NumberSvg number={(i + 1).toString().padStart(2, "0")} />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-           
-            </div>
-          </div>
-
-    
-
-        </div>
+    <div className="w-full px-1 pb-2">
+      <div className="mb-4 flex items-center gap-2 px-1">
+        {allFeatures.map((item, index) => (
+          <button
+            key={item.id}
+            type="button"
+            onClick={() => scrollToCard(index)}
+            aria-label={`Go to step ${index + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              index === activeIndex ? "w-8 bg-black" : "w-3 bg-[#D3D3D3]"
+            }`}
+          />
+        ))}
       </div>
+
+      <div
+        ref={scrollRef}
+        onScroll={handleScroll}
+        className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        {allFeatures.map((item, index) => (
+          <article
+            key={item.id}
+            ref={(element) => {
+              itemRefs.current[index] = element;
+            }}
+            className="group relative min-h-[230px] w-[86%] shrink-0 snap-center overflow-hidden rounded-[28px] bg-[#E2E2E2] px-5 py-5 shadow-sm transition-transform duration-300 active:scale-[0.98]"
+          >
+            <div className="mb-4 flex items-center justify-between">
+              <span className="rounded-full bg-black px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
+                Step {index + 1}
+              </span>
+              <div className="opacity-20 transition-transform duration-300 group-active:scale-95">
+                <NumberSvg number={(index + 1).toString().padStart(2, "0")} />
+              </div>
+            </div>
+
+            <div className="relative z-10">
+              <h3 className="mb-3 text-[16px] font-bold leading-tight text-black">
+                {item.title}
+              </h3>
+              <p className="text-[13px] font-semibold leading-relaxed text-black">
+                {item.description}
+              </p>
+            </div>
+
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-white/20 to-transparent" />
+          </article>
+        ))}
+      </div>
+
+      <p className="mt-3 px-1 text-[12px] font-medium text-[#666666]">
+        Swipe across the steps to explore the full DevOps process.
+      </p>
     </div>
   );
 };
 
 const StructuredDevOps = () => {
+  const isMobile = useIsMobile();
   return (
-    <section className="relative w-full py-10 px-4 sm:px-6 overflow-hidden">
+    <section className="relative w-full px-4 sm:px-6">
       {/* Header */}
-      <div className="text-center mb-8 sm:mb-10 lg:mb-14 max-w-6xl mx-auto flex flex-col justify-center items-center">
+      <div className="text-center mb-8 sm:mb-10 lg:mb-14 max-w-7xl mx-auto flex flex-col justify-center items-center">
         <h2 className="text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px]  text-black font-bold leading-tight mb-3 sm:mb-4">
           Our
           <span
             data-text="Structured DevOps"
             className="shine-text text-[#F5B800] relative mx-1 sm:mx-2"
           >
-            Structured DevOps 
-          </span><br />
-          Consulting Approach
-          <br />
+            Structured DevOps
+          </span>
+          <span>Consulting Approach</span>
         </h2>
-        <p className="text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]  text-black leading-relaxed font-medium font-poppins leading-6 sm:leading-7 w-full sm:w-2xl lg:w-3xl px-2">
-         Beelockchain follows a structured DevOps consulting approach to automate software delivery, optimize infrastructure, and streamline CI/CD workflows across cloud-native environments.
+        <p className="text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] text-black font-poppins font-medium w-full px-2 sm:w-2xl lg:w-4xl">
+          Beelockchain follows a structured DevOps consulting approach to
+          automate software delivery, optimize infrastructure, and streamline
+          CI/CD workflows across cloud-native environments.
         </p>
+
+        <div className="mt-5 flex w-full justify-center sm:mt-6">
+          <Link
+            href="/contact-us"
+            className="group relative inline-flex min-h-9 w-auto max-w-[290px] items-center justify-center gap-1.5 overflow-hidden rounded-full border border-black bg-white px-3 py-1.5 text-black sm:min-h-12 sm:max-w-[360px] sm:gap-2 sm:px-5 sm:py-2.5 lg:min-h-14 lg:px-6"
+          >
+            <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.95)_0%,rgba(226,226,226,0.35)_55%,transparent_100%)] transition-opacity duration-300 group-hover:opacity-0" />
+            <span className="relative z-10 whitespace-nowrap text-center font-poppins text-[11px] font-medium leading-4 sm:text-[14px] sm:leading-5 lg:text-[15px]">
+              Consult Our DevOps Specialists
+            </span>
+            <svg
+              className="relative z-10 h-6 w-6 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 sm:h-8 sm:w-8"
+              viewBox="0 0 56 55"
+              aria-hidden="true"
+            >
+              <circle
+                cx="28"
+                cy="27"
+                r="16"
+                fill="#F6E000"
+                stroke="#F9C901"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M31 22L33 29M31 22L24 24M31 22L25 33"
+                stroke="black"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
       </div>
 
-      {/* ========== MOBILE ONLY (< 768px) ========== */}
-      <div className="md:hidden max-w-md mx-auto">
-        {/* Phone Image Centered */}
-        <div className="flex justify-center items-center mb-6 sm:mb-8">
-          <div className="relative w-full">
-            <img
-              src="/assets/images/devops/StructuredDevOps-mobile.png"
-              alt="App Development Mockup"
-              className="relative object-contain  w-full"
+      {/* ========== MOBILE ONLY (< 640px) ========== */}
+      {isMobile ? (
+        <div className="max-w-md mx-auto">
+          {/* Phone Image Centered */}
+          <div className="flex justify-center items-center mb-6 sm:mb-8">
+            <div className="relative w-full">
+              <img
+                src="/assets/images/devops/StructuredDevOps-mobile.png"
+                alt="App Development Mockup"
+                className="relative object-contain  w-full"
+              />
+            </div>
+          </div>
+
+          {/* Scrollable reel for Mobile */}
+          <MobileFeatureReel />
+        </div>
+      ) : (
+        <div className="relative mx-auto max-w-6xl">
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-0 flex min-h-[420px] items-start justify-center pt-2 sm:min-h-[360px] lg:min-h-[520px] xl:min-h-[560px]">
+            <Image
+              src="/assets/images/devops/StructuredDevOps.png"
+              alt="Structured DevOps consulting process illustration"
+              width={860}
+              height={860}
+              className="h-[300px] w-auto max-w-none object-contain sm:h-[300px] md:h-[460px] lg:h-[420px] xl:h-[730px]"
+              priority
             />
           </div>
-        </div>
 
-        {/* Carousel for Mobile */}
-        <MobileCarousel />
-      </div>
+          <div className="relative z-10 grid items-center gap-4 sm:grid-cols-[minmax(150px,1fr)_minmax(180px,220px)_minmax(150px,1fr)] md:grid-cols-[minmax(210px,1fr)_minmax(220px,280px)_minmax(210px,1fr)] lg:grid-cols-[minmax(290px,1fr)_minmax(380px,500px)_minmax(290px,1fr)] lg:gap-8 xl:grid-cols-[minmax(320px,1fr)_minmax(420px,560px)_minmax(320px,1fr)] xl:gap-10">
+            <div className="flex min-h-[420px] flex-col justify-start gap-3 pr-1 sm:min-h-[360px] sm:gap-2 sm:pr-0 md:min-h-[420px] md:gap-3 lg:min-h-[520px] lg:gap-4 lg:pr-2 xl:min-h-[560px] xl:pr-5">
+              {leftFeatures.map((feature) => (
+                <FeatureCard
+                  key={feature.id}
+                  title={feature.title}
+                  description={feature.description}
+                  align="left"
+                />
+              ))}
+            </div>
 
-      {/* ========== DESKTOP ONLY (≥ 1024px) ========== */}
-      <div
-        className="hidden lg:grid max-w-5xl mx-auto gap-8 items-stretch"
-        style={{
-          backgroundImage:
-            "url('/assets/images/devops/StructuredDevOps.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          gridTemplateColumns: "1fr auto 1fr",
-        }}
-      >
-        {/* Left Column */}
-        <div className="flex flex-col gap-5">
-          {leftFeatures.map((f, i) => (
-            <FeatureCard
-              key={i}
-              title={f.title}
-              description={f.description}
-              align="left"
-            />
-          ))}
-        </div>
+            <div className="min-h-[420px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[520px] xl:min-h-[560px]" />
 
-        {/* Center Column — Phone Image */}
-        <div className="flex justify-center items-center w-[220px] lg:w-[360px]">
-          <div className="relative w-full">
-            {/* Yellow blob background */}
-            <div
-              className="absolute inset-0 rounded-[40%] h-80 blur-2xl z-0"
-              style={{
-                background:
-                  "radial-gradient(ellipse at center, rgba(245, 184, 0, 0.4) 0%, rgba(245, 184, 0, 0.1) 50%, transparent 70%)",
-              }}
-            />
-           
+            <div className="flex min-h-[420px] flex-col justify-start gap-3 pl-1 sm:min-h-[360px] sm:gap-2 sm:pl-0 md:min-h-[420px] md:gap-3 lg:min-h-[520px] lg:gap-4 lg:pl-2 xl:min-h-[560px] xl:pl-5">
+              {rightFeatures.map((feature) => (
+                <FeatureCard
+                  key={feature.id}
+                  title={feature.title}
+                  description={feature.description}
+                  align="right"
+                />
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Right Column */}
-        <div className="flex flex-col gap-5">
-          {rightFeatures.map((f, i) => (
-            <FeatureCard
-              key={i}
-              title={f.title}
-              description={f.description}
-              align="right"
-            />
-          ))}
-        </div>
-      </div>
-
-    
+      )}
     </section>
   );
 };

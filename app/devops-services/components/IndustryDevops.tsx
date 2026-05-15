@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
+import { useIsMobile } from "./useIsMobile";
+import Link from "next/link";
 const industries = [
   "Fintech",
   "Healthcare",
-  "EdTech & e-Learning",
+  "EdTech",
   "Fitness",
   "Human Resource",
   "Real estate",
@@ -30,14 +32,16 @@ const industryImages = [
 
 const IndustryDevops = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
-    const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
+  const isMobile = useIsMobile(768);
 
   return (
-    <section className="w-full bg-white py-10  overflow-hidden">
-      {/* MOBILE TITLE */}
-      <h2 className="block md:hidden text-[20px] font-bold sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug    text-center mb-8 ">
-         Industries <span  className="shine-text text-[#F5B800]">We Serve with Our <br/> DevOps </span> Services
-      </h2>
+    <section className="w-full bg-white py-6  overflow-hidden">
+      {isMobile ? (
+        <h2 className="text-[20px] font-bold sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] text-black leading-snug text-center mb-8">
+          Industries <span className="shine-text text-[#F5B800]">We Serve with Our <br /> DevOps </span> Services
+        </h2>
+      ) : null}
 
       <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-16 items-start">
         {/* LEFT – IMAGE STACK GRID */}
@@ -55,7 +59,7 @@ const IndustryDevops = () => {
     ${i % 2 === 0 ? "-rotate-2" : "rotate-2"}
 
     group-hover:opacity-50
-    hover:!opacity-100
+    hover:opacity-100!
     hover:rotate-0
     hover:scale-110
     hover:z-20
@@ -89,13 +93,15 @@ const IndustryDevops = () => {
 
         {/* RIGHT – CONTENT */}
         <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
-          {/* TABLET + DESKTOP TITLE */}
-          <h2 className="hidden md:block text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold text-black  mb-6 ">
-            Industries <span  className="shine-text text-[#F5B800]">We Serve with Our DevOps </span> Services
-          </h2>
+          {!isMobile ? (
+            <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold text-black mb-6">
+              Industries <span className="shine-text text-[#F5B800]">We Serve with Our DevOps </span> Services
+            </h2>
+          ) : null}
 
-          <p className="text-black max-w-xl mb-10 lg:mb-20 md:mb-10  sm:mb-4 text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px] leading-relaxed font-normal font-['Poppins']">
-           We support digital transformation initiatives across industries with diverse operational, regulatory, and customer experience requirements.
+          <p className="text-black max-w-xl mb-8 sm:mb-4 md:mb-10 lg:mb-20 text-[13px] sm:text-[13px] md:text-[13px] lg:text-[14px] xl:text-[16px] font-medium font-poppins">
+
+          We don’t limit ourselves to just a few sectors. Over the years, Beelockchain has helped businesses across various industries adopt DevOps practices and improve software delivery performance.
           </p>
 
           {/* INDUSTRY LIST */}
@@ -112,8 +118,9 @@ const IndustryDevops = () => {
 
           {/* CTA BUTTON */}
           <div className="flex justify-center md:justify-start">
-          <a
+          <Link
             href="/contact-us"
+            target="_blank"
             onTouchStart={() => setActive(true)}
             onTouchEnd={() => setActive(false)}
             onMouseLeave={() => setActive(false)}
@@ -151,8 +158,8 @@ const IndustryDevops = () => {
               className="
                 relative z-10 w-10 h-10 lg:w-14 lg:h-14
                 transition-all duration-300 ease-out
-                group-hover:rotate-[60deg] group-hover:translate-x-1
-                group-active:rotate-[60deg] group-active:translate-x-1 group-active:scale-95
+                group-hover:rotate-60 group-hover:translate-x-1
+                group-active:rotate-60 group-active:translate-x-1 group-active:scale-95
               "
             >
               <circle
@@ -171,7 +178,7 @@ const IndustryDevops = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
 
         </div>
 
