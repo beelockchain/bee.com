@@ -112,17 +112,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-
-      <body  className={`${poppins.variable} ${manrope.variable} antialiased`}>
+      <body className={`${poppins.variable} ${manrope.variable} antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MLC9XMS6"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
 
         {/* ================= TOP NAVIGATION ================= */}
         <Topnav />
 
         {/* ================= MAIN CONTENT ================= */}
         {/* Add padding-top to account for fixed navbar height (h-20 = 5rem = 80px) */}
-        <main className="pt-20">
-          {children}
-          </main>
+        <main className="pt-20">{children}</main>
 
         <Footer />
 
@@ -136,7 +141,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Product",
               name: "Top Digital Transformation Services Company",
-              image: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/og-img.webp",
+              image:
+                "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/og-img.webp",
               description:
                 "Beelockchain.com is a prominent digital transformation company offering digital transformation services and solutions that help leading enterprises transform their businesses and modernize operations.",
               brand: {
