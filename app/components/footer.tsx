@@ -175,7 +175,7 @@ const Footer = () => {
           {/* LEFT — LOGO */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
             <Image
-              src={`${ASSET_URL}/images/Mainlogo.webp`}
+              src={`${ASSET_URL}/images/footer-logo.webp`}
               alt="Company Logo"
               width={160}
               height={40}
@@ -193,7 +193,12 @@ const Footer = () => {
 
             <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-2 max-w-[600px]
             text-[14px] sm:text-[14px] md:text-[12px]  xl:text-[14px]  text-black/70 font-poppins">
-              <Link href="/digital-transformation-services" className="underline underline-offset-4 hover:text-black">Digital Transformation</Link>
+             <Link 
+              href="/digital-transformation-services#top"
+              className="underline underline-offset-4 hover:text-black"
+            >
+              Digital Transformation
+            </Link>
               <Link href="/" className="underline underline-offset-4 hover:text-black">Generative AI Development</Link>
               <Link href="/" className="underline underline-offset-4 hover:text-black">Software Development</Link>
               <Link href="/" className="underline underline-offset-4 hover:text-black">Blockchain Development</Link>

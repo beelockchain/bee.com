@@ -75,7 +75,7 @@ const Digitaltransformation = () => {
           </div>
 
           {/* BUTTON */}
-<div className="order-4 sm:order-none flex flex-col md:flex-row gap-3 flex-nowrap px-5">
+<div className="order-4 sm:order-none flex flex-col md:flex-row gap-3 flex-nowrap px-5 md:px-0">
   
   <a
     href="/contact-us"

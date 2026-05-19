@@ -44,7 +44,7 @@ const TAB_CONTENT: Record<
     title: "Software Development",
     desc: "We specialize in bespoke software development solutions that help startups and enterprises grow with future-focused technology.",
     routes: [
-      { label: "Custom App Development",       href: "#" },
+      { label: "Custom App Development",       href: "/mobile-app-development" },
       { label: "Android App Development",      href: "#" },
       { label: "iOS App Development",          href: "#" },
       { label: "React Native App Development", href: "#" },

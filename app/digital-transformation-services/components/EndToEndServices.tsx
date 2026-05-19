@@ -30,11 +30,10 @@ const EndToEndServices: React.FC = () => {
 
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-10 xl:mb-15">
-          <h2 className="text-[20px] md:text-[22px] lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-[#000000] ">
-            Our <span data-text="End-to-End" className="shine-text relative text-[#F9C901]">End-To-End</span> Digital Transformation
-            <br className="hidden md:block" />
-            Services & Solutions
-          </h2>
+         <h2 className="text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-[#000000] [word-spacing:2px]">
+  Our <span data-text="End-to-End" className="shine-text relative text-[#F9C901]">End-To-End</span> Digital Transformation
+  <br className="hidden md:block" /> Services & Solutions
+</h2>
 
           <p className="text-[#000000] text-[14px] md:text-[14px] lg:text-[14px] xl:text-[16px] font-semibold lg:max-w-5xl xl:max-w-4xl mx-auto md:px-4 lg:px-4 xl:px-4">
             Beelockchain provides full-cycle digital transformation services, supporting organizations from roadmap to

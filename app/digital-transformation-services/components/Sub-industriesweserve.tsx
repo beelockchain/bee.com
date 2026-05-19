@@ -40,8 +40,9 @@ const SubIndustriesWeServe = () => {
   return (
     <section className="w-full bg-white pt-16 sm:py-10 lg:py-20 overflow-hidden">
       {/* MOBILE TITLE */}
-      <h2 className="block md:hidden text-3xl font-medium  text-center text-black mb-8">
-        Industries We Serve
+      <h2 className="block md:hidden text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold  text-center text-black mb-5">
+        <span data-text="Industries" className="shine-text relative text-[#F9C901]">Industries</span>    We Serve
+        
       </h2>
 
       <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-16 items-start">
@@ -72,8 +73,8 @@ const SubIndustriesWeServe = () => {
         {/* RIGHT – CONTENT */}
         <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
           {/* TABLET + DESKTOP TITLE */}
-          <h2 className="hidden md:block text-3xl lg:text-4xl font-medium text-black  mb-6 ">
-            Industries We Serve
+          <h2 className="hidden md:block text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold text-black  mb-6 ">
+              <span data-text="Industries" className="shine-text relative text-[#F9C901]">Industries</span>  We Serve
           </h2>
 
           <p className="text-black max-w-xl mb-10 lg:mb-10 md:mb-10 font-semibold  sm:mb-4 text-[14px] sm:text-sm md:text-[14px] lg:text-[14px] xl:text-[16px] leading-relaxed ">

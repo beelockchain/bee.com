@@ -3,12 +3,9 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+
 const Herosection = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
- const canvasRef = useRef<HTMLDivElement>(null)
-
   const imgRef = useRef<HTMLImageElement>(null);
   const beeRef = useRef<HTMLImageElement>(null);
   const btnRef = useRef<HTMLAnchorElement >(null);
@@ -123,54 +120,6 @@ const Herosection = () => {
       });
     });
   }, []);
-useEffect(() => {
-  if (!canvasRef.current) return
-
-  const width = 380
-  const height = 400
-
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
-  renderer.setSize(width, height)
-  renderer.setClearColor(0x000000, 0) // transparent background
-  canvasRef.current.appendChild(renderer.domElement)
-
-  const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100)
-  camera.position.set(0, 0, 5)
-
-  scene.add(new THREE.DirectionalLight(0xffffff, 1))
-  scene.add(new THREE.AmbientLight(0xffffff, 0.5))
-
-  const loader = new GLTFLoader()
-  loader.load('/models/Heromainimg.glb', (gltf) => {
-    const model = gltf.scene
-
-    // ✅ Auto-center and scale model to fit view
-    const box = new THREE.Box3().setFromObject(model)
-    const center = box.getCenter(new THREE.Vector3())
-    const size = box.getSize(new THREE.Vector3())
-    const maxDim = Math.max(size.x, size.y, size.z)
-    const scale = 3 / maxDim  // adjust 3 to make bigger/smaller
-    model.scale.setScalar(scale)
-    model.position.sub(center.multiplyScalar(scale))
-
-    scene.add(model)
-
-    const animate = () => {
-      requestAnimationFrame(animate)
-      model.rotation.y += 0.01
-      renderer.render(scene, camera)
-    }
-    animate()
-  })
-
-  return () => {
-    renderer.dispose()
-    if (canvasRef.current?.contains(renderer.domElement)) {
-      canvasRef.current.removeChild(renderer.domElement)
-    }
-  }
-}, [])
   return (
     <section className="w-full bg-white px-2  md:px-10 lg:px-20 py-2">
       <div className="max-w-9xl lg:max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-10">
@@ -198,23 +147,23 @@ useEffect(() => {
 
         {/* CENTER - IMAGE */}
         <div className="flex justify-center">
-          <div
-            ref={canvasRef}
+          <img
+            ref={imgRef}
+            src={`${ASSET_URL}/images/Heromainimg.webp`}
+            alt="Beelockchain Hero"
             className="
               w-full max-w-[280px]
               md:max-w-[260px]
               lg:max-w-[200px]
               xl:max-w-[380px]
+              object-contain
             "
-            style={{ 
-              height: '400px',
-              overflow: 'visible',   // ✅ stops clipping
-              transformStyle: "preserve-3d" 
-            }}
+            style={{ transformStyle: "preserve-3d" }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           />
         </div>
+
         {/* RIGHT - CONTENT */}
         <div className="relative  flex flex-col items-center lg:items-start gap-4 text-center lg:text-left">
           {/* DESCRIPTION BOX */}
@@ -228,7 +177,7 @@ useEffect(() => {
             <div className="relative z-10 px-4 py-5">
               <p
                 className="
-                  text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]
+                  text-[14px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]
                   font-normal text-black font-['Poppins']
                   w-full
                   max-w-[280px]
