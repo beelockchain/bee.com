@@ -195,7 +195,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
         <div className="flex justify-end items-center gap-3">
           <Link
             href="/contact-us"
-            className="hidden sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
+            className="flex  sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
           >
             Get started
             <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5 text-yellow-500 ml-1" />
@@ -295,9 +295,9 @@ const isActive = (href: string, hasDropdown?: boolean) => {
       {/* ===== SIDE MENU ===== */}
       <div
         className={`
-          fixed z-50  flex flex-col pb-8
+        fixed z-50 flex flex-col justify-between pb-6
           transition-all duration-300 ease-in-out
-          top-20
+          top-15
           w-full pt-5
           ${sideMenuOpen
             ? "translate-y-0 opacity-100"
@@ -312,7 +312,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
           }
         `}
       >
-        <div className="flex flex-col items-start sm:items-end gap-8 flex-1 overflow-y-auto  sm:pr-10 px-6 sm:px-0 pt-5">
+       <div className="flex flex-col items-start sm:items-end gap-8 flex-1 overflow-y-auto sm:pr-10 px-6 sm:px-0 pt-5 min-h-0">
 
           {/* PRIMARY MOBILE LINKS */}
           <div className="flex flex-col items-start gap-4 sm:hidden w-full">
@@ -367,14 +367,12 @@ const isActive = (href: string, hasDropdown?: boolean) => {
               </a>
             ))}
           </div>
-        </div>
-
-        {/* SOCIAL ICONS */}
-        <div className="px-3 sm:px-0  pt-0  sm:pr-8 mt-7 flex flex-col  sm:items-end">
-          <h4 className="text-lg md:text-md font-medium text-black mb-3 px-3">
+                  {/* SOCIAL ICONS */}
+        <div className="sm:px-0 sm:pr-0 flex flex-col sm:items-end md:mt-40 shrink-0">
+          <h4 className="text-lg md:text-md font-medium text-black mb-3">
             Connect With Us:
           </h4>
-          <div className="flex gap-3 px-1">
+          <div className="flex gap-3">
            {socialIcons.map((icon, i) => (
     <Link
       key={i}
@@ -403,6 +401,9 @@ const isActive = (href: string, hasDropdown?: boolean) => {
   ))}
           </div>
         </div>
+        </div>
+
+
       </div>
     </>
   );

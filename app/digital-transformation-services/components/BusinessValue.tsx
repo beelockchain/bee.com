@@ -444,7 +444,7 @@ TabletLayout = () => {
           <div className="mt-4 flex gap-3 flex-wrap">
             
             <a href="/contact-us">
-              <button className="group cursor-pointer relative flex items-center gap-2 px-4 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
+              <button className="group cursor-pointer relative flex items-center gap-2 px-3 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                 
                 {/* ripple */}
                 <span className="absolute inset-0 flex items-center justify-center z-0">
@@ -471,7 +471,7 @@ TabletLayout = () => {
               </button>
             </a>
 
-            <button className="group cursor-pointer relative flex items-center gap-2 px-4 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
+            <button className="group cursor-pointer relative flex items-center gap-2 px-6 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
               
               {/* ripple */}
               <span className="absolute inset-0 flex items-center justify-center z-0">

@@ -277,9 +277,9 @@ const BenefitsSection: React.FC = () => {
               style={{ height: `${WINDOW_H}px` }}
             >
               {/* Top fade — masks rows exiting upward */}
-              <div className="absolute top-0 left-0 right-0 z-10 pointer-events-none"
+              {/* <div className="absolute top-0 left-0 right-0 z-10 pointer-events-none"
                 style={{ height: '60px', background: 'linear-gradient(to bottom, #F9FAFB 0%, transparent 100%)' }}
-              />
+              /> */}
               {/* Bottom fade — peek hint */}
               <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
                 style={{ height: `${PEEK + 10}px`, background: 'linear-gradient(to top, #F9FAFB 0%, transparent 100%)' }}

@@ -37,7 +37,7 @@ const DigitalTransformationSection = () => {
           
           {/* IMAGE */}
           <div className="order-2 md:order-2 flex justify-center lg:justify-end xl:justify-center">
-            <div className="relative w-60 sm:w-80 md:w-70 lg:w-80 xl:w-100 flex justify-center">
+            <div className="relative w-70 sm:w-80 md:w-70 lg:w-80 xl:w-120 flex justify-center">
               <img src="assets/images/digitaltransform.png" alt="Digital Transformation Illustration" />
             </div>
           </div>
