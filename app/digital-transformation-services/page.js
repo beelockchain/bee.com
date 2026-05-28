@@ -48,7 +48,7 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp",
+        url: "/assets/favicon.webp",
       },
     ],
     apple: "/apple-touch-icon.png",
@@ -70,7 +70,7 @@ export const metadata = {
 
       images: [
         {
-          url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/og.webp", // replace
+          url: "/assets/og.webp", // replace
           width: 1200,
           height: 630,
           alt: "Digital Transformation Services & Solutions | Beelockchain",

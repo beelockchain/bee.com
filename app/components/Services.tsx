@@ -44,7 +44,7 @@ const TAB_CONTENT: Record<
     title: "Software Development",
     desc: "We specialize in bespoke software development solutions that help startups and enterprises grow with future-focused technology.",
     routes: [
-      { label: "Custom App Development",       href: "/mobile-app-development" },
+      { label: "Custom App Development",       href: "#" },
       { label: "Android App Development",      href: "#" },
       { label: "iOS App Development",          href: "#" },
       { label: "React Native App Development", href: "#" },
@@ -74,7 +74,7 @@ const TAB_CONTENT: Record<
   DevOps: {
     title: "DevOps Services",
     desc: "Beelockchain specializes in end-to-end DevOps solutions, offering CI/CD automation, cloud DevOps services, and faster, reliable software deployments.",
-    routes: [{ label: "DevOps Development", href: "#" }],
+    routes: [{ label: "DevOps Development", href: "/devops-services" }],
   },
   Marketing: {
     title: "Digital Marketing",

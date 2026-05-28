@@ -253,7 +253,7 @@ export default function Testi() {
       <div className="w-full bg-white mt-10">
         <div className="flex flex-col items-center w-full">
           <img
-            src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/TESTIMONIALS.webp"
+            src="/assets/images/TESTIMONIALS.webp"
             className="w-full max-w-7xl h-auto object-contain"
             alt="Testimonials"
           />

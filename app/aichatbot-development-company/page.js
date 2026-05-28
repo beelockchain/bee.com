@@ -15,6 +15,9 @@ import Chatbotawards from './components/Chatbotawards';
 import Chatbottestimonal from './components/Chatbottestimonal';
 import Chatbottesticarousel from './components/Chatbottesticarousel'
 import ContactBanner from './components/Contactbanner';
+import TechnologiesSection from './components/Chatbot-TechnologiesSection';
+import AIChatbotProcess from './components/AIChatbotProcess';
+import WhyChooseSection from './components/ChatbotWhyChooseSection';
 export const metadata = {
   title: "Digital Transformation Services & Solutions | Beelockchain",
   description:"Beelockchain is a digital transformation services company helping businesses with consulting, strategy, automation, cloud migration, & application modernization",
@@ -48,7 +51,7 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp",
+        url: "/assets/favicon.webp",
       },
     ],
     apple: "/apple-touch-icon.png",
@@ -70,7 +73,7 @@ export const metadata = {
 
       images: [
         {
-          url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/og.webp", // replace
+          url: "/assets/og.webp", // replace
           width: 1200,
           height: 630,
           alt: "Digital Transformation Services & Solutions | Beelockchain",
@@ -193,6 +196,9 @@ const serviceSchema = {
           <ChatbotBusiness />
           <ChatbotSolution/>
           <Chatbotindustry/>
+          <TechnologiesSection/>
+          <AIChatbotProcess/>
+          <WhyChooseSection/>
           <Chatbotawards/>
           <Chatbottestimonal/>
           <Chatbottesticarousel/>

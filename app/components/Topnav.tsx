@@ -144,7 +144,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
         <div className="flex items-center">
           <Link href="/" onClick={() => setServiceDropdownOpen(false)}>
             <img
-              src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/footer-logo.webp"
+              src="/assets/images/footer-logo.webp"
               alt="logo"
               className="h-10 sm:h-10
                 md:h-10 lg:h-14"
@@ -211,7 +211,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
                 <X className="h-4 w-4 md:h-5 md:w-5" />
               ) : (
                 <img
-                  src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/Hamburger.webp"
+                  src="/assets/images/Hamburger.webp"
                   alt="menu"
                   className="h-4 w-4 md:h-5 md:w-5"
                 />
