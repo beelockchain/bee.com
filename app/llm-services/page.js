@@ -9,6 +9,8 @@ import LlmUsecases from "./components/LlmUsecases";
 import LlmProcess from "./components/LlmProcess";
 import LlmIndustry from "./components/LlmIndustry";
 import LlmFaq from "./components/LlmFaq";
+import LlmTechnologies from "./components/LlmTechnologies";
+import WhyBeelockchainLlm from "./components/WhyBeelockchainLlm";
 export default function LLMServicesPage() {
   return (
     <>
@@ -23,6 +25,8 @@ export default function LLMServicesPage() {
         <LlmUsecases/>
         <LlmProcess/>
         <LlmIndustry/>
+        <WhyBeelockchainLlm/>
+        <LlmTechnologies/>
         <LlmFaq/>
 
       </main>

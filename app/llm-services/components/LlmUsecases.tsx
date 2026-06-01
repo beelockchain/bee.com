@@ -231,7 +231,7 @@ const SectionHeader = ({ isMobile = false }: { isMobile?: boolean }) => {
             }`}
           >
             The most valuable LLM applications focus on measurable business
-            outcomes. Organizations use large  language models to automate tasks
+            outcomes. Organizations use large language models to automate tasks
             that require heavy language processing while creating systems that
             extract information and develop intelligent, user-friendly
             interfaces.
