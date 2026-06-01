@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp",
+        url: "/assets/favicon.webp",
       },
     ],
     apple: "/apple-touch-icon.png",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     alternateLocale: ["en_GB", "en_AE", "en_IN"],
     images: [
       {
-        url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/og-img.webp",
+        url: "/assets/images/og-img.webp",
         width: 1200,
         height: 630,
         alt: "Digital Transformation Services & Solutions | Beelockchain.com",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     description:
       "Beelockchain offers next-generation digital transformation through AI-powered software and advanced blockchain solutions for enterprise growth.",
     images: [
-      "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/twitter.webp",
+      "/assets/images/twitter.webp",
     ],
   },
 

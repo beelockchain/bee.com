@@ -156,7 +156,7 @@ export default function CustomTestimonial() {
         <div className="flex flex-col items-center w-full">
 
           <img
-            src="https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/images/TESTIMONIALS.webp"
+            src="/assets/images/TESTIMONIALS.webp"
             className="w-[80%] md:w-[80%]"
             alt="Testimonials"
           />

@@ -9,12 +9,12 @@ interface BenefitCard {
 }
 
 const benefitCards: BenefitCard[] = [
-  { id: 1, icon: '/assets/images/aichatbot/automation-icon.png', title: 'Chatbot Consulting', description: 'Our chatbot consulting services help businesses identify the most valuable chatbot use cases and define a strategy that aligns with operational goals and customer interaction requirements.' },
-  { id: 2, icon: '/assets/images/aichatbot/automation-icon.png', title: 'Chatbot Conversion Design', description: 'We design structured conversation flows that guide users through intuitive interactions, helping businesses improve engagement and increase conversion rates.' },
-  { id: 3, icon: '/assets/images/aichatbot/automation-icon.png', title: 'Chatbot Architecture', description: 'Our team builds secure and scalable chatbot architectures capable of handling enterprise workloads while ensuring reliability, performance, and seamless integrations.' },
-  { id: 4, icon: '/assets/images/aichatbot/automation-icon.png', title: 'Custom Chatbot Development', description: 'We develop custom AI chatbot solutions tailored to specific business needs, enabling companies to automate customer support, lead generation, and digital communication.' },
-  { id: 5, icon: '/assets/images/aichatbot/automation-icon.png', title: 'Chatbot Integration', description: 'Our chatbot systems integrate with CRM platforms, APIs, enterprise databases, and third-party applications to create unified communication ecosystems.' },
-  { id: 6, icon: '/assets/images/aichatbot/automation-icon.png', title: 'AI Chatbot Support', description: 'We provide ongoing monitoring, optimization, and support to ensure chatbot systems continue delivering accurate responses and improved performance over time.' },
+  { id: 1, icon: '/assets/images/aichatbot/aichat-consult.png', title: 'Chatbot Consulting', description: 'Our chatbot consulting services help businesses identify the most valuable chatbot use cases and define a strategy that aligns with operational goals and customer interaction requirements.' },
+  { id: 2, icon: '/assets/images/aichatbot/aichat-design.png', title: 'Chatbot Conversion Design', description: 'We design structured conversation flows that guide users through intuitive interactions, helping businesses improve engagement and increase conversion rates.' },
+  { id: 3, icon: '/assets/images/aichatbot/aichat-architecture.png', title: 'Chatbot Architecture', description: 'Our team builds secure and scalable chatbot architectures capable of handling enterprise workloads while ensuring reliability, performance, and seamless integrations.' },
+  { id: 4, icon: '/assets/images/aichatbot/aichat-chatbotdev.png', title: 'Custom Chatbot Development', description: 'We develop custom AI chatbot solutions tailored to specific business needs, enabling companies to automate customer support, lead generation, and digital communication.' },
+  { id: 5, icon: '/assets/images/aichatbot/aichat-integration.png', title: 'Chatbot Integration', description: 'Our chatbot systems integrate with CRM platforms, APIs, enterprise databases, and third-party applications to create unified communication ecosystems.' },
+  { id: 6, icon: '/assets/images/aichatbot/aichat-support.png', title: 'AI Chatbot Support', description: 'We provide ongoing monitoring, optimization, and support to ensure chatbot systems continue delivering accurate responses and improved performance over time.' },
 ]
 
 // ✅ Fixed: row 3 now correctly has both card 7 and card 8

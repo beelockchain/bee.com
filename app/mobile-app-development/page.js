@@ -51,7 +51,7 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: "https://beecomassets.s3.ap-southeast-2.amazonaws.com/assets/favicon.webp",
+        url: "/assets/favicon.webp",
       },
     ],
   },
