@@ -106,7 +106,7 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => (
     <h3 className="text-base xl:text-[18px] font-bold text-gray-900 mb-1.5 leading-snug">
       {card.title}
     </h3>
-    <p className="text-center sm:text-left md:text-left  text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium  text-black">
+    <p className="text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium  text-black">
       {card.description}
     </p>
   </div>
@@ -114,15 +114,16 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => (
 
 // ─── LEFT PANEL ──────────────────────────────────────────────────────────────
 const LeftPanel: React.FC = () => (
-  <div className="flex flex-col justify-center">
-    <h2 className="text-3xl lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-black">
+  <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
+    <h2 className="text-[17px] sm:text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-black">
+      
       Our{" "}
       <span className="shine-text relative text-[#F9C901]">
         Large Language Model{" "}
       </span>{" "}
       Development Services
     </h2>
-    <p className="text-center sm:text-left md:text-left  text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium mb-4  text-black">
+    <p className="text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium mb-4 text-black text-center lg:text-left">
       Beelockchain’s end-to-end Large Language Model development services cover
       every stage of the AI lifecycle. From strategy and model selection, our
       expert AI Engineers, to production deployment and continuous
@@ -134,7 +135,7 @@ const LeftPanel: React.FC = () => (
       width={520}
       height={360}
       sizes="(max-width: 1024px) 100vw, 520px"
-      className="w-full max-w-md object-contain self-start"
+      className="w-full max-w-md object-contain self-center lg:self-start"
     />
   </div>
 );
@@ -143,13 +144,13 @@ const LeftPanel: React.FC = () => (
 const CustomLlm: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const columnRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const ROW_H = 285;
+  const ROW_H = 290;
   const GAP = 16; // gap between columns inside a row AND between rows
   const STEP = ROW_H + GAP; // distance to travel per scroll step
-  const PEEK = 0; // px of next row visible at bottom as hint
+  const PEEK = 0; // px of next row visi320pxble at bottom as hint
   const WINDOW_H = ROW_H * 2.1 + GAP + PEEK; // clipping window height
   const HEADER_OFFSET = 80;
 
@@ -157,15 +158,17 @@ const CustomLlm: React.FC = () => {
   const TOTAL_STEPS = rows.length - 2; // = 2
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 1024);
+    const mediaQuery = window.matchMedia("(max-width: 991px)");
+    const check = () => setIsMobile(mediaQuery.matches);
+
     check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    mediaQuery.addEventListener("change", check);
+    return () => mediaQuery.removeEventListener("change", check);
   }, []);
 
   // ── GSAP desktop animation ────────────────────────────────────────────────
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile !== false) return;
     if (typeof window === "undefined") return;
 
     let cleanup: (() => void) | undefined;
@@ -225,7 +228,7 @@ const CustomLlm: React.FC = () => {
     const card = benefitCards[activeIndex];
     return (
       <div className="w-full flex flex-col items-center mt-8">
-        <div className="w-full max-w-sm px-6">
+        <div className="w-full max-w-md px-2">
           <Card card={card} />
         </div>
         <div className="flex gap-2 mt-5">
@@ -255,102 +258,23 @@ const CustomLlm: React.FC = () => {
     );
   };
 
+  if (isMobile === null) {
+    return (
+      <section className="relative bg-gray-50 py-6 lg:py-12">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <LeftPanel />
+        </div>
+      </section>
+    );
+  }
+
   // ── MOBILE LAYOUT ─────────────────────────────────────────────────────────
   if (isMobile) {
     return (
-      <section className="relative bg-gray-50 py-12">
+      <section className="relative bg-gray-50 py-6">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex flex-col items-center text-center mb-2">
-            <span className="inline-block py-1 border-b-2 border-[#F9C901] text-[13px] font-bold text-black mb-4">
-              What Make Us Unique
-            </span>
-            <h2 className="text-[20px] font-bold leading-tight text-black">
-              Benefits Of{" "}
-              <span className="shine-text relative text-yellow-400">
-                Beelockchain's
-              </span>{" "}
-              Digital Transformation Services
-            </h2>
-            <p className="text-black text-[14px] mt-4 leading-relaxed max-w-sm md:max-w-xl font-semibold">
-              Begin your transformation journey with Beelockchain's skilled
-              experts. Build a future-ready organization using a structured
-              digital business transformation service approach.
-            </p>
-            <div className="mt-6 flex flex-col gap-3">
-              <a href="/contact-us">
-                <button className="group cursor-pointer relative inline-flex items-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">
-                  {/* ripple */}
-                  <span className="absolute inset-0 flex items-center justify-center z-0">
-                    <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
-                  </span>
-
-                  {/* glow */}
-                  <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
-
-                  <span className="relative z-10  text-black text-[12px]">
-                    Digitalize Your Business Now
-                  </span>
-
-                  <svg
-                    className="relative z-10 w-8 h-8 ml-1 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
-                    viewBox="0 0 56 55"
-                    fill="none"
-                  >
-                    <circle
-                      cx="28.2473"
-                      cy="27.0945"
-                      r="15.912"
-                      fill="#F6E000"
-                      stroke="#F9C901"
-                      strokeWidth="1.51543"
-                    />
-                    <path
-                      d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                      stroke="black"
-                      strokeWidth="3.03086"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-              </a>
-
-              <button className="group cursor-pointer relative inline-flex items-center justify-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">
-                {/* ripple */}
-                <span className="absolute inset-0 flex items-center justify-center z-0">
-                  <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
-                </span>
-
-                {/* glow */}
-                <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
-
-                <span className="relative z-10  text-black text-[12px]">
-                  Explore Our Portfolio
-                </span>
-
-                <svg
-                  className="relative z-10 w-8 h-8 ml-1 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95"
-                  viewBox="0 0 56 55"
-                  fill="none"
-                >
-                  <circle
-                    cx="28.2473"
-                    cy="27.0945"
-                    r="15.912"
-                    fill="#F6E000"
-                    stroke="#F9C901"
-                    strokeWidth="1.51543"
-                  />
-                  <path
-                    d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
-                    stroke="black"
-                    strokeWidth="3.03086"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+          <div className="mb-2">
+            <LeftPanel />
           </div>
           <MobileCards />
         </div>
@@ -361,9 +285,9 @@ const CustomLlm: React.FC = () => {
   // ── DESKTOP LAYOUT ────────────────────────────────────────────────────────
   return (
     <section ref={sectionRef} className="relative bg-gray-50">
-      <div className="min-h-[calc(100vh-5rem)] pt-20 flex items-center">
+      <div className="min-h-[calc(100vh-5rem)] flex items-center">
         <div className="container mx-auto px-6 lg:px-8 max-w-[1380px]">
-          <div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-8 lg:gap-10 items-center">
+          <div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-8 lg:gap-10 items-center mt-6">
             <LeftPanel />
 
             <div
@@ -390,17 +314,21 @@ const CustomLlm: React.FC = () => {
               />
 
               {/* Moving column — GSAP drives translateY on this */}
-              <div ref={columnRef} className="absolute left-0 right-0 top-0">
-                {rows.map((rowCards, rowIdx) => (
-                  <div
-                    key={rowIdx}
-                    className="grid grid-cols-2"
-                    style={{
-                      gap: `${GAP}px`, // gap between the 2 cards in a row
-                      height: `${ROW_H}px`,
-                      marginBottom: rowIdx < rows.length - 1 ? `${GAP}px` : 0, // gap between rows
-                    }}
-                  >
+             <div
+  ref={columnRef}
+  className="absolute left-0 right-0 top-0 flex flex-col"
+  style={{
+    gap: `${GAP}px`,
+  }}
+>
+  {rows.map((rowCards, rowIdx) => (
+    <div
+      key={rowIdx}
+      className="grid grid-cols-2 gap-4"
+      style={{
+        minHeight: `${ROW_H}px`,
+      }}
+    >
                     {rowCards.map((card) => (
                       <Card key={card.id} card={card} />
                     ))}

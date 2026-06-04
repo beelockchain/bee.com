@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useIsMobile } from "@/app/devops-services/components/useIsMobile";
+import { useIsMobile } from "@/app/devops-development-company/components/useIsMobile";
 import Link from "next/link";
 
 const services = [
@@ -42,75 +42,221 @@ const services = [
   },
 ];
 
-const SidePreviewCard = ({ service }: { service: (typeof services)[0] }) => {
+const UseCaseCard = ({
+  service,
+  isActive = false,
+}: {
+  service: (typeof services)[0];
+  isActive?: boolean;
+}) => {
   return (
-    <div className="max-w-[230px] text-center xl:max-w-[250px]">
-      <h3 className="text-lg font-semibold  mb-3 text-black font-poppins">
+    <div
+      className={`mx-auto flex min-h-[220px] h-full w-full max-w-[560px] flex-col items-center justify-center rounded-3xl bg-white px-8 py-8 text-center transition-all duration-300 ${
+        isActive
+          ? "border-2 border-[#F6E000]"
+          : "border border-[#d4d4d4]"
+      }`}
+    >
+      <h3 className="mb-3 text-lg font-semibold text-black font-poppins">
         {service.title}
       </h3>
-      <p className="flex-1 text-[11px] font-semibold leading-relaxed text-black sm:text-[10px] sm:leading-[1.45] md:text-[11px] lg:text-[13px] xl:text-[14px]">
+      <p className="text-[11px] font-semibold leading-relaxed text-black sm:text-[10px] sm:leading-[1.45] md:text-[11px] lg:text-[13px] xl:text-[14px]">
         {service.description}
       </p>
     </div>
   );
 };
 
-const FeaturedServiceCard = ({
-  previousService,
-  service,
-  nextService,
+const DesktopCarousel = ({
+  visibleServices,
   slideDirection = null,
 }: {
-  previousService: (typeof services)[0];
-  service: (typeof services)[0];
-  nextService: (typeof services)[0];
+  visibleServices: (typeof services)[0][];
   slideDirection?: "next" | "prev" | null;
 }) => {
   const trackClassName =
     slideDirection === "next"
-      ? "animate-[usecaseTrackNext_420ms_cubic-bezier(0.22,1,0.36,1)_forwards]"
+      ? "animate-[usecaseCardTrackNext_420ms_cubic-bezier(0.22,1,0.36,1)_forwards]"
       : slideDirection === "prev"
-        ? "animate-[usecaseTrackPrev_420ms_cubic-bezier(0.22,1,0.36,1)_forwards]"
+        ? "animate-[usecaseCardTrackPrev_420ms_cubic-bezier(0.22,1,0.36,1)_forwards]"
         : "translate-x-[-33.333%]";
-
-  const contentPanel = (item: (typeof services)[0]) => (
-    <div className="flex w-full shrink-0 basis-1/3 flex-col items-center justify-center px-8 py-8 text-center">
-      <h3 className="mb-3 max-w-[240px] text-lg font-semibold text-black font-poppins">
-        {item.title}
-      </h3>
-      <p className="text-[11px] font-semibold leading-relaxed text-black sm:text-[10px] sm:leading-[1.45] md:text-[11px] lg:text-[13px] xl:text-[14px]">
-        {item.description}
-      </p>
-    </div>
-  );
+  const highlightedIndex =
+    slideDirection === "next" ? 3 : slideDirection === "prev" ? 1 : 2;
 
   return (
-    <div className="relative mx-auto min-h-[210px] w-full max-w-[380px] overflow-hidden rounded-[20px] border border-[#d4d4d4] bg-white shadow-[0_10px_28px_rgba(0,0,0,0.14)]">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className={`flex h-full w-[300%] ${trackClassName}`}>
-          {contentPanel(previousService)}
-          {contentPanel(service)}
-          {contentPanel(nextService)}
+    <div className="overflow-hidden px-3 py-4">
+      <div className={`flex items-stretch ${trackClassName}`}>
+        {visibleServices.map((service, index) => (
+          <div
+            key={`${service.title}-${index}`}
+            className="w-1/3 shrink-0 px-3"
+          >
+            <UseCaseCard
+              service={service}
+              isActive={index === highlightedIndex}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const IndicatorDots = ({
+  activeIndex,
+  onSelect,
+}: {
+  activeIndex: number;
+  onSelect: (targetIndex: number) => void;
+}) => {
+  return (
+    <div className="flex items-center justify-center gap-2">
+      {services.map((service, index) => {
+        const isActive = index === activeIndex;
+
+        return (
+          <button
+            key={service.title}
+            type="button"
+            aria-label={`Go to ${service.title}`}
+            aria-pressed={isActive}
+            onClick={() => onSelect(index)}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              isActive
+                ? "w-8 bg-[#F6E000]"
+                : "w-2.5 bg-[#d2d2d2] hover:bg-[#b8b8b8]"
+            }`}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+const getDirectionalSteps = (fromIndex: number, targetIndex: number) => {
+  const forwardSteps =
+    (targetIndex - fromIndex + services.length) % services.length;
+  const backwardSteps =
+    (fromIndex - targetIndex + services.length) % services.length;
+
+  if (forwardSteps === 0) {
+    return { direction: null, steps: 0 };
+  }
+
+  if (forwardSteps <= backwardSteps) {
+    return { direction: "next" as const, steps: forwardSteps };
+  }
+
+  return { direction: "prev" as const, steps: backwardSteps };
+};
+
+const getVisibleServices = (activeIndex: number) => {
+  const total = services.length;
+
+  return [
+    services[(activeIndex - 2 + total) % total],
+    services[(activeIndex - 1 + total) % total],
+    services[activeIndex],
+    services[(activeIndex + 1) % total],
+    services[(activeIndex + 2) % total],
+  ];
+};
+
+const MobileCarousel = ({
+  activeIndex,
+  onPrevious,
+  onNext,
+  onSelect,
+}: {
+  activeIndex: number;
+  onPrevious: () => void;
+  onNext: () => void;
+  onSelect: (targetIndex: number) => void;
+}) => {
+  return (
+    <div className="mt-1 sm:mt-2 md:mt-3">
+      <div className="mx-auto w-full max-w-md overflow-hidden px-1 sm:max-w-xl md:max-w-md md:px-0">
+        <div
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        >
+          {services.map((service) => (
+            <div key={service.title} className="w-full shrink-0">
+              <div className="h-full rounded-2xl border border-[#d4d4d4] bg-white p-5">
+                <div className="mb-3 flex items-start justify-start"></div>
+
+                <h3 className="mb-2 text-base font-bold text-gray-900">
+                  {service.title}
+                </h3>
+
+                <p className="text-xs leading-relaxed font-medium font-poppins text-black">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
+
+      <div className="mt-4 flex items-center justify-center gap-3">
+        <button
+          type="button"
+          aria-label="Previous use case"
+          onClick={onPrevious}
+          className="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d8d8] bg-white text-black transition-colors hover:bg-[#f7f7f7]"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <IndicatorDots activeIndex={activeIndex} onSelect={onSelect} />
+
+        <button
+          type="button"
+          aria-label="Next use case"
+          onClick={onNext}
+          className="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d8d8] bg-white text-black transition-colors hover:bg-[#f7f7f7]"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            className="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
       </div>
     </div>
   );
 };
 
 // Reusable CTA Button Component
-const CTAButton = ({ isMobile = false }: { isMobile?: boolean }) => {
+const CTAButton = ({ isCompact = false }: { isCompact?: boolean }) => {
   return (
     <div
       className={`
     w-full flex items-center justify-center gap-3
-    ${isMobile ? "flex-col" : "flex-row"}
+    ${isCompact ? "flex-col sm:flex-row" : "flex-row"}
   `}
     >
       {" "}
       <Link href="/contact-us" target="_blank">
         <button
           className={`group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white ${
-            isMobile
+            isCompact
               ? "px-4 py-3 w-auto min-w-[200px]"
               : "px-4 py-2 lg:px-4 lg:py-0 w-auto"
           }`}
@@ -121,15 +267,15 @@ const CTAButton = ({ isMobile = false }: { isMobile?: boolean }) => {
           <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
           <span
             className={`relative z-10 text-black font-medium text-center transition-colors ${
-              isMobile ? "text-[12px]" : "text-sm whitespace-nowrap"
+              isCompact ? "text-[12px]" : "text-sm whitespace-nowrap"
             }`}
           >
             Contact Our AI Engineer
           </span>
           <svg
             viewBox="0 0 56 55"
-            className={`relative z-10 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95 ${
-              isMobile ? "w-6 h-6 ml-2" : "w-10 h-10 lg:w-14 lg:h-14"
+            className={`relative z-10 transition-all duration-300 group-hover:rotate-60 group-hover:translate-x-1 group-active:scale-95 ${
+              isCompact ? "w-6 h-6 ml-2" : "w-10 h-10 lg:w-14 lg:h-14"
             }`}
           >
             <circle
@@ -153,7 +299,7 @@ const CTAButton = ({ isMobile = false }: { isMobile?: boolean }) => {
       <Link href="/contact-us" target="_blank">
         <button
           className={`group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white ${
-            isMobile
+            isCompact
               ? "px-4 py-3 w-auto min-w-[200px]"
               : "px-4 py-2 lg:px-4 lg:py-0 w-auto"
           }`}
@@ -164,15 +310,15 @@ const CTAButton = ({ isMobile = false }: { isMobile?: boolean }) => {
           <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300 z-0" />
           <span
             className={`relative z-10 text-black font-medium text-center transition-colors ${
-              isMobile ? "text-[12px]" : "text-sm whitespace-nowrap"
+              isCompact ? "text-[12px]" : "text-sm whitespace-nowrap"
             }`}
           >
             Explore Our Work
           </span>
           <svg
             viewBox="0 0 56 55"
-            className={`relative z-10 transition-all duration-300 group-hover:rotate-[60deg] group-hover:translate-x-1 group-active:scale-95 ${
-              isMobile ? "w-6 h-6 ml-2" : "w-10 h-10 lg:w-14 lg:h-14"
+            className={`relative z-10 transition-all duration-300 group-hover:rotate-60 group-hover:translate-x-1 group-active:scale-95 ${
+              isCompact ? "w-6 h-6 ml-2" : "w-10 h-10 lg:w-14 lg:h-14"
             }`}
           >
             <circle
@@ -198,15 +344,21 @@ const CTAButton = ({ isMobile = false }: { isMobile?: boolean }) => {
 };
 
 // Header Component
-const SectionHeader = ({ isMobile = false }: { isMobile?: boolean }) => {
+const SectionHeader = ({
+  isMobile = false,
+  isCompact = false,
+}: {
+  isMobile?: boolean;
+  isCompact?: boolean;
+}) => {
   return (
-    <div className={isMobile ? "text-center mb-0" : "mb-0"}>
+    <div className={isCompact ? "text-center mb-0" : "mb-0"}>
       <div
         className={
-          isMobile ? "" : "flex items-start justify-between gap-8 xl:gap-12"
+          isCompact ? "" : "flex items-start justify-between gap-8 xl:gap-12"
         }
       >
-        <div className={isMobile ? "" : "max-w-2xl text-start"}>
+        <div className={isCompact ? "mx-auto max-w-2xl" : "max-w-2xl text-start"}>
           <h2
             className={`font-bold text-gray-900 ${
               isMobile
@@ -240,58 +392,31 @@ const SectionHeader = ({ isMobile = false }: { isMobile?: boolean }) => {
 
         <div
           className={
-            isMobile
+            isCompact
               ? "w-full flex justify-center items-center mt-6"
-              : "flex-shrink-0 pt-5"
+              : "shrink-0 pt-5"
           }
         >
-          <CTAButton isMobile={isMobile} />
+          <CTAButton isCompact={isCompact} />
         </div>
       </div>
     </div>
   );
 };
 
-// ─── Mobile Carousel ────────────────────────────────────────────────────────
-// Mirrors exact carousel behaviour from BenefitsSection
-const MobileCarousel = () => {
-  return (
-    <div
-      className="
-    flex gap-4 overflow-x-auto pl-4 pr-2
-    scroll-smooth snap-x snap-mandatory
-    no-scrollbar mt-4
-  "
-    >
-      {services.map((service, i) => (
-        <div key={i} className="snap-start flex-shrink-0 w-[88%]">
-          <div className="bg-[#F8F8F8] rounded-2xl p-5 h-full">
-            <div className="mb-3 flex items-start justify-start"></div>
-
-            <h3 className="text-base font-bold text-gray-900 mb-2">
-              {service.title}
-            </h3>
-
-            <p className="text-xs text-black leading-relaxed font-medium font-poppins">
-              {service.description}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
 const LlmUsecases = () => {
   const isMobile = useIsMobile();
+  const isCompactLayout = useIsMobile(1024);
   const [activeIndex, setActiveIndex] = useState(1);
   const [slideDirection, setSlideDirection] = useState<"next" | "prev" | null>(
     null,
   );
   const timeoutRef = useRef<number | null>(null);
-
-  const previousIndex = (activeIndex - 1 + services.length) % services.length;
-  const nextIndex = (activeIndex + 1) % services.length;
+  const queuedStepsRef = useRef<{
+    direction: "next" | "prev" | null;
+    steps: number;
+  }>({ direction: null, steps: 0 });
+  const visibleServices = getVisibleServices(activeIndex);
 
   useEffect(() => {
     return () => {
@@ -316,6 +441,25 @@ const LlmUsecases = () => {
       );
       setSlideDirection(null);
       timeoutRef.current = null;
+
+      if (
+        queuedStepsRef.current.direction === nextDirection &&
+        queuedStepsRef.current.steps > 0
+      ) {
+        queuedStepsRef.current.steps -= 1;
+      }
+
+      if (
+        queuedStepsRef.current.direction !== null &&
+        queuedStepsRef.current.steps > 0
+      ) {
+        const queuedDirection = queuedStepsRef.current.direction;
+        window.setTimeout(() => {
+          runCarouselTransition(queuedDirection);
+        }, 0);
+      } else {
+        queuedStepsRef.current = { direction: null, steps: 0 };
+      }
     }, 420);
   };
 
@@ -327,13 +471,52 @@ const LlmUsecases = () => {
     runCarouselTransition("next");
   };
 
+  const goToIndex = (targetIndex: number) => {
+    if (slideDirection !== null || targetIndex === activeIndex) {
+      return;
+    }
+
+    const { direction, steps } = getDirectionalSteps(activeIndex, targetIndex);
+
+    if (direction === null || steps === 0) {
+      return;
+    }
+
+    queuedStepsRef.current = {
+      direction,
+      steps: steps - 1,
+    };
+
+    runCarouselTransition(direction);
+  };
+
   return (
     <section className="relative pt-10 pb-2  px-6 h-fit ">
       <div className="max-w-7xl mx-auto">
-        {isMobile ? (
+        {isCompactLayout ? (
           <div className="pb-10">
-            <SectionHeader isMobile={true} />
-            <MobileCarousel />
+            <SectionHeader isMobile={isMobile} isCompact={true} />
+
+            <div className="relative overflow-hidden rounded-[28px] px-4 pb-0 pt-4 sm:px-6 sm:pt-5 md:px-8 md:pt-6">
+              <div className="pointer-events-none absolute left-1/2 top-14 h-[170px] w-[280px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,223,109,0.5)_0%,rgba(248,223,109,0.22)_48%,rgba(248,223,109,0)_76%)] blur-2xl sm:top-[60px] sm:h-[190px] sm:w-[340px] md:top-[68px] md:h-[210px] md:w-[430px]" />
+
+              <div className="relative z-0 flex justify-center">
+                <div className="flex items-center justify-center rounded-full">
+                  <img
+                    src="/assets/images/llm/llm-logo.png"
+                    alt="LLM Logo"
+                    className="w-full max-w-[220px] object-contain sm:max-w-[280px] md:max-w-[340px]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <MobileCarousel
+              activeIndex={activeIndex}
+              onPrevious={showPrevious}
+              onNext={showNext}
+              onSelect={goToIndex}
+            />
           </div>
         ) : (
           <div>
@@ -352,29 +535,19 @@ const LlmUsecases = () => {
                 </div>
               </div>
 
-              <div className="relative z-20 -mt-36 grid grid-cols-[1fr_minmax(320px,380px)_1fr] items-center gap-12 xl:gap-16">
-                <div className="flex justify-end">
-                  <SidePreviewCard service={services[previousIndex]} />
-                </div>
-
-                <FeaturedServiceCard
-                  previousService={services[previousIndex]}
-                  service={services[activeIndex]}
-                  nextService={services[nextIndex]}
+              <div className="relative z-20 -mt-36">
+                <DesktopCarousel
+                  visibleServices={visibleServices}
                   slideDirection={slideDirection}
                 />
-
-                <div className="flex justify-start">
-                  <SidePreviewCard service={services[nextIndex]} />
-                </div>
               </div>
 
-              <div className="relative z-10 mt-10 flex items-center justify-center gap-3">
+              <div className="relative z-10 mt-6 flex items-center justify-center gap-3">
                 <button
                   type="button"
                   aria-label="Previous use case"
                   onClick={showPrevious}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d8d8] bg-white text-black transition-colors hover:bg-[#f7f7f7]"
+                  className="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d8d8] bg-white text-black transition-colors hover:bg-[#f7f7f7]"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -389,11 +562,13 @@ const LlmUsecases = () => {
                   </svg>
                 </button>
 
+                <IndicatorDots activeIndex={activeIndex} onSelect={goToIndex} />
+
                 <button
                   type="button"
                   aria-label="Next use case"
                   onClick={showNext}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d8d8] bg-white text-black transition-colors hover:bg-[#f7f7f7]"
+                  className="cursor-pointer flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d8d8] bg-white text-black transition-colors hover:bg-[#f7f7f7]"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -414,7 +589,7 @@ const LlmUsecases = () => {
       </div>
 
       <style jsx>{`
-        @keyframes usecaseTrackNext {
+        @keyframes usecaseCardTrackNext {
           0% {
             transform: translateX(-33.333%);
           }
@@ -424,7 +599,7 @@ const LlmUsecases = () => {
           }
         }
 
-        @keyframes usecaseTrackPrev {
+        @keyframes usecaseCardTrackPrev {
           0% {
             transform: translateX(-33.333%);
           }

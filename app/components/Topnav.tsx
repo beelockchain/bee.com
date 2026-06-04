@@ -13,14 +13,13 @@ const serviceSubMenu = [
   { label: "Software Development", href: "/" },
   { label: "Blockchain Solutions", href: "https://beelockchain.io/" },
   { label: "AI Development", href: "/" },
-  { label: "DevOps", href: "/devops-services" },
+  { label: "DevOps", href: "/devops-development-company" },
 ];
 
 const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Service", href: "/service", hasDropdown: true },
   { label: "Insights", href: "/#insights" },
-  
 ];
 
 const secondaryNav = [
@@ -28,17 +27,15 @@ const secondaryNav = [
   { label: "Pitch Deck", href: "#" },
   { label: "Portfolio", href: "#" },
   { label: "Career", href: "#" },
-    { label: "Privacy Policy", href: "#" },
+  { label: "Privacy Policy", href: "#" },
   { label: "Terms & Condition", href: "#" },
- 
 ];
 
-  const socialIcons = [
+const socialIcons = [
   {
     name: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61585250317865",
     src: `${ASSET_URL}/images/fb-icon.webp`,
-    
   },
   {
     name: "Twitter",
@@ -65,7 +62,7 @@ const secondaryNav = [
   //   href: "https://t.me/+919025217523",
   //   src: `${ASSET_URL}/images/telegram-icon.webp`,
   // },
-   {
+  {
     name: "Instagram",
     href: "https://www.instagram.com/beelockchain_com",
     src: `${ASSET_URL}/images/insta-icon.webp`,
@@ -108,22 +105,20 @@ const Topnav = () => {
     };
   }, [sideMenuOpen]);
 
-const isActive = (href: string, hasDropdown?: boolean) => {
-  if (hasDropdown) {
-    return (
-      pathname.startsWith("/service") ||
-      pathname === "/digital-transformation-services"
-    );
-  }
+  const isActive = (href: string, hasDropdown?: boolean) => {
+    if (hasDropdown) {
+      return (
+        pathname.startsWith("/service") ||
+        pathname === "/digital-transformation-services"
+      );
+    }
 
-  if (href === "/") return pathname === "/";
+    if (href === "/") return pathname === "/";
 
-  return pathname.startsWith(href);
-};
+    return pathname.startsWith(href);
+  };
 
   const handleSubMenuClick = (href: string) => {
-
-    
     setServiceDropdownOpen(false);
     window.location.href = href;
   };
@@ -138,96 +133,93 @@ const isActive = (href: string, hasDropdown?: boolean) => {
     <>
       {/* ===== TOP NAV ===== */}
       <div className="fixed z-50 w-full bg-[#FFFCF8]">
-      <div className="h-20 grid grid-cols-2   sm:grid-cols-3 md:grid md:grid-cols-3 items-center px-4 lg:px-10">
-
-        {/* LEFT - LOGO */}
-        <div className="flex items-center">
-          <Link href="/" onClick={() => setServiceDropdownOpen(false)}>
-            <img
-              src="/assets/images/footer-logo.webp"
-              alt="logo"
-              className="h-10 sm:h-10
+        <div className="h-20 grid grid-cols-2   sm:grid-cols-3 md:grid md:grid-cols-3 items-center px-4 lg:px-10">
+          {/* LEFT - LOGO */}
+          <div className="flex items-center">
+            <Link href="/" onClick={() => setServiceDropdownOpen(false)}>
+              <img
+                src="/assets/images/footer-logo.webp"
+                alt="logo"
+                className="h-10 sm:h-10
                 md:h-10 lg:h-14"
-            />
-          </Link>
-        </div>
+              />
+            </Link>
+          </div>
 
-        {/* CENTER NAV */}
-        <nav className="hidden sm:flex justify-center items-center gap-6 sm:gap-6 md:gap-8 lg:gap-10">
-          {primaryNav.map((item) => {
-            const active = isActive(item.href, item.hasDropdown);
+          {/* CENTER NAV */}
+          <nav className="hidden sm:flex justify-center items-center gap-6 sm:gap-6 md:gap-8 lg:gap-10">
+            {primaryNav.map((item) => {
+              const active = isActive(item.href, item.hasDropdown);
 
-            return (
-              <div key={item.label} className="relative ">
-                {item.hasDropdown ? (
-                  <button
-                    ref={serviceButtonRef}
-                    onClick={() => setServiceDropdownOpen((prev) => !prev)}
-                    className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+              return (
+                <div key={item.label} className="relative ">
+                  {item.hasDropdown ? (
+                    <button
+                      ref={serviceButtonRef}
+                      onClick={() => setServiceDropdownOpen((prev) => !prev)}
+                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
                       ${
                         active || serviceDropdownOpen
                           ? "font-bold text-black"
                           : "font-medium text-[#807E7C] hover:text-black"
                       }`}
-                  >
-                    {item.label}
-                  </button>
-                ) : (
-                  <Link
-                    href={item.href}
-                    onClick={() => setServiceDropdownOpen(false)}
-                    className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setServiceDropdownOpen(false)}
+                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
                       ${
                         active
                           ? "font-bold text-black"
                           : "font-medium text-[#807E7C] hover:text-black"
                       }`}
-                  >
-                    {item.label}
-                  </Link>
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* RIGHT ACTIONS */}
+          <div className="flex justify-end items-center gap-3">
+            <Link
+              href="/contact-us"
+              className="flex  sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
+            >
+              Get started
+              <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5 text-yellow-500 ml-1" />
+            </Link>
+
+            <button
+              onClick={() => setSideMenuOpen(!sideMenuOpen)}
+              className="flex items-center cursor-pointer gap-1.5 border border-black px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm hover:bg-gray-100 transition text-black"
+            >
+              {sideMenuOpen ? "Close" : "Menu"}
+              <div className="w-6 h-6 flex items-center justify-center">
+                {sideMenuOpen ? (
+                  <X className="h-4 w-4 md:h-5 md:w-5" />
+                ) : (
+                  <img
+                    src="/assets/images/Hamburger.webp"
+                    alt="menu"
+                    className="h-4 w-4 md:h-5 md:w-5"
+                  />
                 )}
               </div>
-            );
-          })}
-        </nav>
-
-        {/* RIGHT ACTIONS */}
-        <div className="flex justify-end items-center gap-3">
-          <Link
-            href="/contact-us"
-            className="flex  sm:flex items-center bg-black text-white px-3 py-2 md:px-4 md:py-2.5 rounded-full text-xs lg:text-sm hover:bg-gray-800 transition border border-black whitespace-nowrap"
-          >
-            Get started
-            <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5 text-yellow-500 ml-1" />
-          </Link>
-
-          <button
-            onClick={() => setSideMenuOpen(!sideMenuOpen)}
-            className="flex items-center cursor-pointer gap-1.5 border border-black px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm hover:bg-gray-100 transition text-black"
-          >
-            {sideMenuOpen ? "Close" : "Menu"}
-            <div className="w-6 h-6 flex items-center justify-center">
-              {sideMenuOpen ? (
-                <X className="h-4 w-4 md:h-5 md:w-5" />
-              ) : (
-                <img
-                  src="/assets/images/Hamburger.webp"
-                  alt="menu"
-                  className="h-4 w-4 md:h-5 md:w-5"
-                />
-              )}
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
-      </div>
 
         {/* ===== SERVICE DROPDOWN (DESKTOP) ===== */}
         <div
           ref={dropdownRef}
           className={`absolute left-0 right-0 top-full w-full cursor-pointer  transition-all duration-300 overflow-hidden ${
-            serviceDropdownOpen
-              ? "max-h-96 opacity-100"
-              : "max-h-0 opacity-0" 
+            serviceDropdownOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           {/* Mirror the exact flex layout of the top nav row so the submenu naturally sits below the "Service" button */}
@@ -248,16 +240,16 @@ const isActive = (href: string, hasDropdown?: boolean) => {
               {/* The actual submenu — directly under Service */}
               <div className="flex flex-col gap-3">
                 {serviceSubMenu.map((sub) => (
-                 <Link
-                  key={sub.label}
-                  href={sub.href}
-                  rel="noopener noreferrer"
-                  onClick={() => setServiceDropdownOpen(false)}
-                  className="flex items-center gap-3 text-sm md:text-[15px] font-medium text-black hover:text-black transition group text-left cursor-pointer"
-                >
-                  <span className="w-2 h-2 flex-shrink-0 rounded-full bg-yellow-400 group-hover:scale-125 transition-transform" />
-                  {sub.label}
-                </Link>
+                  <Link
+                    key={sub.label}
+                    href={sub.href}
+                    rel="noopener noreferrer"
+                    onClick={() => setServiceDropdownOpen(false)}
+                    className="flex items-center gap-3 text-sm md:text-[15px] font-medium text-black hover:text-black transition group text-left cursor-pointer"
+                  >
+                    <span className="w-2 h-2 flex-shrink-0 rounded-full bg-yellow-400 group-hover:scale-125 transition-transform" />
+                    {sub.label}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -299,9 +291,11 @@ const isActive = (href: string, hasDropdown?: boolean) => {
           transition-all duration-300 ease-in-out
           top-15
           w-full pt-5
-          ${sideMenuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-4 opacity-0 pointer-events-none"}
+          ${
+            sideMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-4 opacity-0 pointer-events-none"
+          }
           sm:w-[380px]
           sm:left-auto sm:right-0 sm:h-[calc(100vh-80px)]
           sm:translate-y-0
@@ -312,8 +306,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
           }
         `}
       >
-       <div className="flex flex-col items-start sm:items-end gap-8 flex-1 overflow-y-auto sm:pr-10 px-6 sm:px-0 pt-5 min-h-0">
-
+        <div className="flex flex-col items-start sm:items-end gap-8 flex-1 overflow-y-auto sm:pr-10 px-6 sm:px-0 pt-5 min-h-0">
           {/* PRIMARY MOBILE LINKS */}
           <div className="flex flex-col items-start gap-4 sm:hidden w-full">
             {primaryNav.map((item) =>
@@ -349,7 +342,7 @@ const isActive = (href: string, hasDropdown?: boolean) => {
                 >
                   {item.label}
                 </a>
-              )
+              ),
             )}
           </div>
 
@@ -359,7 +352,6 @@ const isActive = (href: string, hasDropdown?: boolean) => {
               <a
                 key={item.label}
                 href={item.href}
-
                 className="text-md font-medium text-black hover:text-yellow-500 transition"
                 onClick={() => setSideMenuOpen(false)}
               >
@@ -367,43 +359,41 @@ const isActive = (href: string, hasDropdown?: boolean) => {
               </a>
             ))}
           </div>
-                  {/* SOCIAL ICONS */}
-        <div className="sm:px-0 sm:pr-0 flex flex-col sm:items-end md:mt-40 shrink-0">
-          <h4 className="text-lg md:text-md font-medium text-black mb-3">
-            Connect With Us:
-          </h4>
-          <div className="flex gap-3">
-           {socialIcons.map((icon, i) => (
-    <Link
-      key={i}
-      href={icon.href}
-      aria-label={icon.name}
-      rel="noopener noreferrer"
-      className="group"
-    >
-      <div
-        className="
+          {/* SOCIAL ICONS */}
+          <div className="sm:px-0 sm:pr-0 flex flex-col sm:items-end md:mt-40 shrink-0">
+            <h4 className="text-lg md:text-md font-medium text-black mb-3">
+              Connect With Us:
+            </h4>
+            <div className="flex gap-3">
+              {socialIcons.map((icon, i) => (
+                <Link
+                  key={i}
+                  href={icon.href}
+                  aria-label={icon.name}
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <div
+                    className="
           transition-all duration-300 ease-out
           group-hover:-translate-y-2
           group-hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)]
           rounded-full
         "
-      >
-        <Image
-          src={icon.src}
-          alt={icon.name}
-          width={42}
-          height={42}
-          className="object-contain transition-opacity duration-300 group-hover:opacity-90"
-        />
-      </div>
-    </Link>
-  ))}
+                  >
+                    <Image
+                      src={icon.src}
+                      alt={icon.name}
+                      width={42}
+                      height={42}
+                      className="object-contain transition-opacity duration-300 group-hover:opacity-90"
+                    />
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-        </div>
-
-
       </div>
     </>
   );

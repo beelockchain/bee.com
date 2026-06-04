@@ -1,5 +1,5 @@
 "use client";
-import { useIsMobile } from "@/app/devops-services/components/useIsMobile";
+import { useIsMobile } from "@/app/devops-development-company/components/useIsMobile";
 
 const BenifitsLLM = () => {
   const isMobile = useIsMobile();
@@ -65,7 +65,7 @@ const BenifitsLLM = () => {
           {/* Image Section - First on mobile/tablet, right on desktop */}
           <div className="w-full flex justify-center items-center h-full">
             <img
-              src="/assets/images/devops/devops-solution.png"
+              src="/assets/images/llm/benefits-llm-leftimg.png"
               alt="Beelockchain mobile app"
               className="max-w-[280px] w-auto h-auto object-contain mx-auto"
             />
@@ -78,10 +78,10 @@ const BenifitsLLM = () => {
                 key={index}
                 className="rounded-3xl border border-[#e5e5e5] bg-[#f8f8f8] px-6 py-7 shadow-[0_4px_18px_rgba(15,23,42,0.06)] transition-shadow duration-200 hover:shadow-[0_10px_28px_rgba(15,23,42,0.1)]"
               >
-                <h3 className="text-left text-[14px] sm:text-[15px] font-semibold font-poppins text-black relative z-10 pr-2">
+                <h3 className="text-left text-[16px] sm:text-[15px] font-semibold font-poppins text-black relative z-10 pr-2">
                   {card.title}
                 </h3>
-                <p className="text-left text-black text-[11.5px] sm:text-[13px] font-medium font-poppins leading-relaxed relative z-10 pb-4">
+                <p className="text-left text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]  font-medium font-poppins leading-relaxed relative z-10 pb-4">
                   {card.description}
                 </p>
               </div>
@@ -89,16 +89,16 @@ const BenifitsLLM = () => {
           </div>
         </div>
       ) : (
-        <div className="max-w-6xl mx-auto grid grid-cols-2 gap-8 lg:gap-4 items-center mt-10">
-          <div className="relative w-full min-h-[360px] lg:min-h-[400px] flex items-start justify-center self-start lg:sticky lg:top-24">
+        <div className="max-w-6xl mx-auto grid gap-8 xl:grid-cols-[0.92fr_1.08fr] xl:gap-4 items-start mt-10">
+          <div className="relative w-full min-h-[260px] md:min-h-80 xl:min-h-[400px] flex items-center justify-center self-start xl:sticky xl:top-24">
             <img
               src="/assets/images/llm/benefits-llm-leftimg.png"
               alt="Beelockchain mobile app"
-              className="max-w-full w-auto h-auto object-contain mx-auto"
+              className="max-w-[320px] md:max-w-[420px] xl:max-w-full w-auto h-auto object-contain mx-auto"
             />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="grid md:grid-cols-2 xl:grid-cols-1 gap-4 xl:gap-2">
             {cards.map((card, index) => (
               <div
                 key={index}

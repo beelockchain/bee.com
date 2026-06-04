@@ -52,13 +52,27 @@ const stepPillClassName = (highlighted: boolean) =>
   highlighted
     ? "border-[#f1c84e] bg-white text-black"
     : "border-[#d8d8d8] bg-white text-black";
-
+const ProcessArrow = ({ className = "" }) => (
+  <svg
+    width="60"
+    height="11"
+    viewBox="0 0 113 11"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M1 4.3335H0V6.3335H1V5.3335V4.3335ZM101.667 5.3335C101.667 8.27901 104.054 10.6668 107 10.6668C109.946 10.6668 112.333 8.27901 112.333 5.3335C112.333 2.38798 109.946 0.000162601 107 0.000162601C104.054 0.000162601 101.667 2.38798 101.667 5.3335ZM10.5 6.3335H11.5V4.3335H10.5V5.3335V6.3335ZM29.5 4.3335H28.5V6.3335H29.5V5.3335V4.3335ZM47.5 6.3335H48.5V4.3335H47.5V5.3335V6.3335ZM64.5 4.3335H63.5V6.3335H64.5V5.3335V4.3335ZM81.5 6.3335H82.5V4.3335H81.5V5.3335V6.3335ZM98.5 4.3335H97.5V6.3335H98.5V5.3335V4.3335ZM1 5.3335V6.3335H10.5V5.3335V4.3335H1V5.3335ZM29.5 5.3335V6.3335H39V5.3335V4.3335H29.5V5.3335ZM39 5.3335V6.3335H47.5V5.3335V4.3335H39V5.3335ZM64.5 5.3335V6.3335H81.5V5.3335V4.3335H64.5V5.3335ZM98.5 5.3335V6.3335H107V5.3335V4.3335H98.5V5.3335Z"
+      fill="#B9B9B9"
+    />
+  </svg>
+);
 const LlmProcess = () => {
   return (
     <section className="w-full px-6 py-8 md:px-16 lg:py-10">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-center text-[17px] font-bold leading-tight text-black sm:text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px]">
+          <h2 className="text-center  font-bold leading-tight text-black 
+           text-[19px] sm:text-[19px] md:text-[21px]  lg:text-[28px] xl:text-[36px]">
             Our LLM{" "}
             <span
               data-text="Development Process"
@@ -75,9 +89,28 @@ const LlmProcess = () => {
 
         <div className="relative mt-12 hidden lg:block">
          
-         <img src="/assets/images/llm/llm-line.png" alt="LLM Process" 
-         className=" w-auto object-contain" />
+        {/* 1 -> 2 */}
+          <div className="absolute top-[95px] left-[30%] z-20">
+            <ProcessArrow />
+          </div>
 
+          {/* 2 -> 3 */}
+          <div className="absolute top-[95px] left-[65%] z-20">
+            <ProcessArrow />
+          </div>
+          {/* 2 -> 3 */}
+          <div className="absolute top-[50%] left-[80%] z-20 rotate-90">
+            <ProcessArrow />
+          </div>
+          {/* 5 <- 4 */}
+          <div className="absolute top-[350px] left-[65%] z-20 rotate-180">
+            <ProcessArrow />
+          </div>
+
+          {/* 6 <- 5 */}
+          <div className="absolute top-[350px] left-[30%] z-20 rotate-180">
+            <ProcessArrow />
+          </div>
           <div className="grid grid-cols-3 gap-x-16 gap-y-16">
             {steps.map((step) => (
               <div
@@ -117,7 +150,7 @@ const LlmProcess = () => {
               <h3 className="mt-4 text-[18px] font-semibold leading-snug text-black">
                 {step.title}
               </h3>
-              <p className="mt-3 text-[13px] font-medium leading-relaxed text-black">
+              <p className="mt-3 text-[13px] font-poppins font-medium leading-relaxed text-black">
                 {step.description}
               </p>
             </div>

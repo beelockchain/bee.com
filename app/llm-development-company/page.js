@@ -1,5 +1,5 @@
 import HeroSectionLlm from "./components/HeroSectionLlm";
-import DevopsCustomers from "../devops-services/components/devops-customers";
+import DevopsCustomers from "../devops-development-company/components/devops-customers";
 import LlmAdopting from "./components/LlmAdopting";
 import CustomLlm from "./components/CustomLlm";
 import TalkExpertLlm from "./components/TalkExpertLlm";
@@ -22,13 +22,12 @@ export default function LLMServicesPage() {
         <TalkExpertLlm />
         <LlmSolution />
         <BenifitsLLM />
-        <LlmUsecases/>
-        <LlmProcess/>
-        <LlmIndustry/>
-        <WhyBeelockchainLlm/>
-        <LlmTechnologies/>
-        <LlmFaq/>
-
+        <LlmUsecases />
+        <LlmProcess />
+        <LlmIndustry />
+        <WhyBeelockchainLlm />
+        <LlmTechnologies />
+        <LlmFaq />
       </main>
     </>
   );

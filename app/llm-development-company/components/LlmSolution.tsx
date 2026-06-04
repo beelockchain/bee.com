@@ -87,8 +87,8 @@ const LlmSolution = () => {
             applications that improve productivity and enhance user experiences.
           </p>
         </div>
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
-          <div className="rounded-[28px] bg-[#FAF8F5] p-5 shadow-[0_20px_60px_rgba(20,20,20,0.05)] sm:p-6">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 lg:gap-12">
+          <div className="mt-8 rounded-[28px] bg-[#FAF8F5] p-5 shadow-[0_20px_60px_rgba(20,20,20,0.05)] sm:p-6">
             <div className="flex flex-col gap-4">
               {solutions.map((solution, index) => {
                 const isActive = index === activeIndex;
@@ -182,7 +182,7 @@ const LlmSolution = () => {
           </div>
 
           <div className="mx-auto flex w-full max-w-[520px] flex-col self-start lg:mx-0 lg:justify-start">
-            <div className="relative flex items-start justify-start self-start">
+            <div className="relative flex items-start justify-center lg:justify-start  lg:self-start ">
               <Image
                 src={activeSolution.image}
                 alt={activeSolution.title}

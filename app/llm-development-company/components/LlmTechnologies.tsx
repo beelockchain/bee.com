@@ -72,50 +72,50 @@ const LlmTechnologies = () => {
     },
     {
       name: "illustrator",
-      icon: `assets/images/llm/icons/Cloud Platforms/icon2.png`,
-      category: "Inference & Model Serving",
+      icon: `assets/images/llm/icons/Devops/icon1.png`,
+      category: "Devops",
     },
     {
       name: "flutter",
-      icon: `assets/images/llm/icons/Cloud Platforms/icon3.png`,
-      category: "Cloud Platforms",
+      icon: `assets/images/llm/icons/Databases/icon1.png`,
+      category: "database",
     },
     {
       name: "selenium",
-      icon: `assets/images/llm/icons/Cloud Platforms/icon4.png`,
-      category: "MLOps & Monitoring",
+      icon: `assets/images/llm/icons/Databases/icon2.png`,
+      category: "database",
     },
 
     {
       name: "angular",
-      icon: `assets/images/llm/icons/Container Orchestration/icon1.png`,
+      icon: `assets/images/llm/icons/Databases/icon3.png`,
       category: "DevOps & Deployment",
     },
     {
       name: "python",
-      icon: `assets/images/llm/icons/Container Orchestration/icon2.png`,
+      icon: `assets/images/llm/icons/Databases/icon4.png`,
       category: "Programming Languages",
     },
     {
       name: "photoshop",
-      icon: `assets/images/llm/icons/Container Orchestration/icon3.png`,
+      icon: `assets/images/llm/icons/Devops/icon2.png`,
       category: "Databases & Storage",
     },
 
     // Row 2 - 10 hexagons
     {
       name: "postgresql",
-      icon: `assets/images/llm/icons/Infrastructure as Code (IaC)/icon1.png`,
+      icon: `assets/images/llm/icons/MLOps/icon1.png`,
       category: "NLP Libraries",
     },
     {
       name: "react-native",
-      icon: `assets/images/llm/icons/Infrastructure as Code (IaC)/icon2.png`,
+      icon: `assets/images/llm/icons/MLOps/icon2.png`,
       category: "LLMs",
     },
     {
       name: "appium",
-      icon: `assets/images/llm/icons/Infrastructure as Code (IaC)/icon3.png`,
+      icon: `assets/images/llm/icons/MLOps/icon3.png`,
       category: "LLMs",
     },
     {
@@ -131,17 +131,17 @@ const LlmTechnologies = () => {
     },
     {
       name: "framer",
-      icon: `assets/images/llm/icons/Infrastructure Automation/icon2.png`,
+      icon: `assets/images/llm/icons/nlp/icon1.png`,
       category: "NLP Libraries",
     },
     {
       name: "mysql",
-      icon: `assets/images/llm/icons/Infrastructure Automation/icon3.png`,
+      icon: `assets/images/llm/icons/nlp/icon2.png`,
       category: "NLP Libraries",
     },
     {
       name: "android",
-      icon: `assets/images/llm/icons/Framework/icon3.png`,
+      icon: `assets/images/llm/icons/nlp/icon3.png`,
       category: "AI Frameworks",
     },
 
@@ -176,13 +176,19 @@ const LlmTechnologies = () => {
     },
     {
       name: "tailwind",
-      icon: `assets/images/llm/icons/Testing Automation Tools/icon3.png`,
+      icon: `assets/images/llm/icons/Inference/icon3.png`,
       category: "NLP Libraries",
     },
+    
     {
       name: "nestjs",
      icon: `assets/images/llm/icons/Framework/icon6.png`,
       category: "AI Frameworks",
+    },
+     {
+      name: "tailwind",
+      icon: `assets/images/llm/icons/Inference/icon4.png`,
+      category: "NLP Libraries",
     },
   {
       name: "xd",
@@ -197,17 +203,17 @@ const LlmTechnologies = () => {
   ];
 
   // Frontend layout - 3 rows with frontend tools
-  const Containerization = [
+  const Foundation = [
     // Row 1
     {
       name: "react",
-      icon: `assets/images/llm/icons/Containerization/icon1.png`,
-      category: "Containerization",
+      icon: `assets/images/llm/icons/Foundation/icon1.png`,
+      category: "Foundation",
     },
     {
       name: "angular",
-      icon: `assets/images/llm/icons/Container Orchestration/icon1.png`,
-      category: "Container Orchestration",
+      icon: `assets/images/llm/icons/Foundation/icon2.png`,
+      category: "Foundation",
     },
     {
       name: "ios",
@@ -216,18 +222,18 @@ const LlmTechnologies = () => {
     },
     {
       name: "illustrator",
-      icon: `assets/images/llm/icons/Cloud Platforms/icon2.png`,
-      category: "Cloud Platforms",
+      icon: `assets/images/llm/icons/Foundation/icon3.png`,
+      category: "Foundation",
     },
     {
       name: "flutter",
-      icon: `assets/images/llm/icons/Cloud Platforms/icon3.png`,
-      category: "Cloud Platforms",
+      icon: `assets/images/llm/icons/Foundation/icon4.png`,
+      category: "Foundation",
     },
     {
       name: "selenium",
-      icon: `assets/images/llm/icons/Cloud Platforms/icon4.png`,
-      category: "Cloud Platforms",
+      icon: `assets/images/llm/icons/Foundation/icon5.png`,
+      category: "Foundation",
     },
     {
       name: "angular",
@@ -247,18 +253,18 @@ const LlmTechnologies = () => {
     // Row 2 - 10 hexagons
     {
       name: "postgresql",
-      icon: `assets/images/llm/icons/Infrastructure as Code (IaC)/icon1.png`,
-      category: "Infrastructure as Code (IaC)",
+      icon: `assets/images/llm/icons/Foundation/icon6.png`,
+      category: "Foundation",
     },
     {
       name: "react-native",
-      icon: `assets/images/llm/icons/Infrastructure as Code (IaC)/icon2.png`,
-      category: "Infrastructure as Code (IaC)",
+      icon: `assets/images/llm/icons/Foundation/icon7.png`,
+      category: "Foundation",
     },
     {
       name: "appium",
-      icon: `assets/images/llm/icons/Infrastructure as Code (IaC)/icon3.png`,
-      category: "Infrastructure as Code (IaC)",
+      icon: `assets/images/llm/icons/Foundation/icon8.png`,
+      category: "Foundation",
     },
     {
       name: "vuejs",

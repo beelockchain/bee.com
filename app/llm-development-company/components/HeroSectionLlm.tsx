@@ -32,21 +32,21 @@ export default function HeroSectionLlm({
   min-h-[380px] sm:min-h-[520px] md:min-h-[200px] lg:min-h-[470px] xl:min-h-[620px]"
         >
           <div className="mx-auto w-full max-w-8xl px-4 sm:px-6 md:px-8 lg:px-12">
-            <div className="max-w-xl sm:max-w-2xl md:max-w-[400px] lg:max-w-2xl mx-auto md:mx-0">
+            <div className="max-w-xl sm:max-w-2xl md:max-w-[400px] lg:max-w-2xl mx-auto md:mx-0 pt-5 sm:pt-6 md:pt-4 lg:pt-0 xl:pt-6">
               {/* Image Text */}
-              <div className="mb-2 sm:mb-4 md:mb-2 flex justify-center md:justify-start">
+              <div className="mb-2 sm:mb-4 md:mb-2 flex justify-center md:justify-start w-full overflow-visible">
                 <Image
                   src="/assets/images/llm/llm-text.png"
                   alt="LLM Text"
                   width={500}
                   height={120}
-                  className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-40 lg:max-w-[420px]"
+                  className="w-full max-w-[200px] sm:max-w-[320px] md:max-w-40 lg:max-w-[220px] xl:max-w-[320px]"
                   priority
                 />
               </div>
 
               {/* Heading */}
-              <h1 className="mb-5 leading-[1.15] mt-3">
+              <h1 className="mb-5 md:mb-3 leading-[1.15] mt-3">
                 <span
                   data-text="LLM Development"
                   className="block text-[23px] sm:text-[30px] shine-text text-[#F5B800] relative  md:text-[25px] lg:text-[35px] xl:text-[48px] font-bold  text-center md:text-left "
@@ -62,7 +62,7 @@ export default function HeroSectionLlm({
               {/* Description */}
               <p
                 className="
-               text-black text-[14px] sm:text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold sm:leading-[1.7]  xl:mt-5 mb-5 sm:mb-6 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] text-center md:text-left
+               text-black text-[14px] sm:text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold sm:leading-[1.7]  xl:mt-5 mb-5 md:mb-3 sm:mb-6 md:max-w-[325px] lg:max-w-[400px] xl:max-w-[520px] text-center md:text-left
               "
               >
                 Beelockchain helps businesses build intelligent applications powered by large language models and advanced AI systems. Our AI engineers develop custom LLM solutions, AI copilots, chatbots, and knowledge assistants that automate workflows and enhance decision-making.  We design scalable generative AI systems using advanced language models such as GPT, LLaMA, and Claude.

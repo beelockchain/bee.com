@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useIsMobile } from "@/app/devops-services/components/useIsMobile";
+import { useIsMobile } from "@/app/devops-development-company/components/useIsMobile";
 import Link from "next/link";
 const industries = [
   "Healthcare",
@@ -39,7 +39,10 @@ const LlmIndustry = () => {
     <section className="w-full bg-white mt-10  overflow-hidden">
       {isMobile ? (
         <h2 className="text-[19px] font-bold sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black leading-tight text-center mb-8">
-           <span className="shine-text text-[#F5B800]">Industries We Serve <br /> </span> With LLM Solutions
+          <span className="shine-text text-[#F5B800]">
+            Industries We Serve <br />{" "}
+          </span>{" "}
+          With LLM Solutions
         </h2>
       ) : null}
 
@@ -47,11 +50,9 @@ const LlmIndustry = () => {
         {/* LEFT – IMAGE STACK GRID */}
         <div className="industry-grid grid grid-cols-3 gap-2 cursor-pointer">
           {industryImages.map((img, i) => (
-
-
-     <div
-  key={i}
-  className={`
+            <div
+              key={i}
+              className={`
     relative
     w-full h-full flex items-center justify-center
     transition-all duration-500 ease-out
@@ -64,10 +65,10 @@ const LlmIndustry = () => {
     hover:scale-110
     hover:z-20
   `}
->
-  {/* Glow Layer */}
-  <span
-    className="
+            >
+              {/* Glow Layer */}
+              <span
+                className="
       absolute inset-0 rounded-xl
       bg-yellow-400/20
       blur-xl
@@ -75,19 +76,19 @@ const LlmIndustry = () => {
       transition-all duration-500
       hover:opacity-100
     "
-  />
+              />
 
-  <img
-    src={`${ASSET_URL}/images/${img}`}
-    alt="Industry"
-    className="
+              <img
+                src={`${ASSET_URL}/images/${img}`}
+                alt="Industry"
+                className="
       relative
       w-full h-full object-contain
       transition-all duration-500
       hover:drop-shadow-[0_15px_25px_rgba(0,0,0,0.3)]
     "
-  />
-</div>
+              />
+            </div>
           ))}
         </div>
 
@@ -95,13 +96,16 @@ const LlmIndustry = () => {
         <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
           {!isMobile ? (
             <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold text-black mb-6">
-               <span className="shine-text text-[#F5B800]">Industries We Serve</span> With LLM Solutions
+              <span className="shine-text text-[#F5B800]">
+                Industries We Serve
+              </span>{" "}
+              With LLM Solutions
             </h2>
           ) : null}
 
           <p className="text-black max-w-xl mb-8 sm:mb-4 md:mb-10 lg:mb-20 text-[13px] sm:text-[13px] md:text-[13px] lg:text-[14px] xl:text-[16px] font-medium font-poppins">
-
-          LLM technology is transforming multiple industries by enabling intelligent automation and data analysis.
+            LLM technology is transforming multiple industries by enabling
+            intelligent automation and data analysis.
           </p>
 
           {/* INDUSTRY LIST */}
@@ -118,70 +122,68 @@ const LlmIndustry = () => {
 
           {/* CTA BUTTON */}
           <div className="flex justify-center md:justify-start">
-          <Link
-            href="/contact-us"
-            target="_blank"
-            onTouchStart={() => setActive(true)}
-            onTouchEnd={() => setActive(false)}
-            onMouseLeave={() => setActive(false)}
-            className="group relative flex items-center gap-3 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
-          >
-            {/* Expand Background */}
-            <span
-              className={`
+            <Link
+              href="/contact-us"
+              target="_blank"
+              onTouchStart={() => setActive(true)}
+              onTouchEnd={() => setActive(false)}
+              onMouseLeave={() => setActive(false)}
+              className="group relative flex items-center gap-3 px-4 py-2 lg:px-4 lg:py-0 border border-black rounded-full overflow-hidden cursor-pointer"
+            >
+              {/* Expand Background */}
+              <span
+                className={`
                 absolute inset-0 bg-gray-100 z-0
                 transition-all duration-300 md:duration-500 ease-out
                 ${active ? "[clip-path:circle(150%_at_50%_50%)]" : "[clip-path:circle(0%_at_50%_50%)]"}
                 group-hover:[clip-path:circle(150%_at_50%_50%)]
               `}
-            />
+              />
 
-            {/* Glow */}
-            <span
-              className="
+              {/* Glow */}
+              <span
+                className="
                 absolute inset-0 z-0
                 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)]
                 transition-opacity duration-300
                 group-hover:opacity-0
                 group-active:opacity-0
               "
-            />
+              />
 
-            {/* Text */}
-            <span className="relative z-10 text-black text-[13px] md:text-[14px] lg:text-[16px] font-medium whitespace-nowrap">
-              Consult Our Experts
-            </span>
+              {/* Text */}
+              <span className="relative z-10 text-black text-[13px] md:text-[14px] lg:text-[16px] font-medium whitespace-nowrap">
+                Consult Our Experts
+              </span>
 
-            {/* Icon */}
-            <svg
-              viewBox="0 0 56 55"
-              className="
+              {/* Icon */}
+              <svg
+                viewBox="0 0 56 55"
+                className="
                 relative z-10 w-10 h-10 lg:w-14 lg:h-14
                 transition-all duration-300 ease-out
                 group-hover:rotate-60 group-hover:translate-x-1
                 group-active:rotate-60 group-active:translate-x-1 group-active:scale-95
               "
-            >
-              <circle
-                cx="28.2"
-                cy="27.1"
-                r="15.9"
-                fill="#F6E000"
-                stroke="#F9C901"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M31.3 22.1L33.2 29.4M31.3 22.1L24.1 24.1M31.3 22.1L25.1 32.8"
-                stroke="black"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
-
-        </div>
-
+              >
+                <circle
+                  cx="28.2"
+                  cy="27.1"
+                  r="15.9"
+                  fill="#F6E000"
+                  stroke="#F9C901"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M31.3 22.1L33.2 29.4M31.3 22.1L24.1 24.1M31.3 22.1L25.1 32.8"
+                  stroke="black"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
