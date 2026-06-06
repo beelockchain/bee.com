@@ -81,7 +81,7 @@ const BenifitsLLM = () => {
                 <h3 className="text-left text-[16px] sm:text-[15px] font-semibold font-poppins text-black relative z-10 pr-2">
                   {card.title}
                 </h3>
-                <p className="text-left text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px]  font-medium font-poppins leading-relaxed relative z-10 pb-4">
+                <p className="text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black  relative z-10 pb-4">
                   {card.description}
                 </p>
               </div>
@@ -107,7 +107,7 @@ const BenifitsLLM = () => {
                 <h3 className="text-left text-[18px] md:text-[14px] lg:text-lg xl:text-[20px] font-semibold font-poppins text-black pr-10">
                   {card.title}
                 </h3>
-                <p className="text-left text-black text-[13px] md:text-[12px] lg:text-sm xl:text-[14px] font-medium font-poppins leading-relaxed">
+                <p className="text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black ">
                   {card.description}
                 </p>
               </div>

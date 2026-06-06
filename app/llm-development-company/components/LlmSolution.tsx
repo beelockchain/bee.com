@@ -88,7 +88,7 @@ const LlmSolution = () => {
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 lg:gap-12">
-          <div className="mt-8 rounded-[28px] bg-[#FAF8F5] p-5 shadow-[0_20px_60px_rgba(20,20,20,0.05)] sm:p-6">
+          <div className="mt-8 hidden rounded-[28px] bg-[#FAF8F5] p-5 shadow-[0_20px_60px_rgba(20,20,20,0.05)] sm:block sm:p-6">
             <div className="flex flex-col gap-4">
               {solutions.map((solution, index) => {
                 const isActive = index === activeIndex;

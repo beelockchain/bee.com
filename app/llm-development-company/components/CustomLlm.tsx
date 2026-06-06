@@ -91,26 +91,50 @@ const rows = [
   [benefitCards[8], benefitCards[9]], // row 4 — both cards
 ];
 
+const DESCRIPTION_PREVIEW_LENGTH = 150;
+
 // ─── CARD ────────────────────────────────────────────────────────────────────
-const Card: React.FC<{ card: BenefitCard }> = ({ card }) => (
-  <div className="bg-[#F5F5F5] rounded-2xl p-4 shadow-lg hover:shadow-lg transition-shadow h-full">
-    <div className="mb-2">
-      <div className="w-10 h-10 xl:w-10 xl:h-10 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
-        <img
-          src={card.icon}
-          alt={card.title}
-          className="w-full h-full object-contain"
-        />
+const Card: React.FC<{ card: BenefitCard }> = ({ card }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const shouldTruncate = card.description.length > DESCRIPTION_PREVIEW_LENGTH;
+  const visibleDescription =
+    shouldTruncate && !isExpanded
+      ? `${card.description.slice(0, DESCRIPTION_PREVIEW_LENGTH).trimEnd()}...`
+      : card.description;
+
+  return (
+    <div className="bg-[#F5F5F5] rounded-2xl p-4 shadow-lg hover:shadow-lg transition-shadow flex flex-col self-start">
+      <div className="mb-2">
+        <div className="w-10 h-10 xl:w-10 xl:h-10 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
+          <img
+            src={card.icon}
+            alt={card.title}
+            className="w-full h-full object-contain"
+          />
+        </div>
+      </div>
+      <h3 className="text-base xl:text-[18px] font-bold text-gray-900 mb-1.5 leading-snug">
+        {card.title}
+      </h3>
+      <div className="flex-1 flex flex-col">
+        <p
+          className={`text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black ${isExpanded ? "overflow-y-auto pr-1" : ""}`}
+        >
+          {visibleDescription}
+        </p>
+        {shouldTruncate ? (
+          <button
+            type="button"
+            onClick={() => setIsExpanded((value) => !value)}
+            className="cursor-pointer mt-3 self-start text-[13px] font-semibold text-[#F9C901] hover:text-[#d2a900] transition-colors"
+          >
+            {isExpanded ? "Read less" : "Read more"}
+          </button>
+        ) : null}
       </div>
     </div>
-    <h3 className="text-base xl:text-[18px] font-bold text-gray-900 mb-1.5 leading-snug">
-      {card.title}
-    </h3>
-    <p className="text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium  text-black">
-      {card.description}
-    </p>
-  </div>
-);
+  );
+};
 
 // ─── LEFT PANEL ──────────────────────────────────────────────────────────────
 const LeftPanel: React.FC = () => (
@@ -123,7 +147,8 @@ const LeftPanel: React.FC = () => (
       </span>{" "}
       Development Services
     </h2>
-    <p className="text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium mb-4 text-black text-center lg:text-left">
+   
+    <p className="sm:text-left md:text-left  text-[13px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins font-medium mb-4 text-black text-center lg:text-left">
       Beelockchain’s end-to-end Large Language Model development services cover
       every stage of the AI lifecycle. From strategy and model selection, our
       expert AI Engineers, to production deployment and continuous
@@ -147,11 +172,12 @@ const CustomLlm: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const ROW_H = 290;
-  const GAP = 16; // gap between columns inside a row AND between rows
-  const STEP = ROW_H + GAP; // distance to travel per scroll step
+  const ROW_H = 260;
+  const COLUMN_GAP = 10;
+  const ROW_GAP = 10;
+  const STEP = ROW_H + ROW_GAP; // distance to travel per scroll step
   const PEEK = 0; // px of next row visi320pxble at bottom as hint
-  const WINDOW_H = ROW_H * 2.1 + GAP + PEEK; // clipping window height
+  const WINDOW_H = ROW_H * 2.1 + ROW_GAP + PEEK; // clipping window height
   const HEADER_OFFSET = 80;
 
   // Now 4 rows, 2 steps to show all (rows 0+1 visible → scroll → rows 1+2 → scroll → rows 2+3)
@@ -298,7 +324,7 @@ const CustomLlm: React.FC = () => {
               <div
                 className="absolute top-0 left-0 right-0 z-10 pointer-events-none"
                 style={{
-                  height: "60px",
+                  height: "20px",
                   background:
                     "linear-gradient(to bottom, #F9FAFB 0%, transparent 100%)",
                 }}
@@ -314,21 +340,22 @@ const CustomLlm: React.FC = () => {
               />
 
               {/* Moving column — GSAP drives translateY on this */}
-             <div
-  ref={columnRef}
-  className="absolute left-0 right-0 top-0 flex flex-col"
-  style={{
-    gap: `${GAP}px`,
-  }}
->
-  {rows.map((rowCards, rowIdx) => (
-    <div
-      key={rowIdx}
-      className="grid grid-cols-2 gap-4"
-      style={{
-        minHeight: `${ROW_H}px`,
-      }}
-    >
+                  <div
+                    ref={columnRef}
+                    className="absolute left-0 right-0 top-0 flex flex-col"
+                    style={{
+                      gap: `${ROW_GAP}px`,
+                    }}
+                  >
+                    {rows.map((rowCards, rowIdx) => (
+                      <div
+                        key={rowIdx}
+                        className="grid grid-cols-2 items-start"
+                        style={{
+                          minHeight: `${ROW_H}px`,
+                          columnGap: `${COLUMN_GAP}px`,
+                        }}
+                      >
                     {rowCards.map((card) => (
                       <Card key={card.id} card={card} />
                     ))}

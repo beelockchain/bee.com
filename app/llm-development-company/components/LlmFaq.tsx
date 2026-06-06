@@ -12,11 +12,21 @@ const LlmFaq = () => {
     },
     {
       q: "What is an LLM development company, and what does it involve?",
-      a: "LLM development is the end-to-end process of selecting, training, fine-tuning, and deploying AI systems powered by large language models. It encompasses use-case strategy, data preparation and curation, fine-tuning or continued pre-training of foundation models, RAG pipeline construction, prompt engineering, application development, security hardening, and production deployment with ongoing optimization. A trusted LLM solution provider like Beelockchain handles the full lifecycle from first consultation to post-launch performance management.",
+      a: (
+      <>
+        LLM development is the end-to-end process of selecting, training, fine-tuning, and deploying AI systems powered by large language models. <br></br><br></br>
+       It encompasses use-case strategy, data preparation and curation, fine-tuning or continued pre-training of foundation models, RAG pipeline construction, prompt engineering, application development, security hardening, and production deployment with ongoing optimization. 
+          A trusted LLM solution provider like Beelockchain handles the full lifecycle from first consultation to post-launch performance management.
+      </>
+    ),
     },
     {
       q: "What is the difference between LLM fine-tuning and RAG?",
-      a: "Fine-tuning retrains a base model on domain-specific data to change its behaviour, style, or task specialization, best for teaching a model your industry's language or adapting its output format. RAG (Retrieval-Augmented Generation) connects the LLM to an external knowledge base at inference time, best for keeping knowledge current and accurate without retraining. Most enterprise LLM solutions use both together: fine-tune for behaviour, RAG for factual grounding. Beelockchain's consulting service helps you determine the right architecture for your specific requirements.",
+      a:(
+        <>
+        Fine-tuning retrains a base model on domain-specific data to change its behaviour, style, or task specialization, best for teaching a model your industry's language or adapting its output format. <br></br><br></br> RAG (Retrieval-Augmented Generation) connects the LLM to an external knowledge base at inference time, best for keeping knowledge current and accurate without retraining. Most enterprise LLM solutions use both together: fine-tune for behaviour, RAG for factual grounding. Beelockchain's consulting service helps you determine the right architecture for your specific requirements.
+        </>
+      )
     },
     {
       q: "How long does LLM development take?",
@@ -29,7 +39,12 @@ const LlmFaq = () => {
     },
     {
       q: "Which LLM models does Beelockchain work with?",
-      a: "We build with OpenAI GPT-4o, GPT-4 Turbo, Anthropic Claude 3.5 Sonnet, Claude 3 Opus, Google Gemini 1.5 Pro, Meta LLaMA 3.1 (8B, 70B, 405B), Mistral AI (7B, Mixtral 8×7B), Falcon, Qwen 2, Phi-3, and custom-trained models. For data sovereignty, we recommend open-source models on your own infrastructure. For maximum capability, GPT-4o or Claude 3.5 Sonnet and cost-optimized production at scale, fine-tuned LLaMA 3.1 70B or Mistral typically offer the best cost-performance ratio.",
+      a:(
+        <>
+        We build with OpenAI GPT-4o, GPT-4 Turbo, Anthropic Claude 3.5 Sonnet, Claude 3 Opus, Google Gemini 1.5 Pro, Meta LLaMA 3.1 (8B, 70B, 405B), Mistral AI (7B, Mixtral 8×7B), Falcon, Qwen 2, Phi-3, and custom-trained models. <br></br> <br></br> For data sovereignty, we recommend open-source models on your own infrastructure. For maximum capability, GPT-4o or Claude 3.5 Sonnet and cost-optimized production at scale, fine-tuned LLaMA 3.1 70B or Mistral typically offer the best cost-performance ratio.
+        </>
+      ),
+
     },
     {
       q: "What is LLM hallucination, and how do you prevent it?",
@@ -43,11 +58,20 @@ const LlmFaq = () => {
     },
     {
       q: "What Learning Strategies Are Used in Custom LLM Development?",
-      a: "We combine in-context and few-shot learning to adapt your model through fast development, because it needs only minimal data, and then we apply zero-shot learning to handle unknown tasks. The model uses a chain-of-thought (CoT) prompting to follow a structured reasoning process, helping it solve complex problems through all of their stages. Self-consistency decoding filters out unreliable outputs, while active learning continuously closes knowledge gaps to improve performance without the need for expensive retraining procedures.",
+       a:(
+        <>
+       We combine in-context and few-shot learning to adapt your model through fast development, because it needs only minimal data, and then we apply zero-shot learning to handle unknown tasks.<br></br><br></br> The model uses a chain-of-thought (CoT) prompting to follow a structured reasoning process, helping it solve complex problems through all of their stages. Self-consistency decoding filters out unreliable outputs, while active learning continuously closes knowledge gaps to improve performance without the need for expensive retraining procedures.
+        </>
+      ),
+
     },
     {
       q: "Can you build an LLM on our own infrastructure?",
-      a: "Yes. Beelockchain, as a leading Large Language Model Development company, offers on-premise LLM deployment for organizations requiring full data sovereignty. We handle GPU infrastructure consultation, model weight delivery, inference server setup (vLLM, TGI, Ollama), API layer development, security hardening, and staff training. On-premise deployments use open-source models (LLaMA 3.1, Mistral, Qwen 2) that operate without any external API dependencies.",
+       a:(
+        <>
+        Yes. Beelockchain, as a leading Large Language Model Development company, offers on-premise LLM deployment for organizations requiring full data sovereignty. <br></br><br></br> We handle GPU infrastructure consultation, model weight delivery, inference server setup (vLLM, TGI, Ollama), API layer development, security hardening, and staff training. On-premise deployments use open-source models (LLaMA 3.1, Mistral, Qwen 2) that operate without any external API dependencies.        </>
+      ),
+
     },
   ];
 
@@ -68,7 +92,7 @@ const LlmFaq = () => {
             starting a project. Still have questions?
           </p>
           <Link href="/contact-us" target="_blank" className="mt-5">
-            <button className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full border border-black bg-white px-4 py-2 lg:px-4 lg:py-0 cursor-pointer">
+            <button className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full border border-black bg-white px-2 py-1 lg:px-4 lg:py-0 cursor-pointer">
               <span className="absolute inset-0 z-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] transition-opacity duration-300 group-hover:opacity-0" />
               <span className="relative z-10 whitespace-nowrap text-sm font-medium text-center text-black transition-colors">
                 Contact Our Team

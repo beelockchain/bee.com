@@ -150,7 +150,7 @@ const LlmProcess = () => {
               <h3 className="mt-4 text-[18px] font-semibold leading-snug text-black">
                 {step.title}
               </h3>
-              <p className="mt-3 text-[13px] font-poppins font-medium leading-relaxed text-black">
+              <p className="mt-3 text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black ">
                 {step.description}
               </p>
             </div>

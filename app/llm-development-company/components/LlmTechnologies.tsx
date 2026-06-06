@@ -67,7 +67,7 @@ const LlmTechnologies = () => {
 
     {
       name: "nodejs",
-      icon: `assets/images/llm/icons/Vector Databases/icon1.png`,
+      icon: `assets/images/llm/icons/VectorDatabases/icon1.png`,
       category: "Vector Databases (RAG)",
     },
     {
@@ -78,12 +78,12 @@ const LlmTechnologies = () => {
     {
       name: "flutter",
       icon: `assets/images/llm/icons/Databases/icon1.png`,
-      category: "database",
+      category: "Database",
     },
     {
       name: "selenium",
       icon: `assets/images/llm/icons/Databases/icon2.png`,
-      category: "database",
+      category: "Database",
     },
 
     {
@@ -161,14 +161,13 @@ const LlmTechnologies = () => {
       icon: `assets/images/llm/icons/Foundation/icon4.png`,
       category: "Foundation Models & APIs",
     },
-   
-     {
+
+    {
       name: "redis",
       icon: `assets/images/llm/icons/Foundation/icon7.png`,
       category: "Foundation Models & APIs",
     },
-  
-  
+
     {
       name: "katalon",
       icon: `assets/images/llm/icons/Framework/icon4.png`,
@@ -179,18 +178,18 @@ const LlmTechnologies = () => {
       icon: `assets/images/llm/icons/Inference/icon3.png`,
       category: "NLP Libraries",
     },
-    
+
     {
       name: "nestjs",
-     icon: `assets/images/llm/icons/Framework/icon6.png`,
+      icon: `assets/images/llm/icons/Framework/icon6.png`,
       category: "AI Frameworks",
     },
-     {
+    {
       name: "tailwind",
       icon: `assets/images/llm/icons/Inference/icon4.png`,
       category: "NLP Libraries",
     },
-  {
+    {
       name: "xd",
       icon: `assets/images/llm/icons/Foundation/icon5.png`,
       category: "Foundation Models & APIs",
@@ -202,759 +201,170 @@ const LlmTechnologies = () => {
     },
   ];
 
-  // Frontend layout - 3 rows with frontend tools
-  const Foundation = [
-    // Row 1
-    {
-      name: "react",
-      icon: `assets/images/llm/icons/Foundation/icon1.png`,
-      category: "Foundation",
-    },
-    {
-      name: "angular",
-      icon: `assets/images/llm/icons/Foundation/icon2.png`,
-      category: "Foundation",
-    },
-    {
-      name: "ios",
-      icon: `assets/images/llm/icons/Foundation/icon8.png`,
-      category: "Foundation Models & APIs",
-    },
-    {
-      name: "illustrator",
-      icon: `assets/images/llm/icons/Foundation/icon3.png`,
-      category: "Foundation",
-    },
-    {
-      name: "flutter",
-      icon: `assets/images/llm/icons/Foundation/icon4.png`,
-      category: "Foundation",
-    },
-    {
-      name: "selenium",
-      icon: `assets/images/llm/icons/Foundation/icon5.png`,
-      category: "Foundation",
-    },
-    {
-      name: "angular",
-      icon: `assets/images/llm/icons/Containerization/icon2.png`,
-      category: "Containerization",
-    },
-    {
-      name: "python",
-      icon: `assets/images/llm/icons/Container Orchestration/icon2.png`,
-      category: "Container Orchestration",
-    },
-    {
-      name: "photoshop",
-      icon: `assets/images/llm/icons/Container Orchestration/icon3.png`,
-      category: "Container Orchestration",
-    },
-    // Row 2 - 10 hexagons
-    {
-      name: "postgresql",
-      icon: `assets/images/llm/icons/Foundation/icon6.png`,
-      category: "Foundation",
-    },
-    {
-      name: "react-native",
-      icon: `assets/images/llm/icons/Foundation/icon7.png`,
-      category: "Foundation",
-    },
-    {
-      name: "appium",
-      icon: `assets/images/llm/icons/Foundation/icon8.png`,
-      category: "Foundation",
-    },
-    {
-      name: "vuejs",
-      icon: `assets/images/llm/icons/Infrastructure as Code (IaC)/icon4.png`,
-      category: "Infrastructure as Code (IaC)",
-    },
+  const buildCategoryLayout = (
+    folderName: string,
+    count: number,
+    category: string,
+    namePrefix: string,
+  ) =>
+    Array.from({ length: count }, (_, index) => ({
+      name: `${namePrefix}-${index + 1}`,
+      icon: `assets/images/llm/icons/${folderName}/icon${index + 1}.png`,
+      category,
+    }));
 
-    {
-      name: "java",
-      icon: `assets/images/llm/icons/Infrastructure Automation/icon1.png`,
-      category: "Infrastructure Automation",
-    },
-    {
-      name: "framer",
-      icon: `assets/images/llm/icons/Infrastructure Automation/icon2.png`,
-      category: "Infrastructure Automation",
-    },
-    {
-      name: "mysql",
-      icon: `assets/images/llm/icons/Infrastructure Automation/icon3.png`,
-      category: "Infrastructure Automation",
-    },
-    {
-      name: "android",
-      icon: `assets/images/llm/icons/Infrastructure Automation/icon4.png`,
-      category: "Infrastructure Automation",
-    },
 
-    {
-      name: "jmeter",
-      icon: `assets/images/llm/icons/Security & DevSecOps Suricata/icon1.png`,
-      category: "Security & DevSecOps Suricata",
-    },
-    {
-      name: "nextjs",
-      icon: `assets/images/llm/icons/Security & DevSecOps Suricata/icon2.png`,
-      category: "Security & DevSecOps Suricata",
-    },
-    // Row 3 - 8 hexagons
-    {
-      name: "golang",
-      icon: `assets/images/llm/icons/Security & DevSecOps Suricata/icon3.png`,
-      category: "Security & DevSecOps Suricata",
-    },
-    {
-      name: "xd",
-      icon: `assets/images/llm/icons/Security & DevSecOps Suricata/icon4.png`,
-      category: "Security & DevSecOps Suricata",
-    },
-    {
-      name: "redis",
-      icon: `assets/images/llm/icons/Security & DevSecOps Suricata/icon5.png`,
-      category: "Security & DevSecOps Suricata",
-    },
 
-    {
-      name: "ios",
-      icon: `assets/images/llm/icons/Testing Automation Tools/icon1.png`,
-      category: "Testing Automation Tools",
-    },
-    {
-      name: "katalon",
-      icon: `assets/images/llm/icons/Testing Automation Tools/icon2.png`,
-      category: "Testing Automation Tools",
-    },
-    {
-      name: "tailwind",
-      icon: `assets/images/llm/icons/Testing Automation Tools/icon3.png`,
-      category: "Testing Automation Tools",
-    },
-    {
-      name: "nestjs",
-      icon: `assets/images/llm/icons/Testing Automation Tools/icon4.png`,
-      category: "Testing Automation Tools",
-    },
-    {
-      name: "sketch",
-      icon: `assets/images/llm/icons/Testing Automation Tools/icon5.png`,
-      category: "Testing Automation Tools",
-    },
-  ];
+  const foundationCategoryLayout = buildCategoryLayout(
+    "Foundation",
+    8,
+    "Foundation Models & APIs",
+    "foundation",
+  );
 
-  // Design layout - 3 rows with design tools
-  const ContainerOrchestration = [
-    // Row 1
-    {
-      name: "react",
-      icon: `assets/images/llm/icons/front/react-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "nodejs",
-      icon: `assets/images/llm/icons/backend/nodejs-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "illustrator",
-      icon: `assets/images/llm/icons/design/ai-design.webp`,
-      category: "design",
-    },
-    {
-      name: "photoshop",
-      icon: `assets/images/llm/icons/design/photoshop-design.webp`,
-      category: "design",
-    },
-    {
-      name: "xd",
-      icon: `assets/images/llm/icons/design/xd-design.webp`,
-      category: "design",
-    },
-    {
-      name: "framer",
-      icon: `assets/images/llm/icons/design/framer-design.webp`,
-      category: "design",
-    },
-    {
-      name: "sketch",
-      icon: `assets/images/llm/icons/design/sketch-design.webp`,
-      category: "design",
-    },
-    {
-      name: "mongodb",
-      icon: `assets/images/llm/icons/database/mongodb-database.webp`,
-      category: "database",
-    },
-    {
-      name: "flutter",
-      icon: `assets/images/llm/icons/mobile/flutter-mobile.webp`,
-      category: "mobile",
-    },
+  const aiFrameworkLayout = buildCategoryLayout(
+    "Framework",
+    6,
+    "AI Frameworks",
+    "framework",
+  );
 
-    // Row 2
-    {
-      name: "angular",
-      icon: `assets/images/llm/icons/Container Orchestration/icon1.png`,
-      category: "Container Orchestration",
-    },
-    {
-      name: "python",
-      icon: `assets/images/llm/icons/Container Orchestration/icon2.png`,
-      category: "Container Orchestration",
-    },
-    {
-      name: "photoshop",
-      icon: `assets/images/llm/icons/Container Orchestration/icon3.png`,
-      category: "Container Orchestration",
-    },
-    {
-      name: "lottie",
-      icon: `assets/images/llm/icons/design/lottie-design.webp`,
-      category: "design",
-    },
-    {
-      name: "spline",
-      icon: `assets/images/llm/icons/design/spline-design.webp`,
-      category: "design",
-    },
-    {
-      name: "webflow",
-      icon: `assets/images/llm/icons/design/webflow-design.webp`,
-      category: "design",
-    },
-    {
-      name: "after-effects",
-      icon: `assets/images/llm/icons/design/ae-design.webp`,
-      category: "design",
-    },
-    {
-      name: "postgresql",
-      icon: `assets/images/llm/icons/database/postgresql-database.webp`,
-      category: "database",
-    },
-    {
-      name: "react-native",
-      icon: `assets/images/llm/icons/mobile/reactjs-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "appium",
-      icon: `assets/images/llm/icons/qa/appium-qa.webp`,
-      category: "qa",
-    },
+  const vectorDatabasesCategoryLayout = buildCategoryLayout(
+    "VectorDatabases",
+    7,
+    "Vector Databases (RAG)",
+    "vector-database",
+  );
 
-    // Row 3
-    {
-      name: "vuejs",
-      icon: `assets/images/llm/icons/front/vuejs-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "java",
-      icon: `assets/images/llm/icons/backend/java-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "mysql",
-      icon: `assets/images/llm/icons/database/mysql-database.webp`,
-      category: "database",
-    },
-    {
-      name: "android",
-      icon: `assets/images/llm/icons/mobile/android-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "jmeter",
-      icon: `assets/images/llm/icons/qa/jmeter-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "tailwind",
-      icon: `assets/images/llm/icons/front/tailwind-css-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "nestjs",
-      icon: `assets/images/llm/icons/backend/nestjs-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "redis",
-      icon: `assets/images/llm/icons/database/redis-database.webp`,
-      category: "database",
-    },
-  ];
+  const devopsCategoryLayout = buildCategoryLayout(
+    "Devops",
+    5,
+    "Devops",
+    "devops",
+  );
 
-  // Database layout - 3 rows with database tools
-  const databaseLayout = [
-    // Row 1
-    {
-      name: "react",
-      icon: `assets/images/llm/icons/front/react-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "nodejs",
-      icon: `assets/images/llm/icons/backend/nodejs-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "illustrator",
-      icon: `assets/images/llm/icons/design/ai-design.webp`,
-      category: "design",
-    },
-    {
-      name: "mongodb",
-      icon: `assets/images/llm/icons/database/mongodb-database.webp`,
-      category: "database",
-    },
-    {
-      name: "mysql",
-      icon: `assets/images/llm/icons/database/mysql-database.webp`,
-      category: "database",
-    },
-    {
-      name: "postgresql",
-      icon: `assets/images/llm/icons/database/postgresql-database.webp`,
-      category: "database",
-    },
-    {
-      name: "redis",
-      icon: `assets/images/llm/icons/database/redis-database.webp`,
-      category: "database",
-    },
-    {
-      name: "flutter",
-      icon: `assets/images/llm/icons/mobile/flutter-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "selenium",
-      icon: `assets/images/llm/icons/qa/selenium-qa.webp`,
-      category: "qa",
-    },
+  const devopsDeploymentLayout = buildCategoryLayout(
+    "Devops",
+    5,
+    "DevOps & Deployment",
+    "devops-deployment",
+  );
 
-    // Row 2
-    {
-      name: "angular",
-      icon: `assets/images/llm/icons/front/angular-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "python",
-      icon: `assets/images/llm/icons/backend/python-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "photoshop",
-      icon: `assets/images/llm/icons/design/photoshop-design.webp`,
-      category: "design",
-    },
-    {
-      name: "oracle",
-      icon: `assets/images/llm/icons/database/oracle-database.webp`,
-      category: "database",
-    },
-    {
-      name: "cassandra",
-      icon: `assets/images/llm/icons/database/cassandra-database.webp`,
-      category: "database",
-    },
-    {
-      name: "react-native",
-      icon: `assets/images/llm/icons/mobile/reactjs-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "appium",
-      icon: `assets/images/llm/icons/qa/appium-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "vuejs",
-      icon: `assets/images/llm/icons/front/vuejs-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "java",
-      icon: `assets/images/llm/icons/backend/java-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "framer",
-      icon: `assets/images/llm/icons/design/framer-design.webp`,
-      category: "design",
-    },
+  const databaseCategoryLayout = buildCategoryLayout(
+    "Databases",
+    4,
+    "Database",
+    "Database",
+  );
 
-    // Row 3
-    {
-      name: "android",
-      icon: `assets/images/llm/icons/mobile/android-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "jmeter",
-      icon: `assets/images/llm/icons/qa/jmeter-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "nextjs",
-      icon: `assets/images/llm/icons/front/nextjs-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "golang",
-      icon: `assets/images/llm/icons/backend/golang-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "xd",
-      icon: `assets/images/llm/icons/design/xd-design.webp`,
-      category: "design",
-    },
-    {
-      name: "ios",
-      icon: `assets/images/llm/icons/mobile/ios-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "katalon",
-      icon: `assets/images/llm/icons/qa/katalon-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "tailwind",
-      icon: `assets/images/llm/icons/front/tailwind-css-front.webp`,
-      category: "frontend",
-    },
-  ];
+  const programmingLanguagesLayout = buildCategoryLayout(
+    "Programming",
+    4,
+    "Programming Languages",
+    "programming",
+  );
 
-  // Mobile layout - 3 rows with mobile tools
-  const mobileLayout = [
-    // Row 1
-    {
-      name: "react",
-      icon: `assets/images/llm/icons/front/react-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "nodejs",
-      icon: `assets/images/llm/icons/backend/nodejs-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "illustrator",
-      icon: `assets/images/llm/icons/design/ai-design.webp`,
-      category: "design",
-    },
-    {
-      name: "mongodb",
-      icon: `assets/images/llm/icons/database/mongodb-database.webp`,
-      category: "database",
-    },
-    {
-      name: "flutter",
-      icon: `assets/images/llm/icons/mobile/flutter-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "react-native",
-      icon: `assets/images/llm/icons/mobile/reactjs-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "android",
-      icon: `assets/images/llm/icons/mobile/android-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "ios",
-      icon: `assets/images/llm/icons/mobile/ios-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "selenium",
-      icon: `assets/images/llm/icons/qa/selenium-qa.webp`,
-      category: "qa",
-    },
+  const databasesStorageLayout = buildCategoryLayout(
+    "Databases",
+    4,
+    "Databases & Storage",
+    "database-storage",
+  );
 
-    // Row 2
-    {
-      name: "angular",
-      icon: `assets/images/llm/icons/front/angular-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "python",
-      icon: `assets/images/llm/icons/backend/python-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "photoshop",
-      icon: `assets/images/llm/icons/design/photoshop-design.webp`,
-      category: "design",
-    },
-    {
-      name: "postgresql",
-      icon: `assets/images/llm/icons/database/postgresql-database.webp`,
-      category: "database",
-    },
-    {
-      name: "kotlin",
-      icon: `assets/images/llm/icons/mobile/kotlin-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "swift",
-      icon: `assets/images/llm/icons/mobile/swift-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "ionic",
-      icon: `assets/images/llm/icons/mobile/ionic-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "xamarin",
-      icon: `assets/images/llm/icons/mobile/xamarin-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "appium",
-      icon: `assets/images/llm/icons/qa/appium-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "vuejs",
-      icon: `assets/images/llm/icons/front/vuejs-front.webp`,
-      category: "frontend",
-    },
+  const nlpLibrariesLayout = buildCategoryLayout(
+    "nlp",
+    3,
+    "NLP Libraries",
+    "nlp",
+  );
 
-    // Row 3
-    {
-      name: "java",
-      icon: `assets/images/llm/icons/backend/java-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "framer",
-      icon: `assets/images/llm/icons/design/framer-design.webp`,
-      category: "design",
-    },
-    {
-      name: "mysql",
-      icon: `assets/images/llm/icons/database/mysql-database.webp`,
-      category: "database",
-    },
-    {
-      name: "jetpack",
-      icon: `assets/images/llm/icons/mobile/jetpack-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "pwa",
-      icon: `assets/images/llm/icons/mobile/pwa-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "jmeter",
-      icon: `assets/images/llm/icons/qa/jmeter-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "nextjs",
-      icon: `assets/images/llm/icons/front/nextjs-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "golang",
-      icon: `assets/images/llm/icons/backend/golang-backend.webp`,
-      category: "backend",
-    },
-  ];
+  const llmsCategoryLayout = buildCategoryLayout("LLM", 6, "LLMs", "llm");
 
-  // QA layout - 3 rows with QA tools
-  const qaLayout = [
-    // Row 1
-    {
-      name: "react",
-      icon: `assets/images/llm/icons/front/react-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "nodejs",
-      icon: `assets/images/llm/icons/backend/nodejs-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "illustrator",
-      icon: `assets/images/llm/icons/design/ai-design.webp`,
-      category: "design",
-    },
-    {
-      name: "mongodb",
-      icon: `assets/images/llm/icons/database/mongodb-database.webp`,
-      category: "database",
-    },
-    {
-      name: "flutter",
-      icon: `assets/images/llm/icons/mobile/flutter-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "selenium",
-      icon: `assets/images/llm/icons/qa/selenium-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "appium",
-      icon: `assets/images/llm/icons/qa/appium-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "jmeter",
-      icon: `assets/images/llm/icons/qa/jmeter-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "katalon",
-      icon: `assets/images/llm/icons/qa/katalon-qa.webp`,
-      category: "qa",
-    },
+  const llmOrchestrationLayout = buildCategoryLayout(
+    "LLM Orchestration",
+    8,
+    "LLM Orchestration",
+    "llm-orchestration",
+  );
 
-    // Row 2
-    {
-      name: "angular",
-      icon: `assets/images/llm/icons/front/angular-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "python",
-      icon: `assets/images/llm/icons/backend/python-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "photoshop",
-      icon: `assets/images/llm/icons/design/photoshop-design.webp`,
-      category: "design",
-    },
-    {
-      name: "postgresql",
-      icon: `assets/images/llm/icons/database/postgresql-database.webp`,
-      category: "database",
-    },
-    {
-      name: "react-native",
-      icon: `assets/images/llm/icons/mobile/reactjs-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "lambda",
-      icon: `assets/images/llm/icons/qa/lambda-qa.webp`,
-      category: "qa",
-    },
-    {
-      name: "vuejs",
-      icon: `assets/images/llm/icons/front/vuejs-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "java",
-      icon: `assets/images/llm/icons/backend/java-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "framer",
-      icon: `assets/images/llm/icons/design/framer-design.webp`,
-      category: "design",
-    },
-    {
-      name: "mysql",
-      icon: `assets/images/llm/icons/database/mysql-database.webp`,
-      category: "database",
-    },
+ 
+  const getActiveLayout = () => {
+    switch (activeCategory) {
+      case "Foundation Models & APIs":
+        return foundationCategoryLayout;
+      case "AI Frameworks":
+        return aiFrameworkLayout;
+      case "LLMs":
+        return llmsCategoryLayout;
+      case "LLM Orchestration":
+        return llmOrchestrationLayout;
+      case "Vector Databases (RAG)":
+        return vectorDatabasesCategoryLayout;
+      case "Devops":
+        return devopsCategoryLayout;
+      case "DevOps & Deployment":
+        return devopsDeploymentLayout;
+      case "Database":
+        return databaseCategoryLayout;
+      case "Programming Languages":
+        return programmingLanguagesLayout;
+      case "Databases & Storage":
+        return databasesStorageLayout;
+      case "NLP Libraries":
+        return nlpLibrariesLayout;
+      default:
+        return defaultLayout;
+    }
+  };
 
-    // Row 3
-    {
-      name: "android",
-      icon: `assets/images/llm/icons/mobile/android-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "nextjs",
-      icon: `assets/images/llm/icons/front/nextjs-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "golang",
-      icon: `assets/images/llm/icons/backend/golang-backend.webp`,
-      category: "backend",
-    },
-    {
-      name: "xd",
-      icon: `assets/images/llm/icons/design/xd-design.webp`,
-      category: "design",
-    },
-    {
-      name: "redis",
-      icon: `assets/images/llm/icons/database/redis-database.webp`,
-      category: "database",
-    },
-    {
-      name: "ios",
-      icon: `assets/images/llm/icons/mobile/ios-mobile.webp`,
-      category: "mobile",
-    },
-    {
-      name: "tailwind",
-      icon: `assets/images/llm/icons/front/tailwind-css-front.webp`,
-      category: "frontend",
-    },
-    {
-      name: "nestjs",
-      icon: `assets/images/llm/icons/backend/nestjs-backend.webp`,
-      category: "backend",
-    },
-  ];
+  const fillRemainingSlots = (
+    selectedLayout: Array<{ name: string; icon: string; category: string }>,
+  ) => {
+    const remainingTech = defaultLayout.filter(
+      (tech) => tech.category !== activeCategory,
+    );
 
-  const currentLayout = defaultLayout;
+    return [...selectedLayout, ...remainingTech].slice(0, defaultLayout.length);
+  };
+
+  const currentLayout =
+    activeCategory === null
+      ? defaultLayout
+      : fillRemainingSlots(getActiveLayout());
 
   const categories = [
     { key: null as string | null, label: "All" },
-    ...Array.from(new Set(defaultLayout.map((tech) => tech.category))).map(
-      (category) => ({
-        key: category,
-        label:
-          category === "Security & DevSecOps Suricata"
-            ? "Security & DevSecOps"
-            : category,
-      }),
-    ),
+    ...Array.from(
+      new Set([
+        ...defaultLayout.map((tech) => tech.category),
+        "LLM Orchestration",
+      ]),
+    ).map((category) => ({
+      key: category,
+      label:
+        category === "Security & DevSecOps Suricata"
+          ? "Security & DevSecOps"
+          : category,
+    })),
   ];
 
   return (
     <div ref={sectionRef}>
-      <div ref={gridRef} className="w-full bg-white mt-4">
+      <div ref={gridRef} className="w-full bg-white mt-10">
         <div className="max-w-[1400px] mx-auto px-6 text-center flex flex-col items-center justify-center">
           {/* Heading */}
           <h2
             className=" mb-6
-       text-[17px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight"
+       text-[16px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight"
           >
             LLM Development Technology
             <span
               data-text="Beelockchain A Leader"
               className="shine-text text-[#F5B800] relative mx-1"
             >
-              Stack & Tools
+               Stack & Tools
             </span>
-            We Use 
+            We Use
           </h2>
 
           {/* Category Buttons - Desktop/Tablet Only */}

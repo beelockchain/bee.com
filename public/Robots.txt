@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin/
 
-Sitemap: https://www.beelockchain.com/sitemap.xml
+Sitemap: https://beelockchain.com/sitemap.xml

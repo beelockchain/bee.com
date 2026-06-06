@@ -52,15 +52,13 @@ const UseCaseCard = ({
   return (
     <div
       className={`mx-auto flex min-h-[220px] h-full w-full max-w-[560px] flex-col items-center justify-center rounded-3xl bg-white px-8 py-8 text-center transition-all duration-300 ${
-        isActive
-          ? "border-2 border-[#F6E000]"
-          : "border border-[#d4d4d4]"
+        isActive ? "border-2 border-[#F6E000]" : "border border-[#d4d4d4]"
       }`}
     >
       <h3 className="mb-3 text-lg font-semibold text-black font-poppins">
         {service.title}
       </h3>
-      <p className="text-[11px] font-semibold leading-relaxed text-black sm:text-[10px] sm:leading-[1.45] md:text-[11px] lg:text-[13px] xl:text-[14px]">
+      <p className="text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black ">
         {service.description}
       </p>
     </div>
@@ -174,15 +172,15 @@ const MobileCarousel = ({
   onSelect: (targetIndex: number) => void;
 }) => {
   return (
-    <div className="mt-1 sm:mt-2 md:mt-3">
-      <div className="mx-auto w-full max-w-md overflow-hidden px-1 sm:max-w-xl md:max-w-md md:px-0">
+    <div className="relative z-10 -mt-3 sm:-mt-4 md:-mt-6">
+      <div className="mx-auto w-full max-w-md overflow-hidden sm:max-w-xl md:max-w-md md:px-0">
         <div
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {services.map((service) => (
-            <div key={service.title} className="w-full shrink-0">
-              <div className="h-full rounded-2xl border border-[#d4d4d4] bg-white p-5">
+            <div key={service.title} className="w-full shrink-0 gap-5 mt-10">
+              <div className="relative h-full rounded-2xl border border-[#d4d4d4] bg-white p-5">
                 <div className="mb-3 flex items-start justify-start"></div>
 
                 <h3 className="mb-2 text-base font-bold text-gray-900">
@@ -358,7 +356,9 @@ const SectionHeader = ({
           isCompact ? "" : "flex items-start justify-between gap-8 xl:gap-12"
         }
       >
-        <div className={isCompact ? "mx-auto max-w-2xl" : "max-w-2xl text-start"}>
+        <div
+          className={isCompact ? "mx-auto max-w-2xl" : "max-w-2xl text-start"}
+        >
           <h2
             className={`font-bold text-gray-900 ${
               isMobile
@@ -496,20 +496,6 @@ const LlmUsecases = () => {
         {isCompactLayout ? (
           <div className="pb-10">
             <SectionHeader isMobile={isMobile} isCompact={true} />
-
-            <div className="relative overflow-hidden rounded-[28px] px-4 pb-0 pt-4 sm:px-6 sm:pt-5 md:px-8 md:pt-6">
-              <div className="pointer-events-none absolute left-1/2 top-14 h-[170px] w-[280px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,223,109,0.5)_0%,rgba(248,223,109,0.22)_48%,rgba(248,223,109,0)_76%)] blur-2xl sm:top-[60px] sm:h-[190px] sm:w-[340px] md:top-[68px] md:h-[210px] md:w-[430px]" />
-
-              <div className="relative z-0 flex justify-center">
-                <div className="flex items-center justify-center rounded-full">
-                  <img
-                    src="/assets/images/llm/llm-logo.png"
-                    alt="LLM Logo"
-                    className="w-full max-w-[220px] object-contain sm:max-w-[280px] md:max-w-[340px]"
-                  />
-                </div>
-              </div>
-            </div>
 
             <MobileCarousel
               activeIndex={activeIndex}
