@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import Link from "next/link";
 
 const Herosection = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
@@ -202,8 +203,9 @@ const Herosection = () => {
                 alt="bee"
                 className="absolute top-0 right-0 w-20 pointer-events-none z-20"
               />
-              <a
+              <Link
                 href="/contact-us"
+                target="_blank"
                 ref={btnRef}
                 onTouchStart={() => setActive(true)}
                 onTouchEnd={() => setActive(false)}
@@ -245,7 +247,7 @@ const Herosection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
 
             </div>
           </div>

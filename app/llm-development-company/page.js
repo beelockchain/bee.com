@@ -201,7 +201,7 @@ export default function LLMServicesPage() {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main>
+      <main className="overflow-x-hidden">
         <HeroSectionLlm />
         <DevopsCustomers />
         <LlmAdopting />
@@ -212,7 +212,7 @@ export default function LLMServicesPage() {
         <LlmUsecases />
         <LlmProcess />
         <LlmIndustry />
-        {/* <WhyBeelockchainLlm /> */}
+        <WhyBeelockchainLlm />
         <LlmTechnologies />
         <LlmFaq />
       </main>

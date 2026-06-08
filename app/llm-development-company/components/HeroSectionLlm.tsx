@@ -69,7 +69,7 @@ export default function HeroSectionLlm({
               </p>
 
               {/* CTA */}
-              <div className="flex justify-center md:justify-start ">
+              <div className="flex justify-center md:justify-start mt-4">
                 <Link
                   href="/contact-us"
                   onClick={onConsultClick}

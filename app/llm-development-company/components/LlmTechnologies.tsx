@@ -355,7 +355,7 @@ const LlmTechnologies = () => {
           {/* Heading */}
           <h2
             className=" mb-6
-       text-[16px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight"
+       text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight"
           >
             LLM Development Technology
             <span

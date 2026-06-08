@@ -69,7 +69,7 @@ const LlmSolution = () => {
   };
 
   return (
-    <section className="w-full bg-white px-6 py-10 sm:px-8 lg:px-14 ">
+    <section className="w-full bg-white px-4 py-10 sm:px-6 lg:px-6 ">
       <div className="mx-auto max-w-6xl">
         {/* Top Section */}
         <div className="max-w-7xl mx-auto text-center">

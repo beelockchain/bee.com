@@ -13,20 +13,37 @@ const LlmFaq = () => {
     {
       q: "What is an LLM development company, and what does it involve?",
       a: (
-      <>
-        LLM development is the end-to-end process of selecting, training, fine-tuning, and deploying AI systems powered by large language models. <br></br><br></br>
-       It encompasses use-case strategy, data preparation and curation, fine-tuning or continued pre-training of foundation models, RAG pipeline construction, prompt engineering, application development, security hardening, and production deployment with ongoing optimization. 
-          A trusted LLM solution provider like Beelockchain handles the full lifecycle from first consultation to post-launch performance management.
-      </>
-    ),
+        <>
+          LLM development is the end-to-end process of selecting, training,
+          fine-tuning, and deploying AI systems powered by large language
+          models. <br></br>
+          <br></br>
+          It encompasses use-case strategy, data preparation and curation,
+          fine-tuning or continued pre-training of foundation models, RAG
+          pipeline construction, prompt engineering, application development,
+          security hardening, and production deployment with ongoing
+          optimization. A trusted LLM solution provider like Beelockchain
+          handles the full lifecycle from first consultation to post-launch
+          performance management.
+        </>
+      ),
     },
     {
       q: "What is the difference between LLM fine-tuning and RAG?",
-      a:(
+      a: (
         <>
-        Fine-tuning retrains a base model on domain-specific data to change its behaviour, style, or task specialization, best for teaching a model your industry's language or adapting its output format. <br></br><br></br> RAG (Retrieval-Augmented Generation) connects the LLM to an external knowledge base at inference time, best for keeping knowledge current and accurate without retraining. Most enterprise LLM solutions use both together: fine-tune for behaviour, RAG for factual grounding. Beelockchain's consulting service helps you determine the right architecture for your specific requirements.
+          Fine-tuning retrains a base model on domain-specific data to change
+          its behaviour, style, or task specialization, best for teaching a
+          model your industry's language or adapting its output format.{" "}
+          <br></br>
+          <br></br> RAG (Retrieval-Augmented Generation) connects the LLM to an
+          external knowledge base at inference time, best for keeping knowledge
+          current and accurate without retraining. Most enterprise LLM solutions
+          use both together: fine-tune for behaviour, RAG for factual grounding.
+          Beelockchain's consulting service helps you determine the right
+          architecture for your specific requirements.
         </>
-      )
+      ),
     },
     {
       q: "How long does LLM development take?",
@@ -39,12 +56,18 @@ const LlmFaq = () => {
     },
     {
       q: "Which LLM models does Beelockchain work with?",
-      a:(
+      a: (
         <>
-        We build with OpenAI GPT-4o, GPT-4 Turbo, Anthropic Claude 3.5 Sonnet, Claude 3 Opus, Google Gemini 1.5 Pro, Meta LLaMA 3.1 (8B, 70B, 405B), Mistral AI (7B, Mixtral 8×7B), Falcon, Qwen 2, Phi-3, and custom-trained models. <br></br> <br></br> For data sovereignty, we recommend open-source models on your own infrastructure. For maximum capability, GPT-4o or Claude 3.5 Sonnet and cost-optimized production at scale, fine-tuned LLaMA 3.1 70B or Mistral typically offer the best cost-performance ratio.
+          We build with OpenAI GPT-4o, GPT-4 Turbo, Anthropic Claude 3.5 Sonnet,
+          Claude 3 Opus, Google Gemini 1.5 Pro, Meta LLaMA 3.1 (8B, 70B, 405B),
+          Mistral AI (7B, Mixtral 8×7B), Falcon, Qwen 2, Phi-3, and
+          custom-trained models. <br></br> <br></br> For data sovereignty, we
+          recommend open-source models on your own infrastructure. For maximum
+          capability, GPT-4o or Claude 3.5 Sonnet and cost-optimized production
+          at scale, fine-tuned LLaMA 3.1 70B or Mistral typically offer the best
+          cost-performance ratio.
         </>
       ),
-
     },
     {
       q: "What is LLM hallucination, and how do you prevent it?",
@@ -58,36 +81,50 @@ const LlmFaq = () => {
     },
     {
       q: "What Learning Strategies Are Used in Custom LLM Development?",
-       a:(
+      a: (
         <>
-       We combine in-context and few-shot learning to adapt your model through fast development, because it needs only minimal data, and then we apply zero-shot learning to handle unknown tasks.<br></br><br></br> The model uses a chain-of-thought (CoT) prompting to follow a structured reasoning process, helping it solve complex problems through all of their stages. Self-consistency decoding filters out unreliable outputs, while active learning continuously closes knowledge gaps to improve performance without the need for expensive retraining procedures.
+          We combine in-context and few-shot learning to adapt your model
+          through fast development, because it needs only minimal data, and then
+          we apply zero-shot learning to handle unknown tasks.<br></br>
+          <br></br> The model uses a chain-of-thought (CoT) prompting to follow
+          a structured reasoning process, helping it solve complex problems
+          through all of their stages. Self-consistency decoding filters out
+          unreliable outputs, while active learning continuously closes
+          knowledge gaps to improve performance without the need for expensive
+          retraining procedures.
         </>
       ),
-
     },
     {
       q: "Can you build an LLM on our own infrastructure?",
-       a:(
+      a: (
         <>
-        Yes. Beelockchain, as a leading Large Language Model Development company, offers on-premise LLM deployment for organizations requiring full data sovereignty. <br></br><br></br> We handle GPU infrastructure consultation, model weight delivery, inference server setup (vLLM, TGI, Ollama), API layer development, security hardening, and staff training. On-premise deployments use open-source models (LLaMA 3.1, Mistral, Qwen 2) that operate without any external API dependencies.        </>
+          Yes. Beelockchain, as a leading Large Language Model Development
+          company, offers on-premise LLM deployment for organizations requiring
+          full data sovereignty. <br></br>
+          <br></br> We handle GPU infrastructure consultation, model weight
+          delivery, inference server setup (vLLM, TGI, Ollama), API layer
+          development, security hardening, and staff training. On-premise
+          deployments use open-source models (LLaMA 3.1, Mistral, Qwen 2) that
+          operate without any external API dependencies.{" "}
+        </>
       ),
-
     },
   ];
 
   return (
-    <section className="w-full bg-white py-0">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-6 xl:px-6 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10 lg:gap-40 py-6">
+    <section className="w-full bg-white mt-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-6 sm:px-6 md:flex-row md:items-start md:gap-10 lg:gap-40 lg:px-6 xl:px-6">
         {/* SINGLE HEADING */}
         <div className="w-full md:w-auto flex flex-col items-center md:items-start justify-center md:justify-start">
           <h2 className="text-center md:text-left text-[24px] sm:text-[32px] md:text-[44px] lg:text-[42px] xl:text-[54px] font-bold leading-tight font-manrope text-black">
             Frequently <br className="hidden md:block" />
             Asked <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-black via-black to-black/50 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-black via-black to-black/50 bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
-          <p className="mt-4 max-w-[460px] text-center md:text-left text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-black/80 leading-relaxed font-poppins">
+          <p className="mt-4 max-w-[460px] md:max-w-[247px] lg:max-w-[460px] text-center md:text-left text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-black/80 leading-relaxed font-poppins">
             Everything you need to know about LLM development services before
             starting a project. Still have questions?
           </p>
@@ -99,7 +136,7 @@ const LlmFaq = () => {
               </span>
               <svg
                 viewBox="0 0 56 55"
-                className="relative z-10 h-10 w-10 transition-all duration-300 group-hover:translate-x-1 group-hover:rotate-[60deg] group-active:scale-95 lg:h-14 lg:w-14"
+                className="relative z-10 h-10 w-10 transition-all duration-300 group-hover:translate-x-1 group-hover:rotate-60 group-active:scale-95 lg:h-14 lg:w-14"
               >
                 <circle
                   cx="28.2"
@@ -128,7 +165,7 @@ const LlmFaq = () => {
             return (
               <div
                 key={index}
-                className="relative rounded-[14px] p-[1px] bg-[#646464] cursor-pointer"
+                className="relative rounded-[14px] bg-[#646464] p-px cursor-pointer"
               >
                 <div
                   className="bg-[#fafafa] rounded-[13px] px-5 py-4"

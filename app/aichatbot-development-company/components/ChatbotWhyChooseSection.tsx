@@ -64,10 +64,11 @@ function FeatureButton({ label }: { label: string }) {
   );
 }
 
-function CTAButton({ href, label }: { href: string; label: string }) {
+function CTAButton({ href, label, target }: { href: string; label: string; target?: string }) {
   return (
     <Link
       href={href}
+      target={target}
       className="group cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3
         px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-1
         border border-black rounded-full overflow-hidden"
@@ -159,8 +160,8 @@ export default function WhyChooseSection() {
            </div>
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-3 mt-4 ml-25">
-              <CTAButton href="/contact-us" label="Consult Our Expert" />
-              <CTAButton href="/portfolio" label="Explore Our Portfolio" />
+              <CTAButton href="/contact-us" target="_blank" label="Consult Our Expert" />
+              <CTAButton href="/portfolio" target="_blank" label="Explore Our Portfolio" />
             </div>
           </div>
 

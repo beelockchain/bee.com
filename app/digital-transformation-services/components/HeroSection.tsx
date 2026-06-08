@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import Link from 'next/link';
 interface HeroSectionProps {
   backgroundImage?: string;
   onConsultClick?: () => void;
@@ -62,8 +62,9 @@ export default function HeroSection({
             {/* CTA Button */}
               {/* CTA Button */}
              <div className="text-center md:text-left mb-5">
-              <a
+              <Link
                 href="/contact-us"
+                target="_blank"
                 className="
                   group relative overflow-hidden
                   cursor-pointer
@@ -111,7 +112,7 @@ export default function HeroSection({
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
 
           </div>

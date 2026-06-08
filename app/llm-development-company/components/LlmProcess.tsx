@@ -21,10 +21,10 @@ const steps = [
     highlighted: true,
   },
   {
-    number: "Step 6",
-    title: "Deployment & Monitoring",
+    number: "Step 4",
+    title: "Model Training & Optimization",
     description:
-      "The final system is deployed within a secure infrastructure and monitored to ensure consistent performance and continuous improvement.",
+      "The model is trained or fine-tuned using domain-specific data to improve contextual understanding and response quality.",
     highlighted: false,
   },
   {
@@ -35,10 +35,10 @@ const steps = [
     highlighted: true,
   },
   {
-    number: "Step 4",
-    title: "Model Training & Optimization",
+    number: "Step 6",
+    title: "Deployment & Monitoring",
     description:
-      "The model is trained or fine-tuned using domain-specific data to improve contextual understanding and response quality.",
+      "The final system is deployed within a secure infrastructure and monitored to ensure consistent performance and continuous improvement.",
     highlighted: false,
   },
 ];
@@ -68,11 +68,13 @@ const ProcessArrow = ({ className = "" }) => (
 );
 const LlmProcess = () => {
   return (
-    <section className="w-full px-6 py-8 md:px-16 lg:py-10">
+    <section className="w-full px-4 py-8 sm:px-6 lg:px-6 lg:py-6">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-center  font-bold leading-tight text-black 
-           text-[19px] sm:text-[19px] md:text-[21px]  lg:text-[28px] xl:text-[36px]">
+          <h2
+            className="text-center  font-bold leading-tight text-black 
+           text-[19px] sm:text-[19px] md:text-[21px]  lg:text-[28px] xl:text-[36px]"
+          >
             Our LLM{" "}
             <span
               data-text="Development Process"
@@ -88,8 +90,7 @@ const LlmProcess = () => {
         </div>
 
         <div className="relative mt-12 hidden lg:block">
-         
-        {/* 1 -> 2 */}
+          {/* 1 -> 2 */}
           <div className="absolute top-[95px] left-[30%] z-20">
             <ProcessArrow />
           </div>
@@ -128,15 +129,12 @@ const LlmProcess = () => {
                 <p className="mt-3 max-w-[350px] text-black text-[12px] md:text-[10px] lg:text-[12px] xl:text-[14px] font-poppins leading-relaxed font-medium">
                   {step.description}
                 </p>
-                
               </div>
             ))}
-            
           </div>
         </div>
-        
 
-        <div className="mt-10 grid gap-5 lg:hidden">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:hidden">
           {steps.map((step) => (
             <div
               key={step.number}

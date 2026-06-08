@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LlmAdopting = () => {
   return (
-    <div className="w-full py-5 px-6 md:px-16">
+    <div className="w-full px-4 py-5 sm:px-6 lg:px-6">
       <h2 className="text-center text-[17px] sm:text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px]  text-black font-bold mb-12 leading-tight">
         Why Businesses Are Adopting <br />
         <span

@@ -77,8 +77,9 @@ const Digitaltransformation = () => {
           {/* BUTTON */}
 <div className="order-4 sm:order-none flex flex-col md:flex-row gap-3 flex-nowrap px-5 md:px-0">
   
-  <a
+  <Link
     href="/contact-us"
+    target="_blank"
     onTouchStart={() => setActive(true)}
     onTouchEnd={() => setActive(false)}
     onMouseLeave={() => setActive(false)}
@@ -120,9 +121,9 @@ const Digitaltransformation = () => {
         strokeLinejoin="round"
       />
     </svg>
-  </a>
+  </Link>
 
-  <a
+  <Link
     href="#"
     onTouchStart={() => setActive(true)}
     onTouchEnd={() => setActive(false)}
@@ -165,7 +166,7 @@ const Digitaltransformation = () => {
         strokeLinejoin="round"
       />
     </svg>
-  </a>
+  </Link>
 
 </div>
 

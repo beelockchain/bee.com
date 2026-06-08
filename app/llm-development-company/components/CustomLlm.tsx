@@ -54,14 +54,14 @@ const benefitCards: BenefitCard[] = [
   },
   {
     id: 7,
-    icon: "/assets/images/llm/custom-llm-icon6.png",
+    icon: "/assets/images/llm/custom-llm-icon7.png",
     title: "LLM Security & Compliance",
     description:
       "Enterprise-grade LLM security covering prompt injection defence, jailbreak prevention, PII detection and redaction, model output auditing, toxicity filtering, GDPR/HIPAA data handling, and AI governance documentation — including fully on-premise deployment for maximum data sovereignty.",
   },
   {
     id: 8,
-    icon: "/assets/images/llm/custom-llm-icon7.png",
+    icon: "/assets/images/llm/custom-llm-icon8.png",
     title: "Prompt Engineering & Optimization",
     description:
       "Systematic prompt design, chain-of-thought engineering, few-shot example curation, and evaluation framework development that maximizes model accuracy, consistency, and safety, reducing inference latency and token costs by up to 40% at production scale.",
@@ -148,7 +148,9 @@ const LeftPanel: React.FC = () => (
       Development Services
     </h2>
    
-    <p className="sm:text-left md:text-left  text-[13px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins font-medium mb-4 text-black text-center lg:text-left">
+    <p className="text-center lg:text-left  max-w-[480px]
+     text-[13px] md:text-[12px] lg:text-[14px] xl:text-[16px] 
+     font-poppins font-medium mb-4 text-black">
       Beelockchain’s end-to-end Large Language Model development services cover
       every stage of the AI lifecycle. From strategy and model selection, our
       expert AI Engineers, to production deployment and continuous

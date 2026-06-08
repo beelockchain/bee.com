@@ -46,7 +46,7 @@ const LlmIndustry = () => {
         </h2>
       ) : null}
 
-      <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-16 items-start">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-6 px-4 sm:grid-cols-2 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-6">
         {/* LEFT – IMAGE STACK GRID */}
         <div className="industry-grid grid grid-cols-3 gap-2 cursor-pointer">
           {industryImages.map((img, i) => (
@@ -113,7 +113,7 @@ const LlmIndustry = () => {
             {industries.map((item, i) => (
               <div
                 key={i}
-                className="text-[13px] sm:text-[14px] md:text-[15px] lg:text-[14px] xl:text-[16px]  font-[Poppins] text-black underline cursor-pointer hover:text-yellow-500 transition"
+                className="text-[13px] sm:text-[14px] md:text-[13px] lg:text-[14px] xl:text-[16px]  font-[Poppins] text-black underline cursor-pointer hover:text-yellow-500 transition"
               >
                 {item}
               </div>

@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import Link from "next/link";
 
 interface BenefitCard {
   id: number;
@@ -93,23 +93,18 @@ const LeftPanel: React.FC = () => (
       Selecting the right development partner plays a critical role in the
       success of AI initiatives. Beelockchain, a leading LLM solutions provider,
       offers a combination of technical expertise and strategic guidance to help
-      businesses implement powerful LLM solutions.{" "}
+      businesses implement powerful LLM solutions.
     </p>
     <div className="mt-6 flex flex-col sm:flex-row gap-3">
-      <a href="/contact-us">
+      <Link href="/contact-us" target="_blank" className="cursor-pointer">
         <button className="group cursor-pointer relative inline-flex items-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">
-          {/* ripple */}
           <span className="absolute inset-0 flex items-center justify-center z-0">
             <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
           </span>
-
-          {/* glow */}
           <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
-
-          <span className="relative z-10  text-black text-[14px]">
+          <span className="relative z-10 text-black text-[14px]">
             Digitalize Your Business Now
           </span>
-
           <svg
             className="relative z-10 w-8 h-8 ml-1 transition-all duration-300 group-hover:rotate-60 group-hover:translate-x-1 group-active:scale-95"
             viewBox="0 0 56 55"
@@ -132,21 +127,16 @@ const LeftPanel: React.FC = () => (
             />
           </svg>
         </button>
-      </a>
+      </Link>
 
       <button className="group cursor-pointer relative inline-flex items-center justify-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">
-        {/* ripple */}
         <span className="absolute inset-0 flex items-center justify-center z-0">
           <span className="w-10 h-10 bg-gray-100 rounded-full scale-0 group-hover:scale-[6] transition-transform duration-500 ease-out" />
         </span>
-
-        {/* glow */}
         <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.9)_0%,rgba(226,226,226,0.3)_50%,transparent_100%)] group-hover:opacity-0 transition-opacity duration-300" />
-
-        <span className="relative z-10  text-black text-[14px]">
+        <span className="relative z-10 text-black text-[14px]">
           Explore Our Portfolio
         </span>
-
         <svg
           className="relative z-10 w-8 h-8 ml-1 transition-all duration-300 group-hover:rotate-60 group-hover:translate-x-1 group-active:scale-95"
           viewBox="0 0 56 55"
@@ -177,29 +167,31 @@ const LeftPanel: React.FC = () => (
 const WhyBeelockchainLlm: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const columnRef = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const ROW_H = 245;
-  const GAP = 14; // gap between columns inside a row AND between rows
-  const STEP = ROW_H + GAP; // distance to travel per scroll step
-  const PEEK = 0; // px of next row visible at bottom as hint
-  const WINDOW_H = ROW_H * 2.1 + GAP + PEEK; // clipping window height
+  const GAP = 14;
+  const STEP = ROW_H + GAP;
+  const PEEK = 0;
+  const WINDOW_H = ROW_H * 2.1 + GAP + PEEK;
   const HEADER_OFFSET = 80;
 
   // Now 4 rows, 2 steps to show all (rows 0+1 visible → scroll → rows 1+2 → scroll → rows 2+3)
   const TOTAL_STEPS = rows.length - 2; // = 2
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 1024);
+    const mediaQuery = window.matchMedia("(max-width: 991px)");
+    const check = () => setIsMobile(mediaQuery.matches);
+
     check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
+    mediaQuery.addEventListener("change", check);
+    return () => mediaQuery.removeEventListener("change", check);
   }, []);
 
   // ── GSAP desktop animation ────────────────────────────────────────────────
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile !== false) return;
     if (typeof window === "undefined") return;
 
     let cleanup: (() => void) | undefined;
@@ -289,10 +281,20 @@ const WhyBeelockchainLlm: React.FC = () => {
     );
   };
 
+  if (isMobile === null) {
+    return (
+      <section className="relative bg-gray-50 py-8">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <LeftPanel />
+        </div>
+      </section>
+    );
+  }
+
   // ── MOBILE LAYOUT ─────────────────────────────────────────────────────────
   if (isMobile) {
     return (
-      <section className="relative bg-gray-50 py-12">
+      <section className="relative bg-gray-50 py-8">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="mb-2">
             <LeftPanel />
@@ -305,8 +307,8 @@ const WhyBeelockchainLlm: React.FC = () => {
 
   // ── DESKTOP LAYOUT ────────────────────────────────────────────────────────
   return (
-    <section ref={sectionRef} className="relative bg-gray-50">
-      <div className="min-h-[calc(100vh-5rem)] pt-20 flex items-center">
+    <section ref={sectionRef} className="relative">
+      <div className="min-h-[calc(100vh-5rem)] pt-10 flex items-center">
         <div className="container mx-auto px-6 lg:px-8 max-w-[1380px]">
           <div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-8 lg:gap-10 items-center">
             <LeftPanel />
@@ -333,17 +335,15 @@ const WhyBeelockchainLlm: React.FC = () => {
                     "linear-gradient(to top, #F9FAFB 0%, transparent 100%)",
                 }}
               />
-
-              {/* Moving column — GSAP drives translateY on this */}
-              <div ref={columnRef} className="absolute left-0 right-0 top-0 ">
+              <div ref={columnRef} className="absolute left-0 right-0 top-0">
                 {rows.map((rowCards, rowIdx) => (
                   <div
                     key={rowIdx}
                     className="grid grid-cols-2"
                     style={{
-                      gap: `${GAP}px`, // gap between the 2 cards in a row
+                      gap: `${GAP}px`,
                       height: `${ROW_H}px`,
-                      marginBottom: rowIdx < rows.length - 1 ? `${GAP}px` : 0, // gap between rows
+                      marginBottom: rowIdx < rows.length - 1 ? `${GAP}px` : 0,
                     }}
                   >
                     {rowCards.map((card) => (

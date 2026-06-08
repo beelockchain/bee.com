@@ -97,6 +97,7 @@ const SubIndustriesWeServe = () => {
         <div className="flex justify-center md:justify-start">
         <Link
           href="/contact-us"
+          target="_blank"
           className="group cursor-pointer relative flex items-center gap-2 md:gap-2 lg:gap-3
           px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2
           border border-black rounded-full overflow-hidden"

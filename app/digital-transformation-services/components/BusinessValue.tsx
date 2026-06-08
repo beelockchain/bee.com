@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -326,8 +327,9 @@ const MobileCardStack = () => {
           <div className="w-full flex justify-center items-center gap-3 pb-4 flex-wrap">
             
             {/* BUTTON 1 */}
-            <a
+            <Link
               href="/contact-us"
+              target="_blank"
               className="
                 group relative overflow-hidden
                 cursor-pointer
@@ -359,10 +361,10 @@ const MobileCardStack = () => {
                 <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
                   stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
+            </Link>
 
             {/* BUTTON 2 */}
-            <a
+            <Link
               href="#"
               className="
                 group relative overflow-hidden
@@ -395,7 +397,7 @@ const MobileCardStack = () => {
                 <path d="M31.3253 22.1686L33.2667 29.414M31.3253 22.1686L24.0799 24.11M31.3253 22.1686L25.1373 32.8865"
                   stroke="black" strokeWidth="3.03086" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
+            </Link>
 
           </div>
 
@@ -443,7 +445,7 @@ TabletLayout = () => {
             <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="w-full object-contain rounded-xl" />
           <div className="mt-4 flex gap-3 flex-wrap">
             
-            <a href="/contact-us">
+            <Link href="/contact-us" target='_blank'>
               <button className="group cursor-pointer relative flex items-center gap-2 px-3 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                 
                 {/* ripple */}
@@ -469,7 +471,7 @@ TabletLayout = () => {
                 </svg>
 
               </button>
-            </a>
+            </Link>
 
             <button className="group cursor-pointer relative flex items-center gap-2 px-6 py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
               
@@ -602,7 +604,7 @@ const DesktopLayout = () => {
               <Image src="/assets/images/business_val1.png" alt="Digital transformation visual" width={500} height={809} className="object-fit xl:ml-25" />
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex justify-center items-center gap-3">
 
-              <a href="/contact-us">
+              <Link href="/contact-us" target="_blank">
                 <button className="group cursor-pointer relative inline-flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">
                   
                   {/* ripple */}
@@ -623,7 +625,7 @@ const DesktopLayout = () => {
                   </svg>
 
                 </button>
-              </a>
+              </Link>
 
               <a href="#">
                 <button className="group cursor-pointer relative inline-flex items-center gap-2 md:gap-2 lg:gap-3 xl:gap-0 px-4 py-1.5 md:px-3 md:py-1.5 lg:px-6 lg:py-2 xl:px-3 xl:py-2 border border-black rounded-full overflow-hidden bg-white/80 shadow-md">

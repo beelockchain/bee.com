@@ -33,7 +33,11 @@ const TAB_CENTER_IMAGES: Record<TabType, string> = {
 
 const TAB_CONTENT: Record<
   TabType,
-  { title: string; desc: string; routes: { label: string; href: string }[] }
+  {
+    title: string;
+    desc: string;
+    routes: { label: string; href: string; target?: "_blank" | "_self" }[];
+  }
 > = {
   Consultant: {
     title: "Digital Transformation Services",
@@ -71,7 +75,11 @@ const TAB_CONTENT: Record<
     routes: [
       { label: "Generative AI Development", href: "#" },
       { label: "Chat AI App Development", href: "#" },
-      { label: "LLM Development", href: "#" },
+      {
+        label: "LLM Development",
+        href: "/llm-development-company",
+        target: "_blank",
+      },
       { label: "AI Strategy Consulting", href: "#" },
       { label: "AI UI/UX Design Services", href: "#" },
       { label: "Machine Learning Development", href: "#" },
@@ -82,7 +90,7 @@ const TAB_CONTENT: Record<
     title: "DevOps Services",
     desc: "Beelockchain specializes in end-to-end DevOps solutions, offering CI/CD automation, cloud DevOps services, and faster, reliable software deployments.",
     routes: [
-      { label: "DevOps Development", href: "/devops-development-company" },
+      { label: "DevOps Development", href: "/devops-development-company", target: "_blank"},
     ],
   },
   Marketing: {
@@ -212,10 +220,11 @@ export default function Services() {
                     key={i}
                     href={route.href}
                     target={
-                      route.href.startsWith("http") ? "_blank" : undefined
+                      route.target ??
+                      (route.href.startsWith("http") ? "_blank" : undefined)
                     }
                     rel={
-                      route.href.startsWith("http")
+                      (route.target ?? route.href.startsWith("http"))
                         ? "noopener noreferrer"
                         : undefined
                     }
@@ -290,9 +299,12 @@ export default function Services() {
               <a
                 key={i}
                 href={route.href}
-                target={route.href.startsWith("http") ? "_blank" : undefined}
+                target={
+                  route.target ??
+                  (route.href.startsWith("http") ? "_blank" : undefined)
+                }
                 rel={
-                  route.href.startsWith("http")
+                  (route.target ?? route.href.startsWith("http"))
                     ? "noopener noreferrer"
                     : undefined
                 }
@@ -367,9 +379,12 @@ export default function Services() {
               <a
                 key={i}
                 href={route.href}
-                target={route.href.startsWith("http") ? "_blank" : undefined}
+                target={
+                  route.target ??
+                  (route.href.startsWith("http") ? "_blank" : undefined)
+                }
                 rel={
-                  route.href.startsWith("http")
+                  (route.target ?? route.href.startsWith("http"))
                     ? "noopener noreferrer"
                     : undefined
                 }

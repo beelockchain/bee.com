@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const useCases = [
   {
@@ -51,7 +52,7 @@ const ChatbotBusiness: React.FC = () => {
   {/* Right: CTAs */}
   <div className="w-full flex items-center justify-start lg:justify-start gap-4">
     
-    <a href="/contact-us">
+    <Link href="/contact-us" target="_blank">
       <button className="group cursor-pointer relative inline-flex items-center px-5 py-3 border border-black rounded-full bg-white overflow-hidden">
         
         <span className="absolute inset-0 flex items-center justify-center z-0">
@@ -86,7 +87,7 @@ const ChatbotBusiness: React.FC = () => {
           />
         </svg>
       </button>
-    </a>
+    </Link>
 
     <button className="group cursor-pointer relative inline-flex items-center px-5 py-3 border border-black rounded-full bg-white overflow-hidden">
       

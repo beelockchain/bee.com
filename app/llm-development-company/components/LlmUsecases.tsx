@@ -51,14 +51,14 @@ const UseCaseCard = ({
 }) => {
   return (
     <div
-      className={`mx-auto flex min-h-[220px] h-full w-full max-w-[560px] flex-col items-center justify-center rounded-3xl bg-white px-8 py-8 text-center transition-all duration-300 ${
+      className={`mx-auto flex min-h-[220px] h-full w-full max-w-[560px] flex-col items-center justify-center rounded-3xl bg-white px-5 py-6 text-center transition-all duration-300 sm:px-6 sm:py-7 lg:px-8 lg:py-8 ${
         isActive ? "border-2 border-[#F6E000]" : "border border-[#d4d4d4]"
       }`}
     >
-      <h3 className="mb-3 text-lg font-semibold text-black font-poppins">
+      <h3 className="mb-3 font-poppins text-base font-semibold text-black sm:text-lg">
         {service.title}
       </h3>
-      <p className="text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black ">
+      <p className="text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black">
         {service.description}
       </p>
     </div>
@@ -172,22 +172,25 @@ const MobileCarousel = ({
   onSelect: (targetIndex: number) => void;
 }) => {
   return (
-    <div className="relative z-10 -mt-3 sm:-mt-4 md:-mt-6">
-      <div className="mx-auto w-full max-w-md overflow-hidden sm:max-w-xl md:max-w-md md:px-0">
+    <div className="relative z-10 mt-0">
+      <div className="mx-auto w-full max-w-full overflow-hidden px-1 sm:max-w-2xl sm:px-2 md:max-w-3xl">
         <div
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {services.map((service) => (
-            <div key={service.title} className="w-full shrink-0 gap-5 mt-10">
-              <div className="relative h-full rounded-2xl border border-[#d4d4d4] bg-white p-5">
+            <div
+              key={service.title}
+              className="mt-0 flex w-full shrink-0 justify-center px-1 sm:px-2"
+            >
+              <div className="relative flex min-h-[220px]  h-full w-full max-w-[320px] flex-col justify-center rounded-[24px] border-2 border-[#f6e000] bg-white p-5 shadow-sm sm:max-w-[380px] sm:min-h-[240px] sm:p-6 md:max-w-[430px]">
                 <div className="mb-3 flex items-start justify-start"></div>
 
-                <h3 className="mb-2 text-base font-bold text-gray-900">
+                <h3 className="text-[19px] sm:text-[19px] md:text-[21px] leading-tight lg:text-[28px] xl:text-[36px] text-black font-bold  font-poppins">
                   {service.title}
                 </h3>
 
-                <p className="text-xs leading-relaxed font-medium font-poppins text-black">
+                <p className="text-center text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black ">
                   {service.description}
                 </p>
               </div>
@@ -196,7 +199,7 @@ const MobileCarousel = ({
         </div>
       </div>
 
-      <div className="mt-4 flex items-center justify-center gap-3">
+      <div className="mt-5 flex flex-wrap items-center justify-center gap-3 sm:mt-6">
         <button
           type="button"
           aria-label="Previous use case"
@@ -255,7 +258,7 @@ const CTAButton = ({ isCompact = false }: { isCompact?: boolean }) => {
         <button
           className={`group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white ${
             isCompact
-              ? "px-4 py-3 w-auto min-w-[200px]"
+              ? "w-full px-4 py-3 sm:w-auto sm:min-w-[200px]"
               : "px-4 py-2 lg:px-4 lg:py-0 w-auto"
           }`}
         >
@@ -298,7 +301,7 @@ const CTAButton = ({ isCompact = false }: { isCompact?: boolean }) => {
         <button
           className={`group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white ${
             isCompact
-              ? "px-4 py-3 w-auto min-w-[200px]"
+              ? "w-full px-4 py-3 sm:w-auto sm:min-w-[200px]"
               : "px-4 py-2 lg:px-4 lg:py-0 w-auto"
           }`}
         >
@@ -350,10 +353,12 @@ const SectionHeader = ({
   isCompact?: boolean;
 }) => {
   return (
-    <div className={isCompact ? "text-center mb-0" : "mb-0"}>
+    <div className={isCompact ? "mb-0 text-center" : "mb-0"}>
       <div
         className={
-          isCompact ? "" : "flex items-start justify-between gap-8 xl:gap-12"
+          isCompact
+            ? "space-y-6"
+            : "flex items-start justify-between gap-8 xl:gap-12"
         }
       >
         <div
@@ -361,9 +366,11 @@ const SectionHeader = ({
         >
           <h2
             className={`font-bold text-gray-900 ${
-              isMobile
-                ? "text-[19px] leading-tight mb-3"
-                : "text-[19px] sm:text-[19px] md:text-[21px] lg:text-[28px] xl:text-[36px] text-black font-bold leading-tight"
+              isCompact
+                ? "mb-3 text-[21px] leading-tight sm:text-[24px] md:text-[30px]"
+                : isMobile
+                  ? "mb-3 text-[19px] leading-tight"
+                  : "text-[19px] sm:text-[19px] md:text-[21px] leading-tight lg:text-[28px] xl:text-[36px] text-black font-bold"
             }`}
           >
             Large Language Model Use Cases That Drive
@@ -377,9 +384,11 @@ const SectionHeader = ({
 
           <p
             className={`text-black ${
-              isMobile
-                ? "text-[13px] font-medium font-poppins mb-0 max-w-2xl mx-auto"
-                : "text-[13px] md:text-[12px] lg:text-[14px] xl:text-[16px] text-black font-medium font-poppins mt-4 max-w-2xl"
+              isCompact
+                ? "mx-auto mb-0 max-w-2xl font-medium font-poppins text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] "
+                : isMobile
+                  ? "text-[13px] font-medium font-poppins mb-0 max-w-2xl mx-auto"
+                  : "text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium font-poppins mt-4 max-w-2xl"
             }`}
           >
             The most valuable LLM applications focus on measurable business
@@ -491,18 +500,22 @@ const LlmUsecases = () => {
   };
 
   return (
-    <section className="relative pt-10 pb-2  px-6 h-fit ">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative h-fit px-4 pb-2 pt-10 sm:px-6 lg:px-6">
+      <div className="mx-auto max-w-7xl">
         {isCompactLayout ? (
-          <div className="pb-10">
-            <SectionHeader isMobile={isMobile} isCompact={true} />
+          <div className="pb-6">
+            <SectionHeader isMobile={isCompactLayout} isCompact={true} />
+            <div className="relative overflow-hidden rounded-[28px] px-4 pb-2 pt-5 sm:rounded-[32px] sm:px-6 sm:pt-6 md:px-8">
+              <div className="pointer-events-none absolute left-1/2 top-[56px] h-[150px] w-[220px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,223,109,0.5)_0%,rgba(248,223,109,0.22)_48%,rgba(248,223,109,0)_76%)] blur-2xl sm:top-[64px] sm:h-[180px] sm:w-[300px] md:top-[72px] md:h-[210px] md:w-[430px]" />
 
-            <MobileCarousel
-              activeIndex={activeIndex}
-              onPrevious={showPrevious}
-              onNext={showNext}
-              onSelect={goToIndex}
-            />
+            
+              <MobileCarousel
+                activeIndex={activeIndex}
+                onPrevious={showPrevious}
+                onNext={showNext}
+                onSelect={goToIndex}
+              />
+            </div>
           </div>
         ) : (
           <div>

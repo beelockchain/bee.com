@@ -38,7 +38,7 @@ const BenifitsLLM = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-8 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-white px-4 py-8 sm:px-6 lg:px-6">
       {/* Top Section */}
       <div className="max-w-7xl mx-auto text-center mb-10">
         <h2 className=" text-[19px] sm:text-[19px] md:text-[21px] leading-tight lg:text-[28px] xl:text-[36px] text-black font-bold  mb-4 ">
@@ -52,7 +52,7 @@ const BenifitsLLM = () => {
           </span>{" "}
           For LLM Development
         </h2>
-        <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium  mb-6 max-w-5xl mx-auto">
+        <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium  mb-6 md:max-w-3xl lg:max-w-5xl mx-auto">
           Building with large language models is not just about the technology,
           it’s about how well that technology fits into your business. At
           Beelockchain, we focus on creating LLM solutions that are practical,

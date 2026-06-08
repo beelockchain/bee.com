@@ -250,6 +250,7 @@ const StructuredDevOps = () => {
         <div className="mt-5 flex w-full justify-center sm:mt-6">
           <Link
             href="/contact-us"
+            target="_blank"
             className="group relative inline-flex min-h-9 w-auto max-w-[290px] items-center justify-center gap-1.5 overflow-hidden rounded-full border border-black bg-white px-3 py-1.5 text-black sm:min-h-12 sm:max-w-[360px] sm:gap-2 sm:px-5 sm:py-2.5 lg:min-h-14 lg:px-6"
           >
             <span className="absolute inset-0 bg-[radial-gradient(circle,rgba(226,226,226,0.95)_0%,rgba(226,226,226,0.35)_55%,transparent_100%)] transition-opacity duration-300 group-hover:opacity-0" />
