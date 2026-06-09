@@ -69,7 +69,7 @@ const LlmSolution = () => {
   };
 
   return (
-    <section className="w-full bg-white px-4 py-10 sm:px-6 lg:px-6 ">
+    <section className="w-full bg-white px-4 py-4  lg:py-10 sm:px-6 lg:px-6 ">
       <div className="mx-auto max-w-6xl">
         {/* Top Section */}
         <div className="max-w-7xl mx-auto text-center">
@@ -82,7 +82,7 @@ const LlmSolution = () => {
             </span>{" "}
             We Build
           </h2>
-          <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium max-w-2xl mx-auto">
+          <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium md:max-w-[550px] lg:max-w-2xl mx-auto">
             Large language models enable organizations to develop intelligent
             applications that improve productivity and enhance user experiences.
           </p>
@@ -193,7 +193,7 @@ const LlmSolution = () => {
             </div>
 
             <div className="mt-6 text-left">
-              <h3 className="text-[19px] sm:text-[19px] md:text-[21px] leading-tight lg:text-[28px] xl:text-[32px] text-black font-bold">
+              <h3 className="text-left text-[18px] md:text-[16px] lg:text-lg xl:text-[24px] font-semibold font-poppins text-black pr-10">
                 {activeSolution.title}
               </h3>
               <p className="mt-3 max-w-xl text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium">

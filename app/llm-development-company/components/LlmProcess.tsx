@@ -83,7 +83,7 @@ const LlmProcess = () => {
               Development Process
             </span>
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-[13px] font-poppins font-medium text-black md:text-[12px] lg:text-[14px] xl:text-[16px]">
+          <p className="mx-auto mt-3 md:max-w-[450px] lg:max-w-2xl text-center text-[13px] font-poppins font-medium text-black md:text-[12px] lg:text-[14px] xl:text-[16px]">
             At Beelockchain, we follow a structured development approach to
             ensure the successful implementation of LLM solutions.
           </p>

@@ -58,7 +58,7 @@ const UseCaseCard = ({
       <h3 className="mb-3 font-poppins text-base font-semibold text-black sm:text-lg">
         {service.title}
       </h3>
-      <p className="text-left text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black">
+      <p className="text-center text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black">
         {service.description}
       </p>
     </div>
@@ -186,7 +186,7 @@ const MobileCarousel = ({
               <div className="relative flex min-h-[220px]  h-full w-full max-w-[320px] flex-col justify-center rounded-[24px] border-2 border-[#f6e000] bg-white p-5 shadow-sm sm:max-w-[380px] sm:min-h-[240px] sm:p-6 md:max-w-[430px]">
                 <div className="mb-3 flex items-start justify-start"></div>
 
-                <h3 className="text-[19px] sm:text-[19px] md:text-[21px] leading-tight lg:text-[28px] xl:text-[36px] text-black font-bold  font-poppins">
+                <h3 className="text-center mb-4 text-[17px] sm:text-[19px] md:text-[21px] leading-tight lg:text-[28px] xl:text-[36px] text-black font-semibold  font-poppins">
                   {service.title}
                 </h3>
 
@@ -249,7 +249,7 @@ const CTAButton = ({ isCompact = false }: { isCompact?: boolean }) => {
   return (
     <div
       className={`
-    w-full flex items-center justify-center gap-3
+    w-full flex items-center justify-center gap-3 mt-0 lg:mt-10
     ${isCompact ? "flex-col sm:flex-row" : "flex-row"}
   `}
     >
@@ -385,10 +385,10 @@ const SectionHeader = ({
           <p
             className={`text-black ${
               isCompact
-                ? "mx-auto mb-0 max-w-2xl font-medium font-poppins text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] "
+                ? "mx-auto mb-0 max-w-xl font-medium font-poppins text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] "
                 : isMobile
                   ? "text-[13px] font-medium font-poppins mb-0 max-w-2xl mx-auto"
-                  : "text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium font-poppins mt-4 max-w-2xl"
+                  : "text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-medium font-poppins mt-4 md:max-w-[550px] lg:max-w-2xl "
             }`}
           >
             The most valuable LLM applications focus on measurable business
@@ -402,7 +402,7 @@ const SectionHeader = ({
         <div
           className={
             isCompact
-              ? "w-full flex justify-center items-center mt-6"
+              ? "w-full flex justify-center items-center"
               : "shrink-0 pt-5"
           }
         >
@@ -500,7 +500,7 @@ const LlmUsecases = () => {
   };
 
   return (
-    <section className="relative h-fit px-4 pb-2 pt-10 sm:px-6 lg:px-6">
+    <section className="relative h-fit px-4 pb-2 mt-6 sm:px-6 lg:px-6">
       <div className="mx-auto max-w-7xl">
         {isCompactLayout ? (
           <div className="pb-6">

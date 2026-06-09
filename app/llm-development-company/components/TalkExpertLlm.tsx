@@ -18,12 +18,12 @@ const TalkExpertLlm = () => {
         </div>
 
         <div className="relative z-10 flex min-h-[170px] flex-col items-center justify-center gap-5 text-center lg:px-14">
-          <div className="max-w-2xl">
-            <p className="text-center mb-3 font-poppins text-[14px] font-medium leading-5 text-white sm:text-[16px] md:text-[16px] sm:leading-7 lg:text-[18px] lg:leading-7">
+          <div className="max-w-3xl">
+            <p className="text-center mb-3 font-poppins text-[18px] font-medium leading-5 text-white sm:text-[18px] md:text-[24px] sm:leading-7 lg:text-[30px] lg:leading-7">
               Build Your <span className="text-yellow-400">Custom LLM</span>{" "}
               Solution With Our Experts
             </p>
-            <p className="text-center text-[12px] md:text-[12px] lg:text-[14px] xl:text-[12px] font-poppins font-medium  text-white">
+            <p className="text-center  text-white text-[11px] md:text-[12px] lg:text-[12px] xl:text-[12px] font-poppins font-medium ">
               Start your project with our experienced AI engineers and bring
               your idea to production faster.
             </p>
@@ -69,8 +69,7 @@ const TalkExpertLlm = () => {
               </svg>
             </Link>
             <Link
-              href="/contact-us"
-              target="_blank"
+              href="#"
               onTouchStart={() => setActive(true)}
               onTouchEnd={() => setActive(false)}
               onMouseLeave={() => setActive(false)}

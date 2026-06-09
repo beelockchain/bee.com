@@ -350,7 +350,7 @@ const LlmTechnologies = () => {
 
   return (
     <div ref={sectionRef}>
-      <div ref={gridRef} className="w-full bg-white mt-10">
+      <div ref={gridRef} className="w-full bg-white mt-6">
         <div className="max-w-[1400px] mx-auto px-6 text-center flex flex-col items-center justify-center">
           {/* Heading */}
           <h2

@@ -52,7 +52,7 @@ const BenifitsLLM = () => {
           </span>{" "}
           For LLM Development
         </h2>
-        <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium  mb-6 md:max-w-3xl lg:max-w-5xl mx-auto">
+        <p className="text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-poppins leading-relaxed font-medium  mb-6 md:max-w-[550px] lg:max-w-4xl mx-auto">
           Building with large language models is not just about the technology,
           it’s about how well that technology fits into your business. At
           Beelockchain, we focus on creating LLM solutions that are practical,
@@ -67,7 +67,7 @@ const BenifitsLLM = () => {
             <img
               src="/assets/images/llm/benefits-llm-leftimg.png"
               alt="Beelockchain mobile app"
-              className="max-w-[280px] w-auto h-auto object-contain mx-auto"
+              className="max-w-[320px] w-auto h-auto object-contain mx-auto"
             />
           </div>
 
@@ -89,8 +89,8 @@ const BenifitsLLM = () => {
           </div>
         </div>
       ) : (
-        <div className="max-w-6xl mx-auto grid gap-8 xl:grid-cols-[0.92fr_1.08fr] xl:gap-4 items-start mt-10">
-          <div className="relative w-full min-h-[260px] md:min-h-80 xl:min-h-[400px] flex items-center justify-center self-start xl:sticky xl:top-24">
+        <div className="max-w-6xl mx-auto grid gap-8 xl:grid-cols-[0.92fr_1.08fr] xl:gap-4 items-start">
+          <div className="relative w-full min-h-[260px] md:min-h-80 xl:min-h-[400px] flex items-center justify-center mt-0 md:mt-0 lg:mt-0 xl:mt-30 xl:sticky">
             <img
               src="/assets/images/llm/benefits-llm-leftimg.png"
               alt="Beelockchain mobile app"

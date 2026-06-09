@@ -124,7 +124,8 @@ const LlmFaq = () => {
               Questions
             </span>
           </h2>
-          <p className="mt-4 max-w-[460px] md:max-w-[247px] lg:max-w-[460px] text-center md:text-left text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] text-black/80 leading-relaxed font-poppins">
+          <p className="mt-4 max-w-[460px] md:max-w-[247px] lg:max-w-[460px] text-center md:text-left 
+          mx-auto mb-0 max-w-xl font-medium font-poppins text-black text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] ">
             Everything you need to know about LLM development services before
             starting a project. Still have questions?
           </p>
@@ -172,7 +173,7 @@ const LlmFaq = () => {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                 >
                   <button className="w-full flex justify-between items-center gap-6 text-left cursor-pointer">
-                    <p className="text-black text-[11px] sm:text-[14px] md:text-[12px] lg:text-[16px] xl:text-[15px] font-poppins font-medium">
+                    <p className="text-black text-[11px] sm:text-[14px] md:text-[12px] lg:text-[15px] xl:text-[15px] font-poppins font-medium">
                       {item.q}
                     </p>
 
