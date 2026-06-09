@@ -46,9 +46,9 @@ const LlmIndustry = () => {
         </h2>
       ) : null}
 
-      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-6 px-4 sm:grid-cols-2 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-6">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start justify-items-center gap-6 px-4 sm:grid-cols-2 sm:justify-items-stretch sm:px-6 md:grid-cols-2 md:gap-16 lg:px-6">
         {/* LEFT – IMAGE STACK GRID */}
-        <div className="industry-grid grid grid-cols-3 gap-2 cursor-pointer">
+        <div className="industry-grid mx-auto grid w-full max-w-[420px] grid-cols-3 gap-2 cursor-pointer sm:max-w-none">
           {industryImages.map((img, i) => (
             <div
               key={i}
@@ -93,7 +93,7 @@ const LlmIndustry = () => {
         </div>
 
         {/* RIGHT – CONTENT */}
-        <div className="md:pt-2 lg:pt-0 lg:mt-10 text-left">
+        <div className="w-full max-w-[420px] text-left sm:max-w-none md:pt-2 lg:mt-10 lg:pt-0">
           {!isMobile ? (
             <h2 className="text-[19px] sm:text-[20px] md:text-[20px] lg:text-[26px] xl:text-[34px] font-bold text-black mb-6">
               <span className="shine-text text-[#F5B800]">

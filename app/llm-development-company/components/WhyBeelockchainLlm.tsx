@@ -74,7 +74,7 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => (
     <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug text-left">
       {card.title}
     </h3>
-    <p className="text-black text-[12px] md:text-[10px] lg:text-[12px] xl:text-[14px] font-poppins font-medium">
+    <p className="text-black text-[12px] md:text-[12px] lg:text-[12px] xl:text-[14px] font-poppins font-medium">
       {card.description}
     </p>
   </div>

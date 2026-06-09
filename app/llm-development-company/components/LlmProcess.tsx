@@ -75,13 +75,13 @@ const LlmProcess = () => {
             className="text-center  font-bold leading-tight text-black 
            text-[19px] sm:text-[19px] md:text-[21px]  lg:text-[28px] xl:text-[36px]"
           >
-            Our LLM{" "}
+            Our{" "}
             <span
               data-text="Development Process"
               className="shine-text relative mx-1 text-[#F5B800]"
             >
-              Development Process
-            </span>
+              LLM Development 
+            </span> Process
           </h2>
           <p className="mx-auto mt-3 md:max-w-[450px] lg:max-w-2xl text-center text-[13px] font-poppins font-medium text-black md:text-[12px] lg:text-[14px] xl:text-[16px]">
             At Beelockchain, we follow a structured development approach to

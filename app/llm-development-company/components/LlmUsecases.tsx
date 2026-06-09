@@ -307,7 +307,7 @@ const CTAButton = ({ isCompact = false }: { isCompact?: boolean }) => {
         <button
           className={`group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white ${
             isCompact
-              ? "w-full px-4 py-3 sm:w-auto sm:min-w-[200px]"
+              ? "w-full px-8 py-3"
               : "px-4 py-2 lg:px-4 lg:py-0 w-auto"
           }`}
         >
