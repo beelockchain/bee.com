@@ -82,14 +82,14 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => (
 
 // ─── LEFT PANEL ──────────────────────────────────────────────────────────────
 const LeftPanel: React.FC = () => (
-  <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
+  <div className="flex flex-col justify-center items-center text-center min-[1367px]:items-start min-[1367px]:text-left">
     <h2 className=" text-[19px] sm:text-[19px] md:text-[21px]  lg:text-[28px] xl:text-[36px]  font-bold mb-6 leading-tight text-black">
       <span className="shine-text relative text-[#F9C901]">
         Why Beelockchain{" "}
       </span>{" "}
       For Large Language Model Development?
     </h2>
-    <p className="text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium mb-4 text-black text-center lg:text-left max-w-[550px]">
+    <p className="text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium mb-4 text-black text-center min-[1367px]:text-left max-w-[550px]">
       Selecting the right development partner plays a critical role in the
       success of AI initiatives. Beelockchain, a leading LLM solutions provider,
       offers a combination of technical expertise and strategic guidance to help
@@ -182,7 +182,7 @@ const WhyBeelockchainLlm: React.FC = () => {
   const TOTAL_STEPS = rows.length - 2; // = 2
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 991px)");
+    const mobileQuery = window.matchMedia("(max-width: 1366px)");
     const shortViewportQuery = window.matchMedia("(max-height: 720px)");
     const check = () => {
       setIsMobile(mobileQuery.matches);

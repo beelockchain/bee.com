@@ -114,7 +114,7 @@ const LlmFaq = () => {
 
   return (
     <section className="w-full bg-white mt-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-6 sm:px-6 md:flex-row md:items-start md:gap-10 lg:gap-40 lg:px-6 xl:px-6">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-6 sm:px-6 md:flex-row md:items-start md:gap-10 lg:gap-10 xl:gap-40 lg:px-6 xl:px-6">
         {/* SINGLE HEADING */}
         <div className="w-full md:w-auto flex flex-col items-center md:items-start justify-center md:justify-start">
           <h2 className="text-center md:text-left text-[24px] sm:text-[32px] md:text-[44px] lg:text-[42px] xl:text-[54px] font-bold leading-tight font-manrope text-black">

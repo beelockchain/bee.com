@@ -51,14 +51,16 @@ const UseCaseCard = ({
 }) => {
   return (
     <div
-      className={`mx-auto flex min-h-[220px] h-full w-full max-w-[560px] flex-col items-center justify-center rounded-3xl bg-white px-5 py-6 text-center transition-all duration-300 sm:px-6 sm:py-7 lg:px-8 lg:py-8 ${
-        isActive ? "border-2 border-[#F6E000]" : "border border-[#d4d4d4]"
+      className={`mx-auto flex h-[260px] min-h-[260px] w-full max-w-[560px] flex-col items-center justify-center overflow-hidden rounded-3xl border-2 bg-white px-5 py-6 text-center transition-[border-color,box-shadow] duration-300 sm:px-6 sm:py-7 ${
+        isActive
+          ? "border-[#F6E000] shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
+          : "border-[#d4d4d4] shadow-none"
       }`}
     >
-      <h3 className="mb-3 font-poppins text-base font-semibold text-black sm:text-lg">
+      <h3 className="mb-3 min-h-[48px] font-poppins text-base font-semibold leading-tight text-black sm:text-lg">
         {service.title}
       </h3>
-      <p className="text-center text-[13px] md:text-[12px] lg:text-[14px] xl:text-[14px] font-poppins font-medium text-black">
+      <p className="max-w-[430px] text-center text-[13px] font-poppins font-medium leading-relaxed text-black md:text-[12px] lg:text-[14px] xl:text-[14px]">
         {service.description}
       </p>
     </div>
@@ -82,12 +84,16 @@ const DesktopCarousel = ({
     slideDirection === "next" ? 3 : slideDirection === "prev" ? 1 : 2;
 
   return (
-    <div className="overflow-hidden px-3 py-4">
-      <div className={`flex items-stretch ${trackClassName}`}>
+    <div className="relative h-[292px] overflow-hidden px-8 py-4">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-7 bg-white" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-7 bg-white" />
+      <div
+        className={`flex h-full transform-gpu items-stretch will-change-transform ${trackClassName}`}
+      >
         {visibleServices.map((service, index) => (
           <div
             key={`${service.title}-${index}`}
-            className="w-1/3 shrink-0 px-3"
+            className="flex min-w-0 basis-1/3 shrink-0 px-1"
           >
             <UseCaseCard
               service={service}
@@ -249,7 +255,7 @@ const CTAButton = ({ isCompact = false }: { isCompact?: boolean }) => {
   return (
     <div
       className={`
-    w-full flex items-center justify-center gap-3 mt-0 lg:mt-10
+    w-full flex items-center justify-center gap-3 lg:mt-10
     ${isCompact ? "flex-col sm:flex-row" : "flex-row"}
   `}
     >
@@ -508,7 +514,6 @@ const LlmUsecases = () => {
             <div className="relative overflow-hidden rounded-[28px] px-4 pb-2 pt-5 sm:rounded-[32px] sm:px-6 sm:pt-6 md:px-8">
               <div className="pointer-events-none absolute left-1/2 top-[56px] h-[150px] w-[220px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,223,109,0.5)_0%,rgba(248,223,109,0.22)_48%,rgba(248,223,109,0)_76%)] blur-2xl sm:top-[64px] sm:h-[180px] sm:w-[300px] md:top-[72px] md:h-[210px] md:w-[430px]" />
 
-            
               <MobileCarousel
                 activeIndex={activeIndex}
                 onPrevious={showPrevious}
@@ -534,7 +539,7 @@ const LlmUsecases = () => {
                 </div>
               </div>
 
-              <div className="relative z-20 -mt-36">
+              <div className="relative z-20 -mt-52">
                 <DesktopCarousel
                   visibleServices={visibleServices}
                   slideDirection={slideDirection}

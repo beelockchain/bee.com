@@ -12,6 +12,7 @@ import LlmIndustry from "./components/LlmIndustry";
 import LlmFaq from "./components/LlmFaq";
 import LlmTechnologies from "./components/LlmTechnologies";
 import WhyBeelockchainLlm from "./components/WhyBeelockchainLlm";
+import LlmCtaBox from "./components/LlmCtaBox";
 
 export const metadata = {
   title: "Large Language Model Development Services | Beelockchain",
@@ -214,6 +215,7 @@ export default function LLMServicesPage() {
         <LlmIndustry />
         <WhyBeelockchainLlm />
         <LlmTechnologies />
+        <LlmCtaBox />
         <LlmFaq />
       </main>
     </>

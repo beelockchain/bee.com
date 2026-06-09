@@ -94,8 +94,11 @@ const rows = [
 const DESCRIPTION_PREVIEW_LENGTH = 150;
 
 // ─── CARD ────────────────────────────────────────────────────────────────────
-const Card: React.FC<{ card: BenefitCard }> = ({ card }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const Card: React.FC<{
+  card: BenefitCard;
+  isExpanded: boolean;
+  onToggle: () => void;
+}> = ({ card, isExpanded, onToggle }) => {
   const shouldTruncate = card.description.length > DESCRIPTION_PREVIEW_LENGTH;
   const visibleDescription =
     shouldTruncate && !isExpanded
@@ -103,9 +106,9 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => {
       : card.description;
 
   return (
-    <div className="bg-[#F5F5F5] rounded-2xl p-4 shadow-lg hover:shadow-lg transition-shadow flex flex-col self-start">
-      <div className="mb-2">
-        <div className="w-10 h-10 xl:w-10 xl:h-10 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
+    <div className="bg-[#F5F5F5] rounded-2xl p-4 md:p-3 lg:p-4 shadow-lg hover:shadow-lg transition-shadow flex flex-col self-start">
+      <div className="mb-2 md:mb-1.5 lg:mb-2">
+        <div className="w-10 h-10 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
           <img
             src={card.icon}
             alt={card.title}
@@ -113,7 +116,7 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => {
           />
         </div>
       </div>
-      <h3 className="text-base xl:text-[18px] font-bold text-gray-900 mb-1.5 leading-snug">
+      <h3 className="text-base md:text-[15px] lg:text-base xl:text-[20px] font-bold text-gray-900 mb-1.5 md:mb-1 lg:mb-1.5 leading-snug">
         {card.title}
       </h3>
       <div className="flex-1 flex flex-col">
@@ -125,8 +128,8 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => {
         {shouldTruncate ? (
           <button
             type="button"
-            onClick={() => setIsExpanded((value) => !value)}
-            className="cursor-pointer mt-3 self-start text-[13px] font-semibold text-[#F9C901] hover:text-[#d2a900] transition-colors"
+            onClick={onToggle}
+            className="cursor-pointer mt-3 md:mt-2 lg:mt-3 self-start text-[13px] font-semibold text-[#F9C901] hover:text-[#d2a900] transition-colors"
           >
             {isExpanded ? "Read less" : "Read more"}
           </button>
@@ -138,19 +141,20 @@ const Card: React.FC<{ card: BenefitCard }> = ({ card }) => {
 
 // ─── LEFT PANEL ──────────────────────────────────────────────────────────────
 const LeftPanel: React.FC = () => (
-  <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
-    <h2 className="text-[17px] sm:text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold mb-6 leading-tight text-black">
-      
+  <div className="flex flex-col justify-center items-center text-center min-[1367px]:items-start min-[1367px]:text-left">
+    <h2 className="text-[17px] sm:text-[20px] md:text-[21px] lg:text-[28px] xl:text-[36px] font-bold mb-6 md:mb-3 lg:mb-6 leading-tight text-black">
       Our{" "}
       <span className="shine-text relative text-[#F9C901]">
         Large Language Model{" "}
       </span>{" "}
       Development Services
     </h2>
-   
-    <p className="text-center lg:text-left  max-w-[480px]
+
+    <p
+      className="text-center min-[1367px]:text-left  max-w-[480px]
      text-[13px] md:text-[12px] lg:text-[14px] xl:text-[16px] 
-     font-poppins font-medium mb-4 text-black">
+    font-poppins font-medium mb-4 md:mb-2 lg:mb-4 text-black"
+    >
       Beelockchain’s end-to-end Large Language Model development services cover
       every stage of the AI lifecycle. From strategy and model selection, our
       expert AI Engineers, to production deployment and continuous
@@ -162,7 +166,7 @@ const LeftPanel: React.FC = () => (
       width={520}
       height={360}
       sizes="(max-width: 1024px) 100vw, 520px"
-      className="w-full max-w-md object-contain self-center lg:self-start"
+      className="w-full max-w-md md:max-w-[320px] lg:max-w-md object-contain self-center min-[1367px]:self-start"
     />
   </div>
 );
@@ -173,6 +177,7 @@ const CustomLlm: React.FC = () => {
   const columnRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedCardId, setExpandedCardId] = useState<number | null>(null);
 
   const ROW_H = 260;
   const COLUMN_GAP = 10;
@@ -186,7 +191,7 @@ const CustomLlm: React.FC = () => {
   const TOTAL_STEPS = rows.length - 2; // = 2
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 991px)");
+    const mediaQuery = window.matchMedia("(max-width: 1366px)");
     const check = () => setIsMobile(mediaQuery.matches);
 
     check();
@@ -243,6 +248,10 @@ const CustomLlm: React.FC = () => {
     () => setActiveIndex((i) => (i + 1) % benefitCards.length),
     [],
   );
+
+  const toggleCardExpansion = useCallback((cardId: number) => {
+    setExpandedCardId((currentId) => (currentId === cardId ? null : cardId));
+  }, []);
   const goPrev = useCallback(
     () =>
       setActiveIndex(
@@ -255,11 +264,15 @@ const CustomLlm: React.FC = () => {
   const MobileCards = () => {
     const card = benefitCards[activeIndex];
     return (
-      <div className="w-full flex flex-col items-center mt-8">
+      <div className="w-full flex flex-col items-center mt-8 md:mt-4">
         <div className="w-full max-w-md px-2">
-          <Card card={card} />
+          <Card
+            card={card}
+            isExpanded={expandedCardId === card.id}
+            onToggle={() => toggleCardExpansion(card.id)}
+          />
         </div>
-        <div className="flex gap-2 mt-5">
+        <div className="flex gap-2 mt-5 md:mt-3">
           {benefitCards.map((_, i) => (
             <button
               key={i}
@@ -268,7 +281,7 @@ const CustomLlm: React.FC = () => {
             />
           ))}
         </div>
-        <div className="flex items-center gap-4 mt-5">
+        <div className="flex items-center gap-4 mt-5 md:mt-3">
           <button
             onClick={goPrev}
             className="bg-white shadow-md w-10 h-10 rounded-full flex items-center justify-center border border-gray-200 hover:bg-gray-50 transition-colors text-lg"
@@ -299,7 +312,7 @@ const CustomLlm: React.FC = () => {
   // ── MOBILE LAYOUT ─────────────────────────────────────────────────────────
   if (isMobile) {
     return (
-      <section className="relative bg-gray-50 py-6">
+      <section className="relative bg-gray-50 py-6 md:py-4">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="mb-2">
             <LeftPanel />
@@ -331,35 +344,42 @@ const CustomLlm: React.FC = () => {
                     "linear-gradient(to bottom, #F9FAFB 0%, transparent 100%)",
                 }}
               />
-              {/* Bottom fade — peek hint */}
-              <div
-                className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
-                style={{
-                  height: `${PEEK + 10}px`,
-                  background:
-                    "linear-gradient(to top, #F9FAFB 0%, transparent 100%)",
-                }}
-              />
+              {/* Bottom fade — only needed when a peek hint is enabled */}
+              {PEEK > 0 ? (
+                <div
+                  className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
+                  style={{
+                    height: `${PEEK}px`,
+                    background:
+                      "linear-gradient(to top, #F9FAFB 0%, transparent 100%)",
+                  }}
+                />
+              ) : null}
 
               {/* Moving column — GSAP drives translateY on this */}
+              <div
+                ref={columnRef}
+                className="absolute left-0 right-0 top-0 flex flex-col"
+                style={{
+                  gap: `${ROW_GAP}px`,
+                }}
+              >
+                {rows.map((rowCards, rowIdx) => (
                   <div
-                    ref={columnRef}
-                    className="absolute left-0 right-0 top-0 flex flex-col"
+                    key={rowIdx}
+                    className="grid grid-cols-2 items-start"
                     style={{
-                      gap: `${ROW_GAP}px`,
+                      minHeight: `${ROW_H}px`,
+                      columnGap: `${COLUMN_GAP}px`,
                     }}
                   >
-                    {rows.map((rowCards, rowIdx) => (
-                      <div
-                        key={rowIdx}
-                        className="grid grid-cols-2 items-start"
-                        style={{
-                          minHeight: `${ROW_H}px`,
-                          columnGap: `${COLUMN_GAP}px`,
-                        }}
-                      >
                     {rowCards.map((card) => (
-                      <Card key={card.id} card={card} />
+                      <Card
+                        key={card.id}
+                        card={card}
+                        isExpanded={expandedCardId === card.id}
+                        onToggle={() => toggleCardExpansion(card.id)}
+                      />
                     ))}
                   </div>
                 ))}
