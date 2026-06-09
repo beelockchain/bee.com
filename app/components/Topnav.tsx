@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowUpRight, ChevronRight, Minus, Plus, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,12 +8,133 @@ import { usePathname } from "next/navigation";
 
 const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
 
-const serviceSubMenu = [
-  { label: "Digital Transformation", href: "/digital-transformation-services" },
-  { label: "Software Development", href: "/" },
-  { label: "Blockchain Solutions", href: "https://beelockchain.io/" },
-  { label: "AI Development", href: "/" },
-  { label: "DevOps", href: "/devops-development-company" },
+const serviceMenu = [
+  {
+    label: "Digital Transformation",
+    href: "/digital-transformation-services",
+    children: [
+      {
+        label: "Digital Transformation Services",
+        href: "/digital-transformation-services",
+        target: "_blank",
+      },
+    ],
+  },
+  {
+    label: "Software Development",
+    href: "/",
+    children: [
+      {
+        label: "Custom App Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "Android App Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "iOS App Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "React Native App Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "Web App Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "ERP Software Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "Progressive Web Apps (PWA)",
+        href: "/",
+        target: "_blank",
+      },
+    ],
+  },
+  {
+    label: "Blockchain Development",
+    href: "https://beelockchain.io/",
+    children: [
+      {
+        label: "Blockchain Development Services",
+        href: "https://beelockchain.io/",
+        target: "_blank",
+      },
+    ],
+  },
+  {
+    label: "AI Development",
+    href: "/llm-development-company",
+    children: [
+      {
+        label: "Generative AI Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "Chat AI App Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "LLM Development",
+        href: "/llm-development-company",
+        target: "_blank",
+      },
+      {
+        label: "AI Strategy Consulting",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "AI UI/UX Design Services",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "Machine Learning Development",
+        href: "/",
+        target: "_blank",
+      },
+      {
+        label: "Custom AI Development",
+        href: "/",
+        target: "_blank",
+      },
+    ],
+  },
+  {
+    label: "DevOps Services",
+    href: "/devops-development-company",
+    children: [
+      {
+        label: "DevOps Development Services",
+        href: "/devops-development-company",
+        target: "_blank",
+      },
+    ],
+  },
+  {
+    label: "Digital Marketing",
+    href: "/",
+    children: [
+      {
+        label: "Digital Marketing Services",
+        href: "/",
+        target: "_blank",
+      },
+    ],
+  },
 ];
 
 const primaryNav = [
@@ -74,6 +195,10 @@ const Topnav = () => {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
   const [mobileServiceOpen, setMobileServiceOpen] = useState(false);
+  const [mobileOpenServiceIndex, setMobileOpenServiceIndex] = useState<
+    number | null
+  >(null);
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
 
   const serviceButtonRef = useRef<HTMLButtonElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -109,7 +234,13 @@ const Topnav = () => {
     if (hasDropdown) {
       return (
         pathname.startsWith("/service") ||
-        pathname === "/digital-transformation-services"
+        serviceMenu.some(
+          (service) =>
+            (service.href !== "/" && pathname === service.href) ||
+            service.children.some(
+              (child) => child.href !== "/" && pathname === child.href,
+            ),
+        )
       );
     }
 
@@ -118,15 +249,28 @@ const Topnav = () => {
     return pathname.startsWith(href);
   };
 
-  const handleSubMenuClick = (href: string) => {
-    setServiceDropdownOpen(false);
-    window.location.href = href;
-  };
-
   const handleSideSubMenuClick = (href: string) => {
     setSideMenuOpen(false);
     setMobileServiceOpen(false);
+    setMobileOpenServiceIndex(null);
     window.location.href = href;
+  };
+
+  const handleSideMenuToggle = () => {
+    setSideMenuOpen((open) => {
+      if (open) {
+        setMobileServiceOpen(false);
+        setMobileOpenServiceIndex(null);
+      }
+
+      return !open;
+    });
+  };
+
+  const handleSideMenuClose = () => {
+    setSideMenuOpen(false);
+    setMobileServiceOpen(false);
+    setMobileOpenServiceIndex(null);
   };
 
   return (
@@ -149,19 +293,21 @@ const Topnav = () => {
           {/* CENTER NAV */}
           <nav className="hidden sm:flex justify-center items-center gap-6 sm:gap-6 md:gap-8 lg:gap-10">
             {primaryNav.map((item) => {
-              const active = isActive(item.href, item.hasDropdown);
+              const active =
+                isActive(item.href, item.hasDropdown) &&
+                (item.hasDropdown || !serviceDropdownOpen);
 
               return (
-                <div key={item.label} className="relative ">
+                <div key={item.label} className="relative group/nav">
                   {item.hasDropdown ? (
                     <button
                       ref={serviceButtonRef}
                       onClick={() => setServiceDropdownOpen((prev) => !prev)}
-                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+                      className={`relative inline-flex items-center py-2 text-xs md:text-sm lg:text-base transition-all duration-300 ease-out cursor-pointer after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:rounded-full after:bg-[#D4A500] after:transition-all after:duration-300 after:ease-out hover:-translate-y-0.5 hover:tracking-[0.02em]
                       ${
                         active || serviceDropdownOpen
-                          ? "font-bold text-black"
-                          : "font-medium text-[#807E7C] hover:text-black"
+                          ? "font-bold text-black after:w-full"
+                          : "font-medium text-[#807E7C] after:w-0 hover:text-black hover:after:w-full"
                       }`}
                     >
                       {item.label}
@@ -170,11 +316,11 @@ const Topnav = () => {
                     <Link
                       href={item.href}
                       onClick={() => setServiceDropdownOpen(false)}
-                      className={`text-xs md:text-sm lg:text-base transition-colors cursor-pointer
+                      className={`relative inline-flex items-center py-2 text-xs md:text-sm lg:text-base transition-all duration-300 ease-out cursor-pointer after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:rounded-full after:bg-[#D4A500] after:transition-all after:duration-300 after:ease-out hover:-translate-y-0.5 hover:tracking-[0.02em]
                       ${
                         active
-                          ? "font-bold text-black"
-                          : "font-medium text-[#807E7C] hover:text-black"
+                          ? "font-bold text-black after:w-full"
+                          : "font-medium text-[#807E7C] after:w-0 hover:text-black hover:after:w-full"
                       }`}
                     >
                       {item.label}
@@ -197,7 +343,7 @@ const Topnav = () => {
             </Link>
 
             <button
-              onClick={() => setSideMenuOpen(!sideMenuOpen)}
+              onClick={handleSideMenuToggle}
               className="flex items-center cursor-pointer gap-1.5 border border-black px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm hover:bg-gray-100 transition text-black"
             >
               {sideMenuOpen ? "Close" : "Menu"}
@@ -220,43 +366,56 @@ const Topnav = () => {
         <div
           ref={dropdownRef}
           className={`absolute left-0 right-0 top-full w-full cursor-pointer  transition-all duration-300 overflow-hidden ${
-            serviceDropdownOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            serviceDropdownOpen
+              ? "max-h-[520px] opacity-100"
+              : "max-h-0 opacity-0"
           }`}
         >
-          {/* Mirror the exact flex layout of the top nav row so the submenu naturally sits below the "Service" button */}
-          <div className="flex items-start px-4 lg:px-10 py-6">
-            {/* Mirror logo spacer */}
-            <div className="flex-shrink-0 w-[20%]" />
+          <div className="hidden sm:flex justify-center px-4 lg:px-10">
+            <div className="grid w-[620px] grid-cols-[280px_1fr] overflow-hidden rounded bg-white shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+              <div className="flex flex-col border-r border-[#CFCFCF] py-3">
+                {serviceMenu.map((service, index) => {
+                  const active = activeServiceIndex === index;
 
-            {/* Mirror center nav container */}
-            <div className="flex flex-1 justify-center items-start gap-6 md:gap-8 lg:gap-0">
-              {/* Invisible "Home" placeholder keeps Service column aligned */}
-              <div
-                aria-hidden
-                className="invisible text-xs md:text-sm lg:text-base font-medium select-none pointer-events-none"
-              >
-                Home
+                  return (
+                    <button
+                      key={service.label}
+                      type="button"
+                      onMouseEnter={() => setActiveServiceIndex(index)}
+                      onFocus={() => setActiveServiceIndex(index)}
+                      onClick={() => setActiveServiceIndex(index)}
+                      className={`cursor-pointer group flex h-[45px] items-center justify-between px-6 text-left 
+                         transition ${
+                           active
+                             ? "text-[#D4A500] text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold leading-[1.65]"
+                             : "text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold leading-[1.65] hover:text-[#D4A500] text-black "
+                         }`}
+                    >
+                      <span className="flex items-center gap-2.5">
+                        <span className=" h-2 w-2 rounded-full bg-[#F0D000] ring-1 ring-[#E6B900]" />
+                        {service.label}
+                      </span>
+                      <ChevronRight className="h-4 w-4 text-black transition group-hover:translate-x-0.5" />
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* The actual submenu — directly under Service */}
-              <div className="flex flex-col gap-3">
-                {serviceSubMenu.map((sub) => (
+              <div className="flex flex-col py-3">
+                {serviceMenu[activeServiceIndex].children.map((sub) => (
                   <Link
                     key={sub.label}
                     href={sub.href}
+                    target={sub.target}
                     rel="noopener noreferrer"
                     onClick={() => setServiceDropdownOpen(false)}
-                    className="flex items-center gap-3 text-sm md:text-[15px] font-medium text-black hover:text-black transition group text-left cursor-pointer"
+                    className="flex min-h-[45px] items-center px-6 py-2 text-[14px] md:text-[12px] lg:text-[14px] xl:text-[16px] font-semibold leading-[1.65] text-black transition hover:text-[#D4A500]"
                   >
-                    <span className="w-2 h-2 flex-shrink-0 rounded-full bg-yellow-400 group-hover:scale-125 transition-transform" />
                     {sub.label}
                   </Link>
                 ))}
               </div>
             </div>
-
-            {/* Mirror right-actions spacer */}
-            <div className="flex-shrink-0 sm:w-[30%] lg:w-[22%]" />
           </div>
         </div>
       </div>
@@ -281,7 +440,7 @@ const Topnav = () => {
         <div
           className="fixed inset-0 z-40 bg-white/40 backdrop-blur-sm"
           style={{ top: "80px" }}
-          onClick={() => setSideMenuOpen(false)}
+          onClick={handleSideMenuClose}
         />
       )}
 
@@ -314,23 +473,82 @@ const Topnav = () => {
               item.hasDropdown ? (
                 <div key={item.label} className="w-full">
                   <button
-                    onClick={() => setMobileServiceOpen((p) => !p)}
-                    className="text-md font-medium text-black hover:text-yellow-500 transition"
+                    onClick={() => {
+                      setMobileServiceOpen((p) => !p);
+                      setMobileOpenServiceIndex(null);
+                    }}
+                    className="flex w-full items-center justify-between text-md font-medium text-black hover:text-yellow-500 transition"
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-black/20 text-black">
+                      {mobileServiceOpen ? (
+                        <Minus className="h-4 w-4" />
+                      ) : (
+                        <Plus className="h-4 w-4" />
+                      )}
+                    </span>
                   </button>
                   {mobileServiceOpen && (
                     <div className="flex flex-col items-start mt-3 gap-3 w-full pl-4">
-                      {serviceSubMenu.map((sub) => (
-                        <button
-                          key={sub.label}
-                          onClick={() => handleSideSubMenuClick(sub.href)}
-                          className="flex items-center gap-2 text-base font-medium text-black hover:text-yellow-500 transition"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />
-                          {sub.label}
-                        </button>
-                      ))}
+                      {serviceMenu.map((service, index) => {
+                        const serviceOpen = mobileOpenServiceIndex === index;
+
+                        return (
+                          <div key={service.label} className="w-full">
+                            <div className="flex w-full items-center justify-between gap-4">
+                              <button
+                                onClick={() =>
+                                  handleSideSubMenuClick(service.href)
+                                }
+                                className="flex min-w-0 items-center gap-2 text-left text-base font-semibold text-black hover:text-yellow-500 transition"
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />
+                                <span>{service.label}</span>
+                              </button>
+                              <button
+                                type="button"
+                                aria-label={`${serviceOpen ? "Close" : "Open"} ${service.label} services`}
+                                aria-expanded={serviceOpen}
+                                onClick={() =>
+                                  setMobileOpenServiceIndex((current) =>
+                                    current === index ? null : index,
+                                  )
+                                }
+                                className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-black/20 text-black transition hover:border-yellow-500 hover:text-yellow-500"
+                              >
+                                {serviceOpen ? (
+                                  <Minus className="h-4 w-4" />
+                                ) : (
+                                  <Plus className="h-4 w-4" />
+                                )}
+                              </button>
+                            </div>
+                            <div
+                              className={`grid overflow-hidden transition-all duration-300 ease-out ${
+                                serviceOpen
+                                  ? "grid-rows-[1fr] opacity-100"
+                                  : "grid-rows-[0fr] opacity-0"
+                              }`}
+                            >
+                              <div className="min-h-0">
+                                <div className="mt-3 flex flex-col items-start gap-2.5 pl-4 pb-2">
+                                  {service.children.map((sub) => (
+                                    <button
+                                      key={sub.label}
+                                      onClick={() =>
+                                        handleSideSubMenuClick(sub.href)
+                                      }
+                                      className="text-left text-sm font-medium text-[#555] hover:text-yellow-500 transition"
+                                    >
+                                      {sub.label}
+                                    </button>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
@@ -348,20 +566,28 @@ const Topnav = () => {
           </div>
 
           {/* SECONDARY LINKS */}
-          <div className="flex flex-col items-start sm:items-end gap-5 w-full">
+          <div
+            className={`flex-col items-start sm:items-end gap-5 w-full ${
+              mobileServiceOpen ? "hidden sm:flex" : "flex"
+            }`}
+          >
             {secondaryNav.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 className="text-md font-medium text-black hover:text-yellow-500 transition"
-                onClick={() => setSideMenuOpen(false)}
+                onClick={handleSideMenuClose}
               >
                 {item.label}
               </a>
             ))}
           </div>
           {/* SOCIAL ICONS */}
-          <div className="sm:px-0 sm:pr-0 flex flex-col sm:items-end md:mt-40 shrink-0">
+          <div
+            className={`sm:px-0 sm:pr-0 flex-col sm:items-end md:mt-40 shrink-0 ${
+              mobileServiceOpen ? "hidden sm:flex" : "flex"
+            }`}
+          >
             <h4 className="text-lg md:text-md font-medium text-black mb-3">
               Connect With Us:
             </h4>
