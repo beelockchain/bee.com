@@ -113,7 +113,7 @@ const Makeusdifferent = () => {
         {/* Image Section - First on mobile/tablet, right on desktop */}
         <div ref={imageRef} className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center lg:items-end h-full order-none lg:order-2">
           <img
-            src="/assets/images/software-dev/custom-app-dev/makeusdifferent.png"
+            src="/assets/images/software-dev/custom-app-dev/custom-mobile-makeusdifferent.png"
             alt="Beelockchain mobile app"
             className="max-w-[280px] md:max-w-[400px] lg:max-w-full w-auto h-auto object-contain mx-auto"
           />

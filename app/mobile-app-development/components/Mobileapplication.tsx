@@ -19,7 +19,7 @@ const Mobileapplication = () => {
         {/* LEFT — Single Image */}
         <div className="w-full md:w-1/2 flex justify-center">
           <img
-            src="/assets/images/software-dev/custom-app-dev/Mobileapplication.png"
+            src="/assets/images/software-dev/custom-app-dev/custom-Mobileapplication.png"
             alt="Enterprise mobile application illustration"
             className="w-full max-w-sm md:max-w-md object-contain rounded-xl"
           />

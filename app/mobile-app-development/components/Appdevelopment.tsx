@@ -59,7 +59,7 @@ const FeatureCard = ({
   align?: "left" | "right";
 }) => (
   <div
-    className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 flex-1 min-h-[140px] justify-center"
+    className="bg-[#F5F5F5] backdrop-blur-sm rounded-xl p-6 border border-gray-100 shadow-sm flex flex-col gap-3 flex-1 min-h-[140px] justify-center"
   >
     {/* Icon + Title */}
     <div className="flex items-center gap-3">
@@ -131,7 +131,7 @@ const MobileCarousel = () => {
           {allFeatures.map((feature, index) => (
             <div key={index} className="w-full flex-shrink-0 px-2">
              
-              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-5 border border-gray-100 shadow-sm min-h-[160px] text-center">
+              <div className="bg-[white/90] backdrop-blur-sm rounded-xl p-5 border border-gray-100 shadow-sm min-h-[160px] text-center">
               <div className="flex justify-center">
                 <img src={feature.icon} alt={feature.icon} />
               </div>  
@@ -246,11 +246,11 @@ const Appdevelopment = () => {
                   "radial-gradient(ellipse at center, rgba(245, 184, 0, 0.4) 0%, rgba(245, 184, 0, 0.1) 50%, transparent 70%)",
               }}
             />
-            <img
-              src="/assets/images/software-dev/custom-app-dev/Appdevelopment.svg"
+            {/* <img
+              src="/assets/images/software-dev/custom-app-dev/custom-mobile-Appdevelopment.png"
               alt="App Development Mockup"
               className="relative object-contain drop-shadow-2xl w-full"
-            />
+            /> */}
           </div>
         </div>
 
@@ -263,8 +263,8 @@ const Appdevelopment = () => {
         className="hidden lg:grid max-w-5xl mx-auto gap-8 items-stretch"
         style={{
           backgroundImage:
-            "url('/assets/images/software-dev/custom-app-dev/Appdevelopmentbg.svg')",
-          backgroundSize: "cover",
+            "url('/assets/images/software-dev/custom-app-dev/custom-mobile-Appdevelopment.png')",
+          backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           gridTemplateColumns: "1fr auto 1fr",
@@ -287,18 +287,18 @@ const Appdevelopment = () => {
         <div className="flex justify-center items-center w-[220px] lg:w-[360px]">
           <div className="relative w-full">
             {/* Yellow blob background */}
-            <div
+            {/* <div
               className="absolute inset-0 rounded-[40%] h-80 blur-2xl z-0"
               style={{
                 background:
                   "radial-gradient(ellipse at center, rgba(245, 184, 0, 0.4) 0%, rgba(245, 184, 0, 0.1) 50%, transparent 70%)",
               }}
-            />
-            <img
-              src="/assets/images/software-dev/custom-app-dev/Appdevelopment.svg"
+            /> */}
+            {/* <img
+              src="/assets/images/software-dev/custom-app-dev/custom-mobile-Appdevelopment.png"
               alt="App Development Mockup"
               className="relative object-contain drop-shadow-2xl"
-            />
+            /> */}
           </div>
         </div>
 
@@ -328,7 +328,7 @@ const Appdevelopment = () => {
           {leftFeatures.map((f, i) => (
             <div
               key={i}
-              className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-gray-100 shadow-sm min-h-[120px] text-center"
+              className="bg-[#F5F5F5] backdrop-blur-sm rounded-xl p-5 border border-gray-100 shadow-sm min-h-[120px] text-center"
             >
               <div className="flex justify-center">
                  <img src={f.icon} alt={f.icon} />
@@ -354,11 +354,11 @@ const Appdevelopment = () => {
                   "radial-gradient(ellipse at center, rgba(245, 184, 0, 0.3) 0%, rgba(245, 184, 0, 0.1) 50%, transparent 70%)",
               }}
             />
-            <img
-              src="/assets/images/software-dev/custom-app-dev/Appdevelopment.svg"
+            {/* <img
+              src="/assets/images/software-dev/custom-app-dev/custom-mobile-Appdevelopment.png"
               alt="App Development Mockup"
               className="relative object-contain drop-shadow-xl"
-            />
+            /> */}
           </div>
         </div>
 
@@ -367,7 +367,7 @@ const Appdevelopment = () => {
           {rightFeatures.map((f, i) => (
             <div
               key={i}
-              className="bg-white/80 backdrop-blur-sm rounded-xl p-5 border border-gray-100 shadow-sm min-h-[120px] text-center"
+              className="bg-[#F5F5F5] backdrop-blur-sm rounded-xl p-5 border border-gray-100 shadow-sm min-h-[120px] text-center"
             >
               <div className="flex justify-center">
                  <img src={f.icon} alt={f.icon} />

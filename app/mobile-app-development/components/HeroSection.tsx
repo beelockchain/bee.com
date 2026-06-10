@@ -8,7 +8,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section className="w-full py-6 md:py-10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-5">
 
         {/* LEFT SIDE CONTENT */}
         <div className="w-full max-w-2xl flex flex-col items-start text-left space-y-6 md:space-y-8 z-10">
@@ -103,7 +103,7 @@ export const HeroSection: React.FC = () => {
         */}
         <div className="hidden md:flex w-full max-w-[400px] md:max-w-[450px] lg:max-w-[600px] justify-center lg:justify-end order-first lg:order-last">
           <Image
-            src="/assets/images/software-dev/custom-app-dev/hero-right-img.png"
+            src="/assets/images/software-dev/custom-app-dev/custom-mobileapp-hero.png"
             alt="Mobile App"
             width={600}
             height={600}

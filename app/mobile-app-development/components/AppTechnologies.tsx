@@ -325,12 +325,11 @@ const AppTechnologies = () => {
 
   const categories = [
     { key: null as string | null, label: "All" },
-    { key: "design" as string, label: "Design Tools" },
-    { key: "frontend" as string, label: "Frontend Tools" },
-    { key: "backend" as string, label: "Backend Tools" },
+    { key: "Mobile" as string, label: "Mobile App" },
+    { key: "backend" as string, label: "Backend" },
     { key: "database" as string, label: "Database" },
-    { key: "mobile" as string, label: "Mobile App" },
-    { key: "qa" as string, label: "Quality Assurance" },
+    { key: "payment" as string, label: "Payment & API Integration" },
+    { key: "cloud" as string, label: "Cloud & DevOps" },
   ];
 
   return (
