@@ -51,7 +51,7 @@ export const metadata = {
   icons: {
     icon: [
       {
-        url: "/assets/favicon.webp",
+        url: "https://ik.imagekit.io/racjwdojq/favicon.webp",
       },
     ],
   },

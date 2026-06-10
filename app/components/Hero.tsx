@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import Link from "next/link";
 
 const Herosection = () => {
   const ASSET_URL = process.env.NEXT_PUBLIC_ASSET_URL;
@@ -121,7 +122,7 @@ const Herosection = () => {
     });
   }, []);
   return (
-    <section className="w-full bg-white px-2  md:px-10 lg:px-20 py-2">
+    <section className="w-full bg-white px-2  md:px-10 lg:px-20 py-2 mt-4 lg:mt-2">
       <div className="max-w-9xl lg:max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-4 lg:gap-10">
         {/* LEFT - HEADING */}
        <div className="w-full text-center lg:text-left">
@@ -202,8 +203,9 @@ const Herosection = () => {
                 alt="bee"
                 className="absolute top-0 right-0 w-20 pointer-events-none z-20"
               />
-              <a
+              <Link
                 href="/contact-us"
+                target="_blank"
                 ref={btnRef}
                 onTouchStart={() => setActive(true)}
                 onTouchEnd={() => setActive(false)}
@@ -245,7 +247,7 @@ const Herosection = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
 
             </div>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useCallback } from "react";
-
+import Link from "next/link";
 const services = [
   {
     image: "/assets/images/software-dev/custom-app-dev/mobile-development.svg",
@@ -110,7 +110,7 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => {
 // Reusable CTA Button Component
 const CTAButton = ({ isMobile = false }: { isMobile?: boolean }) => {
   return (
-    <a href="/contact-us">
+    <Link href="/contact-us" target="_blank" className="cursor-pointer">
       <button
         className={`group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white ${
           isMobile ? "px-6 py-3 w-auto min-w-[200px]" : "px-4 py-2 lg:px-4 lg:py-0 w-auto"
@@ -143,7 +143,7 @@ const CTAButton = ({ isMobile = false }: { isMobile?: boolean }) => {
           />
         </svg>
       </button>
-    </a>
+    </Link>
   );
 };
 

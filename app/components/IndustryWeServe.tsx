@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 const industries = [
   "Fintech",
   "Healthcare",
@@ -134,8 +135,9 @@ const IndustryWeServe = () => {
 
           {/* CTA BUTTON */}
           <div className="flex justify-center md:justify-start">
-          <a
+          <Link
             href="/contact-us"
+            target="_blank"
             onTouchStart={() => setActive(true)}
             onTouchEnd={() => setActive(false)}
             onMouseLeave={() => setActive(false)}
@@ -193,7 +195,7 @@ const IndustryWeServe = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
 
         </div>
 

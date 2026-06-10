@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const HeroSection: React.FC = () => {
   const [active, setActive] = useState(false);
@@ -56,7 +57,7 @@ export const HeroSection: React.FC = () => {
           {/* BUTTON CONTAINER */}
          
          <div className="flex justify-start w-full">
-        <a href="/contact-us">
+        <Link href="/contact-us" target="_blank" className="cursor-pointer">
           <button
             onTouchStart={() => setActive(true)}
             onTouchEnd={() => setActive(false)}
@@ -91,7 +92,7 @@ export const HeroSection: React.FC = () => {
               />
             </svg>
           </button>
-        </a>
+        </Link>
       </div>
         </div>
 

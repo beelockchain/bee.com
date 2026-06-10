@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState, useCallback } from 'react'
+import Link from 'next/link'
 
 interface BenefitCard {
   id: number
@@ -83,7 +84,7 @@ const LeftPanel: React.FC = () => (
      Beelockchain provides AI chatbot development services designed to support enterprise automation and intelligent customer engagement. Our solutions help organizations streamline communication, automate workflows, and improve digital experiences.
     </p>
    <div className="flex flex-row gap-3">
-    <a href="/contact-us">
+    <Link href="/contact-us" target="_blank">
       <button className="group cursor-pointer relative inline-flex items-center w-fit px-4 py-2 lg:px-3 lg:py-2 border border-black rounded-full bg-white overflow-hidden">
         
         {/* ripple */}
@@ -105,7 +106,7 @@ const LeftPanel: React.FC = () => (
         </svg>
 
       </button>
-    </a>
+    </Link>
 
     <button className="group cursor-pointer relative inline-flex items-center w-fit px-4 py-2 lg:px-3 lg:py-2 border border-black rounded-full bg-white overflow-hidden">
       
@@ -234,7 +235,7 @@ const Automation: React.FC = () => {
               Begin your transformation journey with Beelockchain's skilled experts. Build a future-ready organization using a structured digital business transformation service approach.
             </p>
           <div className="mt-6 flex flex-col gap-3">
-            <a href="/contact-us">
+            <Link href="/contact-us" target="_blank">
               <button className="group cursor-pointer relative inline-flex items-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">
                 
                 {/* ripple */}
@@ -256,7 +257,7 @@ const Automation: React.FC = () => {
                 </svg>
 
               </button>
-            </a>
+            </Link>
 
 
               <button className="group cursor-pointer relative inline-flex items-center justify-center px-3 py-2 border border-black rounded-full bg-white overflow-hidden">

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const industries = [
   "FinTech",
@@ -125,7 +126,7 @@ const Appdevindustryweserve = () => {
 
           {/* CTA BUTTON */}
           <div className="flex justify-center md:justify-start">
-            <a href="/contact-us">
+            <Link href="/contact-us" target="_blank" className="cursor-pointer">
             <button
               onTouchStart={() => setActive(true)}
               onTouchEnd={() => setActive(false)}
@@ -168,7 +169,7 @@ const Appdevindustryweserve = () => {
                 />
               </svg>
             </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

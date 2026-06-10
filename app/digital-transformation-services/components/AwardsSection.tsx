@@ -14,7 +14,7 @@ const awards = [
   {
     src: "/assets/images/beelock-reward3.png",
     alt: "Clutch Top Company",
-    href: "/",
+    href: "https://techreviewer.co/companies/beelockchain-digital-transformation-company",
   },
   {
     src: "/assets/images/beelock-reward4.png",
@@ -23,8 +23,8 @@ const awards = [
   },
   {
     src: "/assets/images/beelock-reward5.png",
-    alt: "GoodFirms Top Mobile Development Company",
-    href: "/",
+    alt: "designrush",
+    href: "https://www.designrush.com/agency/profile/beelockchain",
   },
 ];
 

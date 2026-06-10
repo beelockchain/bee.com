@@ -60,10 +60,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/assets/favicon.webp",
+        url: "https://ik.imagekit.io/racjwdojq/favicon.webp",
       },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "https://ik.imagekit.io/racjwdojq/apple-touch-icon.png",
   },
 
   openGraph: {
@@ -94,9 +94,7 @@ export const metadata: Metadata = {
       "Best Digital Transformation Company | Digital Transformation Solutions",
     description:
       "Beelockchain offers next-generation digital transformation through AI-powered software and advanced blockchain solutions for enterprise growth.",
-    images: [
-      "/assets/images/twitter.webp",
-    ],
+    images: ["/assets/images/twitter.webp"],
   },
 
   verification: {
@@ -126,8 +124,8 @@ export default function RootLayout({
         <Topnav />
 
         {/* ================= MAIN CONTENT ================= */}
-        {/* Add padding-top to account for fixed navbar height (h-20 = 5rem = 80px) */}
-        <main className="pt-20">{children}</main>
+        {/* Add padding-top to account for fixed navbar height */}
+        <main className="pt-16">{children}</main>
 
         <Footer />
 

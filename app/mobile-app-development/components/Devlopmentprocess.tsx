@@ -127,7 +127,7 @@ const Developmentprocess = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
 
           {/* Consult Our Experts */}
-          <a href="/contact-us">
+          <Link href="/contact-us" target='_blank'>
             <button className="group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white px-5 py-2 lg:px-4 lg:py-0 w-auto">
               
               <span className="absolute inset-0 flex items-center justify-center z-0">
@@ -154,10 +154,10 @@ const Developmentprocess = () => {
                 />
               </svg>
             </button>
-          </a>
+          </Link>
 
           {/* Explore Portfolio */}
-          <a href="/portfolio">
+          <Link href="/portfolio" target='_blank' className="cursor-pointer">
             <button className="group relative flex items-center justify-center gap-2 border border-black rounded-full overflow-hidden cursor-pointer bg-white px-4 py-2 lg:px-4 lg:py-0 w-auto">
               
               <span className="absolute inset-0 flex items-center justify-center z-0">
@@ -184,7 +184,7 @@ const Developmentprocess = () => {
                 />
               </svg>
             </button>
-          </a>
+          </Link>
 
         </div>
         </div>
